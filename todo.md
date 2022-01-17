@@ -1,0 +1,44 @@
+- Forensics of the subclavial vein
+- [Your Local Epidemiologist](https://yourlocalepidemiologist.substack.com/) by Dr. Katelyn Jetelina
+    - Paxlovid (88% reduction, 89% efficacy)
+    - Molnupiravir (30% reduction)
+- [Save matplotlib figures as TikZ/PGFplots for smooth integration into LaTeX.](https://github.com/nschloe/tikzplotlib)
+- Queen and Rook endgames
+- Placental protein 13
+    -  It creates a diversion, it goes to some other part of the uterus that the placenta isn't trying to invade and attracts the attention of the immune system.
+- Human placental lactogen
+    - By the third trimester, 25% of the blood flow is going into the placenta.
+    - It can cause Pre-eclampsia, dangerously high blood pressure leading to organ failure.
+- Marcus Hutchins
+- [Typesetting before $\LaTeX$](https://twitter.com/iraphas13/status/1262489387767480322?s=20)
+- Julius Caesar,  Act 3 Scene 2: "Friends, Romans, Countrymen".
+- [Github Stars are overvalued](https://towardsdatascience.com/github-stars-are-overvalued-15ba780b36)
+- Seb Vettel
+    - 38 laps on the softs, Bahrain 2018
+    - Ferrari screw ups in Australia 2016, Canada, Germany 2016, Germany 2018, Italy 2018, China 2019, Russia 2019, Mexico 2019, Silverstone 2020
+    - Monza 2008 win
+    - Brazil 2012 win
+- [Eagle's Nest, Hitler's HQ](https://www.youtube.com/watch?v=u7Yy-NG2o_A). All of Mark Felton's videos.
+- The Genius of the Crowd
+- [Career Panel with Yoshua Bengio and Richard Sutton](https://www.youtube.com/watch?v=kL5GJag6Ipo)
+- Nietzsche's "Morality is Cowardice": If you don't have the courage to commit a crime, it doesn't mean you're moral for not committing a crime. It just means you're afraid of doing it. We can see this in mob violence, people riot because they don't think they'll get caught.
+- [Elon Musk and Sal Khan talk about Entrepreneurship](https://www.youtube.com/watch?v=vDwzmJpI4io)
+- [Colour photographs from The Great War](https://rarehistoricalphotos.com/hans-hildenbrand-german-front-in-rare-color-photos-1914-1918/), these are nothing like I expected them to be. Granted, the soldiers were posing but these photos give off an idyllic vibe. Very unsettling.
+- [The Machine Learning Community has a toxicity problem](https://www.reddit.com/r/MachineLearning/comments/hiv3vf/d_the_machine_learning_community_has_a_toxicity/)
+- People assume that if they're not doing anything unlawful, there is no threat to their privacy. If there is unlawful activity, it is all the more reason for the activity to not be private.
+- [Where do Birds Go?](https://xkcd.com/1434/)
+- [The Fading Battlefields of World War 1](https://www.theatlantic.com/photo/2018/05/the-fading-battlefields-of-world-war-i/561353/)
+- Citicorp Center engineering crisis
+- [Date formatting in javascript](https://stackoverflow.com/questions/1056728/where-can-i-find-documentation-on-formatting-a-date-in-javascript)
+- Kimi stats
+    - Fastest laps
+    - Only driver to win for McLaren, Ferrari and Lotus
+    - Only driver to win races in the three different engine regulations eras (3.0 litre V10, 2.4 litre V8 and 1.6 litre V6 turbo)
+- Rudyard Kipling, If
+> If you can make one heap of all your winnings \
+> And risk it on one turn of pitch-and-toss, \
+> And lose, and start again at your beginnings \
+> And never breathe a word about your loss;
+- [Brief intro to Game Theory](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1968579)
+- ["The Best of Dan's narration"](https://www.reddit.com/r/dancarlin/comments/myn9uc/what_has_stuck_with_you_the_most_from_a_hardcore/)
+- [How many recursive calls does a recursive function make?](https://vulms.vu.edu.pk/Courses/CS201/Downloads/p60-robertson.pdf)
