@@ -1,3 +1,4 @@
+- `latexmk -pdf -pvc file.tex` to open an updating pdf file everytime `file.tex` is saved. To use with `vi` and `zathura`.
 - Forensics of the subclavial vein
 - [Your Local Epidemiologist](https://yourlocalepidemiologist.substack.com/) by Dr. Katelyn Jetelina
     - Paxlovid (88% reduction, 89% efficacy)
