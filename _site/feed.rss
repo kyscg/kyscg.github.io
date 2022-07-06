@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+<channel>
+<title>New Ideas</title>
+<link>https://kyscg.github.io</link>
+<description>New Ideas</description>
+    <item>
+        <title>Skill Moves: An analysis </title>
+        <guid>https://kyscg.github.io/skillmoves</guid>
+        <link>https://kyscg.github.io/skillmoves</link>
+    </item>
+    <item>
+        <title>Skill Moves: An analysis </title>
+        <guid>https://kyscg.github.io/GSoC2020</guid>
+        <link>https://kyscg.github.io/GSoC2020</link>
+    </item>
+    <item>
+        <title>Skill Moves: An analysis </title>
+        <guid>https://kyscg.github.io/GCJ2020</guid>
+        <link>https://kyscg.github.io/GCJ2020</link>
+    </item>
+</channel>
+</rss>

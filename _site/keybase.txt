@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/kyscg
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://kyscg.github.io
+  * I am kyscg (https://keybase.io/kyscg) on keybase.
+  * I have a public key ASBJZzcNRqXoaPOJNogWdPa_YhPzBY1N2G2dWZxXSbL07Qo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010195c79cc6b1e36ad9d5119456180f7b00aa9a1b6ccd2707a30d6ae56a44added80a",
+      "host": "keybase.io",
+      "kid": "01204967370d46a5e868f38936881674f6bf6213f3058d4dd86d9d599c5749b2f4ed0a",
+      "uid": "fe15fda6cde887937716c1a04b6df519",
+      "username": "kyscg"
+    },
+    "merkle_root": {
+      "ctime": 1619176428,
+      "hash": "6fa09763e9a20ce31a2bc20faa8682d58db07bb44bf74310ab08d1076bba8e4ec1f1088809bcab1c7dfb85682010682dfa14e63056f68cfd139abd4de161d71d",
+      "hash_meta": "c45230804080298fc27b8a3ec33d57cabd8386c0b971b698f2056017d333d731",
+      "seqno": 19720041
+    },
+    "service": {
+      "entropy": "oqGySCnWePKiWbOvViTBTi+0",
+      "hostname": "kyscg.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.6.0"
+  },
+  "ctime": 1619176469,
+  "expire_in": 504576000,
+  "prev": "26fbf90094a20f67de0e1f7c5cc1a97ceffba0bb849cba3e7eba73c1a8117d11",
+  "seqno": 20,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgSWc3DUal6GjziTaIFnT2v2IT8wWNTdhtnVmcV0my9O0Kp3BheWxvYWTESpcCFMQgJvv5AJSiD2feDh98XMGpfO/7oLuEnLo+frpzwagRfRHEICx5Np31xZFVnoshBGQt3o5YdkKod8vqE3RYDuCa88HrAgHCo3NpZ8RA5sWUuUOL89VekJvACLeupYfQpkBLfKittwszEJz04DRvf05Oi4xIrGgKgA83p8NT2sz5TZ2LkK92EP1s9wv0BKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIIYwwZIqFpiy/fq+b/L+LBvN0YMO0dmS99BwMqkhzCFvo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/kyscg
+
+==================================================================

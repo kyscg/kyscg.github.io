@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Google Code Jam</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" sizes="152x152" href="/assets/images/logos/alexandrosMegas.jpg">
+    <link href="/assets/main.css" media="screen" rel="stylesheet" type="text/css">
+    <script src="/assets/main.js" type="text/javascript"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBVJ1FF958"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-HBVJ1FF958');
+    </script>
+</head>
+
+<body class="">
+    <div id="container">
+        <div class="signature">
+            <div class="flexcontainer">
+                <div class="nav-view">
+                    <div class="nav-inner">
+                        <nav>
+                            <a href="/" title="New Ideas"><img style="float: left;margin: 0px 35px 25px 35px;"
+                                    src="/assets/images/logos/logo.svg" alt="website-logo" width="75" height="75"></a>
+                            <ul>
+                                <li><a href="/about" title="About">About</a></li>
+                                <li><a href="/" title="Articles">Articles</a></li>
+                                <li><a href="/research" title="Research">Research</a></li>
+                                <li><a href="/reading" title="Reading">Reading</a></li>
+                                <li><a href="/notes" title="Notes">Notes</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="toc-index"></div>
+                <div class="content">
+                    <div class="signature-content-header">
+                        <div id="title">
+                            <h1>Google Code Jam</h1>
+                            <h3>Analysis and Solutions for the 2020 edition of Google's annual Code Jam competition.
+                            </h3>
+                            <div class="publishing-info-mobile">
+                                <p><em>Published:</em> April 14, 2020</p>
+                                <p><em>Updated:</em> June 2, 2020</p>
+                                <p><em>Status:</em> Unfinished</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="signature-content">
+                        <div class="toc">
+                            <h2>Contents</h2>
+                            <ol>
+                                <li><a href="#section-0">Qualification Round</a>
+                                    <ol>
+                                        <li><a href="#section-1">Vestigium</a></li>
+                                        <li><a href="#section-2">Nesting Depth</a></li>
+                                        <li><a href="#section-3">Parenting Partnering Returns</a></li>
+                                        <li><a href="#section-4">ESAb ATAd</a></li>
+                                        <li><a href="#section-5">Indicium</a></li>
+                                    </ol>
+                                </li>
+                                <li><a href="#section-6">Round 1A</a>
+                                    <ol>
+                                        <li><a href="#section-7">Pattern Matching</a></li>
+                                        <li><a href="#section-8">Pascal Walk</a></li>
+                                    </ol>
+                                </li>
+                            </ol>
+                            <div class="divider-short"></div>
+                        </div>
+                        <article class="big">
+                            <p><em>I originally meant this to be separate posts for each of the rounds but then, I
+                                    didn't want to clutter up my blog too
+                                    much. So, I'm putting everything in one file which I shall keep updating with the
+                                    rounds. This post is an editorial of sorts for
+                                    all the rounds in the 2020 edition of Google CodeJam. This is my first time
+                                    attempting to write an editorial for a competitive programming contest and I&#39;m
+                                    already
+                                    puzzled over how I should be structuring this. I guess I&#39;ll start with an
+                                    overview of the contest and then
+                                    tackle every question. VAMOS!!<br><br>The solutions are coded
+                                    in C++ and some questions will also have solutions that failed, so that I can
+                                    provide commentary on what went wrong. The solutions aren't the best, but they do
+                                    the job well enough for an <code>AC</code>.</em>
+                            </p>
+
+                            <h2 id="section-0"><a href="#section-0">Qualification Round</a></h2>
+
+                            <p>This round felt tougher than last year&#39;s Qualification Round. Participants needed to
+                                score a minimum of 30 points
+                                in order to qualify which meant that solving three problems was a must. I panicked a bit
+                                on Problem 1 as I followed
+                                a fallible logic and messed up (more about that below), the second one took me some time
+                                but I got through it
+                                without any difficulties. By this time, I was fairly confident of getting beyond 30 and
+                                I attempted a brute force on
+                                Problem 3 getting a few <code>WA</code>&#39;s before sobering up and hitting 42 points.
+                                I&#39;d spent almost three
+                                hours in front of my screen and I didn&#39;t feel like pushing for the fifth problem.
+                                The fourth problem was an
+                                interactive problem, so that was out of the window anyways.</p>
+
+                            <h3 id="section-1"><a href="#section-1">Problem 1: <a
+                                        href="https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27/000000000020993c">Vestigium</a>
+                            </h3>
+
+                            <p>This problem asks us to check if a given square matrix is a <a
+                                    href="https://mathworld.wolfram.com/LatinSquare.html">Latin Square</a> or not. In
+                                addition, the problem asks us
+                                to compute the trace of the square matrix as well.</p>
+                            <p>The first thought I had was that <strong>if</strong> the matrix was a Latin Square, the
+                                sum of elements across all
+                                rows and columns would be equal to the sum of the first $n$ natural numbers. So, I first
+                                coded a $n + 1$
+                                by $n + 1$ matrix and I added every element to the $(n + 1)^{th}$ place both row-wise
+                                and column-wise. For the
+                                trace, I added every diagonal element to the $(n + 1, n + 1)^{th}$ cell.</p>
+
+                            <pre><code class="language-cpp">for (int j = 0; j < n; j++) 
+{
+    cin >> a[i][j];
+    a[i][n] += a[i][j];
+    a[n][j] += a[i][j];
+    if (i == j)
+    a[n][n] += a[i][j];
+}</code></pre>
+
+                            <p>I immediately understood that this doesn&#39;t really work. For example, if $n = 4,$
+                                possible row configurations that
+                                give us a sum of 10 are $(2, 2, 3, 3)$ and $(1, 2, 3, 4)$ out of which the former is
+                                definitely wrong.</p>
+                            <p>After this fiasco, I looked at the constraints and decided to attempt a brute-force
+                                implementation. I&#39;m not proud
+                                of it, but it did the trick. The following is my accepted submission.</p>
+
+                            <pre><code class="language-cpp">#include &ltbits/stdc++.h&gt
+using namespace std;
+
+typedef long long ll;
+typedef vector<int> vi;
+typedef pair<int, int> pii;
+
+int main()
+{
+    int t;
+    cin >> t;
+    for (int q = 0; q < t; q++)
+    {
+        int n;
+        cin >> n;
+        int a[n + 1][n + 1] = {0};
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                cin >> a[i][j];
+                a[i][n] += a[i][j];
+                a[n][j] += a[i][j];
+                if (i == j)
+                    a[n][n] += a[i][j];
+            }
+        }
+        int rctr = 0, cctr = 0;
+        for (int i = 0; i < n; i++)
+        {
+            int rctra[n] = {0}, cctra[n] = {0};
+            for (int j = 0; j < n; j++)
+            {
+                rctra[a[i][j] - 1]++;
+                cctra[a[j][i] - 1]++;
+            }
+            for (int j = 0; j < n; j++)
+            {
+                if (rctra[j] != 1)
+                {
+                    rctr++;
+                    break;
+                }
+            }
+            for (int j = 0; j < n; j++)
+            {
+                if (cctra[j] != 1)
+                {
+                    cctr++;
+                    break;
+                }
+            }
+        }
+        cout << "Case #" << q + 1 << ": " << a[n][n] << " " << rctr << " " << cctr << "\n";
+    }
+}</code></pre>
+
+                            <p>Obviously, after the solution, I tried the problem again by looking at some solutions by
+                                the other participants. The
+                                best solution I found was to use sets. The key feature of a set is that it doesn't take
+                                duplicates, that makes it the
+                                ideal data structure to solve this problem. Once we insert every element of the row and
+                                column into a set, we can just
+                                check if the size of the set is equal to `n` or not.</p>
+
+                            <pre><code class="language-cpp">#include &ltbits/stdc++.h&gt
+using namespace std;
+
+typedef long long ll;
+typedef vector<int> vi;
+typedef pair<int, int> pii;
+
+int main()
+{
+    int t;
+    cin >> t;
+    for (int q = 0; q < t; q++)
+    {
+        int n;
+        cin >> n;
+        int a[n + 1][n + 1] = {0};
+
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                cin >> a[i][j];
+
+        int k = 0;
+        for (int i = 0; i < n; i++)
+            k += a[i][i];
+
+        int r = 0;
+        for (int i = 0; i < n; i++)
+        {
+            set<int> s;
+            for (int j = 0; j < n; j++)
+                s.insert(a[i][j]);
+            if (s.size() != n)
+                r++;
+        }
+
+        int c = 0;
+        for (int i = 0; i < n; i++)
+        {
+            set<int> s;
+            for (int j = 0; j < n; j++)
+                s.insert(a[j][i]);
+            if (s.size() != n)
+                c++;
+        }
+
+        cout << "Case #" << q + 1 << ": " << k << " " << r << " " << c << "\n";
+    }
+}</code></pre>
+
+                            <p>Well, this looks much better than the previous attempt. So sets are something I will not
+                                forget and thankfully, the
+                                C++ STL has the implementations. Let's move to the next problem.</p>
+
+                            <h3 id="section-2"><a href="#section-2">Problem 2: <a
+                                        href="https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27/0000000000209a9f">Nesting
+                                        Depth</a></a></h3>
+
+                            <p>This is a very good problem, we&#39;re given a string of digits, $S$ and we need to add a
+                                number of opening and
+                                closing parenthesis and generate a string $S&#39;$ such that:</p>
+                            <ul>
+                                <li>All parentheses in $S&#39;$ match some other parenthesis.</li>
+                                <li>Removing any and all parentheses from $S&#39;$ results in $S.$</li>
+                                <li>Each digit in $S&#39;$ is equal to its nesting depth.</li>
+                                <li>$S&#39;$ is of minimum length.</li>
+                            </ul>
+                            <p>The first thing I did was to write down some test cases and their solutions, I&#39;ll
+                                list them below</p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Test Case</th>
+                                        <th>Solution</th>
+                                        <th>Remark</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>323</code></td>
+                                        <td><code>(((3)2(3)))</code></td>
+                                        <td>To understand how some digits might not need parenthesis around them</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>0123456789</code></td>
+                                        <td><code>0(1(2(3(4(5(6(7(8(9)))))))))</code></td>
+                                        <td>Generic template for clarity</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>46831</code></td>
+                                        <td><code>((((4((6((8)))))3))1)</code></td>
+                                        <td>The number of parenthesis in between two digits is the difference between
+                                            the digits and the direction
+                                            is open towards the larger number</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>37082</code></td>
+                                        <td><code>(((3((((7)))))))0((((((((8))))))2))</code></td>
+                                        <td>Presence of zeroes splits the string</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>26471</code></td>
+                                        <td><code>((2((((6))4(((7))))))1)</code></td>
+                                        <td>Confirming hypothesis deduced from third test case</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>This got me thinking that stacks would work very well for this problem. The stack needs
+                                to contain the number of open
+                                parenthesis as well as the current nesting depth. This will ensure that we put in the
+                                correct number of closing
+                                brackets in the middle and at the end of the string. The following is my accepted
+                                submission.</p>
+
+                            <pre><code class="language-cpp">#include &ltbits/stdc++.h&gt
+using namespace std;
+
+typedef long long ll;
+typedef vector<int> vi;
+typedef pair<int, int> pii;
+
+int main()
+{
+    int t;
+    cin >> t;
+    for (int q = 0; q < t; q++)
+    {
+        string s, a = "";
+        cin >> s;
+        stack<int> st;
+        for (int i = 0; i < s.length(); i++)
+        {
+            int temp = s[i] - '0';
+            //cout << temp << " " << st.size() << " ";
+            if (temp > st.size())
+            {
+                for (int j = st.size(); j < temp; j++)
+                {
+                    st.push(st.size() + 1);
+                    a += '(';
+                }
+            }
+            if (temp < st.size())
+            {
+                for (int j = st.size(); j > temp; j--)
+                {
+                    st.pop();
+                    a += ')';
+                }
+            }
+            a += s[i];
+        }
+        for (int i = 0; i < st.size(); i++)
+            a += ')';
+        cout << "Case #" << q + 1 << ": " << a << "\n";
+    }
+}</code></pre>
+
+                            <p>By now, I was much more confident of getting the required 30. Let's see how the third
+                                problem made things difficult for
+                                me.</p>
+
+                            <h3 id="section-3"><a href="#section-3">Problem 3: <a
+                                        href="https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27/000000000020bdf9">Parenting
+                                        Partnering Returns</a></h3>
+
+                            <p>The problem statement is relatively simple to understand, we will be given certain time
+                                slots and we need to allocate
+                                the time slots between two people such that at no time, a person will be doing more that
+                                one task. I looked at the
+                                constraints and I decided to brute force this as well. My idea was to initially kick out
+                                the test cases with time
+                                slots overlapping more than two times and then checking each slot for availability. My
+                                first attempt was a wrong
+                                answer.</p>
+
+                            <pre><code class="language-cpp">#include &ltbits/stdc++.h&gt
+using namespace std;
+
+typedef long long ll;
+typedef vector<int> vi;
+typedef pair<int, int> pii;
+
+int main()
+{
+    int t;
+    cin >> t;
+    for (int q = 0; q < t; q++)
+    {
+        int n;
+        cin >> n;
+        int ev[n][2] = {0};
+        int chk[1440] = {0};
+        string a = "";
+        for (int i = 0; i < n; i++)
+        {
+            cin >> ev[i][0] >> ev[i][1];
+        }
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = ev[i][0]; j < ev[i][1]; j++)
+                chk[j]++;
+        }
+        for (int i = 0; i < 1440; i++)
+        {
+            if (chk[i] > 2)
+            {
+                a = "IMPOSSIBLE";
+                break;
+            }
+        }
+        int cn[1440] = {0}, je[1440] = {0};
+        if (a == "IMPOSSIBLE")
+        {
+            cout << "Case #" << q + 1 << ": " << a << "\n";
+            continue;
+        }
+        else
+        {
+            for (int i = 0; i < n; i++)
+            {
+                if (i == 0)
+                {
+                    for (int j = ev[i][0]; j < ev[i][1]; j++)
+                        cn[j]++;
+                    a += "C";
+                }
+                else
+                {
+                    int clash = 0;
+                    for (int j = ev[i][0]; j < ev[i][1]; j++)
+                    {
+                        if (cn[j] == 1)
+                        {
+                            clash++;
+                            break;
+                        }
+                    }
+                    if (clash > 0)
+                    {
+                        for (int j = ev[i][0]; j < ev[i][1]; j++)
+                            je[j]++;
+                        a += "J";
+                    }
+                    else
+                    {
+                        for (int j = ev[i][0]; j < ev[i][1]; j++)
+                            cn[j]++;
+                        a += "C";
+                    }
+                }
+            }
+        }
+        cout << "Case #" << q + 1 << ": " << a << "\n";
+    }
+}</code></pre>
+
+                            <p>Obviously, I didn't understand that there was going to be a problem with the
+                                implementation. So, for my next attempt, I
+                                greedily sorted and allocated the time slots. My accepted solution follows.</p>
+
+                            <pre><code class="language-cpp">#include &ltbits/stdc++.h&gt
+using namespace std;
+bool comp(pair<int, pair<int, int>> p1, pair<int, pair<int, int>> p2)
+{
+    return p1.second.first < p2.second.first;
+}
+bool co(pair<int, pair<int, int>> p1, pair<int, pair<int, int>> p2)
+{
+    return p1.first < p2.first;
+}
+int main()
+{
+    int t;
+    cin >> t;
+    int flag = 1;
+    while (flag <= t)
+    {
+        int n;
+        cin >> n;
+        vector<pair<int, pair<int, int>>> v;
+        for (int i = 0; i < n; i++)
+        {
+            int x, y;
+            cin >> x >> y;
+            v.push_back(make_pair(i, make_pair(x, y)));
+        }
+        sort(v.begin(), v.end(), comp);
+        vector<pair<int, pair<int, int>>> j;
+        vector<pair<int, pair<int, int>>> c;
+        int f = 0;
+        j.push_back(make_pair(v[0].first, make_pair(v[0].second.first, v[0].second.second)));
+        c.push_back(make_pair(v[1].first, make_pair(v[1].second.first, v[1].second.second)));
+        for (int i = 2; i < v.size(); i++)
+        {
+            if (j[j.size() - 1].second.second <= v[i].second.first)
+            {
+                j.push_back(make_pair(v[i].first, make_pair(v[i].second.first, v[i].second.second)));
+            }
+            else if (c[c.size() - 1].second.second <= v[i].second.first)
+            {
+                c.push_back(make_pair(v[i].first, make_pair(v[i].second.first, v[i].second.second)));
+            }
+            else
+            {
+                f = 1;
+                break;
+            }
+        }
+        if (f == 1)
+        {
+            cout << "Case #" << flag << ": "
+                 << "IMPOSSIBLE\n";
+        }
+        else
+        {
+            sort(j.begin(), j.end(), co);
+            sort(c.begin(), c.end(), co);
+            int li = 0, ja = 0;
+
+            string ans = "";
+            for (int k = 0; k < n; k++)
+            {
+                if (li < j.size() && j[li].first == k)
+                {
+                    ans += 'J';
+                    li++;
+                }
+                else if (ja < c.size() && c[ja].first == k)
+                {
+                    ans += 'C';
+                    ja++;
+                }
+            }
+            cout << "Case #" << flag << ": " << ans << "\n";
+        }
+
+        flag++;
+    }
+    return 0;
+}</code></pre>
+
+                            <p>That was that, I mulled over the 5th problem but there wasn't enough motivation to go at
+                                it. There's a lot of ground to
+                                cover.</p>
+
+                            <h3 id="section-4"><a href="#section-4">Problem 4: <a
+                                        href="https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27/0000000000209a9e">ESAb
+                                        ATAd</a></h3>
+
+                            <p>I suggest watching <a href="https://www.youtube.com/watch?v=AK45-rrnYhY">Errichto&#39;s
+                                    explanation</a> first.</p>
+                            <p>The problem statement is quite long and it was tough for me to get a grip on what exactly
+                                the problem required. But after a while, I boiled it down to the following
+                                simple-looking statement.</p>
+                            <p>We are given an unknown sequence with $B=100$ elements that can take values $0$ and $1.$
+                                We can query this sequence to get the $i^{th}$ element. We need to find the entire
+                                sequence and print it. A tiny catch is that after the $1^{st}, 11^{th}, 21^{st} \cdots$
+                                query, <em>but before the response is given</em>, the array is either complemented with
+                                $0.50$ probability or reversed with $0.50$ probability. Also, we are allowed a maximum
+                                of $150$ queries.</p>
+                            <p>Just for fun, I first scribbled down the case when there are no changes to the sequence
+                            </p>
+                            <pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span>
+</span>{
+    <span class="hljs-comment">//flushing output.</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="hljs-built_in">endl</span>;
+    <span class="hljs-keyword">int</span> res;
+    <span class="hljs-built_in">cin</span> &gt;&gt; res;
+    <span class="hljs-keyword">return</span> res;
+}
+
+<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; solve()
+{
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; res(<span class="hljs-number">100</span>);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; i++)
+    {
+        res[i] = query(i);
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+</code></pre>
+                            <p>First, we&#39;ll consider <strong>only</strong> the flipping of bits. With probability
+                                $0.50,$ after every $10^{th}$ query, all the bits are flipped. We&#39;ll check for
+                                flipping after every ten queries by checking with our own <code>res</code>. If the
+                                values don&#39;t match, we&#39;ll flip all the bits in our variable. Note that we use up
+                                a query to perform the comparison. Around $B*1.1$ queries will be used as we need one
+                                additional query after every ten queries.</p>
+                            <pre><code class="lang-cpp"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; solve()
+{
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; res(<span class="hljs-number">100</span>);
+    <span class="hljs-keyword">int</span> queries = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; i++)
+    {
+        res[i] = query(i);
+        queries++;
+
+        <span class="hljs-keyword">if</span>(queries % <span class="hljs-number">10</span> == <span class="hljs-number">0</span>)
+        {
+            <span class="hljs-keyword">if</span>(res[<span class="hljs-number">0</span>] != query(<span class="hljs-number">0</span>))
+            {
+                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt;= i; j++)
+                {
+                    res[j] ^= <span class="hljs-number">1</span>;
+                }
+            }
+            <span class="hljs-comment">//incremented for comparison.</span>
+            queries++;
+        }
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+</code></pre>
+                            <p>But what the entire problem is asking also involves flipping. We just check for one more
+                                bit next to the ones at the ends. For example, if $1 \space 0 \space 1 \space 1 \cdots 0
+                                \space 0 \space 0$ changes to $0 \space 0 \cdots 0 \space 0 \space 1,$ we know that it
+                                was just a reversal. But if it changes to $0 \space 1 \cdots 1 \space 1 \space 0,$ we
+                                know there have been flips.</p>
+                            <p>This problem fails for $1 \space 0 \cdots 1 \space 0.$ I hope by now, many of you have
+                                figured out the solution. We have to find two pairs such that one is a same-bit pair and
+                                the other is a different-bit pair and then perform the check described in the previous
+                                paragraph. I have to thank <a
+                                    href="https://github.com/Errichto/youtube/blob/master/GCJ/2020/qual/D-esab-atad.cpp">Errichto</a>
+                                for this implementation. I kept messing up the flushing of the input and I gave up after
+                                twenty odd tries.</p>
+                            <pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-keyword">int</span> B;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span>
+</span>{
+    <span class="hljs-built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="hljs-built_in">endl</span>;
+    <span class="hljs-keyword">int</span> r;
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;r);
+    <span class="hljs-keyword">return</span> r;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; answer(B + <span class="hljs-number">1</span>);
+    <span class="hljs-keyword">int</span> L = <span class="hljs-number">1</span>, R = B;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> nr = <span class="hljs-number">1</span>; <span class="hljs-literal">true</span>; nr += <span class="hljs-number">2</span>)
+    {
+        <span class="hljs-keyword">if</span> (nr % <span class="hljs-number">10</span> == <span class="hljs-number">1</span> &amp;&amp; nr != <span class="hljs-number">1</span>)
+        {
+            <span class="hljs-keyword">int</span> found = <span class="hljs-number">-1</span>;
+            <span class="hljs-keyword">int</span> found_diff = <span class="hljs-number">-1</span>;
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; L; ++i)
+            {
+                <span class="hljs-keyword">if</span> (answer[i] == answer[B + <span class="hljs-number">1</span> - i])
+                {
+                    found = i;
+                }
+                <span class="hljs-keyword">else</span>
+                {
+                    found_diff = i;
+                }
+            }
+            <span class="hljs-keyword">if</span> (found == <span class="hljs-number">-1</span>)
+            {
+                <span class="hljs-keyword">int</span> new_value = query(<span class="hljs-number">1</span>);
+                query(<span class="hljs-number">1</span>);
+                <span class="hljs-keyword">if</span> (new_value != answer[<span class="hljs-number">1</span>])
+                {
+                    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= L; ++i)
+                    {
+                        answer[i] ^= <span class="hljs-number">1</span>;
+                    }
+                    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = R; i &lt;= B; ++i)
+                    {
+                        answer[i] ^= <span class="hljs-number">1</span>;
+                    }
+                }
+            }
+            <span class="hljs-keyword">else</span>
+            {
+                <span class="hljs-keyword">int</span> one = query(found);
+                <span class="hljs-keyword">if</span> (one != answer[found])
+                {
+                    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= L; ++i)
+                    {
+                        answer[i] ^= <span class="hljs-number">1</span>;
+                    }
+                    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = R; i &lt;= B; ++i)
+                    {
+                        answer[i] ^= <span class="hljs-number">1</span>;
+                    }
+                }
+                <span class="hljs-keyword">if</span> (found_diff == <span class="hljs-number">-1</span>)
+                {
+                    query(found);
+                }
+                <span class="hljs-keyword">else</span>
+                {
+                    <span class="hljs-keyword">if</span> (query(found_diff) != answer[found_diff])
+                    {
+                        reverse(answer.begin() + <span class="hljs-number">1</span>, answer.end());
+                    }
+                }
+            }
+            nr += <span class="hljs-number">2</span>;
+        }
+        answer[L] = query(L);
+        answer[R] = query(R);
+        L++;
+        R--;
+        <span class="hljs-keyword">if</span> (L &gt; R)
+        {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= B; ++i)
+            {
+                <span class="hljs-built_in">cout</span> &lt;&lt; answer[i];
+            }
+            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+            <span class="hljs-built_in">string</span> response;
+            <span class="hljs-built_in">cin</span> &gt;&gt; response;
+            assert(response == <span class="hljs-string">"Y"</span>);
+            <span class="hljs-keyword">return</span>;
+        }
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">int</span> T;
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d%d"</span>, &amp;T, &amp;B);
+    <span class="hljs-keyword">while</span>(T--)
+    {
+        solve();
+    }
+}
+</code></pre>
+
+                            <h3 id="section-5"><a href="#section-5">Problem 5: <a
+                                        href="https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27/0000000000209aa0">Indicium</a>
+                            </h3>
+
+                            <p>Now, on to the final and the toughest problem in the round. <em>To-do!</em></p>
+
+
+                            <h2 id="section-6"><a href="#section-6">Round 1A</a></h2>
+
+                            <p>This is by far on the top of my all-time favourite contests. Every question was
+                                maddeningly difficult but not
+                                unreachable. And the solutions were simple and elegant, if you had any eye for problem
+                                solving, you'd love this round.</p>
+
+
+                            <h3 id="section-7"><a href="#section-7">Problem 1: <a
+                                        href="https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd74/00000000002b3034">Pattern
+                                        Matching</a></h3>
+
+                            <p>This is a very easy problem statement to understand and just like I do in the first five
+                                minutes of every contest, I assumed I had the solution already. You have a bunch of
+                                strings of the form <code>__*___</code> with the blanks filled by the uppercase
+                                alphabet. Over the entire array, you are supposed to fill the asterisks with a string
+                                such that no string conflicts with the other.</p>
+                            <p>I started to write some test-cases but I soon found out that Google had provided some
+                                great test-cases. They helped me further understand the problem at hand and I&#39;ll
+                                list them out below</p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Test Case</th>
+                                        <th>Solution</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>*CONUTS</code> <code>*COCONUTS</code> <code>*OCONUTS</code>
+                                            <code>*CONUTS</code> <code>*S</code></td>
+                                        <td><code>COCONUTS</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>*XZ</code> <code>*XYZ</code></td>
+                                        <td><code>*</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>H\*O</code> <code>HELLO*</code> <code>\*HELLO</code> <code>HE*</code>
+                                        </td>
+                                        <td><code>HELLO</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>CO\*DE</code> <code>J*AM</code></td>
+                                        <td><code>*</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>A\*C\*E</code> <code>\*B\*D*</code></td>
+                                        <td><code>ABCDE</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>A\*C\*E</code> <code>\*B*D</code></td>
+                                        <td><code>*</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>\*\*Q**</code> <code>\*A*</code></td>
+                                        <td><code>QA</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>I had a vague idea of what I should be doing but I didn&#39;t get the breakthrough idea.
+                                So, I decided I should at least get through the first test set for 5 points. For the
+                                first test case, all the strings only have one asterisk and that too at position
+                                <code>0</code>. So, the idea was to isolate the longest string and check if all the
+                                other strings were substrings of that one. It passed the first test set.</p>
+                            <pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isSubstring</span><span class="hljs-params">(<span class="hljs-built_in">string</span> a, <span class="hljs-built_in">string</span> b)</span>
+</span>{
+    <span class="hljs-keyword">int</span> ctr1 = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; a.length(); i++)
+    {
+        <span class="hljs-keyword">if</span>(a[a.length() - i] != b[b.length() - i])
+        {
+            ctr1++;
+            <span class="hljs-keyword">break</span>;
+        }
+    }
+    <span class="hljs-keyword">if</span>(ctr1 &gt; <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    ios_base::sync_with_stdio(<span class="hljs-number">0</span>);
+    <span class="hljs-built_in">cin</span>.tie(<span class="hljs-number">0</span>);
+    <span class="hljs-built_in">cout</span>.tie(<span class="hljs-number">0</span>);
+
+    <span class="hljs-keyword">int</span> t;
+    <span class="hljs-built_in">cin</span> &gt;&gt; t;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> q = <span class="hljs-number">0</span>; q &lt; t; q++)
+    {
+        <span class="hljs-keyword">int</span> n, ctr = <span class="hljs-number">0</span>;
+        <span class="hljs-built_in">cin</span> &gt;&gt; n;
+        <span class="hljs-built_in">string</span> ans, a[n], maxs = <span class="hljs-string">""</span>;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)
+        {
+            <span class="hljs-built_in">cin</span> &gt;&gt; a[i];
+            <span class="hljs-keyword">if</span>(a[i].length() &gt; maxs.length())
+                maxs = a[i];
+        }
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)
+        {
+            <span class="hljs-comment">//cout &lt;&lt; a[i] &lt;&lt; " " &lt;&lt; maxs &lt;&lt; " ";</span>
+            <span class="hljs-keyword">if</span>(!isSubstring(a[i], maxs))
+            {
+                ctr++;
+                <span class="hljs-keyword">break</span>;
+            }
+        }
+        <span class="hljs-keyword">if</span>(ctr &gt; <span class="hljs-number">0</span>)
+            ans = <span class="hljs-string">"*"</span>;
+        <span class="hljs-keyword">else</span>
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; maxs.length(); i++)
+                ans += maxs[i];
+
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Case #"</span> &lt;&lt; q + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">": "</span> &lt;&lt; ans &lt;&lt; <span class="hljs-string">"\n"</span>;
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+                            <p>For the entire problem however, I needed a more general approach. Assume that the given
+                                strings have asterisks both before and after the alphabets, we would then just have to
+                                print the alphabets without the asterisks. Now, if we had alphabets before and after
+                                those asterisks. We need to perform the same checks as above. After performing the
+                                checks, we use the longest prefix, all the letters in between and the longest suffix.
+                                Check out the code:</p>
+                            <pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">int</span> n;
+    <span class="hljs-built_in">cin</span> &gt;&gt; n;
+
+    <span class="hljs-comment">//Store the prefixes, suffixes and final answer.</span>
+    <span class="hljs-built_in">string</span> a[n], pre[n], suf[n], ans = <span class="hljs-string">""</span>;
+
+    <span class="hljs-comment">//Position of the longest prefix and suffix. (Initialization important)</span>
+    <span class="hljs-keyword">int</span> lp = <span class="hljs-number">0</span>, ls = <span class="hljs-number">0</span>, chk = <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)
+    {
+        <span class="hljs-built_in">cin</span> &gt;&gt; a[i];
+
+        <span class="hljs-comment">//We extract all prefixes and suffixes</span>
+        pre[i] = suf[i] = <span class="hljs-string">""</span>;
+
+        <span class="hljs-comment">//Note how the `for` loops are implemented</span>
+        <span class="hljs-keyword">for</span> (; a[i][<span class="hljs-number">0</span>] != <span class="hljs-string">'*'</span>; a[i].erase(a[i].begin()))
+            pre[i] += a[i][<span class="hljs-number">0</span>];
+        <span class="hljs-keyword">for</span> (; a[i].back() != <span class="hljs-string">'*'</span>; a[i].pop_back())
+            suf[i] = a[i].back() + suf[i];
+
+        <span class="hljs-comment">//Check for longest prefix and suffix</span>
+        <span class="hljs-keyword">if</span> (pre[i].size() &gt; pre[lp].size())
+            lp = i;
+        <span class="hljs-keyword">if</span> (suf[i].size() &gt; suf[ls].size())
+            ls = i;
+    }
+
+    <span class="hljs-comment">//Check whether all prefixes and suffixes are matching (substr())</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)
+    {
+        <span class="hljs-keyword">if</span> (pre[lp].substr(<span class="hljs-number">0</span>, pre[i].size()) != pre[i])
+        {
+            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"*"</span>;
+            <span class="hljs-keyword">return</span>;
+        }
+        <span class="hljs-keyword">if</span> (suf[ls].substr(suf[ls].size() - suf[i].size()) != suf[i])
+        {
+            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"*"</span>;
+            <span class="hljs-keyword">return</span>;
+        }
+    }
+
+    <span class="hljs-comment">//We build the answer by using the longest prefix, suffix and everything but asterisks in between.</span>
+    ans = pre[lp];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> c : a[i])
+            <span class="hljs-keyword">if</span> (c != <span class="hljs-string">'*'</span>)
+                ans += c;
+    ans += suf[ls];
+    <span class="hljs-built_in">cout</span> &lt;&lt; ans;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    ios_base::sync_with_stdio(<span class="hljs-number">0</span>);
+    <span class="hljs-built_in">cin</span>.tie(<span class="hljs-number">0</span>);
+    <span class="hljs-built_in">cout</span>.tie(<span class="hljs-number">0</span>);
+
+    <span class="hljs-keyword">int</span> t;
+    <span class="hljs-built_in">cin</span> &gt;&gt; t;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> q = <span class="hljs-number">0</span>; q &lt; t; q++)
+    {
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Case #"</span> &lt;&lt; q + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">": "</span>;
+        solve();
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"\n"</span>;
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+
+                            <h3 id="section-8"><a href="#section-8">Problem 2: <a
+                                        href="https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd74/00000000002b1353">Pascal
+                                        Walk</a></h3>
+
+                            <p>We&#39;re given a Pascal Triangle and a number. We need to traverse the cells of the
+                                Pascal triangle such that the sum of numbers in the cells equal the given number. Some
+                                initial observations I had were that the sum across the rows of the pascal triangle
+                                follow the rule that $\text{sum}_r = 2^{r - 1}.$ This shows that we probably need to
+                                find the binary representation of the number. For example, if the number is $19,$ the
+                                binary representation will be $(10011)_2$ and the answer will be the cells in the 1st,
+                                2nd and 5th rows. But the question says we can only traverse neighbouring cells starting
+                                with $(1, 1).$</p>
+                            <p>So, one way to solve it is to go along the edges, adding ones until we reach the required
+                                row. Of course, this would be for the numbers greater than 30. For numbers less than 30,
+                                we could just add ones all the time.</p>
+                            <p>The main thing I learnt to do in this problem was to use bit-operations and make things
+                                simpler. For example, <code>n&gt;&gt;</code> performs a right shift a.k.a divides by 2.
+                                <code>a&amp;1</code> checks if a is odd.</p>
+                            <pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">long</span> n;
+    <span class="hljs-built_in">cin</span> &gt;&gt; n;
+
+    <span class="hljs-comment">//For small n, we just return the first cells in each row</span>
+    <span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">30</span>)
+    {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)
+            <span class="hljs-built_in">cout</span> &lt;&lt; i + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">" 1\n"</span>;
+        <span class="hljs-keyword">return</span>;
+    }
+
+    <span class="hljs-comment">//For large n, we only need to account for the difference with 30</span>
+    n -= <span class="hljs-number">30</span>;
+
+    <span class="hljs-comment">//This counts the number of ones we need to add at the end</span>
+    <span class="hljs-keyword">int</span> ctr = <span class="hljs-number">0</span>;
+
+    <span class="hljs-comment">//To keep track of whether we're at the left end or right end.</span>
+    <span class="hljs-keyword">bool</span> chk = <span class="hljs-number">1</span>;
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">30</span>; i++)
+    {
+        <span class="hljs-built_in">cout</span> &lt;&lt; i + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">" "</span> &lt;&lt; (chk ? <span class="hljs-number">1</span> : i + <span class="hljs-number">1</span>) &lt;&lt; <span class="hljs-string">"\n"</span>;
+        <span class="hljs-comment">//Check if a row-traversal is required by using the binary representation.</span>
+        <span class="hljs-keyword">if</span> ((n &gt;&gt; i) &amp; <span class="hljs-number">1</span>)
+        {
+            <span class="hljs-comment">//Check for where the current pointer is and traverse accordingly.</span>
+            <span class="hljs-keyword">if</span> (chk)
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt;= i; j++)
+                    <span class="hljs-built_in">cout</span> &lt;&lt; i + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">" "</span> &lt;&lt; j + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">"\n"</span>;
+            <span class="hljs-keyword">else</span>
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i - <span class="hljs-number">1</span>; j &gt;= <span class="hljs-number">0</span>; j--)
+                    <span class="hljs-built_in">cout</span> &lt;&lt; i + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">" "</span> &lt;&lt; j + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">"\n"</span>;
+
+            <span class="hljs-comment">//Swing the end to the other side now that traversal is done.</span>
+            chk = !chk;
+
+            <span class="hljs-comment">//Increment number of 1's skipped with every row-traversal.</span>
+            ctr++;
+        }
+    }
+    <span class="hljs-comment">//Add the ones required</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">30</span>; ctr &gt; <span class="hljs-number">0</span>; ctr--, i++)
+        <span class="hljs-built_in">cout</span> &lt;&lt; i + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">" "</span> &lt;&lt; (chk ? <span class="hljs-number">1</span> : i + <span class="hljs-number">1</span>) &lt;&lt; <span class="hljs-string">"\n"</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    ios_base::sync_with_stdio(<span class="hljs-number">0</span>);
+    <span class="hljs-built_in">cin</span>.tie(<span class="hljs-number">0</span>);
+    <span class="hljs-built_in">cout</span>.tie(<span class="hljs-number">0</span>);
+
+    <span class="hljs-keyword">int</span> t;
+    <span class="hljs-built_in">cin</span> &gt;&gt; t;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; t; i++)
+    {
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Case #"</span> &lt;&lt; i + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">":\n"</span>;
+        solve();
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"\n"</span>;
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+
+<script src="https://utteranc.es/client.js"
+        repo="kyscg/kyscg.github.io"
+        issue-term="url"
+        label="comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                            <div class="divider-short"></div>
+                            <div class="info">
+                                <div class="publishing-info-mobile">
+                                    <p><em>Published:</em> April 14, 2020</p>
+                                    <p><em>Updated:</em> June 2, 2020</p>
+                                    <p><em>Status:</em> Unfinished</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
