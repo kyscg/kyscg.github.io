@@ -1,3 +1,11 @@
+- James Maynard (2022 Fields Medal): distances between primes, existence of infinite decimal representations of primes with no digit 7 (or any other digit).
+- Maryna Viazovska (2022 Fields Medal): [The sphere packing problem in dimension 8](https://arxiv.org/abs/1603.04246)
+- June Huh (2022 Fields Medal): Proof that absolute values of coefficients in chromatic polynomials are unimodal and log-concave.
+    - Chromatic polynomials for various graphs to try out
+        - Complete graph: $x(x - 1)(x - 2)\cdots(x - n + 1))$
+        - Graph with no edges: $x^n$
+        - Tree on $n$ vertices: $x(x - 1)^{n - 1}$
+        - Cycle??
 - Patients with amnesia or agnosia usually answered questions by cues rather than memory, a sort of inference. For example, identifying the month by looking out the window and identifying platonic solids by feeling them.
     - Is the loss in these pattern making abilities greater nowadays than before?
     - What can we recognize nowadays by cues? shapes, yes, I imagine. Seasons, maybe not? More auditory cues than haptic cues?
