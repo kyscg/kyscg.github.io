@@ -1,3 +1,30 @@
+- [Machiavelli: A Very Short Introduction](https://www.youtube.com/watch?v=CKGuzJ6GwHM) by Quentin Skinner
+- [Ferrari vs. Mercedes along Eau Rouge, 2017 to 2019](https://www.youtube.com/watch?v=nNCQ_MDeVFE)
+- [Manchester United vs. Barcelona, UEFA Champions League Final, Wembley 2011.](https://www.youtube.com/watch?v=zZK4mg3PQH4) Tiki-taka masterclass by Pep Guardiola.
+- [Mechanical Watch](https://ciechanow.ski/mechanical-watch/) by Bartosz Ciechanowski \*
+- [The Physics of Racing](https://www.youtube.com/watch?v=bYp2vvUgEqE) by Andre Marziali
+- [What Does Any of This Have To Do with Physics?](https://nautil.us/issue/43/heroes/what-does-any-of-this-have-to-do-with-physics) by Bob Henderson
+- [How to Be a Mathematician (or Theoretical Computer Scientist)](https://www.cs.cmu.edu/~odonnell/toolkit13/how-to-do-math-and-tcs.pdf) by Ryan O'Donnell
+- [Math Has a Fatal Flaw](https://www.youtube.com/watch?v=HeQX2HjkcNo) by Veritasium
+- The Silver War, [2014](https://www.youtube.com/watch?v=BhSDGA5nrzw) and [2016](https://vimeo.com/355686413) \*
+- [The Real Problem at Yale Is Not Free Speech](https://palladiummag.com/2019/08/05/the-real-problem-at-yale-is-not-free-speech/) by Natasha Dashan
+- [Joe Gebbia with Tim Ferriss](https://www.youtube.com/watch?v=Xao9DJEpk8I) \*
+- Last of the Czars: [Part 1: Nicky and Alix](https://youtu.be/mYo8SEvnsrM), [Part 2: The Shadow of Rasputin](https://youtu.be/Hx2zMUCsdM0), [Part 3: The Death of the Dynasty](https://youtu.be/f1em_lDQzmA) \*
+- [36 all-out to Mission Melbourne](https://www.youtube.com/watch?v=juZ3z8SH67w), [The Great Sidney Robbery](https://youtu.be/M1FPtT9xEJc) and [The Gabbatoir Breach](https://www.youtube.com/watch?v=HcsTN3sbyCM). The greatest Test series win, relived by Ravichandran Ashwin and R. Sridhar.
+- [Tribute to Christopher Hitchens](https://www.youtube.com/watch?v=iR0GyYaeI-k) by The 2012 Global Atheist Convention
+- 2020's biggest breakthroughs in [Math and Computer Science](https://www.youtube.com/watch?v=HL7DEkXV_60), [Physics](https://youtu.be/D0-JbxX209g), and [Biology](https://youtu.be/YpDsA7SE-3c)
+- [Taylor Swift: folklore, evermore and Songwriting](https://youtu.be/CQacWbsLbS4?list=TLPQMTcxMjIwMjD-WdyRkICjpg)
+- [Who goes Nazi?](https://harpers.org/archive/1941/08/who-goes-nazi/) by Dorothy Thompson (1941, Harpers)
+- [Dan Carlin](https://youtu.be/-k-ztNsBM54) on the Lex Fridman podcast.
+- [Essay: How do you describe TikTok?](https://kylechayka.substack.com/p/essay-how-do-you-describe-tiktok), "The best bodily position in which to watch TikTok is supine, muscles slack, phone above your face like it’s an endless tunnel into the air."
+- [Trench verses](http://kovalevav.ru/Belash.html) by Belash Yuri Semyonovich
+- [The Insect Brain](https://www.cronodon.com/BioTech/insect_nervous_systems.html)
+- [A Mathematician's Lament](https://www.maa.org/external_archive/devlin/LockhartsLament.pdf) by Paul Lockhart
+- [Against Dog Ownership](https://dormin.org/2020/03/21/against-dog-ownership/)
+- [Documentary on Amal Kumar Raychaudhuri](https://www.youtube.com/watch?v=i9_hm2qe34s) \*
+- [The Offensive Lineman - with John Urschel](https://www.numberphile.com/podcast/john-urschel) on the Numberphile podcast.
+- [Steering Into the Iceberg](https://www.dancarlin.com/product/common-sense-320-steering-into-the-iceberg/) on Common Sense with Dan Carlin \*
+-   [Frank von Hippel](http://podcasts.joerogan.net/podcasts/frank-von-hippel) on the Joe Rogan Experience
 - James Maynard (2022 Fields Medal): distances between primes, existence of infinite decimal representations of primes with no digit 7 (or any other digit).
 - Maryna Viazovska (2022 Fields Medal): [The sphere packing problem in dimension 8](https://arxiv.org/abs/1603.04246)
 - June Huh (2022 Fields Medal): Proof that absolute values of coefficients in chromatic polynomials are unimodal and log-concave.
@@ -54,3 +81,5 @@
 - [Brief intro to Game Theory](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1968579)
 - ["The Best of Dan's narration"](https://www.reddit.com/r/dancarlin/comments/myn9uc/what_has_stuck_with_you_the_most_from_a_hardcore/)
 - [How many recursive calls does a recursive function make?](https://vulms.vu.edu.pk/Courses/CS201/Downloads/p60-robertson.pdf)
+
+<script src="/assets/main.js" type="text/javascript"></script>
