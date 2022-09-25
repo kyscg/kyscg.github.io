@@ -1,3 +1,7 @@
+- [Get Some Free Speech While You Can](https://www.theatlantic.com/ideas/archive/2022/08/salman-rushdie-free-speech-pen-america-harpers/671208/) by Caitlin Flanagan.
+    - Freedom of expression isn’t the tool of the powerful; it’s the tool of the powerless.
+    - Malcolm Gladwell pointed out the absurdity of her position by tweeting, “I signed the Harpers letter because there were lots of people who also signed the Harpers letter whose views I disagreed with. I thought that was the point of the Harpers letter.”
+    - Whenever a society collapses in on itself, free speech is the first thing to go. That’s how you know we’re in the process of closing up shop. Our legal protections remain in place—that’s why so many of us were able to smack the Trump piñata to such effect—but the culture of free speech is eroding every day. Ask an Oberlin student—fresh outta Shaker Heights, coming in hot, with a heart as big as all outdoors and a 3 in AP Bio—to tell you what speech is acceptable, and she’ll tell you that it’s speech that doesn’t hurt the feelings of anyone belonging to a protected class.
 - [Machiavelli: A Very Short Introduction](https://www.youtube.com/watch?v=CKGuzJ6GwHM) by Quentin Skinner
 - [Ferrari vs. Mercedes along Eau Rouge, 2017 to 2019](https://www.youtube.com/watch?v=nNCQ_MDeVFE)
 - [Manchester United vs. Barcelona, UEFA Champions League Final, Wembley 2011.](https://www.youtube.com/watch?v=zZK4mg3PQH4) Tiki-taka masterclass by Pep Guardiola.
