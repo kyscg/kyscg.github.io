@@ -1,3 +1,5 @@
+- A survey of some [famous problems in Mathematics](https://afieldguidetomath.wordpress.com/2021/02/26/list-o-mania/) over the years, compiled by Alvaro Rozano-Robledo
+- [A perfect Suzuka qualifying lap](https://www.youtube.com/watch?v=pf4tL46VhHE) by Sebastian Vettel in the AMR22.
 - [Get Some Free Speech While You Can](https://www.theatlantic.com/ideas/archive/2022/08/salman-rushdie-free-speech-pen-america-harpers/671208/) by Caitlin Flanagan.
     - Freedom of expression isn’t the tool of the powerful; it’s the tool of the powerless.
     - Malcolm Gladwell pointed out the absurdity of her position by tweeting, “I signed the Harpers letter because there were lots of people who also signed the Harpers letter whose views I disagreed with. I thought that was the point of the Harpers letter.”
