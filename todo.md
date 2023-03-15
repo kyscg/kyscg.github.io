@@ -1,3 +1,38 @@
+- Allen Mandelbaum's translation of The Odyssey.
+
+> Muse, tell me of the man of many wiles,\
+> the man who wandered many paths of exile\
+> after he sacked Troy’s sacred citadel.\
+> He saw the cities—mapped the minds—of many;\
+> and on the sea, his spirit suffered every\
+> adversity—to keep his life intact,\
+> to bring his comrades back.  In that last task,\
+> he will was firm and fast, and yet he failed:\
+> he could not save his comrades.  Fools, they foiled\
+> themselves: they ate the oxen of the Sun,\
+> the herd of Hélios Hypérion;\
+> the lord of light requited their transgression—\
+> he took away the day of their return.\
+> \
+> Muse, tell us of these matters. Daughter of Zeus,\
+> my starting point is any point you choose.\
+> \
+> All other Greeks who had been spared the steep\
+> descent to death had reached their homes—released\
+> from war and waves.  One man alone was left,\
+> still longing for his home, his wife, his rest.\
+> For the commanding nymph, the brightest goddess,\
+> Calypso, held him in her hollow grottoes:\
+> she wanted him as husband.  Even when\
+> the wheel of years drew near his destined time—\
+> the time the gods designed for his return\
+> to Ithaca—he still could not depend \
+> upon fair fortune or unfailing friends.\
+> While other gods took pity on him, one—\
+> Poseidon—still pursued: he preyed upon\
+> divine Odysseus until the end,\
+> until the exile found his own dear land.
+
 - A survey of some [famous problems in Mathematics](https://afieldguidetomath.wordpress.com/2021/02/26/list-o-mania/) over the years, compiled by Alvaro Rozano-Robledo
 - [A perfect Suzuka qualifying lap](https://www.youtube.com/watch?v=pf4tL46VhHE) by Sebastian Vettel in the AMR22.
 - [Get Some Free Speech While You Can](https://www.theatlantic.com/ideas/archive/2022/08/salman-rushdie-free-speech-pen-america-harpers/671208/) by Caitlin Flanagan.
