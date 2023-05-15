@@ -1,8 +1,8 @@
 - I think Substack should
-    - make the profile link more prettier, something like `substack.com/username`
-    - provide a link just for the Notes feature of every user, like `substack.com/n/username`
-    - make LaTeX work in the Notes feature
-- Some cool problems to think about from LessWrong about [matrix completion](https://www.lesswrong.com/posts/pJrebDRBj9gfBE8qE/prizes-for-matrix-completion-problems)
+    - make the profile link prettier, something like `substack.com/username`
+    - provide a link just for the Notes feature, like `substack.com/n/username`
+    - make LaTeX work in Notes
+- Some cool problems from LessWrong about [matrix completion](https://www.lesswrong.com/posts/pJrebDRBj9gfBE8qE/prizes-for-matrix-completion-problems)
 - There's no stopping Max this season, he's just breezing past everyone. I guess F1 has converged to a point where aero is so overpowered that there wont be any competition if you get it right. This isn't even recent phenomena. It started with Sebastian and then Lewis and now Max. One car, and usually one driver (that's in tune with that car) dominating the field.
 - Everyone I know that has bought The Cursed Child has the hardback edition (as opposed to the paperback that is released much later). All of us really hoped great things from that book eh?
 - I just don’t understand the use of over-rated as critique.
