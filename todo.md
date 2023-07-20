@@ -101,7 +101,7 @@
 - Marcus Hutchins
 - [Typesetting before $\LaTeX$](https://twitter.com/iraphas13/status/1262489387767480322?s=20)
 - Julius Caesar,  Act 3 Scene 2: "Friends, Romans, Countrymen".
-- [Github Stars are overvalued](https://towardsdatascience.com/github-stars-are-overvalued-15ba780b36)
+- [Github Stars are overvalued](https://web.archive.org/web/20200630182243/https://towardsdatascience.com/github-stars-are-overvalued-15ba780b36?gi=9e46fb653c5d)
 - Seb Vettel
     - 38 laps on the softs, Bahrain 2018
     - Ferrari screw ups in Australia 2016, Canada, Germany 2016, Germany 2018, Italy 2018, China 2019, Russia 2019, Mexico 2019, Silverstone 2020

@@ -18,6 +18,15 @@
 
         gtag('config', 'G-HBVJ1FF958');
     </script>
+    <script>
+        function toggleAbstract(theID) {
+            if (document.getElementById(theID).style.display == 'none') {
+                document.getElementById(theID).style.display = '';
+            } else {
+                document.getElementById(theID).style.display = 'none';
+            }
+        }
+    </script>
 </head>
 
 <body class="">
@@ -39,7 +48,7 @@
                         </nav>
                         <div class="nav-extra-content">
                             <div class="divider"></div>
-                            <p><em>Updated:</em> January 2, 2022</p>
+                            <p><em>Updated:</em> July 20, 2023</p>
                         </div>
                     </div>
                 </div>
@@ -50,7 +59,7 @@
                             <h1 style="font-variant: small-caps;">Spinning Plates</h1>
                             <h3>Presentations, publications, talks, lectures et al.</h3>
                             <div class="publishing-info-mobile">
-                                <p><em>Updated:</em> January 2, 2022</p>
+                                <p><em>Updated:</em> July 20, 2023</p>
                             </div>
                         </div>
                     </div>
@@ -61,10 +70,11 @@
                                         <p>There's no importance whatsoever. I'm just doing it for the fun of
                                             it</p>
                                         <p>- Richard Feynman, Surely You're Joking Mr. Feynman</p>
-                                    </blockquote>This is a list of all my research projects. I'm not entirely sure how
-                                    to structure this yet because I also want to include failed attempts at solving
-                                    problems. However, that might not be what people want to see when they load this
-                                    page. <br><br> The title
+                                    </blockquote>
+                                    This is a list of all my research projects. I'm not entirely sure how to structure
+                                    this yet because I also want to include failed attempts at solving problems.
+                                    However, that might not be what people want to see when they load this page.
+                                    <br><br> The title
                                 </em>"Spinning Plates"<em> is from the famous Richard Feynman story where he's burned
                                     out and realizes that the reason he enjoyed doing Physics was because he used to
                                     play with it.
@@ -77,6 +87,64 @@
                                 <tbody>
                                     <tr>
                                         <td style="text-align: center;vertical-align: text-top;"><img
+                                                src="./assets/images/research/seamCarving2.jpg" style="width: 250px;">
+                                        </td>
+                                        <td style="vertical-align: top;">Yasaswi Sri Chandra Gandhi Kilaru<br>
+                                            <strong>Seam Carving. Part 2: Energy Function</strong><br>
+                                            YouTube 2022 <br>
+                                            [<a href="javascript:toggleAbstract('desc22b')">description</a>][<a
+                                                href="https://www.youtube.com/watch?v=kGIflDM9Q78">www</a>][<a
+                                                href="javascript:toggleAbstract('bib22b')">BibTeX</a>]
+                                            <br>
+                                            <div id="desc22b"
+                                                style="width: 675px; display: none; background-color: #fdf6e3; text-align: justify; text-justify: inter-word; padding: 10px;">
+                                                Reading and implementing the Seam Carving paper. In this video, I write
+                                                the energy function and test it on a bunch of
+                                                diverse images. I also explain the energy function and the formal
+                                                definition of a seam. A seam is a path of pixels that is removed from
+                                                the image. The energy function is a function that assigns a value to
+                                                each pixel in the image. The value is a measure of how important the
+                                                pixel is to the image. The seam is the path of pixels with the lowest
+                                                energy. The seam is removed from the image and the image is resized.
+                                                This video is also a code walkthrough of how to read the paper and
+                                                translate it into code.
+                                            </div>
+                                            <div id="bib22b"
+                                                style="width: 675px; display: none; background-color: #fdf6e3; text-align: justify; text-justify: inter-word; padding: 10px;">
+                                                <code>
+                                                    @online{kilaru2022b, <br> title = {Seam Carving. Part 2: Energy Function}, <br> organization = {YouTube}, <br> author = {Yasaswi Sri Chandra Gandhi Kilaru}, <br> year = 2022, <br> month = {Oct}, <br> url = {https://www.youtube.com/watch?v=kGIflDM9Q78}, <br>}
+                                                </code>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center;vertical-align: text-top;"><img
+                                                src="./assets/images/research/seamCarving1.jpg" style="width: 250px;">
+                                        </td>
+                                        <td style="vertical-align: top;">Yasaswi Sri Chandra Gandhi Kilaru<br>
+                                            <strong>Seam Carving. Part 1: Intuition and Ideas</strong><br>
+                                            YouTube 2022 <br>
+                                            [<a href="javascript:toggleAbstract('desc22a')">description</a>][<a
+                                                href="https://www.youtube.com/watch?v=fvvEGFGRQzo">www</a>][<a
+                                                href="javascript:toggleAbstract('bib22a')">BibTeX</a>]
+                                            <div id="desc22a"
+                                                style="width: 675px; display: none; background-color: #fdf6e3; text-align: justify; text-justify: inter-word; padding: 10px;">
+                                                Reading and implementing the Seam Carving paper. In this video, I go
+                                                through the seam carving paper while explaining
+                                                what I'm taking away. I try to understand the contributions of the paper
+                                                and what we need to implement. I also talk about the ideas I have for
+                                                implementing the algorithm based on directions from the paper.
+                                            </div>
+                                            <div id="bib22a"
+                                                style="width: 675px; display: none; background-color: #fdf6e3; text-align: justify; text-justify: inter-word; padding: 10px;">
+                                                <code>
+                                                    @online{kilaru2022a, <br> title = {Seam Carving. Part 1: Intuition and Ideas}, <br> organization = {YouTube}, <br> author = {Yasaswi Sri Chandra Gandhi Kilaru}, <br> year = 2022, <br> month = {Oct}, <br> url = {https://www.youtube.com/watch?v=fvvEGFGRQzo}, <br>}
+                                                </code>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center;vertical-align: text-top;"><img
                                                 src="./assets/images/research/tpmdc.png" style="width: 250px;"></td>
                                         <td style="vertical-align: top;">Yasaswi Sri Chandra Gandhi Kilaru, Indrajit
                                             Ghosh<br>
@@ -84,10 +152,10 @@
                                                 Learning
                                                 Methods for Indian road conditions</strong><br>
                                             TPMDC 2020 <br>
-                                            [<button type="button" onclick="toggleabs()">abstract</button>][<a
+                                            [<a href="javascript:toggleAbstract('abs20')">abstract</a>][<a
                                                 href="https://dblp.org/rec/journals/corr/abs-2201-02738.html">paper</a>][<a
-                                                href="https://www.civil.iitb.ac.in/~tse/tpmdc_web/index.phtml">www</a>][<button
-                                                type="button" onclick="togglebib()">BibTeX</button>]
+                                                href="https://www.civil.iitb.ac.in/~tse/tpmdc_web/index.phtml">www</a>][<a
+                                                href="javascript:toggleAbstract('bib20')">BibTeX</a>]
                                             <br>
                                             <div id="abs20"
                                                 style="width: 675px; display: none; background-color: #fdf6e3; text-align: justify; text-justify: inter-word; padding: 10px;">
@@ -117,28 +185,8 @@
                                                     }
                                                 </code>
                                             </div>
-                                            <script>
-                                                function toggleabs() {
-                                                    var x = document.getElementById("abs20");
-                                                    if (x.style.display === "none") {
-                                                        x.style.display = "block";
-                                                    } else {
-                                                        x.style.display = "none";
-                                                    }
-                                                    return false;
-                                                }
-                                                function togglebib() {
-                                                    var x = document.getElementById("bib20");
-                                                    if (x.style.display === "none") {
-                                                        x.style.display = "block";
-                                                    } else {
-                                                        x.style.display = "none";
-                                                    }
-                                                    return false;
-                                                }
-                                            </script>
-
                                         </td>
+                                    </tr>
                             </table>
 
                             <script src="https://utteranc.es/client.js" repo="kyscg/kyscg.github.io" issue-term="url"
@@ -148,7 +196,7 @@
                             <div class="divider-short"></div>
                             <div class="info">
                                 <div class="publishing-info-mobile">
-                                    <p><em>Updated:</em> January 2, 2022</p>
+                                    <p><em>Updated:</em> July 20, 2023</p>
                                 </div>
                             </div>
                         </article>
