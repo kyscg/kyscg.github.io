@@ -1,4 +1,5 @@
 - Book review snippet until I figure out how to automate it
+
 ```html
 <li>
     <a href="link">title</a> by author <a href="javascript:toggleReview('author23')"><sup>rating</sup></a>
