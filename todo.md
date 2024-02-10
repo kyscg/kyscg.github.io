@@ -2,8 +2,8 @@
 
 ```html
 <li>
-    <a href="link">title</a> by author <a href="javascript:toggleReview('author23')"><sup>rating</sup></a>
-    <div id="author23" style="display:none; background-color: #fdf6e3; text-align: justify; text-justify: inter-word; padding: 10px; font-size: smaller;"
+    <a href="link">title</a> by author <a href="javascript:toggleReview('author24')"><sup>rating</sup></a>
+    <div id="author24" style="display:none; background-color: #fdf6e3; text-align: justify; text-justify: inter-word; padding: 10px; font-size: smaller;"
         <p>rating/5<br>review</p>
     </div>
 </li>
