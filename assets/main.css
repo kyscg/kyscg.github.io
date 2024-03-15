@@ -616,7 +616,7 @@ img,
 video {
   display: block;
   height: auto;
-  margin: 20px 0;
+  margin: auto;
   max-width: 100%;
 }
 
@@ -1604,4 +1604,24 @@ blockquote {
   padding-top: 7px;
   padding-bottom: 7px;
   position: relative;
+}
+
+.card {
+  background: transparent;
+  border-radius: 0.3em;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Two columns of equal width */
+  grid-gap: 10px;
+  /* Spacing between images */
+}
+
+.image-grid img {
+  width: 100%;
+  /* Adjust width as needed */
+  height: auto;
+  /* Maintain aspect ratio */
 }
