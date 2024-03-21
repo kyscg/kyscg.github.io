@@ -1606,6 +1606,18 @@ blockquote {
   position: relative;
 }
 
+@media (max-width: 1000px) {
+  blockquote {
+    background: #f9f9f9;
+    /*margin: 1.5em 0 1.5em;*/
+    margin: auto;
+    padding: 0 1em 0 2.5em;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    position: relative;
+  }
+}
+
 .card {
   background: transparent;
   border-radius: 0.3em;
