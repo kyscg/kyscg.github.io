@@ -22,6 +22,15 @@
 
         gtag('config', 'G-HBVJ1FF958');
     </script>
+    <script>
+        function toggleNote(theID) {
+            if (document.getElementById(theID).style.display == 'none') {
+                document.getElementById(theID).style.display = '';
+            } else {
+                document.getElementById(theID).style.display = 'none';
+            }
+        }
+    </script>
 </head>
 
 <body class="">
@@ -51,6 +60,309 @@
                             <h1 style="font-variant: small-caps;">Notes</h1><br><br>
                         </div>
                         <div class="card-content">
+                            <div class="card">
+                                <h3 id="240831"><a href="#240831">An Elliptic Curve with Rank >= 29 has been found!</a>
+                                </h3>
+                                <blockquote>
+
+                                    The elliptic curve<br><br>
+
+                                    y² + xy = x³ - 27006183241630922218434652145297453784768054621836357954737385x
+                                    +
+                                    55258058551342376475736699591118191821521067032535079608372404779149413277716173425636721497<br><br>
+
+                                    has rank at least 29.<br><br>
+
+                                    <a
+                                        href="https://web.math.pmf.unizg.hr/~duje/tors/rk29.html">https://web.math.pmf.unizg.hr/~duje/tors/rk29.html</a><br><br>
+
+                                    - robinhouston (@robinhouston) <a
+                                        href="https://mathstodon.xyz/@robinhouston/113049565052550325">August 30,
+                                        2024</a>
+                                </blockquote>
+
+                                This <a
+                                    href="https://www.reddit.com/r/math/comments/1f4nwja/new_record_in_elliptic_curves_noam_elkies_and_zev/">Reddit
+                                    thread from r/math</a> is very interesting. Elliptic curves are super-important in
+                                number theory. Many unsolved problems depend on our understanding of elliptic curves. I
+                                remember reading all I could about Fermat's Last Theorem in 2021 and learning the basics
+                                of elliptic curves so I could get a rudimentary understanding of the Taniyama-Shimura
+                                conjecture. Most elliptic curves have ranks of 0 or 1, so finding curves with higher
+                                ranks is very hard. I mean, look at the coefficients!
+                            </div>
+                            <div class="card">
+                                <h3 id="240823"><a href="#240823"> on the sums of multiples of two numbers</a></h3>
+                                <p>
+                                    I came across a strange pattern when computing the sum of multiples of 2 and 3 below
+                                    1000, below 10000 et cetera. The sum of multiples of 2 and 3 less than
+                                    increasing powers of 10 are as follows, $\{32, 3317, 333167, 33331667, 3333316667,
+                                    \dots\}.$ This intrigued me and I wanted to check if this behaviour held for other
+                                    primes as well and found that it does for a bunch of others. Examples: $f(2,5)=\{25,
+                                    2950, 299500, 29995000, 2999950000,\dots\},$ and $f(3,5)=\{23, 2318, 233168,
+                                    23331668, 2333316668,\dots\}.$<br><br>
+                                <pre><code class="language-python">def sumMul(p1: int, p2: int, b: int, n: int) -> int:
+
+    A = (b ** n - 1) // p1
+    B = (b ** n - 1) // p2
+    C = (b ** n - 1) // (p1 * p2)
+
+    print(A, B, C)
+    
+    return p1 * A * (A + 1) / 2 + p2 * B * (B + 1) / 2 - (p1 * p2) * C * (C + 1) / 2
+
+
+res = []
+for i in range(1, 9):
+    res.append(sumMul35(3, 5, 10, i)) # change this line
+
+print(res)</code></pre>
+
+                                But all primes don't follow this pattern. As you may expect, the first prime to give me
+                                trouble was 7. After some more experiments, I wondered why I couldn't try it for all
+                                natural numbers and computed a few more numbers. I couldn't come up with any rules for
+                                why some pairs had these patterns and why others did not but I noticed a few interesting
+                                cases. For example, pairs like $(2,2^k)$ always gave a lot of zeros at the end of the
+                                number, and that behaviour did not replicate among powers of 3 or 5. To investigate, I
+                                looked at the actual number of terms that each summation had. Concretely, given two
+                                numbers $p_1$ and $p_2,$ we first find the number of terms in each summation $A, B, C$.
+                                $$A=\left\lfloor{\frac{10^n - 1}{p_1}}\right\rfloor,
+                                B=\left\lfloor{\frac{10^n - 1}{p_2}}\right\rfloor,
+                                C=\left\lfloor{\frac{10^n - 1}{p_1p_2}}\right\rfloor$$
+                                $$S=\sum_{i=1}^Ap_1i+\sum_{i=1}^Bp_2i-\sum_{i=1}^Cp_1p_2i$$
+                                $$S=p_1\cdot\frac{A(A+1)}{2}+p_2\cdot\frac{B(B+1)}{2}-p_1p_2\cdot\frac{C(C+1)}{2}$$
+                                For most numbers, the numbers $A,B,C$ don't change apart from being multiplied by 10 and
+                                so we can see patterns in the resulting sum. So that mystery is solved. But what I don't
+                                get is what is so special about powers of 10 that this works. For example, changing the
+                                base of the exponential to 7 (and computing the sums less than powers of 7) or any other
+                                number doesn't work. Is there anything obvious that I am missing here?
+                                </p>
+                            </div>
+                            <div class="card">
+                                <h3 id="240815"><a href="#240815"> $x^n/n!$ and Stirling's formula</a></h3>
+                                <p>
+                                    I saw this nice problem on Mathstodon a few months ago and decided to take a look
+                                    today. It turns out that the curves of $x^n/n!$ have very similar shapes but
+                                    shifted. What is the size of the shift between the curves?
+                                </p>
+                                <p><img width="70%" src="./assets/images/notes/stirling.svg" alt="circleinternal">
+                                </p>
+                                <p>
+                                    The easiest way to do it is by using Stirling approximations, on which I did some
+                                    rudimentary speed analysis <a
+                                        href="https://gist.github.com/kyscg/b5f90f5162582f86197ddd7a391ad471">sometime
+                                        before.</a> Assume that the value we're trying to find the spacing at is $t.$
+                                    Then we need to find the corresponding value of $x$ for two successive curves. $x^n
+                                    / n! = t.$ Recall Stirling's formula and substitute it into this: $$n! \approx
+                                    (n/e)^n \sqrt{2\pi n}$$ $$x^n / (n/e)^n \sqrt{2\pi n} = t$$ Two things happen here
+                                    when $n$ is large and $t$ is small, we can ignore the effects of $\sqrt{n}$ in the
+                                    product with $n^{n}$ firstly and notice that $t^{1/n}$ equals one. So we get $$x =
+                                    n/e$$ and the resulting spacing is simply $1/e.$ I thought this was very neat, and a
+                                    good example of street-fighting calculations that are seemingly too complex. I would
+                                    say that the hardest part in this entire thing was plotting the graphs, they needed
+                                    some programming acrobatics to get the axes right.
+                                <pre><code class="language-python">def comp(n: int) -> list:
+    
+    x = []
+    y = []
+    for i in np.linspace(0, 10, 1000):
+        if ((i ** n) / math.factorial(n)) <= 2:
+            x.append(i)
+            y.append((i ** n) / math.factorial(n))
+    
+    return x, y
+
+for i in range(2, 20):
+    plt.plot(comp(i)[0], comp(i)[1])
+plt.xlabel("x")
+plt.ylabel("x^n/n!")
+plt.show()</code></pre>
+                                An interesting fact here is that every curve intersects with the next one only at an
+                                integer. This is fairly easy to show, $$\frac{(n + 1)^{n + 1}}{(n + 1)!} = \frac{(n +
+                                1)(n + 1)^{n}}{(n + 1)(n)!} = \frac{(n + 1)^{n}}{(n)!}$$ This means that the
+                                $n^{\text{th}}$ curve and the $(n + 1)^{\text{th}}$ curve will intersect at $x = n + 1.$
+                                Cute.
+                                </p>
+                            </div>
+                            <div class="card">
+                                <h3 id="240811"><a href="#240811">Olympic Medals per Capita</a></h3>
+                                <p><a href="https://www.medalspercapita.com/">Olympics Medals per Capita</a>
+                                    measures the number of Olympic
+                                    medals won by a country relative to its population. They also have a weighted
+                                    measure, and another metric relative to the GDP of the country. All of these metrics
+                                    are better than raw medal tally. They have a description in their 'about' page which
+                                    goes:</p>
+                                <blockquote>
+                                    <p>As you scan the Olympic medal tally, one thing stands out: larger countries tend
+                                        to win more medals. There are a few notable exceptions, though, including New
+                                        Zealand, which wins many more medals than you&#39;d expect of a country its
+                                        size.</p>
+                                </blockquote>
+                                <p>However, they are very kind to India, which is definitely an exception, seeing how we
+                                    regularly have nothing to show for our booming population. We need to get an award
+                                    for transcending the law of averages by not even accidentally producing a good bunch
+                                    of Olympic athletes over the last thirty odd years.</p>
+                            </div>
+                            <div class="card">
+                                <h3 id="240804"><a href="#240804">[wip] Thoughts on Novak Djokovic</a></h3>
+                                <p>
+                                    There is a very strong chance no one will have his resume ever again. 24 slams and
+                                    counting, 7 year-end championships, and now the Olympic Gold. History was made at
+                                    Philippe Chatrier, an unlikely place for Novak to do it, considering that there was
+                                    another man for whom this court has been a kiddie playground for almost twenty
+                                    years. Novak Djokovic has always been an interesting player to me, he's
+                                    definitely the greatest, but it feels like he needs to do something more than win
+                                    for him to be in the debate with Federer and Rafa.<br><br>
+
+                                    I remember reading an article about Rafael Nadal sometime ago where the writer was
+                                    talking about how Rafa was perpetually in second place all his career (apart from in
+                                    Roland Garros, and a couple of years here and there). First to Roger Federer and
+                                    then to Novak Djokovic. The writer wondered how it must feel to always be the person
+                                    that comes up short. How it must feel to always die at the end of the book.<br><br>
+
+                                    With Novak, it is quite a different question. He has always been second favourite,
+                                    first to the Roger-Rafa fans and now with the Sinner-Alcaraz fans. He is continually
+                                    the anti-hero for the crowds. How must it feel when everyone is rooting for you to
+                                    die at the end of the book?<br><br>
+
+                                    Maybe that is why he fights so hard. Maybe it is when his back is against the wall,
+                                    that he becomes Novak Djokovic.
+                                </p>
+                            </div>
+                            <div class="card">
+                                <h3 id="240720"><a href="#240720">Colonization of Venus</a></h3>
+                                <p>
+                                    I came upon this delightfully technical article on the possibilities of a Venus
+                                    colony, wait for it, not on the surface of the planet but in the atmosphere of
+                                    Venus! around 50 km above the surface. The rationale is that while the surface is
+                                    very hostile to human life, the zone 50 km above is the most earth-like in the solar
+                                    system. I did not know this, and I wonder how they ascertained that. First
+                                    principles wise, space is hard. There's the minor issue of oxygen, but we also need
+                                    carbon, hydrogen, nitrogen, and basically every element that we have evolved to live
+                                    in harmony with on earth. Apart from all that, winning the under-appreciation
+                                    contest, is gravity. We're going to go all loopy, literally and figuratively, if we
+                                    don't have gravity.<br><br>
+
+
+                                    Long story short, the surface of Venus sucks. Surface temperature of 737 K (300 K on
+                                    earth), surface pressure of 9.2 MPa (0.1 MPa on earth) and an atmosphere with 96.5%
+                                    CO$_2$ which, get this, exists in a supercritical state at the surface because of
+                                    the pressures. The worst part, there's no sun, because of all the poisonous cloud
+                                    cover.<a href="javascript:toggleNote('n240720')"><sup>*</sup></a>
+                                <div id="n240720"
+                                    style="display:none; background-color: #fdf6e3; text-align: justify; text-justify: inter-word; padding: 10px; font-size: smaller;"
+                                    <p>Please note that it is not the poison that blocks out the sun, but the clouds
+                                    themselves. I would not have needed to add this note if someone hadn't asked me if
+                                    there was something about the poison that did it. No. The clouds are not laced with
+                                    SPF50++.<br><br>
+
+                                    Fun fact: The reflective power of the clouds above the surface of Venus is so
+                                    powerful that one can generate the same power by pointing the solar panels down into
+                                    the reflective clouds as up into the sun.
+                                    </p>
+                                </div> But 50 km above the surface is quite a different story. Apart from the acidic
+                                clouds (H$_2$SO$_4$), the conditions are very earthlike. Temperatures around 320 K,
+                                pressure of 0.1 MPa, gravity is a little less than what we get on earth but manageable,
+                                and we get some sun. We still cannot breathe though, and heat waves would take out the
+                                entire population if there was no protection. But this is as good as we have it under
+                                the sun. Literally, this is as good as we have it in our solar system.<br><br>
+
+                                The proposal is this. We colonize the air of Venus. We build floating cities, much like
+                                <a href="https://en.wikipedia.org/wiki/Vimana"><em>vimanas</em></a> or the golden
+                                floating
+                                city of <a
+                                    href="https://en.wikipedia.org/wiki/Tripura_(mythology)#The_construction_of_the_three_cities"><em>Tripura</em></a>.
+                                Considerations include breathing (oxygen supply), solar radiation shielding,
+                                anti-corrosive measures in the air, pressure differentials and repairs in case of gas
+                                leaks, length of the solar day (116.8 times that of earth) and resources (both for
+                                maintenance and exploration purposes)<br><br>
+
+                                Space is wonderful and it is probably my fear of getting nerd-sniped into eternity
+                                that I don't spend more time on these ideas.<br><br>
+
+                                References:<br>
+                                1. <a href="https://www.space.com/18527-venus-atmosphere.html">Venus' atmosphere:
+                                    Composition, clouds and weather</a> on Space<br>
+                                2. <a href="https://doi.org/10.1016/j.icarus.2015.05.006">Constraints on a potential
+                                    aerial biosphere on Venus</a> by Dartnell et al, in Icarus<br>
+                                3. <a
+                                    href="https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf">Colonization
+                                    of Venus</a> by Geoffrey Landis
+                                </p>
+                            </div>
+                            <div class="card">
+                                <h3 id="240701"><a href="#240701"> Like a river of steel it flowed, grey and
+                                        ghostlike.</a></h3>
+                                <blockquote>
+                                    The entrance of the German army into Brussels has lost the human quality. It was
+                                    lost as soon as the three soldiers who led the army bicycled into the Boulevard du
+                                    Régent and asked the way to the Gare du Nord. When they passed, the human note
+                                    passed with them. What came after them, and 24 hours later is still coming, is
+                                    not men marching, but a force of nature like a tidal wave, an avalanche or a river
+                                    flooding its banks. At this minute it is rolling through Brussels as the swollen
+                                    waters of the Conemaugh Valley swept through Johnstown.<br><br>
+
+                                    At the sight of the first few regiments of the enemy we were thrilled with interest.
+                                    After they had passed for three hours in one unbroken steel-grey column we were
+                                    bored. But when hour after hour passed and there was no halt, no breathing time, no
+                                    open spaces in the ranks, the thing became uncanny, inhuman. You returned to watch
+                                    it, fascinated. It held the mystery and menace of fog rolling toward you across the
+                                    sea.<br><br>
+
+                                    The grey of the uniforms worn by both officers and men helped this air of mystery.
+                                    Only the sharpest eye could detect among the thousands that passed the slightest
+                                    difference. All moved under a cloak of invisibility. Only after the most numerous
+                                    and severe tests, with all materials and combinations of colour that give forth no
+                                    colour, could this grey have been discovered. That it was selected to clothe and
+                                    disguise the German when he fights is typical of the German Staff in striving for
+                                    efficiency to leave nothing to chance, to neglect no detail.<br><br>
+
+                                    After you have seen this service uniform under conditions entirely opposite you are
+                                    convinced that for the German soldier it is his strongest weapon. Even the most
+                                    expert marksman cannot hit the target unless he can see. It is a grey-green, not the
+                                    blue-grey of our Confederates. It is the grey of the hour just before daybreak, the
+                                    grey of unpolished steel, of mist among green trees...<br><br>
+
+                                    This army has been on active service three weeks, and so far there is not apparently
+                                    a chin-strap or a horseshoe
+                                    missing. It came in with the smoke pouring from cookstoves on wheels, and in an hour
+                                    had set up post office wagons, from
+                                    which mounted messengers galloped along the line of column distributing letters and
+                                    at which soldiers posted picture
+                                    postcards.<br><br>
+
+                                    The infantry came in files of five, 200 men to each company; the lancers in columns
+                                    of four, with not a pennant missing.
+                                    The quick-firing guns and field pieces were one hour at a time in passing, each gun
+                                    with its caisson and ammunition
+                                    wagon taking 20 seconds in which to pass.<br><br>
+
+                                    The men of the infantry sang “Fatherland, My Fatherland”. Between each line of song
+                                    they took three steps. At times
+                                    2,000 men were singing together in absolute rhythm and beat. When the melody gave
+                                    way, the silence was broken only by
+                                    the stamp of ironshod boots, and then again the song rose. When the singing ceased,
+                                    the bands played marches. They were
+                                    followed by the rumbles of siege guns, the creaking of wheels and of chains clanking
+                                    against the cobble-stones and the
+                                    sharp bell-like voices of the bugles.<br><br>
+
+                                    For seven hours the army passed in such solid column that not once might a taxi-cab
+                                    or trolley car pass through the
+                                    city. Like a river of steel it flowed, grey and ghostlike. Then, as dusk came and a
+                                    thousands of horses’ hoofs and
+                                    thousands of iron boots continued to tramp forward, they struck tiny sparks from the
+                                    stones, but the horses and men who
+                                    beat out the sparks were invisible.<br><br>
+
+                                    At midnight, pack wagons and siege guns were still passing. At seven this morning I
+                                    was awakened by the tramp of men and
+                                    bands playing jauntily. Whether they marched all day or not I do not know; but for
+                                    26 hours the grey army rumbled with
+                                    the mystery of fog and the pertinacity of a steamroller.<br><br>
+
+                                    - Richard Harding Davis
+                                </blockquote>
+                            </div>
                             <div class="card">
                                 <h3 id="240621"><a href="#240621"> Links from the Summer of '24</a></h3>
                                 <p><a
@@ -95,7 +407,6 @@
                                         href="https://www.nytimes.com/interactive/2023/09/20/well/family/13-year-old-girls-social-media-self-esteem.html">Being
                                         13</a>: Social media is the worst thing that has happened to teenage girls
                                 </p>
-
                             </div>
                             <div class="card">
                                 <h3 id="240614"><a href="#240614">Geometry Puzzle</a></h3>
@@ -549,7 +860,7 @@
                                 </p>
                             </div>
                             <div class="card">
-                                <h3 id="240220"><a href="#240220"> Dimensional Analysis on Loss Functions</a></h3>
+                                <h3 id="240220"><a href="#240220">[wip] Dimensional Analysis on Loss Functions</a></h3>
                                 <p>One of my favourite tricks to minimize errors while doing high school physics was to
                                     use dimensional analysis as a sanity check on all my equations. It is easy to see
                                     that gradient descent is not dimensionally sound, and so I have some thoughts on
@@ -924,7 +1235,8 @@ print(f"Set Counts: {result['set_counts']}")</code></pre>
                                 </p>
                             </div>
                             <div class="card">
-                                <h3 id="231111"><a href="#231111"> Some ideas on improving semantic segmentation with
+                                <h3 id="231111"><a href="#231111">[wip] Some ideas on improving semantic segmentation
+                                        with
                                         SAM</a></h3>
                                 <p>Use some pre-existing models like <a
                                         href="https://arxiv.org/abs/1606.00915">DeepLab</a> and <a
