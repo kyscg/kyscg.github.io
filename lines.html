@@ -2,19 +2,124 @@
 <html lang="en">
 
 <head>
-    <title>New Ideas</title>
-    
+    <title>Linear Regression with Multiple Lines</title>
+
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" sizes="152x152" 
+    href="/assets/images/logos/logo.svg">
+
     <link href="/assets/main.css" media="screen" rel="stylesheet"
     type="text/css">
     <script src="/assets/main.js" type=text/javascript></script>
 
-<h2>title tbd</h2>
+    <!--Umami Tracking-->
+    <script defer src="https://analytics.eu.umami.is/script.js"
+        data-website-id="82adae1f-43a5-41ef-bded-93558dd2709e"></script>
 
-<p>
-Let us sample some points from a line $L:y=mx+c$ and attempt to fit a line
-$L_1:y=m_1x+c_1$ to the data points. Using an iterative algorithm like
-stochastic gradient descent guarantees convergence of the parameters $m_1, c_1$
-to the true slope and intercept, $m, c.$ We don't add any noise anywhere and
-this is as simple as things get when one starts out in deep learning.
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBVJ1FF958"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-HBVJ1FF958');
+    </script>
+</head>
+
+<body class="">
+    <div id="container">
+        <div class="signature">
+            <div class="flexcontainer">
+                <div class="nav-view">
+                    <div class="nav-inner">
+                        <nav>
+                            <a href="/" title="New Ideas"><img style="float: left;margin: 0px 35px 25px 35px;"
+                                    src="/assets/images/logos/logo.svg" alt="website-logo" width="75" height="75"></a>
+                            <ul>
+                                <li><a href="/about" title="About">About</a></li>
+                                <li><a href="/" title="Articles">Articles</a></li>
+                                <li><a href="/research" title="Research">Research</a></li>
+                                <li><a href="/reading" title="Reading">Reading</a></li>
+                                <li><a href="/notes" title="Notes">Notes</a></li>
+                            </ul>
+                        </nav>
+                        <div class="nav-extra-content">
+                            <div class="divider"></div>
+                            <p><em>Published:</em> October 14, 2024</p>
+                            <p><em>Status:</em> In Progress</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="toc-index"></div>
+                <div class="content">
+                    <div class="signature-content-header">
+                        <div id="title">
+                            <h1>Linear Regression with Multiple Lines</h1>
+                            <h3>Looking at the convergence of parameters of individual lines when multiple lines are used to perform linear regression.</h3>
+                            <div class="publishing-info-mobile">
+                                <p><em>Published:</em> October 14, 2024</p>
+                                <p><em>Status:</em> In Progress</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="signature-content">
+                        <div class="toc">
+                            <h2>Contents</h2>
+                            <ol>
+                                <li><a href="#section-0">Problem Statement</a></li>
+                                <li><a href="#section-1">Initial Rules</a></li>
+                                <li><a href="#section-2">Solution for $i_n$</a></li>
+                                <li><a href="#section-3">Solving Limits</a></li>
+                                <li><a href="#section-4">Visualizing Convergence</a></li>
+                                <li><a href="#section-5">Denouement</a></li>
+                            </ol>
+                            <div class="divider-short"></div>
+                        </div>
+                        <article class="big">
+                            <p><em>We cannot approximate a non-linear function using a neural network unless we use non-linear activation functions. This made me wonder if we could approximate a linear function by injecting non-linearity into a network. I was using a very primitive network that learnt two lines with a ReLU non-linearity added to the output of the first line. Those results aside, I found something interesting when visualizing the weights (by plotting the two lines). Both lines always had the same slope, or at least the same magnitude. Which leads us to the following analysis.<br><br>I have to mention that I searched far and wide for what this exact setting is called, and I couldn't find a name for it. This is probably because the problem is very trivial. But I wish it were trivial to name this blog post, because the one I have right now is very underwhelming, maybe misleading, and probably confusing.
+                            </em></p>
+
+                            <h2 id="section-0"><a href="#section-0">Problem Statement</a></h2>
+
+                            <p>
+                            Sample a set of points $\{(x_1, y_1),(x_2, y_2),\dots, (x_n, y_n)\}$ from the line $L:y=mx+c$ and fit two lines $L_1,L_2$ such that $L=L_2(L_1(x))$ where $L_1:y=m_1x+c_1$ and $L_2:y=m_2x+c_2.$ At convergence, we get $$L=m_1m_2x+m_2c_1+c_2,$$ and $$m=m_1m_2\qquad c=m_2c_1+c_2.$$ From choosing a few examples for the original line, we can quickly see that there are infinitely many solutions for the two lines to take (try $L:y=x$ and see that all pairs of lines $L_1:y=ax,$ and $L_2:y=x/a$ are solutions, $a\in\mathbb{R}-\{0\}$)). I now have some questions,<br><br>Question 1: On using gradient descent to solve for the two lines, $m_1$ and $m_2$ always converge at $\pm\sqrt{m}.$ Can this be proven analytically? Why does this happen when there are infinitely many solutions.<br><br>Question 2: Is this behaviour general? If we use $n$ lines, will the slopes of all the lines converge to $\pm (m)^{1/n}$?<br><br>Question 3: What can we say about the intercepts ($c_1, c_2$)? They don't converge to a single number like the slopes do, so maybe we don't care that much.
+                            </p>
+
+                            <h2 id="section-1"><a href="#section-1">Two Lines</a></h2>
+
+                            <p>
+                            </p>
+
+                            <h2 id="section-2"><a href="#section-2">$n$ Lines</a></h2>
+
+                            <p>
+                            </p>
+
+                            <h2 id="section-3"><a href="#section-3">Intercepts</a></h2>
+
+                            <p>
+                            </p>
+
+                            <script src="https://utteranc.es/client.js" repo="kyscg/kyscg.github.io" issue-term="url"
+                                label="comments" theme="github-light" crossorigin="anonymous" async>
+                                </script>
+
+                            <div class="divider-short"></div>
+                            <div class="info">
+                                <div class="publishing-info-mobile">
+                                    <p><em>Published:</em> October 14, 2024</p>
+                                    <p><em>Status:</em> In Progress</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 
 </html>
