@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <title>Aprendiendo Español [WIP]</title>
+    <meta charset='UTF-8'>
+    <meta content='width=device-width, initial-scale=1' name='viewport' />
+
+    <meta name='description' content=''>
+    <meta name='keywords' content='espanol, notes'>
+    <meta name='author' content='Kilaru Yasaswi Sri Chandra Gandhi'>
+
+    <link rel='shortcut icon' href='/assets/images/alexandrosMegas.jpg'>
+    <link href='/index.css' rel='stylesheet'>
+
+    <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+
+<body>
+    <div id="dappled-light">
+
+    <div id="glow"></div>
+    <div id="glow-bounce"></div>
+    <div class="perspective">
+        <div id="leaves">
+            <svg style="width: 0; height: 0; position: absolute;">
+                <defs>
+                    <filter id="wind" x="-20%" y="-20%" width="140%" height="140%">
+                        <feTurbulence type="fractalNoise" numOctaves="2" seed="1">
+                            <animate attributeName="baseFrequency" dur="16s" keyTimes="0;0.33;0.66;1"
+                                values="0.005 0.003;0.01 0.009;0.008 0.004;0.005 0.003" repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic">
+                            <animate attributeName="scale" dur="20s" keyTimes="0;0.25;0.5;0.75;1"
+                                values="45;55;75;55;45" repeatCount="indefinite" />
+                        </feDisplacementMap>
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+        <div id="blinds">
+            <div class="shutters">
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+            </div>
+            <div class="vertical">
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+    <div id="progressive-blur">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+    <article id="writing">
+        <p id="nav">
+            <a href='/'>Home</a> ~
+            <a href='/writing'>Writing</a> ~
+            <a href='/reading'>Reading</a>
+        </p>
+        <hr>
+        <div class='content'>
+            <div class='front-matter'>
+                <div class='wrap'>
+                    <h1>Aprendiendo Español [WIP]</h1>
+                    <p><i>Notas que he tomado mientras aprendía español.</i></p>
+                    <div class='bylines'>
+                        <div class='byline'>
+                            <h3>Published</h3>
+                            <p>11 November 2024</p>
+                        </div>
+                    </div>
+                    <div class='clear'></div>
+                </div>
+            </div>
+            <hr>
+            <div class='wrap-article'>
+                <p>Esta nota es un trabajo en progreso.</p>
+
+<h2 id="español">Español</h2>
+
+<ul>
+  <li><em>lo sé</em> means I know it, whereas <em>yo sé</em> means I know. Use the former when we want to say that we specifically know something, and the latter in general. Although, practically, both are used interchangeably, sometimes just as <em>sé</em>.</li>
+  <li><em>trabaja</em> is “you work” <em>trabaje</em> is “work” (as a command) <em>trabajé</em> is “I worked”.</li>
+  <li><em>ir de</em> means “to go” and <em>voy</em> is “i go”</li>
+  <li><em>entender</em> means to get an idea about something, but <em>comprender</em> means to completely understand something</li>
+</ul>
+
+<hr />
+
+
+                <script src="https://utteranc.es/client.js" repo="kyscg/kyscg.github.io" issue-term="url"
+                    label="comments" theme="github-light" crossorigin="anonymous" async></script>
+            </div>
+        </div>
+    </article>
+</body>
+
+</html>

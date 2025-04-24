@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed/reads.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-04-25T04:30:42+05:30</updated><id>http://localhost:4000/feed/reads.xml</id><title type="html">New Ideas | Reads</title><subtitle>my personal website :)</subtitle><author><name>Kilaru Yasaswi Sri Chandra Gandhi</name></author><entry><title type="html">Favourite Books</title><link href="http://localhost:4000/favouritebooks/" rel="alternate" type="text/html" title="Favourite Books" /><published>2025-04-14T02:38:42+05:30</published><updated>2025-04-14T02:38:42+05:30</updated><id>http://localhost:4000/favouritebooks</id><content type="html" xml:base="http://localhost:4000/favouritebooks/"><![CDATA[<p>A lot of people ask me what my favourite books are, or what books I would recommend to them. The purpose of this page is to provide a diversion to the question so I can sneak away before they figure out I dodged the question. These are a few of my all-time favourite reads, and books that got a spot on this list are those that I loved on first read. The fiction category is sorted by the order in which I read the books, but the non-fiction and academic section are random. I like to think I read everything apart from self-help, although I notice that I don’t like horror, and look down on science-fiction. There aren’t any super-niche books on this list because I very rarely stray from mainstream bestsellers that have stood the test of time. I don’t know if I would recommend any of these books. I think I would actually discourage people from reading a few of these, and there are many books that I would recommend that are not on this list because I didn’t like the reading experience. The academic section was a very last minute addition, I didn’t know if you consider that “reading” and I definitely did not read all those books cover to cover. But those are books that have kept me company for a very long time, and taught me so much, that it is only fair that I put them here.</p>
+
+<h2 id="fiction">Fiction</h2>
+
+<ul>
+  <li>The Ramayana by Valmiki</li>
+  <li>The Mahabharata by Vyasa</li>
+  <li>The Iliad by Homer</li>
+  <li>The Odyssey by Homer</li>
+  <li>Famous Five series by Enid Blyton</li>
+  <li>The Naughtiest Girl series by Enid Blyton</li>
+  <li>Mythos by Stephen Fry</li>
+  <li>Heroes by Stephen Fry</li>
+  <li>Harry Potter series by J. K. Rowling</li>
+  <li>The Call of the Wild by Jack London</li>
+  <li>Diary of a Wimpy Kid series by Jeff Kinney</li>
+  <li>Inferno by Dan Brown</li>
+  <li>Percy Jackson series by Rick Riordan</li>
+  <li>Heroes of Olympus series by Rick Riordan</li>
+  <li>A Thousand Splendid Suns by Khaled Hosseini</li>
+  <li>Kane and Abel by Jeffrey Archer</li>
+  <li>A Prisoner of Birth by Jeffrey Archer</li>
+  <li>Crime and Punishment by Fyodor Dostoevsky</li>
+  <li>The Interpreter of Maladies by Jhumpa Lahiri</li>
+  <li>The Namesake by Jhumpa Lahiri</li>
+  <li>As The Crow Flies by Jeffrey Archer</li>
+  <li>The White Tiger by Aravind Adiga</li>
+  <li>Circe by Madeline Miller</li>
+  <li>The Song of Achilles by Madeline Miller</li>
+  <li>A Man Called Ove by Fredrik Backman</li>
+  <li>Normal People by Sally Rooney</li>
+  <li>Don Quixote by Cervantes</li>
+  <li>A Gentleman in Moscow by Amor Towles</li>
+  <li>The Great Gatsby by F. Scott Fitzgerald</li>
+  <li>East of Eden by John Steinbeck</li>
+  <li>White Fang by Jack London</li>
+  <li>War and Peace by Leo Tolstoy</li>
+</ul>
+
+<h2 id="non-fiction">Non-fiction</h2>
+
+<ul>
+  <li>Alexander the Great by Philip Freeman</li>
+  <li>Julius Caesar by Philip Freeman</li>
+  <li>Napoleon by Andrew Roberts</li>
+  <li>Surely You’re Joking Mr. Feynman by Richard Feynman</li>
+  <li>Genius by James Gleick</li>
+  <li>The Making of the Atomic Bomb by Richard Rhodes</li>
+  <li>The Emperor of all Maladies by Siddhartha Mukherjee</li>
+  <li>The Rise and Fall of the Third Reich by William L. Shirer</li>
+  <li>Lenin by Victor Sebestyen</li>
+  <li>The Gulag Archipelago by Aleksandr Solzhenitsyn</li>
+  <li>1984 by George Orwell</li>
+  <li>Complications by Atul Gawande</li>
+  <li>This is Going to Hurt by Adam Kay</li>
+  <li>The Boys in the Boat by Daniel James Brown</li>
+  <li>Bad Blood by John Carreyrou</li>
+  <li>Can’t Hurt Me by David Goggins</li>
+  <li>Shoe Dog by Phil Knight</li>
+  <li>Open by Andre Agassi</li>
+  <li>Fermat’s Last Theorem by Simon Singh</li>
+</ul>
+
+<h2 id="academic">Academic</h2>
+
+<ul>
+  <li>Linear Algebra by Serge Lang</li>
+  <li>A First Course in Probability by Sheldon Ross</li>
+  <li>Calculus by Michael Spivak</li>
+  <li>Elementary Introduction to Number Theory by Calvin Long</li>
+  <li>Concepts of Physics by H. C. Verma</li>
+  <li>Gravitation by Misner and Thorpe</li>
+  <li>Fluid Mechanics by Landau and Lifshitz</li>
+  <li>Introduction to Electrodynamics by David Griffiths</li>
+  <li>Finite Element Procedures by Klaus-Jurgen Bathe</li>
+  <li>Stochastic Calculus for Finance by Steven Shreve</li>
+  <li>Option Volatility and Pricing by Sheldon Natenberg</li>
+  <li>Options, Futures, and Derivatives by John Hull</li>
+  <li>C Programming by K. N. King</li>
+  <li>The Algorithm Design Manual by Steven S. Skiena</li>
+  <li>Dynamic Programming by Art Lew</li>
+  <li>Introduction to Statistical Learning by James et al.</li>
+  <li>Reinforcement Learning by Sutton and Barto</li>
+  <li>Introduction to the Theory of Computation by Michael Sipser</li>
+  <li>Operating Systems Three Easy Pieces by Remzi and Andrea Arpaci-Dusseau</li>
+  <li>100 Endgames You Must Know by Jesus de la Villa</li>
+</ul>
+
+<hr />]]></content><author><name>Kilaru Yasaswi Sri Chandra Gandhi</name></author><summary type="html"><![CDATA[A lot of people ask me what my favourite books are, or what books I would recommend to them. The purpose of this page is to provide a diversion to the question so I can sneak away before they figure out I dodged the question. These are a few of my all-time favourite reads, and books that got a spot on this list are those that I loved on first read. The fiction category is sorted by the order in which I read the books, but the non-fiction and academic section are random. I like to think I read everything apart from self-help, although I notice that I don’t like horror, and look down on science-fiction. There aren’t any super-niche books on this list because I very rarely stray from mainstream bestsellers that have stood the test of time. I don’t know if I would recommend any of these books. I think I would actually discourage people from reading a few of these, and there are many books that I would recommend that are not on this list because I didn’t like the reading experience. The academic section was a very last minute addition, I didn’t know if you consider that “reading” and I definitely did not read all those books cover to cover. But those are books that have kept me company for a very long time, and taught me so much, that it is only fair that I put them here.]]></summary></entry><entry><title type="html">2025</title><link href="http://localhost:4000/2025books/" rel="alternate" type="text/html" title="2025" /><published>2025-04-09T22:38:42+05:30</published><updated>2025-04-09T22:38:42+05:30</updated><id>http://localhost:4000/2025books</id><content type="html" xml:base="http://localhost:4000/2025books/"><![CDATA[<h3 id="1-uncle-toms-cabin-by-harriet-beecher-stowe-45">1. <a href="https://www.gutenberg.org/cache/epub/203/pg203-images.html">Uncle Tom’s Cabin</a> by Harriet Beecher Stowe <span style="float: right;"><code class="language-plaintext highlighter-rouge">(4/5)</code></span></h3>
+
+<p>good book, the whole christian evangelism propaganda was overdone in my opinion, but it is tolerable.</p>
+
+<h3 id="2-south-sea-tales-by-jack-london-3755">2. <a href="https://www.gutenberg.org/cache/epub/1208/pg1208-images.html">South Sea Tales</a> by Jack London <span style="float: right;"><code class="language-plaintext highlighter-rouge">(3.75/5)</code></span></h3>
+
+<p>Some Robinson Crusoesque short stories that I really enjoyed reading. I liked The House of Mapuhi, Mauki, and The Heathen a lot.</p>
+
+<h3 id="3-the-call-of-the-wild-by-jack-london-55">3. <a href="https://www.gutenberg.org/cache/epub/215/pg215-images.html">The Call of the Wild</a> by Jack London <span style="float: right;"><code class="language-plaintext highlighter-rouge">(5/5)</code></span></h3>
+
+<p>I love this book so much, for so many reasons. As a child, I used to open this book to the scene where Buck pulls a thousand pounds for John and read it over and over again. Simply wonderful.</p>
+
+<h3 id="4-white-fang-by-jack-london-55">4. <a href="https://www.gutenberg.org/cache/epub/910/pg910-images.html">White Fang</a> by Jack London <span style="float: right;"><code class="language-plaintext highlighter-rouge">(5/5)</code></span></h3>
+
+<p>my third consecutive Jack London book, I can’t get enough of his writing. I wish I read this when I was in school. For me, this is better than The Call of the Wild as far as the writing and story go. I am going to go around for the next few days asking everyone I run into to read this book.</p>
+
+<h3 id="5-suicide-notes-by-michael-thomas-ford-45">5. <a href="https://www.michaelthomasford.com/ya-novels.html">Suicide Notes</a> by Michael Thomas Ford <span style="float: right;"><code class="language-plaintext highlighter-rouge">(4/5)</code></span></h3>
+
+<p>I hadn’t realised how much I missed this sarcastic percy jacksonesque humour until I started reading this book. I finished this in one sitting, which is something childhood me wouldn’t really think was anything special but many winters have passed since I read a book cover to cover without stopping.</p>
+
+<p>both the dialogue and monologue are great, the plot kinda darkens and pales simultaneously towards the end but it was still very enjoyable to read. also, the subject matter is clearly dark, and the humour does a very good job of being thoughtful as well as effective.</p>
+
+<h3 id="6-night-watch-by-jayne-anne-phillips-35">6. <a href="https://jayneannephillips.com/night-watch/">Night Watch</a> by Jayne Anne Phillips <span style="float: right;"><code class="language-plaintext highlighter-rouge">(3/5)</code></span></h3>
+
+<p>wasn’t too bad, although I felt that narration + dialogue were far stronger than descriptions in many places. I have no clue what that Weed character is doing in the book except as a literary device for more exposition, and even that is a weak justification.</p>
+
+<p>I am updating the review on my website a month after reading it, and one thing that stands out is how certain aspects of the book linger on for a long time. The whole Civil War thing, and rustic descriptions of rural America. Very enduring. I can see why it appealed to the Pulitzer folks.</p>
+
+<h3 id="7-the-financial-lives-of-the-poets-by-jess-walter-45">7. <a href="https://www.jesswalter.com/the_financial_lives_of_the_poets__2009__94357.htm">The Financial Lives of the Poets</a> by Jess Walter <span style="float: right;"><code class="language-plaintext highlighter-rouge">(4/5)</code></span></h3>
+
+<p>this writing has some of the best self-deprecating + existentialist humour ever written. some parts would go real viral on substack/blog-screenshot-twitter. the plot gets weak at some places and the ending is lacklustre. almost like it was written in the hope that it would be adapted into a movie.</p>
+
+<h3 id="8-war-and-peace-by-leo-tolstoy-translated-by-louise-and-aylmer-maude-4755">8. <a href="https://www.gutenberg.org/ebooks/2600">War and Peace</a> by Leo Tolstoy, translated by Louise and Aylmer Maude <span style="float: right;"><code class="language-plaintext highlighter-rouge">(4.75/5)</code></span></h3>
+
+<p>there is nothing that hasn’t been said before about this, so I wont waste my time. I loved reading the book, it never felt long, or boring, or difficult, or any of the usual excuses people give for not picking it up. The first time I read it, I simply didn’t have any historical background to appreciate it, but now I get why Tolstoy wanted to write this book.</p>
+
+<p>Obviously, he has a very strong anti-Napoleon bias, and that put me off in some sections. But can we really blame the Russians for not liking Napoleon? His ideas on history are coherent until the epilogue, and then they get into youtube video-essay script territory. As far as characters go, Napoleon was my favourite (no surprises there) followed by Prince Andrei. Absolutely despised the entire Kuragin clan, and Anna Pavlovna, and Pierre Bezukhov. While the Kuragin’s and Anna Pavlovna are just despicable people, Pierre is guilty in that he is a comfort-seeking man, the worst of the lot.</p>
+
+<p>docked a quarter star for all the forced Napoleon hate, Vive l’Empereur!</p>
+
+<h3 id="9-a-study-in-scarlet-by-arthur-conan-doyle-255">9. <a href="https://www.gutenberg.org/cache/epub/244/pg244-images.html">A Study in Scarlet</a> by Arthur Conan Doyle <span style="float: right;"><code class="language-plaintext highlighter-rouge">(2.5/5)</code></span></h3>
+
+<p>what was that in the middle? the most pointless backstory ever. The Sherlock stuff was cool. but that flashback ruined it all.</p>
+
+<h3 id="10-odyssey-by-stephen-fry-45">10. <a href="https://www.stephenfry.com/store/">Odyssey</a> by Stephen Fry <span style="float: right;"><code class="language-plaintext highlighter-rouge">(4/5)</code></span></h3>
+
+<p>I am rather unfairly partial to the Allen Mandelbaum translation of The Odyssey (because it was the first classic I ever read) and so I am not going to say this was a great retelling or anything.</p>
+
+<p>However, I think Fry’s four volumes on Greek Myths are incredibly important for how all-encompassing they are. My first exposure to the Ancient Greek myths and legends was Mandelbaum’s translation of the Odyssey, and then I picked up the Robert Graves book on Greek Myths off a shelf in my school library. After reading that, I was so captivated that I searched far and wide for other such books but never found any.</p>
+
+<p>Children now wont have to search farther than the next book in the series. Athena smiles on Stephen Fry.</p>
+
+<h3 id="11-the-room-on-the-roof-by-ruskin-bond-25">11. <a href="https://www.google.co.in/books/edition/THE_ROOM_ON_THE_ROOF/1MGC-Iu1yPkC">The Room on the Roof</a> by Ruskin Bond <span style="float: right;"><code class="language-plaintext highlighter-rouge">(2/5)</code></span></h3>
+
+<p>quaint and nice, but also drawn-out in some places.</p>
+
+<h3 id="12-1984-by-george-orwell-55">12. <a href="https://www.george-orwell.org/1984">1984</a> by George Orwell <span style="float: right;"><code class="language-plaintext highlighter-rouge">(5/5)</code></span></h3>
+
+<p>This is essential reading. The writing is so powerful, and prescient. One can argue that the idea of the thought police is very far away from most people’s concern, especially in light of the recent resurgence of free-speech absolutists. But I think this book is about Fear, and how it paralyzes and eventually snuffs out everything brilliant and unique about humans. I might read Brave New World sometime soon, that one is about Greed.</p>
+
+<h3 id="13-napoleon-by-andrew-roberts-55">13. <a href="https://www.andrew-roberts.net/books/napoleon-a-life/">Napoleon</a> by Andrew Roberts <span style="float: right;"><code class="language-plaintext highlighter-rouge">(5/5)</code></span></h3>
+
+<p>the last great man in history</p>
+
+<p>Vive l’Empereur!</p>
+
+<hr />]]></content><author><name>Kilaru Yasaswi Sri Chandra Gandhi</name></author><summary type="html"><![CDATA[1. Uncle Tom’s Cabin by Harriet Beecher Stowe (4/5)]]></summary></entry><entry><title type="html">2024</title><link href="http://localhost:4000/2024books/" rel="alternate" type="text/html" title="2024" /><published>2024-12-21T12:51:42+05:30</published><updated>2024-12-21T12:51:42+05:30</updated><id>http://localhost:4000/2024books</id><content type="html" xml:base="http://localhost:4000/2024books/"><![CDATA[<h3 id="1-the-woman-in-me-by-britney-spears-45">1. <a href="https://www.britneybook.com/">The Woman In Me</a> by Britney Spears <span style="float: right;"><code class="language-plaintext highlighter-rouge">(4/5)</code></span></h3>
+
+<p>This book was incredibly hard to read, just so sad :(</p>
+
+<p>Fame is the worst double-edged sword ever</p>
+
+<h3 id="2-living-with-a-seal-by-jesse-itzler-4255">2. <a href="https://jesseitzler.com/products/living-with-a-seal-31-days-training-with-the-toughest-man-on-the-planet">Living with a SEAL</a> by Jesse Itzler <span style="float: right;"><code class="language-plaintext highlighter-rouge">(4.25/5)</code></span></h3>
+
+<p>I will never not love a David Goggins story</p>
+
+<p>“don’t stop when you’re tired, stop when you’re done”</p>
+
+<h3 id="3-the-art-thief-by-michael-finkel-2755">3. <a href="https://www.michaelfinkel.com/books/the-art-thief/">The Art Thief</a> by Michael Finkel <span style="float: right;"><code class="language-plaintext highlighter-rouge">(2.75/5)</code></span></h3>
+
+<p>All the hype for Breitweiser completely loses substance after he starts stealing just because he can’t control himself. Really throws out the entire “aesthetics are more important than ethics” theme that the author tries to sell.</p>
+
+<p>What I liked about the book was the description of the artworks, and there is further reading material at the end of the book for people that are interested in literature about art.</p>
+
+<h3 id="4-the-virgin-way-by-richard-branson-35">4. <a href="https://www.virgin.com/branson-family/books/richard-branson/the-virgin-way">The Virgin Way</a> by Richard Branson <span style="float: right;"><code class="language-plaintext highlighter-rouge">(3/5)</code></span></h3>
+
+<p>Read this once, and write down the important stuff. Not too bad imo considering how much I loathe this genre.</p>
+
+<h3 id="5-greenlights-by-matthew-mcconaughey-45">5. <a href="https://greenlights.com/">Greenlights</a> by Matthew McConaughey <span style="float: right;"><code class="language-plaintext highlighter-rouge">(4/5)</code></span></h3>
+
+<p>Alright, alright, alright</p>
+
+<p>It was super fun listening to this book. The writing is fantastic, I thought McConaughey used a ghostwriter. Superb stories, great lessons, and I learnt a lot. Greenlight.</p>
+
+<h3 id="6-friends-lovers-and-the-big-terrible-thing-by-matthew-perry-4255">6. <a href="https://www.goodreads.com/book/show/59641216-friends-lovers-and-the-big-terrible-thing">Friends, Lovers, and the Big Terrible Thing</a> by Matthew Perry <span style="float: right;"><code class="language-plaintext highlighter-rouge">(4.25/5)</code></span></h3>
+
+<p>How are you supposed to rate/review a man’s life?</p>
+
+<p>This was ridiculously difficult to read, I can’t fathom how difficult it must have been to live. That is all I’m capable of saying about it.</p>
+
+<p><a href="https://www.nytimes.com/2022/10/23/arts/television/matthew-perry-friends-lovers-and-the-big-terrible-thing.html">The One Where Matthew Perry Writes an Addiction Memoir</a></p>
+
+<h3 id="7-never-finished-by-david-goggins-3755">7. <a href="https://davidgoggins.com/book/">Never Finished</a> by David Goggins <span style="float: right;"><code class="language-plaintext highlighter-rouge">(3.75/5)</code></span></h3>
+
+<p>Look, when I first heard Goggins came out with an other book, I was convinced it was a publicity stunt, because how can you replicate Can’t Hurt Me? That book was iconic because it was authentic, will this be authentic? Or will it be another sub-par sophomore book by a famous personality that hit it big with their first book? With these doubts, I just wasn’t willing to read this one, but after completing Living with a SEAL, I wanted more Goggins’ stories.</p>
+
+<p>This book is just as good as Can’t Hurt Me in all the places where Goggins is narrating episodes from his life. It falls flat in places where he’s not narrating and it’s just some advice that feels placed there to complete some word count. I can never get enough of his stories, never, and for this I rate the book very well. One-time read for sure.</p>
+
+<h3 id="8-the-chalice-of-the-gods-by-rick-riordan-35">8. <a href="https://rickriordan.com/book/the-chalice-of-the-gods/">The Chalice of the Gods</a> by Rick Riordan <span style="float: right;"><code class="language-plaintext highlighter-rouge">(3/5)</code></span></h3>
+
+<p>Super low effort writing, this. Could’ve been so much more. You do expect Percy to mature but not into a middle-aged man, which is what he sounds like in many places. The beloved Percy Jackson sarcasm has mellowed out, and only shows up a handful of times through the book. The ending is some of the weakest writing I’ve read in a long while, the chapter breaks are forced and pointless, just bad overall. Pains me to rate a Percy Jackson book anything but five stars.</p>
+
+<p>Was this book just promo for the new series? Seems very much like that. The saving grace is that this is not another Cursed Child.</p>
+
+<h3 id="9-impossible-first-by-colin-obrady-35">9. <a href="https://www.theimpossiblefirst.com/">Impossible First</a> by Colin O’Brady <span style="float: right;"><code class="language-plaintext highlighter-rouge">(3/5)</code></span></h3>
+
+<p>Should’ve been a blog post, or a series of blog posts at the most. Some parts of the book were very engaging, the rest were a slog. The writing lets the book down, did no editor read it before it was published?</p>
+
+<h3 id="10-interpreter-of-maladies-by-jhumpa-lahiri-4755">10. <a href="https://www.randomhouse.com/kvpa/jhumpalahiri/books.php">Interpreter of Maladies</a> by Jhumpa Lahiri <span style="float: right;"><code class="language-plaintext highlighter-rouge">(4.75/5)</code></span></h3>
+
+<p>This book will forever be special to me, it opened my mind to the kind of stories I never thought were possible to write. Interpreter of Maladies was my first Jhumpa Lahiri book ever, it was assigned reading to me as part of an advanced english course in my first undergraduate semester and I couldn’t get enough of it, I think I read the book over and over again until I couldn’t savour the deliciousness of the writing anymore. Oh! How I wish I could read it again for the first time. It is also the book I gift the most, because everyone needs to read it :)</p>
+
+<p>My favourite stories are <em>Mrs. Sen’s</em> (which was my assigned story!) and <em>A Temporary Matter</em> which is Lahiri at her best.</p>
+
+<h3 id="11-cabin-fever-by-jeff-kinney-55">11. <a href="https://wimpykid.com/books/cabin-fever/">Cabin Fever</a> by Jeff Kinney <span style="float: right;"><code class="language-plaintext highlighter-rouge">(5/5)</code></span></h3>
+
+<p>five stars, no notes.</p>
+
+<h3 id="12-norwegian-wood-by-haruki-murakami-255">12. <a href="https://harukimurakami.com/books">Norwegian Wood</a> by Haruki Murakami <span style="float: right;"><code class="language-plaintext highlighter-rouge">(2.5/5)</code></span></h3>
+
+<p>Sure, I can see how this book is critically acclaimed in literature circles but Murakami has never appealed to me, and I don’t know why. The story never flows easily, and it feels very forced. Very confused.</p>
+
+<hr />]]></content><author><name>Kilaru Yasaswi Sri Chandra Gandhi</name></author><summary type="html"><![CDATA[1. The Woman In Me by Britney Spears (4/5)]]></summary></entry><entry><title type="html">2023</title><link href="http://localhost:4000/2023books/" rel="alternate" type="text/html" title="2023" /><published>2023-12-21T22:52:23+05:30</published><updated>2023-12-21T22:52:23+05:30</updated><id>http://localhost:4000/2023books</id><content type="html" xml:base="http://localhost:4000/2023books/"><![CDATA[<h3 id="1-napoleon-a-life-by-andrew-roberts">1. <a href="https://www.andrew-roberts.net/books/napoleon-a-life/">Napoleon: A Life</a> by Andrew Roberts</h3>
+
+<p>5/5</p>
+
+<p>Vive l’Empereur!!</p>]]></content><author><name>Kilaru Yasaswi Sri Chandra Gandhi</name></author><summary type="html"><![CDATA[1. Napoleon: A Life by Andrew Roberts]]></summary></entry></feed>

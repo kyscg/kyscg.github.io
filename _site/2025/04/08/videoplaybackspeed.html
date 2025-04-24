@@ -1,0 +1,130 @@
+<html>
+
+<head>
+    <title>JavaScript to change video playback speed</title>
+    <meta charset='UTF-8'>
+    <meta content='width=device-width, initial-scale=1' name='viewport' />
+
+    <meta name='description' content=''>
+    <meta name='keywords' content='javascript, hacks'>
+    <meta name='author' content='Kilaru Yasaswi Sri Chandra Gandhi'>
+
+    <link rel='shortcut icon' href='/assets/images/alexandrosMegas.jpg'>
+    <link href='/index.css' rel='stylesheet'>
+
+    <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+
+<body>
+    <div id="dappled-light">
+
+    <div id="glow"></div>
+    <div id="glow-bounce"></div>
+    <div class="perspective">
+        <div id="leaves">
+            <svg style="width: 0; height: 0; position: absolute;">
+                <defs>
+                    <filter id="wind" x="-20%" y="-20%" width="140%" height="140%">
+                        <feTurbulence type="fractalNoise" numOctaves="2" seed="1">
+                            <animate attributeName="baseFrequency" dur="16s" keyTimes="0;0.33;0.66;1"
+                                values="0.005 0.003;0.01 0.009;0.008 0.004;0.005 0.003" repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic">
+                            <animate attributeName="scale" dur="20s" keyTimes="0;0.25;0.5;0.75;1"
+                                values="45;55;75;55;45" repeatCount="indefinite" />
+                        </feDisplacementMap>
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+        <div id="blinds">
+            <div class="shutters">
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+            </div>
+            <div class="vertical">
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+    <div id="progressive-blur">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+    <article id="writing">
+        <p id="nav">
+            <a href='/'>Home</a> ~
+            <a href='/writing'>Writing</a> ~
+            <a href='/reading'>Reading</a>
+        </p>
+        <hr>
+        <div class='content'>
+            <div class='front-matter'>
+                <div class='wrap'>
+                    <h1>JavaScript to change video playback speed</h1>
+                    <p><i>because sometimes, you want to go faster than 2x</i></p>
+                    <div class='bylines'>
+                        <div class='byline'>
+                            <h3>Published</h3>
+                            <p>08 April 2025</p>
+                        </div>
+                    </div>
+                    <div class='clear'></div>
+                </div>
+            </div>
+            <hr>
+            <div class='wrap-article'>
+                <p>To speed up video playback beyond 2x, open the JavaScript console on your web browser (<code class="language-plaintext highlighter-rouge">Ctrl</code> + <code class="language-plaintext highlighter-rouge">Shift</code> + <code class="language-plaintext highlighter-rouge">K</code> on FireFox, <code class="language-plaintext highlighter-rouge">Ctrl</code> + <code class="language-plaintext highlighter-rouge">Shift</code> + <code class="language-plaintext highlighter-rouge">J</code> on Chrome, etc) and paste the following command with your desired playback rate:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nb">document</span><span class="p">.</span><span class="nf">getElementsByTagName</span><span class="p">(</span><span class="dl">"</span><span class="s2">video</span><span class="dl">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">playbackRate</span> <span class="o">=</span> 
+</code></pre></div></div>
+
+<p>This should work on almost all websites that serve video. I can’t remember where I first found it many years ago, but I’m sure this is a common solution to the problem that is easily available online.</p>
+
+<hr />
+
+
+                <script src="https://utteranc.es/client.js" repo="kyscg/kyscg.github.io" issue-term="url"
+                    label="comments" theme="github-light" crossorigin="anonymous" async></script>
+            </div>
+        </div>
+    </article>
+</body>
+
+</html>

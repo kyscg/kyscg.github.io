@@ -1,0 +1,321 @@
+<html>
+
+<head>
+    <title>Sums of random variables and convolutions</title>
+    <meta charset='UTF-8'>
+    <meta content='width=device-width, initial-scale=1' name='viewport' />
+
+    <meta name='description' content=''>
+    <meta name='keywords' content='deep learning, diffusion models, probability'>
+    <meta name='author' content='Kilaru Yasaswi Sri Chandra Gandhi'>
+
+    <link rel='shortcut icon' href='/assets/images/alexandrosMegas.jpg'>
+    <link href='/index.css' rel='stylesheet'>
+
+    <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+
+<body>
+    <div id="dappled-light">
+
+    <div id="glow"></div>
+    <div id="glow-bounce"></div>
+    <div class="perspective">
+        <div id="leaves">
+            <svg style="width: 0; height: 0; position: absolute;">
+                <defs>
+                    <filter id="wind" x="-20%" y="-20%" width="140%" height="140%">
+                        <feTurbulence type="fractalNoise" numOctaves="2" seed="1">
+                            <animate attributeName="baseFrequency" dur="16s" keyTimes="0;0.33;0.66;1"
+                                values="0.005 0.003;0.01 0.009;0.008 0.004;0.005 0.003" repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic">
+                            <animate attributeName="scale" dur="20s" keyTimes="0;0.25;0.5;0.75;1"
+                                values="45;55;75;55;45" repeatCount="indefinite" />
+                        </feDisplacementMap>
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+        <div id="blinds">
+            <div class="shutters">
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+            </div>
+            <div class="vertical">
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+    <div id="progressive-blur">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+    <article id="writing">
+        <p id="nav">
+            <a href='/'>Home</a> ~
+            <a href='/writing'>Writing</a> ~
+            <a href='/reading'>Reading</a>
+        </p>
+        <hr>
+        <div class='content'>
+            <div class='front-matter'>
+                <div class='wrap'>
+                    <h1>Sums of random variables and convolutions</h1>
+                    <p><i>A note on how Gaussians are convolved to make the reparameterization trick work in the diffusion forward process.</i></p>
+                    <div class='bylines'>
+                        <div class='byline'>
+                            <h3>Published</h3>
+                            <p>24 April 2025</p>
+                        </div>
+                    </div>
+                    <div class='clear'></div>
+                </div>
+            </div>
+            <hr>
+            <div class='wrap-article'>
+                <p>In probability theory, the probability distribution of the sum of two or more independent random variables is the convolution of their individual distributions<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>. I learnt this while trying to make sense of the reparameterization trick in the diffusion forward process where we have to “add” two normal distributions.</p>
+
+<p>This blog hopes to take the reader along my journey of understanding this idea. Even though — I hope I have presented it in an organized way — this blog is set out fairly sequentially so that there are no inane jumps, I did not actually go through it this way. When I first came upon the idea of adding two distributions, I skipped past it as being irrelevant. But I didn’t understand why the variances had to add up. So, I sat down to work it out only to realize I had no clue what adding two Gaussians meant. I did some Googling and found out that the product of two Gaussians was a Gaussian, and that this fact is used to prove that the convolution of two Gaussians is a Gaussian.</p>
+
+<p>Now I had two more tasks in front of me. 1) Why is a convolution of two Gaussians a Gaussian? and 2) What does convolution have anything to do with adding the two distributions? I first solved the first question by solving the convolution integral, and then I watched a 3Blue1Brown video that helped me understand why you have to perform a convolution in order to add when you sample from two different distributions.</p>
+
+<p>Finally, I went around trying to teach this to a few of my friends so they would ask me any questions I did not think about. This also helped me understand the whole thing in a much better way. Then I sat down to write this post.</p>
+
+<p>A list of references if you want to work it out yourself:</p>
+<ul>
+  <li><a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/">What are Diffusion Models</a> by Lilian Weng — whose blog is one of the best things to read btw — where I was learning the diffusion theory from.</li>
+  <li><a href="https://stats.stackexchange.com/questions/125808/sum-of-gaussian-is-gaussian">Sum of Gaussian is Gaussian?</a> which confused me because the accepted answer (with a dead link) says that it is not.</li>
+  <li><a href="https://jeremy9959.net/Math-5800-Spring-2020/notebooks/convolution_of_gaussians.html">Convolution of Gaussians is Gaussian</a> which uses the FFT for the proof.</li>
+  <li><a href="https://www.lesswrong.com/posts/6oPe3oqzdJtrWmduR/the-central-limit-theorem-in-terms-of-convolutions">The central limit theorem in terms of convolutions</a> by Maxwell Peterson which finally cleared the fog blinding my eyes. “But this is the same thing as our convolution-of-distributions, because the density function of the sum of two random variables X, Y is the convolution of the density functions of X and Y.”</li>
+</ul>
+
+<h2 id="the-diffusion-forward-process">The Diffusion Forward Process</h2>
+
+<p>The diffusion forward process progressively adds Gaussian noise to a probability distribution (an image in this case) until the distribution very closely resembles a Gaussian distribution itself. The real data distribution $q(\mathbf{x})$ is transformed at each time step by the following rule</p>
+
+\[q(\mathbf{x}_t|\mathbf{x}_{t-1})=\mathcal{N}(\mathbf{x}_t;\mu_t=\sqrt{1-\beta_t}\mathbf{x}_{t-1},\sigma_t^2=\beta_t\mathbf{I})\tag{1}.\]
+
+<div class="figure">
+    <img src="/assets/images/diff1.png" />
+    <div class="caption">
+        <span class="caption-label">Figure 1.</span> The diffusion forward process on an image from the CIFAR10 dataset.
+    </div>
+</div>
+
+<p>In practice, we compute this by multiplying the standard deviation to a normal distribution and adding a scaled mean to it ($\mathcal{N}(\mu, \sigma^{2})=\sigma\mathcal{N}(0, 1)+\mu$).</p>
+
+\[\mathbf{x}_t=\sqrt{1-\beta_t}\mathbf{x}_{t-1}+\sqrt{\beta_t}\mathbf{\epsilon}_{t-1},\tag{2}\]
+
+<p>where $\mathbf{\epsilon}_{t-1}\sim\mathcal{N}(0, 1).$</p>
+
+<div class="figure">
+    <img src="/assets/images/diff2.png" />
+    <div class="caption">
+        <span class="caption-label">Figure 2.</span> The top two images show the first and final image, $\mathbf{x}_0$ and $\mathbf{x}_T$ respectively. The bottom two panels show the corresponding distributions of their pixel values. All three colour channels were flattened into one tensor before the histogram was produced.
+    </div>
+</div>
+
+<p>In order to compute any $\mathbf{x}_t$ without having to go through all the previous time steps, we can substitute $\beta$ with $1-\alpha.$ Equation $(\tag(2)$ now becomes</p>
+
+\[\begin{align}
+\mathbf{x}_t &amp;= \sqrt{\alpha_t}\mathbf{x}_{t-1}+\sqrt{1-\alpha_t}\epsilon_{t-1} \\
+&amp;= \sqrt{\alpha_t}(\sqrt{\alpha_{t-1}}\mathbf{x}_{t-2}+\sqrt{1-\alpha_{t-1}}\epsilon_{t-2}) + \sqrt{1-\alpha_t}\epsilon_{t-1} \\
+&amp;= \sqrt{\alpha_t\alpha_{t-1}}\mathbf{x}_{t-2}+\sqrt{\alpha_t(1-\alpha_{t-1})}\epsilon_{t-2} + \sqrt{1-\alpha_t}\epsilon_{t-1}\tag{3} \\
+&amp;= \sqrt{\alpha_t\alpha_{t-1}}\mathbf{x}_{t-2}+\sqrt{\alpha_t-\alpha_t\alpha_{t-1} + 1-\alpha_t}\bar\epsilon_{t-2}\tag{4} \\
+&amp;= \sqrt{\bar\alpha_t}\mathbf{x}_{0}+\sqrt{1-\bar\alpha_t}\epsilon
+\end{align}\]
+
+<p>where $\bar\alpha_t=\displaystyle\Pi_{i=1}^t\alpha_i.$ And finally,</p>
+
+\[q(\mathbf{x}_t|\mathbf{x}_0)=\mathcal{N}(\mathbf{x}_t;\mu_t=\sqrt{\bar\alpha_t}\mathbf{x}_0, \sigma_t^2=(1-\bar\alpha_t)\mathbf{I}).\tag{5}\]
+
+<h2 id="convolutions-as-sums-of-random-variables">Convolutions as sums of random variables</h2>
+
+<p>This is famously known as the reparameterization trick, and it was first used in variational auto-encoders. While I was reading through this math, I came to a stop between equations $(3)$ and $(4).$ I did not think it was immediately obvious that the sum of two normal distributions should be a normal distribution. In my head I pictured the bell curve of a gaussian and another bell curve of a different gaussian and attempted to add them only to realize I would get something like two peaks.</p>
+
+<div class="figure">
+    <img src="/assets/images/gsum.png" />
+    <div class="caption">
+        <span class="caption-label">Figure 3.</span> My first attempt at adding the probability distributions of two Gaussians.
+    </div>
+</div>
+
+<p>But this is obviously incorrect because this is adding the individual probabilies over the entire number line whereas what we need to do is compute the probability distribution of the random variable that arises when you sum the individual (and independent) normally distributed random variables. After a very long time, I found out that this could be achieved by performing a convolution between the individual probability distribution functions. The intuition really set in for me after I watched these two videos from 3Blue1Brown.</p>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=IaSGqQa5O-M">Convolutions | Why X+Y in probability is a beautiful mess</a></li>
+  <li><a href="https://www.youtube.com/watch?v=d_qvLDhkg00">A pretty reason why Gaussian + Gaussian = Gaussian</a></li>
+</ul>
+
+<p>We can see this in action using <a href="https://numpy.org/doc/stable/reference/generated/numpy.convolve.html"><code class="language-plaintext highlighter-rouge">np.convolve</code></a>. Just make sure that the “filter” has a smaller size, or the function will swap the two arrays around.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">array_a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">])</span>
+<span class="n">array_b</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">])</span>
+
+<span class="n">convolved_array</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">convolve</span><span class="p">(</span><span class="n">array_a</span><span class="p">,</span> <span class="n">array_b</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">convolved_array</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mf">0.04</span> <span class="mf">0.11</span> <span class="mf">0.21</span> <span class="mf">0.23</span> <span class="mf">0.23</span> <span class="mf">0.12</span> <span class="mf">0.06</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h2 id="convolution-of-two-gaussians">Convolution of two Gaussians</h2>
+
+<p>The last thing that remains is for us to verify that convolving one Gaussian with another gives a Gaussian as a result. We can check that by writing some code, and looking at the resulting curve, but it would be nice if we could rigorously prove it as well. Also, we have to verify that the variances add up (which is what is happening in the jump from equation $(3)$ to $(4)$).</p>
+
+<p>A Gaussian probability distribution function is defined in the following way:</p>
+
+\[g(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp{\left(-\frac{1}{2}\frac{(x-\mu)^2}{\sigma^2}\right)}\tag{6}\]
+
+<p>To make things easier for ourselves, and also to generalize, we can rewrite $g(x)$ as</p>
+
+\[g(x)=A\exp{\left(-B(x-C)^2\right)},\]
+
+<p>which, if it has to be a Gaussian pdf, $A=\displaystyle\frac{1}{\sigma\sqrt{2\pi}},B=\displaystyle\frac{1}{2\sigma^2},$ and $C=\mu.$ We can perform a variable substitution $t=x-C$; which is the same as recentering the Gaussian. This doesn’t change the nature of the distribution.</p>
+
+\[g(t)=A\exp{\left(-Bt^2\right)}\tag{7}\]
+
+<p>Let us now take two functions $g_1(t)$ and $g_2(t)$</p>
+
+\[g_1(t) = A_1 \exp(-B_1t^2) \qquad g_2(t) = A_2 \exp(-B_2t^2)\]
+
+<p>The convolution between them is defined as:</p>
+
+\[\begin{align}
+(g_1 \star g_2)(x) &amp;= \int_{-\infty}^{\infty} g_1(t) g_2(x-t) dt \\
+&amp;= \int_{-\infty}^{\infty} A_1 \exp(-B_1t^2) \cdot A_2 \exp(-B_2(x-t)^2) dt \\
+&amp;= A_1 A_2 \int_{-\infty}^{\infty} \exp(-B_1t^2 - B_2(x-t)^2) dt
+\end{align}\]
+
+<p>The trick to solving this integral is to convert it to the form $\displaystyle{\int_{-\infty}^{\infty}e^{-x^2}dx},$ which we know equals $\sqrt\pi.$ To do this, we complete the square inside the exponential.</p>
+
+\[\begin{aligned}
+&amp;-B_1 t^2 - B_2 x^2 - B_2 t^2 + 2 B_2 x t \\
+&amp;- ( (B_1 + B_2) t^2 - 2 B_2 x t ) - B_2 x^2 \\
+&amp;- \left( \sqrt{B_1 + B_2} t - \frac{B_2 x}{\sqrt{B_1 + B_2}} \right)^2 - B_2 x^2 + \frac{B_2^2 x^2}{B_1 + B_2} \\
+&amp;- \left( \sqrt{B_1 + B_2} t - \frac{B_2 x}{\sqrt{B_1 + B_2}} \right)^2 - x^2 \left( \frac{B_1 B_2 + B_2^2 - B_2^2}{B_1 + B_2} \right) \\
+&amp;- \left( \sqrt{B_1 + B_2} t - \frac{B_2 x}{\sqrt{B_1 + B_2}} \right)^2 - x^2 \frac{B_1 B_2}{B_1 + B_2}
+\end{aligned}\]
+
+<p>Now the whole convolution becomes:</p>
+
+\[\begin{align}
+(g_1\star g_2)(x) &amp;= A_1 A_2 \exp \left( - \frac{B_1 B_2}{B_1 + B_2} x^2 \right) \int_{-\infty}^{\infty} e^{- \left( \sqrt{B_1 + B_2} t + \frac{B_2 x}{\sqrt{B_1 + B_2}} \right)^2 } dt \\
+&amp;= A_1 A_2 \sqrt{\frac{\pi}{B_1+B_2}}\exp \left( - \frac{B_1 B_2}{B_1 + B_2} x^2 \right) 
+\end{align}\]
+
+<p>Now we know we have a Gaussian as the result of two Gaussians. The relationship between the variances can be gotten by substituting the value of $B=\frac{1}{2\sigma^2}$ everywhere:</p>
+
+\[\frac{\frac{1}{2\sigma_1^2 2\sigma_2^2}}{\frac{1}{2\sigma_1^2} + \frac{1}{2\sigma_2^2}} = \frac{1}{2\sigma^2} \implies \sigma^2 = \sigma_1^2 + \sigma_2^2\]
+
+<p style="text-align: right">$\blacksquare$</p>
+
+<p>This is easier to do in code:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+
+<span class="k">def</span> <span class="nf">gauss</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">sigma</span> <span class="o">*</span> <span class="p">((</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)))</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="nf">exp</span><span class="p">(</span>
+        <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">G</span> <span class="o">/</span> <span class="n">G</span><span class="p">.</span><span class="nf">sum</span><span class="p">()</span>
+
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">N1</span> <span class="o">=</span> <span class="nf">gauss</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">N2</span> <span class="o">=</span> <span class="nf">gauss</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">N3</span> <span class="o">=</span> <span class="nf">gauss</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># -3 + 3 = 0; 5 = sqrt(3^2 + 4^2)
+</span>
+<span class="n">N1c2</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">convolve</span><span class="p">(</span><span class="n">N1</span><span class="p">,</span> <span class="n">N2</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="sh">"</span><span class="s">same</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="figure">
+    <img src="/assets/images/gconv.png" />
+    <div class="caption">
+        <span class="caption-label">Figure 4.</span> Convolution of two Gaussians on the left pane, and a comparison with the true Gaussian on the right pane.
+    </div>
+</div>
+
+<h2 id="citation">Citation</h2>
+
+<p>Cited as:</p>
+
+<blockquote>
+  <p>Kilaru, Yasaswi Sri Chandra Gandhi. (April 2025). Sums of random variables and convolutions, New Ideas. <a href="https://kyscg.github.io/2025/04/23/diffusionconvolution/">https://kyscg.github.io/2025/04/23/diffusionconvolution/</a></p>
+</blockquote>
+
+<p>Or</p>
+
+<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nc">@article</span><span class="p">{</span><span class="nl">kilaru2025diffusionconvolution</span><span class="p">,</span>
+  <span class="na">title</span>   <span class="p">=</span> <span class="s">"Sums of random variables and convolutions"</span><span class="p">,</span>
+  <span class="na">author</span>  <span class="p">=</span> <span class="s">"Kilaru, Yasaswi Sri Chandra Gandhi"</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">"kyscg.github.io"</span><span class="p">,</span>
+  <span class="na">year</span>    <span class="p">=</span> <span class="s">"2025"</span><span class="p">,</span>
+  <span class="na">month</span>   <span class="p">=</span> <span class="s">"Apr"</span><span class="p">,</span>
+  <span class="na">url</span>     <span class="p">=</span> <span class="s">"https://kyscg.github.io/2025/04/23/diffusionconvolution/"</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="https://en.wikipedia.org/wiki/List_of_convolutions_of_probability_distributions">https://en.wikipedia.org/wiki/List_of_convolutions_of_probability_distributions</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+                <script src="https://utteranc.es/client.js" repo="kyscg/kyscg.github.io" issue-term="url"
+                    label="comments" theme="github-light" crossorigin="anonymous" async></script>
+            </div>
+        </div>
+    </article>
+</body>
+
+</html>

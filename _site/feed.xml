@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-04-25T04:30:42+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">New Ideas</title><subtitle>my personal website :)</subtitle><author><name>Kilaru Yasaswi Sri Chandra Gandhi</name></author><entry><title type="html">Sums of random variables and convolutions</title><link href="http://localhost:4000/2025/04/24/diffusionconvolution.html" rel="alternate" type="text/html" title="Sums of random variables and convolutions" /><published>2025-04-24T19:28:12+05:30</published><updated>2025-04-24T19:28:12+05:30</updated><id>http://localhost:4000/2025/04/24/diffusionconvolution</id><content type="html" xml:base="http://localhost:4000/2025/04/24/diffusionconvolution.html"><![CDATA[<p>In probability theory, the probability distribution of the sum of two or more independent random variables is the convolution of their individual distributions<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>. I learnt this while trying to make sense of the reparameterization trick in the diffusion forward process where we have to “add” two normal distributions.</p>
+
+<p>This blog hopes to take the reader along my journey of understanding this idea. Even though — I hope I have presented it in an organized way — this blog is set out fairly sequentially so that there are no inane jumps, I did not actually go through it this way. When I first came upon the idea of adding two distributions, I skipped past it as being irrelevant. But I didn’t understand why the variances had to add up. So, I sat down to work it out only to realize I had no clue what adding two Gaussians meant. I did some Googling and found out that the product of two Gaussians was a Gaussian, and that this fact is used to prove that the convolution of two Gaussians is a Gaussian.</p>
+
+<p>Now I had two more tasks in front of me. 1) Why is a convolution of two Gaussians a Gaussian? and 2) What does convolution have anything to do with adding the two distributions? I first solved the first question by solving the convolution integral, and then I watched a 3Blue1Brown video that helped me understand why you have to perform a convolution in order to add when you sample from two different distributions.</p>
+
+<p>Finally, I went around trying to teach this to a few of my friends so they would ask me any questions I did not think about. This also helped me understand the whole thing in a much better way. Then I sat down to write this post.</p>
+
+<p>A list of references if you want to work it out yourself:</p>
+<ul>
+  <li><a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/">What are Diffusion Models</a> by Lilian Weng — whose blog is one of the best things to read btw — where I was learning the diffusion theory from.</li>
+  <li><a href="https://stats.stackexchange.com/questions/125808/sum-of-gaussian-is-gaussian">Sum of Gaussian is Gaussian?</a> which confused me because the accepted answer (with a dead link) says that it is not.</li>
+  <li><a href="https://jeremy9959.net/Math-5800-Spring-2020/notebooks/convolution_of_gaussians.html">Convolution of Gaussians is Gaussian</a> which uses the FFT for the proof.</li>
+  <li><a href="https://www.lesswrong.com/posts/6oPe3oqzdJtrWmduR/the-central-limit-theorem-in-terms-of-convolutions">The central limit theorem in terms of convolutions</a> by Maxwell Peterson which finally cleared the fog blinding my eyes. “But this is the same thing as our convolution-of-distributions, because the density function of the sum of two random variables X, Y is the convolution of the density functions of X and Y.”</li>
+</ul>
+
+<h2 id="the-diffusion-forward-process">The Diffusion Forward Process</h2>
+
+<p>The diffusion forward process progressively adds Gaussian noise to a probability distribution (an image in this case) until the distribution very closely resembles a Gaussian distribution itself. The real data distribution $q(\mathbf{x})$ is transformed at each time step by the following rule</p>
+
+\[q(\mathbf{x}_t|\mathbf{x}_{t-1})=\mathcal{N}(\mathbf{x}_t;\mu_t=\sqrt{1-\beta_t}\mathbf{x}_{t-1},\sigma_t^2=\beta_t\mathbf{I})\tag{1}.\]
+
+<div class="figure">
+    <img src="/assets/images/diff1.png" />
+    <div class="caption">
+        <span class="caption-label">Figure 1.</span> The diffusion forward process on an image from the CIFAR10 dataset.
+    </div>
+</div>
+
+<p>In practice, we compute this by multiplying the standard deviation to a normal distribution and adding a scaled mean to it ($\mathcal{N}(\mu, \sigma^{2})=\sigma\mathcal{N}(0, 1)+\mu$).</p>
+
+\[\mathbf{x}_t=\sqrt{1-\beta_t}\mathbf{x}_{t-1}+\sqrt{\beta_t}\mathbf{\epsilon}_{t-1},\tag{2}\]
+
+<p>where $\mathbf{\epsilon}_{t-1}\sim\mathcal{N}(0, 1).$</p>
+
+<div class="figure">
+    <img src="/assets/images/diff2.png" />
+    <div class="caption">
+        <span class="caption-label">Figure 2.</span> The top two images show the first and final image, $\mathbf{x}_0$ and $\mathbf{x}_T$ respectively. The bottom two panels show the corresponding distributions of their pixel values. All three colour channels were flattened into one tensor before the histogram was produced.
+    </div>
+</div>
+
+<p>In order to compute any $\mathbf{x}_t$ without having to go through all the previous time steps, we can substitute $\beta$ with $1-\alpha.$ Equation $(\tag(2)$ now becomes</p>
+
+\[\begin{align}
+\mathbf{x}_t &amp;= \sqrt{\alpha_t}\mathbf{x}_{t-1}+\sqrt{1-\alpha_t}\epsilon_{t-1} \\
+&amp;= \sqrt{\alpha_t}(\sqrt{\alpha_{t-1}}\mathbf{x}_{t-2}+\sqrt{1-\alpha_{t-1}}\epsilon_{t-2}) + \sqrt{1-\alpha_t}\epsilon_{t-1} \\
+&amp;= \sqrt{\alpha_t\alpha_{t-1}}\mathbf{x}_{t-2}+\sqrt{\alpha_t(1-\alpha_{t-1})}\epsilon_{t-2} + \sqrt{1-\alpha_t}\epsilon_{t-1}\tag{3} \\
+&amp;= \sqrt{\alpha_t\alpha_{t-1}}\mathbf{x}_{t-2}+\sqrt{\alpha_t-\alpha_t\alpha_{t-1} + 1-\alpha_t}\bar\epsilon_{t-2}\tag{4} \\
+&amp;= \sqrt{\bar\alpha_t}\mathbf{x}_{0}+\sqrt{1-\bar\alpha_t}\epsilon
+\end{align}\]
+
+<p>where $\bar\alpha_t=\displaystyle\Pi_{i=1}^t\alpha_i.$ And finally,</p>
+
+\[q(\mathbf{x}_t|\mathbf{x}_0)=\mathcal{N}(\mathbf{x}_t;\mu_t=\sqrt{\bar\alpha_t}\mathbf{x}_0, \sigma_t^2=(1-\bar\alpha_t)\mathbf{I}).\tag{5}\]
+
+<h2 id="convolutions-as-sums-of-random-variables">Convolutions as sums of random variables</h2>
+
+<p>This is famously known as the reparameterization trick, and it was first used in variational auto-encoders. While I was reading through this math, I came to a stop between equations $(3)$ and $(4).$ I did not think it was immediately obvious that the sum of two normal distributions should be a normal distribution. In my head I pictured the bell curve of a gaussian and another bell curve of a different gaussian and attempted to add them only to realize I would get something like two peaks.</p>
+
+<div class="figure">
+    <img src="/assets/images/gsum.png" />
+    <div class="caption">
+        <span class="caption-label">Figure 3.</span> My first attempt at adding the probability distributions of two Gaussians.
+    </div>
+</div>
+
+<p>But this is obviously incorrect because this is adding the individual probabilies over the entire number line whereas what we need to do is compute the probability distribution of the random variable that arises when you sum the individual (and independent) normally distributed random variables. After a very long time, I found out that this could be achieved by performing a convolution between the individual probability distribution functions. The intuition really set in for me after I watched these two videos from 3Blue1Brown.</p>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=IaSGqQa5O-M">Convolutions | Why X+Y in probability is a beautiful mess</a></li>
+  <li><a href="https://www.youtube.com/watch?v=d_qvLDhkg00">A pretty reason why Gaussian + Gaussian = Gaussian</a></li>
+</ul>
+
+<p>We can see this in action using <a href="https://numpy.org/doc/stable/reference/generated/numpy.convolve.html"><code class="language-plaintext highlighter-rouge">np.convolve</code></a>. Just make sure that the “filter” has a smaller size, or the function will swap the two arrays around.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">array_a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">])</span>
+<span class="n">array_b</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">])</span>
+
+<span class="n">convolved_array</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">convolve</span><span class="p">(</span><span class="n">array_a</span><span class="p">,</span> <span class="n">array_b</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">convolved_array</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mf">0.04</span> <span class="mf">0.11</span> <span class="mf">0.21</span> <span class="mf">0.23</span> <span class="mf">0.23</span> <span class="mf">0.12</span> <span class="mf">0.06</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h2 id="convolution-of-two-gaussians">Convolution of two Gaussians</h2>
+
+<p>The last thing that remains is for us to verify that convolving one Gaussian with another gives a Gaussian as a result. We can check that by writing some code, and looking at the resulting curve, but it would be nice if we could rigorously prove it as well. Also, we have to verify that the variances add up (which is what is happening in the jump from equation $(3)$ to $(4)$).</p>
+
+<p>A Gaussian probability distribution function is defined in the following way:</p>
+
+\[g(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp{\left(-\frac{1}{2}\frac{(x-\mu)^2}{\sigma^2}\right)}\tag{6}\]
+
+<p>To make things easier for ourselves, and also to generalize, we can rewrite $g(x)$ as</p>
+
+\[g(x)=A\exp{\left(-B(x-C)^2\right)},\]
+
+<p>which, if it has to be a Gaussian pdf, $A=\displaystyle\frac{1}{\sigma\sqrt{2\pi}},B=\displaystyle\frac{1}{2\sigma^2},$ and $C=\mu.$ We can perform a variable substitution $t=x-C$; which is the same as recentering the Gaussian. This doesn’t change the nature of the distribution.</p>
+
+\[g(t)=A\exp{\left(-Bt^2\right)}\tag{7}\]
+
+<p>Let us now take two functions $g_1(t)$ and $g_2(t)$</p>
+
+\[g_1(t) = A_1 \exp(-B_1t^2) \qquad g_2(t) = A_2 \exp(-B_2t^2)\]
+
+<p>The convolution between them is defined as:</p>
+
+\[\begin{align}
+(g_1 \star g_2)(x) &amp;= \int_{-\infty}^{\infty} g_1(t) g_2(x-t) dt \\
+&amp;= \int_{-\infty}^{\infty} A_1 \exp(-B_1t^2) \cdot A_2 \exp(-B_2(x-t)^2) dt \\
+&amp;= A_1 A_2 \int_{-\infty}^{\infty} \exp(-B_1t^2 - B_2(x-t)^2) dt
+\end{align}\]
+
+<p>The trick to solving this integral is to convert it to the form $\displaystyle{\int_{-\infty}^{\infty}e^{-x^2}dx},$ which we know equals $\sqrt\pi.$ To do this, we complete the square inside the exponential.</p>
+
+\[\begin{aligned}
+&amp;-B_1 t^2 - B_2 x^2 - B_2 t^2 + 2 B_2 x t \\
+&amp;- ( (B_1 + B_2) t^2 - 2 B_2 x t ) - B_2 x^2 \\
+&amp;- \left( \sqrt{B_1 + B_2} t - \frac{B_2 x}{\sqrt{B_1 + B_2}} \right)^2 - B_2 x^2 + \frac{B_2^2 x^2}{B_1 + B_2} \\
+&amp;- \left( \sqrt{B_1 + B_2} t - \frac{B_2 x}{\sqrt{B_1 + B_2}} \right)^2 - x^2 \left( \frac{B_1 B_2 + B_2^2 - B_2^2}{B_1 + B_2} \right) \\
+&amp;- \left( \sqrt{B_1 + B_2} t - \frac{B_2 x}{\sqrt{B_1 + B_2}} \right)^2 - x^2 \frac{B_1 B_2}{B_1 + B_2}
+\end{aligned}\]
+
+<p>Now the whole convolution becomes:</p>
+
+\[\begin{align}
+(g_1\star g_2)(x) &amp;= A_1 A_2 \exp \left( - \frac{B_1 B_2}{B_1 + B_2} x^2 \right) \int_{-\infty}^{\infty} e^{- \left( \sqrt{B_1 + B_2} t + \frac{B_2 x}{\sqrt{B_1 + B_2}} \right)^2 } dt \\
+&amp;= A_1 A_2 \sqrt{\frac{\pi}{B_1+B_2}}\exp \left( - \frac{B_1 B_2}{B_1 + B_2} x^2 \right) 
+\end{align}\]
+
+<p>Now we know we have a Gaussian as the result of two Gaussians. The relationship between the variances can be gotten by substituting the value of $B=\frac{1}{2\sigma^2}$ everywhere:</p>
+
+\[\frac{\frac{1}{2\sigma_1^2 2\sigma_2^2}}{\frac{1}{2\sigma_1^2} + \frac{1}{2\sigma_2^2}} = \frac{1}{2\sigma^2} \implies \sigma^2 = \sigma_1^2 + \sigma_2^2\]
+
+<p style="text-align: right">$\blacksquare$</p>
+
+<p>This is easier to do in code:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+
+<span class="k">def</span> <span class="nf">gauss</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">sigma</span> <span class="o">*</span> <span class="p">((</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)))</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="nf">exp</span><span class="p">(</span>
+        <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">G</span> <span class="o">/</span> <span class="n">G</span><span class="p">.</span><span class="nf">sum</span><span class="p">()</span>
+
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">N1</span> <span class="o">=</span> <span class="nf">gauss</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">N2</span> <span class="o">=</span> <span class="nf">gauss</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">N3</span> <span class="o">=</span> <span class="nf">gauss</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># -3 + 3 = 0; 5 = sqrt(3^2 + 4^2)
+</span>
+<span class="n">N1c2</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">convolve</span><span class="p">(</span><span class="n">N1</span><span class="p">,</span> <span class="n">N2</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="sh">"</span><span class="s">same</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="figure">
+    <img src="/assets/images/gconv.png" />
+    <div class="caption">
+        <span class="caption-label">Figure 4.</span> Convolution of two Gaussians on the left pane, and a comparison with the true Gaussian on the right pane.
+    </div>
+</div>
+
+<h2 id="citation">Citation</h2>
+
+<p>Cited as:</p>
+
+<blockquote>
+  <p>Kilaru, Yasaswi Sri Chandra Gandhi. (April 2025). Sums of random variables and convolutions, New Ideas. <a href="https://kyscg.github.io/2025/04/23/diffusionconvolution/">https://kyscg.github.io/2025/04/23/diffusionconvolution/</a></p>
+</blockquote>
+
+<p>Or</p>
+
+<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nc">@article</span><span class="p">{</span><span class="nl">kilaru2025diffusionconvolution</span><span class="p">,</span>
+  <span class="na">title</span>   <span class="p">=</span> <span class="s">"Sums of random variables and convolutions"</span><span class="p">,</span>
+  <span class="na">author</span>  <span class="p">=</span> <span class="s">"Kilaru, Yasaswi Sri Chandra Gandhi"</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">"kyscg.github.io"</span><span class="p">,</span>
+  <span class="na">year</span>    <span class="p">=</span> <span class="s">"2025"</span><span class="p">,</span>
+  <span class="na">month</span>   <span class="p">=</span> <span class="s">"Apr"</span><span class="p">,</span>
+  <span class="na">url</span>     <span class="p">=</span> <span class="s">"https://kyscg.github.io/2025/04/23/diffusionconvolution/"</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="https://en.wikipedia.org/wiki/List_of_convolutions_of_probability_distributions">https://en.wikipedia.org/wiki/List_of_convolutions_of_probability_distributions</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name>Kilaru Yasaswi Sri Chandra Gandhi</name></author><summary type="html"><![CDATA[In probability theory, the probability distribution of the sum of two or more independent random variables is the convolution of their individual distributions1. I learnt this while trying to make sense of the reparameterization trick in the diffusion forward process where we have to “add” two normal distributions. https://en.wikipedia.org/wiki/List_of_convolutions_of_probability_distributions &#8617;]]></summary></entry><entry><title type="html">Using shuf to select random ports in a cluster</title><link href="http://localhost:4000/2025/04/12/shuftricks.html" rel="alternate" type="text/html" title="Using shuf to select random ports in a cluster" /><published>2025-04-12T00:24:53+05:30</published><updated>2025-04-12T00:24:53+05:30</updated><id>http://localhost:4000/2025/04/12/shuftricks</id><content type="html" xml:base="http://localhost:4000/2025/04/12/shuftricks.html"><![CDATA[<p>I found this Stack OverFlow answer about <a href="https://stackoverflow.com/a/2556282">generating random numbers with a bash command</a> and I’ve been using it to randomly select ports in a cluster.</p>
+
+<p>It uses the <a href="https://man7.org/linux/man-pages/man1/shuf.1.html"><code class="language-plaintext highlighter-rouge">shuf</code></a> command (typing <code class="language-plaintext highlighter-rouge">man shuf</code> opens the manual on linux)</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+curl http://127.0.0.1:<span class="si">$(</span><span class="nb">shuf</span> <span class="nt">-i</span> 4000-4007 <span class="nt">-n1</span><span class="si">)</span>
+</code></pre></div></div>
+
+<p>I was reading the man pages and I found that you can do so much more with this simple command, a few cool examples are:</p>
+
+<ul>
+  <li>Randomize lines in a file (this is useful if I have a list of file names of training data and I want to do a quick <code class="language-plaintext highlighter-rouge">train_test_split</code>)</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">shuf </span>files.txt
+</code></pre></div></div>
+
+<ul>
+  <li>Pick seven random numbers out of an input range</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">seq </span>1 10010 | <span class="nb">shuf</span> <span class="nt">-n</span> 7
+</code></pre></div></div>
+
+<ul>
+  <li>And finally, the last one doesn’t really need <code class="language-plaintext highlighter-rouge">shuf</code> but I found it while I was exploring, so I’m just putting it here. This one is the coolest, you can generate random passwords by taking random bytes from <code class="language-plaintext highlighter-rouge">/dev/urandom</code>, filter for alphanumeric characters, and choose how many ever characters you want. I am definitely using this the next time my institute bugs me about changing my email passwords.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">head</span> /dev/urandom | <span class="nb">tr</span> <span class="nt">-dc</span> A-Za-z0-9 | <span class="nb">head</span> <span class="nt">-c</span> 9 | <span class="nb">shuf</span> <span class="nt">-n</span> 1
+</code></pre></div></div>
+
+<hr />]]></content><author><name>Kilaru Yasaswi Sri Chandra Gandhi</name></author><summary type="html"><![CDATA[I found this Stack OverFlow answer about generating random numbers with a bash command and I’ve been using it to randomly select ports in a cluster.]]></summary></entry><entry><title type="html">JavaScript to change video playback speed</title><link href="http://localhost:4000/2025/04/08/videoplaybackspeed.html" rel="alternate" type="text/html" title="JavaScript to change video playback speed" /><published>2025-04-08T00:07:44+05:30</published><updated>2025-04-08T00:07:44+05:30</updated><id>http://localhost:4000/2025/04/08/videoplaybackspeed</id><content type="html" xml:base="http://localhost:4000/2025/04/08/videoplaybackspeed.html"><![CDATA[<p>To speed up video playback beyond 2x, open the JavaScript console on your web browser (<code class="language-plaintext highlighter-rouge">Ctrl</code> + <code class="language-plaintext highlighter-rouge">Shift</code> + <code class="language-plaintext highlighter-rouge">K</code> on FireFox, <code class="language-plaintext highlighter-rouge">Ctrl</code> + <code class="language-plaintext highlighter-rouge">Shift</code> + <code class="language-plaintext highlighter-rouge">J</code> on Chrome, etc) and paste the following command with your desired playback rate:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nb">document</span><span class="p">.</span><span class="nf">getElementsByTagName</span><span class="p">(</span><span class="dl">"</span><span class="s2">video</span><span class="dl">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">playbackRate</span> <span class="o">=</span> 
+</code></pre></div></div>
+
+<p>This should work on almost all websites that serve video. I can’t remember where I first found it many years ago, but I’m sure this is a common solution to the problem that is easily available online.</p>
+
+<hr />]]></content><author><name>Kilaru Yasaswi Sri Chandra Gandhi</name></author><summary type="html"><![CDATA[To speed up video playback beyond 2x, open the JavaScript console on your web browser (Ctrl + Shift + K on FireFox, Ctrl + Shift + J on Chrome, etc) and paste the following command with your desired playback rate:]]></summary></entry><entry><title type="html">Max Verstappen breaks Suzuka Lap Record!</title><link href="http://localhost:4000/2025/04/05/suzukaPole.html" rel="alternate" type="text/html" title="Max Verstappen breaks Suzuka Lap Record!" /><published>2025-04-05T18:01:53+05:30</published><updated>2025-04-05T18:01:53+05:30</updated><id>http://localhost:4000/2025/04/05/suzukaPole</id><content type="html" xml:base="http://localhost:4000/2025/04/05/suzukaPole.html"><![CDATA[<p>Max broke Seb’s Suzuka lap record with an inch-perfect lap in qualifying. Suzuka is the track I love driving on the most in the F1 game, because the track is really technical and flowing. What I mean by that is performance on large parts of the track is directly dependent on entry/exit at the beginning, and all the tiny mistakes stay with you throughout the lap. I would say it is probably the only track I feel comfortable on in the game, so I always like to watch pole laps to see what the drivers do, especially at the hairpin where I usually mess up.</p>
+
+<p>Sebastian was always good at Suzuka, and he had the lap record before Max broke it today. Two of my favourite laps are his 2019 pole lap and his final qualifying lap at the 2022 GP where he was driving the AMR22 but still managed to ace every turn. I will link the videos here, but I can’t really guarantee that the AMR22 lap video will stay up on YouTube forever. If in the future, the video gets taken down, you can write to me for a copy :)</p>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=JUbHn7egKHs">Record breaking pole lap</a> by Sebastian Vettel in the SF90.</li>
+  <li><a href="https://www.youtube.com/watch?v=x4QeXGRu04w">A perfect Suzuka qualifying lap</a> by Sebastian Vettel in the AMR22.</li>
+</ul>
+
+<p>And now for Max’s lap, this was “simply lovely” to say the least. The RB21 is a very oversteery car and to put in on pole is nothing short of spectacular. Max later told the Dutch media that he actually found the car to be understeering in some parts of the track! It shows how Max’s driving style is very similar to Schumi’s where they both just want the car to point in the right direction, and then they’re going to take care of the back. He makes a lot of time in the final chicane, and notice how he close he gets to the wall, which is technically the shortest route to the finish line but for some reason, not everyone can manage to not scrape the wall at such high speeds (the air pressure tends to suck you into the barriers)</p>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=puWsv5-4ELg">Record breaking pole lap</a> by Max Verstappen in the RB21.</li>
+</ul>
+
+<p>Probably his best lap ever, but one can only imagine what that Jeddah 2021 lap would’ve been like if it was completed.</p>
+
+<p>In a way, Red Bull golden boy Max Verstappen taking the Suzuka lap record from former Red Bull golden boy Sebastian Vettel in the last Honda powered Japanese GP is very poetic. Almost like a distillation of their careers.</p>
+
+<p>p.s: that makes it two lap records Seb has lost to these fast cars this season. But the thing is, I’m sure Seb wouldn’t mind at all, he’s the kind of person who thinks records are transient and are meant to be broken.</p>
+
+<hr />]]></content><author><name>Kilaru Yasaswi Sri Chandra Gandhi</name></author><summary type="html"><![CDATA[Max broke Seb’s Suzuka lap record with an inch-perfect lap in qualifying. Suzuka is the track I love driving on the most in the F1 game, because the track is really technical and flowing. What I mean by that is performance on large parts of the track is directly dependent on entry/exit at the beginning, and all the tiny mistakes stay with you throughout the lap. I would say it is probably the only track I feel comfortable on in the game, so I always like to watch pole laps to see what the drivers do, especially at the hairpin where I usually mess up.]]></summary></entry><entry><title type="html">Classical Chess Stream 4</title><link href="http://localhost:4000/2025/04/04/classicalstream4.html" rel="alternate" type="text/html" title="Classical Chess Stream 4" /><published>2025-04-04T16:11:22+05:30</published><updated>2025-04-04T16:11:22+05:30</updated><id>http://localhost:4000/2025/04/04/classicalstream4</id><content type="html" xml:base="http://localhost:4000/2025/04/04/classicalstream4.html"><![CDATA[<p>Recording of me playing a 30 + 20 game against g4lois (such a cool username) on LiChess. I make no major mistakes out of the Smith-Morra Declined and get into the middlegame. Black makes a mistake and is left with no pieces to have counterplay.</p>
+
+<p>This game was about using the knights well. Black had very well positioned knights but they did not make use of the central control while my knight controlled large areas of the board because of how uncoordinated black’s pieces were. Overall, it was a comfortable win and I was never in any great trouble.</p>
+
+<ul>
+  <li><a href="https://lichess.org/k3YNQmc9">Game Link</a></li>
+  <li><a href="https://www.youtube.com/watch?v=xgyCaKiD9tk">Video Recording</a></li>
+</ul>
+
+<hr />]]></content><author><name>Kilaru Yasaswi Sri Chandra Gandhi</name></author><summary type="html"><![CDATA[Recording of me playing a 30 + 20 game against g4lois (such a cool username) on LiChess. I make no major mistakes out of the Smith-Morra Declined and get into the middlegame. Black makes a mistake and is left with no pieces to have counterplay.]]></summary></entry><entry><title type="html">Blog Checklist</title><link href="http://localhost:4000/2025/03/22/csscheck.html" rel="alternate" type="text/html" title="Blog Checklist" /><published>2025-03-22T02:32:42+05:30</published><updated>2025-03-22T02:32:42+05:30</updated><id>http://localhost:4000/2025/03/22/csscheck</id><content type="html" xml:base="http://localhost:4000/2025/03/22/csscheck.html"><![CDATA[<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />all level headings</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />bold, italics, and strikethrough</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />links</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />footnotes</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />images and captions</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />quotes</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />code blocks and syntax highlighting</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />$\TeX$</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />utterances comments</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />RSS feed for both /writing and /reading</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />sitemap.xml</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />lichess, twitter, and youtube embeds</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />github gists</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />jekyll-scholar</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />site-wide search box</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />categories</li>
+</ul>
+
+<h1 id="level-1-heading">Level 1 Heading</h1>
+
+<h2 id="level-2-heading">Level 2 Heading</h2>
+
+<h3 id="level-3-heading">Level 3 Heading</h3>
+
+<h4 id="level-4-heading">Level 4 Heading</h4>
+
+<p><strong>This is bold</strong></p>
+
+<p><em>This is italics</em></p>
+
+<p><del>This is strikethrough</del></p>
+
+<p><a href="/reading.html">This is a link to /reading</a></p>
+
+<p>This line has a footnote<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup></p>
+
+<div class="figure">
+    <img src="/assets/images/alexandrosMegas.jpg" />
+    <div class="caption">
+        <span class="caption-label">Figure 1.</span> this is an image and caption.
+    </div>
+</div>
+
+<blockquote>
+    <p>this a quote</p>
+    <cite>— this is the quote citation</cite>
+</blockquote>
+
+<p>this is a codeblock, with syntax highlighting</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cm">/*
+ * Name: qsort.c
+ * Description: C implementation of the quicksort algorithm
+ * Author: kyscg
+ */</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="cp">#define N 10
+</span>
+<span class="kt">int</span> <span class="nf">split</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">low</span><span class="p">,</span> <span class="kt">int</span> <span class="n">high</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">quicksort</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">low</span><span class="p">,</span> <span class="kt">int</span> <span class="n">high</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">i</span><span class="p">;</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Enter %d numbers to be sorted: "</span><span class="p">,</span> <span class="n">N</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+    <span class="n">quicksort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"In sorted order: "</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d "</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">split</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">low</span><span class="p">,</span> <span class="kt">int</span> <span class="n">high</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">part_element</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">low</span><span class="p">];</span>
+
+    <span class="k">for</span> <span class="p">(;;)</span>
+    <span class="p">{</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">low</span> <span class="o">&lt;</span> <span class="n">high</span> <span class="o">&amp;&amp;</span> <span class="n">part_element</span> <span class="o">&lt;=</span> <span class="n">a</span><span class="p">[</span><span class="n">high</span><span class="p">])</span>
+            <span class="n">high</span><span class="o">--</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">low</span> <span class="o">&gt;=</span> <span class="n">high</span><span class="p">)</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">low</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">high</span><span class="p">];</span>
+
+        <span class="k">while</span> <span class="p">(</span><span class="n">low</span> <span class="o">&lt;</span> <span class="n">high</span> <span class="o">&amp;&amp;</span> <span class="n">a</span><span class="p">[</span><span class="n">low</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">part_element</span><span class="p">)</span>
+            <span class="n">low</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">low</span> <span class="o">&gt;=</span> <span class="n">high</span><span class="p">)</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">high</span><span class="o">--</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">low</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="n">a</span><span class="p">[</span><span class="n">high</span><span class="p">]</span> <span class="o">=</span> <span class="n">part_element</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">high</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">quicksort</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">low</span><span class="p">,</span> <span class="kt">int</span> <span class="n">high</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">middle</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">low</span> <span class="o">&gt;=</span> <span class="n">high</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="n">middle</span> <span class="o">=</span> <span class="n">split</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">);</span>
+    <span class="n">quicksort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">middle</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">quicksort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">middle</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>this is a $\TeX$ command:</p>
+
+\[2+2=4\tag{$\star$}\]
+
+<p>this is a lichess embed:</p>
+
+<iframe src="https://lichess.org/embed/game/k3YNQmc9?theme=green&amp;bg=light" width="600" height="397" frameborder="0"></iframe>
+
+<p>this is a youtube embed:</p>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xgyCaKiD9tk?si=0xO1_O7qkanBc5at" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+
+<p>this is a twitter embed:</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Circumstances? What are circumstances? I make circumstances!</p>&mdash; ︎kyscg (@kyscg7) <a href="https://twitter.com/kyscg7/status/1909373118189314259?ref_src=twsrc%5Etfw">April 7, 2025</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>this is a github gist embed:</p>
+
+<script src="https://gist.github.com/kyscg/fe6bfe5ddb0e34c918c06242f7979c87.js"></script>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>which redirects back to the line <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name>Kilaru Yasaswi Sri Chandra Gandhi</name></author><summary type="html"><![CDATA[all level headings bold, italics, and strikethrough links footnotes images and captions quotes code blocks and syntax highlighting $\TeX$ utterances comments RSS feed for both /writing and /reading sitemap.xml lichess, twitter, and youtube embeds github gists jekyll-scholar site-wide search box categories]]></summary></entry><entry><title type="html">Tolstoy on History</title><link href="http://localhost:4000/2025/03/20/tolstoyhistory.html" rel="alternate" type="text/html" title="Tolstoy on History" /><published>2025-03-20T19:27:37+05:30</published><updated>2025-03-20T19:27:37+05:30</updated><id>http://localhost:4000/2025/03/20/tolstoyhistory</id><content type="html" xml:base="http://localhost:4000/2025/03/20/tolstoyhistory.html"><![CDATA[<p>I’ve been reading War and Peace and one theme that Tolstoy constantly revisits is the great man theory of history vs. the trends and forces theory of history. Time and again, he seems to favour the latter theory. Especially through Prince Andrei’s monologues to Pierre before the Battle of Borodino, and then while talking about all those defeats to Napoleon at Austerlitz, and Borodino. The writing is so inspired and I wanted to quote some of the writing here in the hope that you will be encouraged to pick up the book and read it. This is Chapter 28 from Book Three, Part Two of War and Peace.</p>
+
+<blockquote>
+  <p>Many historians say that the French did not win the battle of Borodino because Napoleon had a cold, and that if he had not had a cold the orders he gave before and during the battle would have been still more full of genius and Russia would have been lost and <em>la face du monde eût été changée</em><sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>.
+<br /><br /> 
+To historians who believe that Russia was shaped by the will of one man—Peter the Great—and that France from a republic became an empire and French armies went to Russia at the will of one man—Napoleon—to say that Russia remained a power because Napoleon had a bad cold on the 24th of August may seem logical and convincing.
+<br /><br /> 
+If it had depended on Napoleon’s will to fight or not to fight the battle of Borodino, and if this or that other arrangement depended on his will, then evidently a cold affecting the manifestation of his will might have saved Russia, and consequently the valet who omitted to bring Napoleon his waterproof-boots on the 24th would have been the saviour of Russia.
+<br /><br />
+Along that line of thought such a deduction is indubitable, as indubitable as the deduction Voltaire made in jest (without knowing what he was jesting at) when he said that the Massacre of St. Bartholomew was due to Charles IX’s stomach being deranged.
+<br /><br />
+But to men who do not admit that Russia was formed by the will of one man, Peter I, or that the French Empire was formed and the war with Russia begun by the will of one man, Napoleon, that argument seems not merely untrue and irrational, but contrary to all human reality. To the question of what causes historic events, another answer presents itself, namely, that the course of human events is predetermined from on high—depends on the coincidence of the wills of all who take part in the events, and that a Napoleon’s influence on the course of these events is purely external and fictitious.
+<br /><br />
+Strange as at first glance it may seem to suppose that the Massacre of St. Bartholomew was not due to Charles IX’s will, though he gave the order for it and thought it was done as a result of that order; and strange as it may seem to suppose that the slaughter of eighty thousand men at Borodino was not due to Napoleon’s will, though he ordered the commencement and conduct of the battle and thought it was done because he ordered it; strange as these suppositions appear, yet human dignity—which tells me that each of us is, if not more, at least not less a man than the great Napoleon—demands the acceptance of that solution of the question, and historic investigation abundantly confirms it.
+<br /><br />
+At the battle of Borodino Napoleon shot at no one and killed no one. That was all done by the soldiers. Therefore it was not he who killed people.
+<br /><br />
+The French soldiers went to kill and be killed at the battle of Borodino not because of Napoleon’s orders, but by their own volition. The whole army—French, Italian, German, Polish, and Dutch—hungry, ragged, and weary of the campaign, felt at the sight of an army blocking their road to Moscow, that <em>le vin est tiré et qu’il faut le boire</em><sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup>.
+<br /><br />
+Had Napoleon then forbidden them to fight the Russians, they would have killed him and have proceeded to fight the Russians because it was inevitable.
+<br /><br />
+When they heard Napoleon’s proclamation offering them, as compensation for mutilation and death, the words of posterity about their having been in the battle before Moscow, they cried <em>‘Vive l’Empereur!’</em> just as they had cried <em>‘Vive l’Empereur!’</em> at the sight of the portrait of the boy piercing the terrestrial globe with a toy stick, and just as they would have cried <em>‘Vive l’Empereur!’</em> at any nonsense that might be told them. There was nothing left for them to do but cry <em>‘Vive l’Empereur!’</em> and go to fight in order to get food and rest as conquerors in Moscow. So it was not because of Napoleon’s commands that they killed their fellow men.</p>
+</blockquote>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>the face of the world would have been changed <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>the wine is drawn (opened) and it must be drunk. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name>Kilaru Yasaswi Sri Chandra Gandhi</name></author><summary type="html"><![CDATA[I’ve been reading War and Peace and one theme that Tolstoy constantly revisits is the great man theory of history vs. the trends and forces theory of history. Time and again, he seems to favour the latter theory. Especially through Prince Andrei’s monologues to Pierre before the Battle of Borodino, and then while talking about all those defeats to Napoleon at Austerlitz, and Borodino. The writing is so inspired and I wanted to quote some of the writing here in the hope that you will be encouraged to pick up the book and read it. This is Chapter 28 from Book Three, Part Two of War and Peace.]]></summary></entry></feed>

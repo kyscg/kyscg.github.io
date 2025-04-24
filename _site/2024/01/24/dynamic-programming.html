@@ -1,0 +1,278 @@
+<html>
+
+<head>
+    <title>Dynamic Programming [UFO]</title>
+    <meta charset='UTF-8'>
+    <meta content='width=device-width, initial-scale=1' name='viewport' />
+
+    <meta name='description' content=''>
+    <meta name='keywords' content='algorithms, notes'>
+    <meta name='author' content='Kilaru Yasaswi Sri Chandra Gandhi'>
+
+    <link rel='shortcut icon' href='/assets/images/alexandrosMegas.jpg'>
+    <link href='/index.css' rel='stylesheet'>
+
+    <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+
+<body>
+    <div id="dappled-light">
+
+    <div id="glow"></div>
+    <div id="glow-bounce"></div>
+    <div class="perspective">
+        <div id="leaves">
+            <svg style="width: 0; height: 0; position: absolute;">
+                <defs>
+                    <filter id="wind" x="-20%" y="-20%" width="140%" height="140%">
+                        <feTurbulence type="fractalNoise" numOctaves="2" seed="1">
+                            <animate attributeName="baseFrequency" dur="16s" keyTimes="0;0.33;0.66;1"
+                                values="0.005 0.003;0.01 0.009;0.008 0.004;0.005 0.003" repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic">
+                            <animate attributeName="scale" dur="20s" keyTimes="0;0.25;0.5;0.75;1"
+                                values="45;55;75;55;45" repeatCount="indefinite" />
+                        </feDisplacementMap>
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+        <div id="blinds">
+            <div class="shutters">
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+            </div>
+            <div class="vertical">
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+    <div id="progressive-blur">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+    <article id="writing">
+        <p id="nav">
+            <a href='/'>Home</a> ~
+            <a href='/writing'>Writing</a> ~
+            <a href='/reading'>Reading</a>
+        </p>
+        <hr>
+        <div class='content'>
+            <div class='front-matter'>
+                <div class='wrap'>
+                    <h1>Dynamic Programming [UFO]</h1>
+                    <p><i>Some notes on rod-cutting, LCS, and 0-1 Knapsack...</i></p>
+                    <div class='bylines'>
+                        <div class='byline'>
+                            <h3>Published</h3>
+                            <p>24 January 2024</p>
+                        </div>
+                    </div>
+                    <div class='clear'></div>
+                </div>
+            </div>
+            <hr>
+            <div class='wrap-article'>
+                <p>Dynamic programming applies when the subproblems overlap - that is, when subproblems share subsubproblems. A dynamic-programming algorithm solves each subsubproblem just once and then saves its answer in a table, thereby avoiding the work of recomputing the answer every time it solves each subsubproblem.</p>
+
+<h2 id="rod-cutting">Rod-cutting</h2>
+
+<p>The <em>rod-cutting</em> problem is the following. Given a rod of length $n$ inches and a table of prices $p_i$ for $i=1,2,\dots,n$, determine the maximum revenue $r_n$ obtainable by cutting up the rod and selling the pieces. Rod lengths are always an integral number of inches.</p>
+
+<p>The length vs. price table is given below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>5</td>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+      <td>17</td>
+      <td>17</td>
+      <td>20</td>
+      <td>24</td>
+      <td>30</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>We can cut up a rod of length $n$ in $2^{n-1}$ different ways. We denote decompositions using ordinary additive notation. $7=2+2+3$ means a rod of length 7 has been cut into 2 pieces of lentgh 2 and 1 piece of length 3. The optimal decomposition:</p>
+
+<p>$n=i_1+i_2+\cdots+i_k$</p>
+
+<p>provides maximum corresponding revenue</p>
+
+<p>$r_n=p_{i_1}+p_{i_2}+\cdots+p_{i_k}$</p>
+
+<p>More generally, we can frame the values $r_n$ for $n\geq1$ in terms of optimal revenue from shorter rods:</p>
+
+<p>$r_n=\max(p_n, r_1+r_{n-1}, r_2+r_{n-2},\dots,r_{n-1}+r_1)$.</p>
+
+<h3 id="recursive-top-down-implementation">Recursive Top Down Implementation</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">CutRod</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="o">-</span><span class="n">inf</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="nc">CutRod</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="n">i</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">q</span>
+</code></pre></div></div>
+
+<p>The problem with the above implementation is that running time doubles every time we increment $n$ by 1. Why is <code class="language-plaintext highlighter-rouge">CutRod</code> so inefficient? The problem is that <code class="language-plaintext highlighter-rouge">CutRod</code> calls itself recursively over and over again with the same parameter values; it solves the same subproblems repeatedly.</p>
+
+<h3 id="using-dynamic-programming">Using Dynamic Programming</h3>
+
+<p>Having observed that a naive recursive solution is inefficient because it solves the same subproblems repeatedly, we arrange for each subproblem to be solved only once, saving its solution.</p>
+
+<p>The first approach is <em>top-down with memoization</em>. In this approach, we write the procedure recursively in a natural manner, but modified to save the result of each subproblem (usually in an array or hash table). The procedure now first checks to see whether it has previously solved this subproblem. If so, it returns the saved value, saving further computation at this level; if not, the procedure computes the value in the usual manner. We say that the recursive procedure has been memoized; it “remembers” what results it has computed previously.</p>
+
+<p>The second approach is the <em>bottom-up method</em>. This approach typically depends on some natural notion of the “size” of a subproblem, such that solving any particular subproblem depends only on solving “smaller” subproblems. We sort the subproblems by size and solve them in size order, smallest first. When solving a particular subproblem, we have already solved all of the smaller subproblems its solution depends upon, and we have saved their solutions. We solve each subproblem only once, and when we first see it, we have already solved all of its prerequisite subproblems</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">MemoizedCutRod</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="bp">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">inf</span>
+    <span class="k">return</span> <span class="nc">MemoizedCutRodAux</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">MemoizedCutRodAux</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">r</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="n">q</span> <span class="o">=</span> <span class="o">-</span><span class="n">inf</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+            <span class="n">q</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="nc">MemoizedCutRodAux</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="n">i</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
+    <span class="n">r</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">q</span>
+    <span class="k">return</span> <span class="n">q</span>
+</code></pre></div></div>
+
+<p>The bottom-up version is very simple:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>BottomUpCutRod(p, n)
+	let r[n] be a new array
+	r[0] = 0
+	for j = 1 to n
+		q = -inf
+		for i = 1 to j
+			q = max(q, p[i] + r[j - 1])
+			r[j] = q
+	return r[n]
+</code></pre></div></div>
+
+<h2 id="fibonacci-numbers">Fibonacci Numbers</h2>
+
+<h2 id="longest-common-subsequence">Longest Common Subsequence</h2>
+
+<p>Biological applications often need to compare the DNA of two (or more) different organisms. For example, the DNA of one organism may be $S_1=$ <code class="language-plaintext highlighter-rouge">ACCGGTCGAGTGCGCGGAAGCCGGCCGAA</code>, and the DNA of another organism may be $S_2=$<code class="language-plaintext highlighter-rouge">GTCGTTCGGAATGCCGTTGCTCTGTAAA</code>. One reason to compare two strands of DNA is to determine how “similar” the two strands are, as some measure of how closely related the two organisms are.</p>
+
+<p>One way to find/measure similarity is to find a third strand $S_3$ in which the bases appear in both $S_1$ and $S_2$; in the same order but not necessarily consecutively. In our example, the longest strand $S_3$ is <code class="language-plaintext highlighter-rouge">GTCGTCGGAAGCCGGCCGAA</code>. This is the longest common subsequence problem.</p>
+
+<h3 id="optimal-substructure-of-lcs">Optimal Substructure of LCS</h3>
+
+<p>Let $X=\langle x_1,x_2,\dots,x_m\rangle$ and $Y=\langle y_1,y_2,\dots,y_n\rangle$ be sequences, and let $Z=\langle z_1,z_2,\dots,z_k\rangle$ be any LCS of $X$ and $Y$.</p>
+
+<ol>
+  <li>If $x_m=y_n$, then $z_k=x_m=y_n$ and $Z_{k-1}$ is an LCS of $X_{m-1}$ and $Y_{n-1}$.</li>
+  <li>If $x_m\neq y_n$, then $z_k\neq x_m$ implies that $Z$ is an LCS of $X_{m-1}$ and $Y$.</li>
+  <li>If $x_m\neq y_n$, then $z_k\neq y_n$ implies that $Z$ is an LCS of $X$ and $Y_{n-1}$.</li>
+</ol>
+
+<h3 id="recursive-solution">Recursive Solution</h3>
+
+<p>Let us define $c[i, j]$ to be the length of an LCS of the sequences $X_i$ and $Y_j$.</p>
+
+\[c[i, j] =
+\begin{cases}
+    0 &amp; \text{if } i = 0 \text{ or } j = 0, \\
+    c[i - 1, j - 1] + 1 &amp; \text{if } i, j &gt; 0 \text{ and } x_i = y_j, \\
+    \max(c[i, j - 1], c[i - 1, j]) &amp; \text{if } i, j &gt; 0 \text{ and } x_i \neq y_j.
+\end{cases}\]
+
+<p>This is a bottom-up or tabulation approach. We first compute the $C$ matrix and then use it for solving problems.</p>
+
+<p><strong>Time Complexity</strong>: $O(mn)$
+<strong>Space complexity</strong>: $O(mn)$</p>
+
+<h2 id="0-1-knapsack-problem">0-1 Knapsack Problem</h2>
+
+<p>A thief robbing a store finds $n$ items. The $i$ th item is worth $v_i$ dollars and weighs $w_i$ pounds, where $v_i$ and $w_i$ are integers. The thief wants to take as valuable a load as possible, but he can carry at most $W$ pounds in his knapsack, for some integer $W$. Which items should he take?</p>
+
+<h3 id="optimal-substructure">Optimal Substructure</h3>
+
+<p>$K(n, W)$ is the knapsack with $n$ items and weight limit of $W$. If $w[n]&gt;W$, then the problem reduces to $K(n-1,W)$. Otherwise, we again have two cases: if we put the $n$ th item in the bag, the problem reduces to $K(n-1,W-w[n])$ and if the $n$ the item is skipped, it reduces to $K(n-1, W)$.</p>
+
+<p>The overall substructure can be written as follows:</p>
+
+\[\begin{equation}
+  K(n,W)=\left\{
+  \begin{array}{@{}ll@{}}
+    K(n-1, W) &amp; \text{if}\ w[n] &gt; W, \\
+    \max\{K(n-1,W-w[n])+val[n], K(n-1,W)\} &amp; \text{otherwise.}
+  \end{array}\right.
+\end{equation}\]
+
+<hr />
+
+
+                <script src="https://utteranc.es/client.js" repo="kyscg/kyscg.github.io" issue-term="url"
+                    label="comments" theme="github-light" crossorigin="anonymous" async></script>
+            </div>
+        </div>
+    </article>
+</body>
+
+</html>

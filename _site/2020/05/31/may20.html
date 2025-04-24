@@ -1,0 +1,441 @@
+<html>
+
+<head>
+    <title>May 2020 Release Notes</title>
+    <meta charset='UTF-8'>
+    <meta content='width=device-width, initial-scale=1' name='viewport' />
+
+    <meta name='description' content=''>
+    <meta name='keywords' content='physics, math, dynamic programming'>
+    <meta name='author' content='Kilaru Yasaswi Sri Chandra Gandhi'>
+
+    <link rel='shortcut icon' href='/assets/images/alexandrosMegas.jpg'>
+    <link href='/index.css' rel='stylesheet'>
+
+    <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+
+<body>
+    <div id="dappled-light">
+
+    <div id="glow"></div>
+    <div id="glow-bounce"></div>
+    <div class="perspective">
+        <div id="leaves">
+            <svg style="width: 0; height: 0; position: absolute;">
+                <defs>
+                    <filter id="wind" x="-20%" y="-20%" width="140%" height="140%">
+                        <feTurbulence type="fractalNoise" numOctaves="2" seed="1">
+                            <animate attributeName="baseFrequency" dur="16s" keyTimes="0;0.33;0.66;1"
+                                values="0.005 0.003;0.01 0.009;0.008 0.004;0.005 0.003" repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic">
+                            <animate attributeName="scale" dur="20s" keyTimes="0;0.25;0.5;0.75;1"
+                                values="45;55;75;55;45" repeatCount="indefinite" />
+                        </feDisplacementMap>
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+        <div id="blinds">
+            <div class="shutters">
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+            </div>
+            <div class="vertical">
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+    <div id="progressive-blur">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+    <article id="writing">
+        <p id="nav">
+            <a href='/'>Home</a> ~
+            <a href='/writing'>Writing</a> ~
+            <a href='/reading'>Reading</a>
+        </p>
+        <hr>
+        <div class='content'>
+            <div class='front-matter'>
+                <div class='wrap'>
+                    <h1>May 2020 Release Notes</h1>
+                    <p><i>A revision of first principles and more mathematics</i></p>
+                    <div class='bylines'>
+                        <div class='byline'>
+                            <h3>Published</h3>
+                            <p>31 May 2020</p>
+                        </div>
+                    </div>
+                    <div class='clear'></div>
+                </div>
+            </div>
+            <hr>
+            <div class='wrap-article'>
+                <p>The dystopia has worsened in Bangalore. Workers who live on daily wages are being forced to move back to their hometowns due to the lack of work and high cost of living. And even that wasn’t very straightforward because not all trains are running and India is a huge country. All this resulted in a kilometer long line at the Palace Grounds, strung together by humans and their luggages and littler humans fighting an invisible virus, the merciless heat and the weight in their hearts. And we’re just getting started.</p>
+
+<p>While we’re on the topic of dystopia, William Shirer’s “<a href="https://www.amazon.com/Rise-Fall-Third-Reich-History/dp/1451651686">The Rise and Fall of The Third Reich</a>” is the most eye-opening piece of documentation on the Nazi regime that threatened to destroy our world, the book is closely followed by the HistoryTV documentary of the same name. With Adolf Hitler, Shirer asks us to appreciate his genius on his way to grabbing power but also wonder how much of everything he achieved can be attributed to luck. The more I read history, the more I’m tempted to believe that though we can extract certain patterns of human behaviour, we are never masters of our fate. I might disagree with <a href="http://shakespeare.mit.edu/julius_caesar/julius_caesar.1.2.html">Shakespeare’s Cassius</a> in this regard, maybe we aren’t underlings and the fault is literally in our stars.</p>
+
+<p>And speaking of stars, SpaceX was set to launch two NASA astronauts, Doug Hurley and Bob Behnken, from Cape Canaveral on NASA’s behalf, but the flight was scrubbed about 18 minutes before takeoff because of something none of us can control: the weather. It was an anticlimactic end to a day of anticipation, albeit a common enough occurrence for human spaceflight. They are going to try again early morning tomorrow, and I hope I get to watch a successful launch.</p>
+
+<h2 id="simple-harmonic-motion">Simple Harmonic Motion</h2>
+
+<p>Let’s look at Simple Harmonic Motion. I remember how I was initially taught the concept. SHM is defined as any motion where</p>
+
+\[f''(x) = -kx\]
+
+<p>There are some functions that fit this very well but the most commonly known ones are sinusoidal functions. But it turns out that there’s a way to conclusively show that SHM’s <strong>will</strong> be sinusoidal in nature.</p>
+
+<p>Consider a string fixed at one end of stiffness constant $k$, attached to a mass $m$ at the other end. Once in motion, the force $F$ by the string can be written as $F = -kx,$ which implies that $a = -\frac{k}{m}x.$ For our purposes, we shall assign $k/m = 1$ which would make $a = -x.$</p>
+
+<p>Now, let us think of the position $x$ and the velocity $v$ of the mass at any given time. They would change by the following rule:</p>
+
+\[\Delta\begin{bmatrix}x\\v\end{bmatrix} = \begin{bmatrix}v\cdot\Delta t\\-x\cdot\Delta t\end{bmatrix}\]
+
+<p>If we plot the position and velocity on a two-dimensional plane, it is easy to see that the change is actually a 90 degree rotation scaled up the small time-change. This is easier to see in the complex plane. More formally:</p>
+
+\[\Delta (x + vi) = -i(x + vi) \Delta t = (v -xi) \Delta t\]
+
+<p>where $i = \sqrt{-1} = e^{i\frac{\pi}{2}}$. This means that, for every $z,$ we can write the change in state with respect to time as $\Delta z = -i \cdot z\Delta t.$ All this is very good, but where does it show the required periodicity? <em>There is an intuitive aspect that we need to understand here, and that is the fact that all such changes will lie on a circle.</em></p>
+
+<p>We can justify this in many ways, the most simple one is to understand that as $\Delta t \rightarrow 0,$ the locus of the points will trace out a circle. If it is so, we can write:</p>
+
+\[z_t = z_0[\cos t + i\sin t]\]
+
+<p>From this, it is easy to compare the real and imaginary parts of $z$ and get back the results we were taught in high school.</p>
+
+<h2 id="ex-and-the-poisson-distribution">$e^x$ and the Poisson Distribution</h2>
+
+<p>Remember the exponentials section from last month? I have some additional material. As it turns out, we can obtain the Poisson distribution from the expansion of $e^x,$ let’s go!</p>
+
+<p>We know the expansion of $e^x$</p>
+
+\[e^\lambda = \sum_{n = 0}^{\infty}\frac{\lambda^n}{n!}\]
+
+<p>simplifying / rescaling / multiplying by $e^{-\lambda},$ we get:</p>
+
+\[1 = \sum_{n = 0}^{\infty}\frac{e^{-\lambda} \lambda^n}{n!}\]
+
+<p>We now have a series that sums up to one, if you’ve been in a ProbStat class recently, you will know that we’re dealing with a distribution function. In this case, for the probability mass function, we just take a single step and evaluate. The Poisson distribution in all its glory is:</p>
+
+\[f(x; \lambda) = \frac{\lambda^x e^{-\lambda}}{x!}\]
+
+<p>I want to look at the infinite sum in closer detail once again, let us write it out:</p>
+
+\[e^{\lambda} = \sum_{n = 0}^{\infty}\frac{\lambda^n}{n!} = 1 + \lambda + \frac{\lambda^2}{2} + \dots\]
+
+<p>To get the $i^{th}$ step, we need to multiply the $(i - 1)^{th}$ step by $\lambda$ and divide it by $i.$ And when we scale the whole thing down, we get a nice distribution.</p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Poisson_pmf.svg/488px-Poisson_pmf.svg.png" alt="poisson" /></p>
+
+<h2 id="natural-logarithms"><a href="https://www.youtube.com/watch?v=4PDoT7jtxmw">Natural Logarithms!!!</a></h2>
+
+<p><strong>Question</strong>: Consider the numbers between 1,000,000,000,000 and 1,000,000,001,000. What is the proportion of these numbers that are prime?</p>
+
+<p>A simple Python function will solve this problem for us:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">math</span>
+
+<span class="k">def</span> <span class="nf">get_primes</span><span class="p">(</span><span class="n">n_min</span><span class="p">,</span> <span class="n">n_max</span><span class="p">):</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">max</span><span class="p">(</span><span class="n">n_min</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">n_max</span><span class="p">):</span>
+    <span class="n">has_factor</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nf">int</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">has_factor</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">break</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">has_factor</span><span class="p">:</span>
+      <span class="n">result</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">result</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="nf">get_primes</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">47</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="nf">get_primes</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1050</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1009</span><span class="p">,</span> <span class="mi">1013</span><span class="p">,</span> <span class="mi">1019</span><span class="p">,</span> <span class="mi">1021</span><span class="p">,</span> <span class="mi">1031</span><span class="p">,</span> <span class="mi">1033</span><span class="p">,</span> <span class="mi">1039</span><span class="p">,</span> <span class="mi">1049</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>We can see that the number of primes lessens as the arguments to <code class="language-plaintext highlighter-rouge">get_primes()</code> increase. This is all very obvious. Let’s now return the proportion and check for the values in our question.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">math</span>
+
+<span class="k">def</span> <span class="nf">get_primes</span><span class="p">(</span><span class="n">n_min</span><span class="p">,</span> <span class="n">n_max</span><span class="p">):</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">max</span><span class="p">(</span><span class="n">n_min</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">n_max</span><span class="p">):</span>
+    <span class="n">has_factor</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nf">int</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">has_factor</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">break</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">has_factor</span><span class="p">:</span>
+      <span class="n">result</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="nf">return </span><span class="p">(</span><span class="n">n_max</span> <span class="o">-</span> <span class="n">n_min</span><span class="p">)</span> <span class="o">/</span> <span class="nf">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="nf">get_primes</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">12</span> <span class="o">+</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="mf">27.027027027027028</span>
+</code></pre></div></div>
+
+<p>Mathematicians know that the density of primes at any point on the number line is <del>equal</del> close to the natural log of that number. In this case, we can verify that <code class="language-plaintext highlighter-rouge">math.log(10**12) = 27.6310211159.</code></p>
+
+<p>With that bit of trivia out of the way, let us first recall that $y = \ln{x}$ is equivalent to $e^y=x.$ Why is this particular function called the <em>natural</em> logarithm though? Some more fun pieces of math coming up.</p>
+
+<p>Consider the infinite series:</p>
+
+\[\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \frac{1}{5^2} + \frac{1}{6^2} + \frac{1}{7^2} + \frac{1}{8^2} + \frac{1}{9^2} + \dots= \frac{\pi^2}{6}\]
+
+<p>Now, we’ll manipulate this series such that we remove all non-primes, and scale down the powers of primes by the appropriate power they were initially raised to.</p>
+
+\[\frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{2} \cdot \frac{1}{4^2} + \frac{1}{5^2} + \frac{1}{7^2} + \frac{1}{3} \cdot \frac{1}{8^2} + \frac{1}{2} \cdot \frac{1}{9^2} + \cdots + \frac{1}{k} \cdot \frac{1}{(p^k)^2}= \ln{\frac{\pi^2}{6}}\]
+
+<p>Another infinite series to play with:</p>
+
+\[\frac{1}{1} - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \frac{1}{11}  + \dots= \frac{\pi}{4}\]
+
+<p>Doing the same thing:</p>
+
+\[- \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{2} \cdot \frac{1}{9} - \frac{1}{11}  + \dots= \ln{\frac{\pi}{4}}\]
+
+<p>Another series with a known result:</p>
+
+\[\frac{1}{1} - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6}  + \dots = \ln{2} \approx 0.69\]
+
+<p>We can actually figure out this result by generalizing it to:</p>
+
+\[\frac{x}{1} - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} - \frac{x^6}{6}  + \dots = \space?\]
+
+<p>Differentiating with respect to $x$ gives:</p>
+
+\[1 - x + x^2 - x^3 + x^4 - x^5 + \cdots = \frac{1}{1 + x}\]
+
+<p>And to get the answer we require, we need to integrate this expression:</p>
+
+\[\int_0^1 \frac{1}{1 + x} = [\ln{(1 + x)}]_0^1 = \ln{2} \approx0.69\]
+
+<p>And the last one:</p>
+
+\[\frac{1}{1} + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \frac{1}{6}  + \dots + \frac{1}{N}= \ln{N} + \gamma\]
+
+<p>where $\gamma$ is a small constant. I hope that some will draw the connection to the integral of $\frac{1}{x}$ and try to answer why the sum turns out to be larger than the integral. I encourage the reader to write code or use a graphing calculator and check the other results out. The next question we should ask is why the derivative of $e^x$ always leads back to itself. One way we can come to this conclusion is by doing it the fundamental way. For $y = A^x:$</p>
+
+\[\frac{dy}{dx} = \lim_{h \to 0} \frac{A^{x + h} - A^x}{h} = A^x \lim_{h \to 0} \frac{A^h - 1}{h} = A^x \ln{A}\]
+
+<p>It would seem circular to put $A = e$ and finish the proof, so we can go back to the polynomial expansion of $exp(x)$ and differentiate that.</p>
+
+<h2 id="local-memoization">Local Memoization</h2>
+
+<ul>
+  <li>Fibonacci numbers:</li>
+</ul>
+
+<p>$f(0)=0,$ $f(1)=1$ and $\forall n, f(n + 2) = f(n + 1) + f(n).$</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">answer</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">())</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>The problem with this approach is that it is extremely time-consuming and we need a better option. The program is doing the same thing multiple times. Draw the recursion tree and check. So let’s add something to our code:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">f(</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s">) called</span><span class="sh">'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">answer</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">())</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Now if we try to find the 30th Fibonacci number, we see that <code class="language-plaintext highlighter-rouge">f(1)</code> was computed $832040$ times. Not optimal. Instead, let’s have a global dictionary and add a check before any compute.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">memo</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">memo</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+
+    <span class="c1">#print(f'f({n}) called')
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+    <span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">answer</span>
+    <span class="k">return</span> <span class="n">answer</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">())</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Even for this, we don’t get the 1000th Fibonacci number <code class="language-plaintext highlighter-rouge">Recursion Error: maximum recursion depth exceeded in comparison</code>. We can add the following lines to the top of the code to increase the depth of the python stack</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="n">sys</span>
+<span class="n">sys</span><span class="p">.</span><span class="nf">setrecursionlimit</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>But even this fails in case our OS’ internal stack for sufficiently large numbers: <code class="language-plaintext highlighter-rouge">Segmentation fault (core dumped)</code>. Then we can actually do the same thing for our OS and find out the $100000^{th}$ Fibonacci number. The whole idea behind this discussion is to show that using memoization gives us massive time advantages.</p>
+
+<p>Another not-so-trivial fact here is that as the numbers get huge, we cannot really stick to our old assumptions that additions and multiplications are constant operations. This is one of the first things we’re taught when we learn the Big-O notation. With big numbers, additions and multiplications require their own algorithms.</p>
+
+<p>For Fibonacci numbers in particular, the time complexity depends on the number of digits of the $i^{th}$ Fibonacci number. More specifically, the number of digits in the $i^{th}$ Fibonacci number is linear in i. There is a class of problems similar to the one we tackled in which we can apply memoization to a similarly string effect.</p>
+
+<p><strong>Question</strong>: We’re given the size $n$ of an array $v$ and the values in that array: $v[0], v[1], \cdots ,$ Our task is to choose certain values such that we don’t pick values from adjacent slots. Find the strategy that maximizes the sum of values.</p>
+
+<p><strong>First approach</strong>: Good ol’ brute force. This is basically a combinatorial optimization problem, so one solution is to iterate over all possible solutions and keep a <code class="language-plaintext highlighter-rouge">max</code> variable. This is actually a good <em>and preferable</em> solution if the value of $n$ is around 20 or so.</p>
+
+<p><strong>Second approach</strong>: Recursive bactracking. Suppose we discard the $v[n - 1]$ slot, we have the same problem for the other $n-1$ slots. In this way, we make recursive calls. But if we do take the $v[n-1]$ slot, we cannot choose the $v[n-2]$ slot. So, the optimal solution in this case is the optimal solution for the first $n-2$ slots.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="nf">int</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">input</span><span class="p">().</span><span class="nf">split</span><span class="p">()]</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="c1"># question: what is the optimal solution for the first k slots?
+</span>    <span class="k">if</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">leave</span> <span class="o">=</span> <span class="nf">solve</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">take</span> <span class="o">=</span> <span class="nf">solve</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">leave</span><span class="p">,</span> <span class="n">take</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">answer</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">solve</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>What is the time complexity of this program? The time to process $n$ slots is the time to process one recursive call with $n - 1$ slots plus one with $n - 2$ slots. Similar to Fibonacci eh? The real value is more like $\Theta (n) = 1.6^n.$ So let’s apply a decorator and memoize this whole process.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="n">sys</span>
+<span class="n">sys</span><span class="p">.</span><span class="nf">setrecursionlimit</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+<span class="kn">from</span> <span class="n">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="nf">int</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">input</span><span class="p">().</span><span class="nf">split</span><span class="p">()]</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+<span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="c1"># question: what is the optimal solution for the first k slots?
+</span>    <span class="k">if</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">leave</span> <span class="o">=</span> <span class="nf">solve</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">take</span> <span class="o">=</span> <span class="nf">solve</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">leave</span><span class="p">,</span> <span class="n">take</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">answer</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">solve</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p><strong>DIY: Iterative Solution</strong>, hint: use a dictionary?</p>
+
+<h2 id="random-thoughts">Random Thoughts</h2>
+
+<p><a href="https://cambridgemathshub.org/everything-you-ever-wanted-to-know-about-negative-numbers-and-werent-afraid-to-ask">Everything you ever wanted to know about negative numbers and weren’t afraid to ask!</a></p>
+
+<p><a href="https://mathprofessorquotes.com/">MathProfessorQuotes</a></p>
+
+<p>Medium posts are mostly trash but this article is really cool: <a href="https://towardsdatascience.com/github-stars-are-overvalued-15ba780b36">Github Stars are overvalued</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=kyL71RoNcCo&amp;feature=youtu.be">Basic git commands everyone should know about</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=RcYjXbSJBN8">Elon Musk on the Joe Rogan Podcast</a></p>
+
+<p><a href="https://youtu.be/4_ZJ8YDOX6g">Dr. Rhonda Patrick on the Joe Rogan Podcast</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=AG726uamib0">The Third Reich: Rise and Fall</a></p>
+
+<p><a href="https://twitter.com/iraphas13/status/1262489387767480322?s=20">Typesetting before $\LaTeX$</a></p>
+
+<p><a href="https://tosdr.org/">Terms of Service; Didn’t Read</a></p>
+
+<p><a href="https://alum.kuleuven.be/eng/news/alumnus-pieter-abbeel">ADAPT TO IMPACT: INSIDE THE HUMAN INTELLIGENCE OF PIETER ABBEEL</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=FYQz4QvYEXA&amp;app=desktop">Diary of a Covid-19 Doctor: 14 Days in a NYC Hospital by WIRED</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=hFZFjoX2cGg">Building the Perfect Squirrel Proof Bird Feeder</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=YbgnlkJPga4">The Past We Can Never Return To – The Anthropocene Reviewed</a></p>
+
+<p><a href="https://www.wired.com/story/confessions-marcus-hutchins-hacker-who-saved-the-internet/">The Confessions of Marcus Hutchins, the Hacker Who Saved the Internet</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=U8q2IEj-j24">Inside Italy’s COVID War by FRONTLINE</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=lbiGYAl_sJ8">Yuval Noah Harari with India Today</a>, the man never fails to amaze me with his powerful thought processes and articulate patterns of argument. Granted, the reporter is an idiot, but Prof. Harari still managed to get across his message.</p>
+
+<hr />
+
+
+                <script src="https://utteranc.es/client.js" repo="kyscg/kyscg.github.io" issue-term="url"
+                    label="comments" theme="github-light" crossorigin="anonymous" async></script>
+            </div>
+        </div>
+    </article>
+</body>
+
+</html>

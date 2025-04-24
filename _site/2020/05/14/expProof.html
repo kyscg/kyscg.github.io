@@ -1,0 +1,185 @@
+<html>
+
+<head>
+    <title>Proof that $\exp(x)=\displaystyle\lim_{n\rightarrow\infty}\left(1+\frac{x}{n}\right)^{n}$</title>
+    <meta charset='UTF-8'>
+    <meta content='width=device-width, initial-scale=1' name='viewport' />
+
+    <meta name='description' content=''>
+    <meta name='keywords' content='math, exponentials'>
+    <meta name='author' content='Kilaru Yasaswi Sri Chandra Gandhi'>
+
+    <link rel='shortcut icon' href='/assets/images/alexandrosMegas.jpg'>
+    <link href='/index.css' rel='stylesheet'>
+
+    <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+
+<body>
+    <div id="dappled-light">
+
+    <div id="glow"></div>
+    <div id="glow-bounce"></div>
+    <div class="perspective">
+        <div id="leaves">
+            <svg style="width: 0; height: 0; position: absolute;">
+                <defs>
+                    <filter id="wind" x="-20%" y="-20%" width="140%" height="140%">
+                        <feTurbulence type="fractalNoise" numOctaves="2" seed="1">
+                            <animate attributeName="baseFrequency" dur="16s" keyTimes="0;0.33;0.66;1"
+                                values="0.005 0.003;0.01 0.009;0.008 0.004;0.005 0.003" repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic">
+                            <animate attributeName="scale" dur="20s" keyTimes="0;0.25;0.5;0.75;1"
+                                values="45;55;75;55;45" repeatCount="indefinite" />
+                        </feDisplacementMap>
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+        <div id="blinds">
+            <div class="shutters">
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+                <div class="shutter"></div>
+            </div>
+            <div class="vertical">
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+    <div id="progressive-blur">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+    <article id="writing">
+        <p id="nav">
+            <a href='/'>Home</a> ~
+            <a href='/writing'>Writing</a> ~
+            <a href='/reading'>Reading</a>
+        </p>
+        <hr>
+        <div class='content'>
+            <div class='front-matter'>
+                <div class='wrap'>
+                    <h1>Proof that $\exp(x)=\displaystyle\lim_{n\rightarrow\infty}\left(1+\frac{x}{n}\right)^{n}$</h1>
+                    <p><i>A math-heavy but super elegant proof that I learnt</i></p>
+                    <div class='bylines'>
+                        <div class='byline'>
+                            <h3>Published</h3>
+                            <p>14 May 2020</p>
+                        </div>
+                    </div>
+                    <div class='clear'></div>
+                </div>
+            </div>
+            <hr>
+            <div class='wrap-article'>
+                <p><strong>Theorem 1.</strong> $\exp(x)=\displaystyle\lim_{n\rightarrow\infty}\left(1+\frac{x}{n}\right)^{n}.$</p>
+
+<p><strong>Proof.</strong> Let $f(x)=\displaystyle\lim_{n\rightarrow\infty}\left(1+\frac{x}{n}\right)^{n}$ First, we’ll neglect the limits and expand $f(x)$ using the binomial theorem.</p>
+
+\[f_{n}(x)=\sum_{k=0}^{n}\binom{x}{n}^{k}\frac{n!}{k!(n-k)!}\]
+
+<p>Now, we will increase $n$ to a sufficiently large value such that $|f_{n}(x)-\exp(x)|&lt;\epsilon,\forall x.$ Once we find such a value, our proof will be complete.</p>
+
+\[|\exp(x)-f_{n}(x)|=\left|\sum_{k=0}^{n}\left(\frac{x^{k}}{k!}-\binom{x}{n}^{k}\frac{n!}{k!(n-k)!}\right)+\sum_{k=n+1}^{\infty}\frac{x^{k}}{k!}\right|.\]
+
+<p>We will make a slight change to the above equation and add a variable $m.$</p>
+
+\[|\exp(x)-f_{n}(x)|=\left|\sum_{k=0}^{m}\left(\frac{x^{k}}{k!}-\binom{x}{n}^{k}\frac{n!}{k!(n-k)!}\right)+\sum_{k=m+1}^{n}\left(\frac{x^{k}}{k!}-\binom{x}{n}^{k}\frac{n!}{k!(n-k)!}\right)+\sum_{k=n+1}^{\infty}\frac{x^{k}}{k!}\right|\]
+
+\[\le\left|\sum_{k=0}^{m}\left(\frac{x^{k}}{k!}-\binom{x}{n}^{k}\frac{n!}{k!(n-k)!}\right)\right|+\left|\sum_{k=m+1}^{n}\left(\frac{x^{k}}{k!}-\binom{x}{n}^{k}\frac{n!}{k!(n-k)!}\right)\right|+\left|\sum_{k=n+1}^{\infty}\frac{x^{k}}{k!}\right|\]
+
+\[\le\left|\sum_{k=0}^{m}\left(\frac{x^{k}}{k!}-\binom{x}{n}^{k}\frac{n!}{k!(n-k)!}\right)\right|+\left|\sum_{k=m+1}^{n}\frac{x^{k}}{k!}\right|+\left|\sum_{k=n+1}^{\infty}\frac{x^{k}}{k!}\right|\]
+
+\[\le\left|\sum_{k=0}^{m}\left(\frac{x^{k}}{k!}-\binom{x}{n}^{k}\frac{n!}{k!(n-k)!}\right)\right|+\left|\sum_{k=m+1}^{\infty}\frac{x^{k}}{k!}\right|\]
+
+<p>We will look at the 2 terms individually, starting with the right.
+Since $\displaystyle\frac{x^{k}}{k!}$ is eventually decreasing to 0, we can choose $m$ large enough so $\displaystyle\frac{x^{m}}{m!}&lt;\displaystyle\frac{\epsilon}{4}$ and select an n larger than that.</p>
+
+\[\left|\sum_{k=m+1}^{\infty}\frac{x^{k}}{k!}\right|\le\frac{\epsilon}{4}\sum_{k=m+1}^{\infty}2^{-k}&lt;\frac{\epsilon}{2}\]
+
+<p>Now, let’s look at the left sum. The following expression will help us understand why the left sum is small.</p>
+
+\[\binom{x}{n}^{k}\frac{n!}{k!(n-k)!}=\frac{x^{k}(n(n-1)...(n-k+1)}{n^{k}k!}=\frac{x^{k}}{k!}\frac{(n(n-1)...(n-k+1)}{n^{k}}\approx\frac{x^{k}}{k!}\]
+
+<p>This approximation is valid as the terms almost cancel out.
+Because of this each of the terms will be fairly small so hopefully we can make the entire sum small.
+A clever observation is $n(n-m+1)\le (n-c)(n-k+1+c),$ $\forall k$ and positive $c$, this further means that</p>
+
+\[1\gt\frac{(n(n-1)\dots(n-k+1))}{n^k}\gt\left(\frac{n-m+1}{n}\right)^{m/2}\gt0\]
+
+<p>This further implies</p>
+
+\[\left|\sum_{k=0}^{m}\left(\frac{x^{k}}{k!}-\binom{x}{n}^{k}\frac{n!}{k!(n-k)!}\right)\right|\le\left|\sum_{k=0}^{m}\frac{x^{k}}{k!}\left(1-\left(\frac{n-m+1}{n}\right)^{m/2}\right)\right|=\left|\left(1-\left(\frac{n-m+1}{n}\right)^{m/2}\right)\sum_{k=0}^{m}\frac{x^{k}}{k!}\right|\]
+
+<p>From this, we know that $\exp(x)$ is finite everywhere, $\exists c$ such that $c$ is greater than all the partial sums of $\exp(x)$, therefore</p>
+
+\[\left|\left(1-\left(\frac{n-m+1}{n}\right)^{m/2}\right)\sum_{k=0}^{m}\frac{x^{k}}{k!}\right|\lt c\left(1-\left(\frac{n-m+1}{n}\right)^{m/2}\right)\]
+
+<p>We can now use Bernoulli’s inequality to say that</p>
+
+<p>Using this,</p>
+
+\[1&gt;\left(\frac{n-m+1}{n}\right)^{m/2}=\left(1-\frac{m+1}{n}\right)^{m/2}&gt;1-\frac{m^{2}+m}{2n}\]
+
+\[c\left(1-\left(\frac{n-m+1}{n}\right)^{m/2}\right)&lt;\frac{c(m^{2}+m)}{2n}\]
+
+<p>We fixed m earlier, and we can use this to find out how large $n$ must be, we get</p>
+
+\[n&gt;\frac{c(m^{2}+m)}{\epsilon}\]
+
+<p>Ergo, putting all of this together</p>
+
+\[\left|\exp(x)-f_{n}(x)\right|\le\left|\sum_{k=0}^{m}\left(\frac{x^{k}}{k!}-\binom{x}{n}^{k}\frac{n!}{k!(n-k)!}\right)\right|+\left|\sum_{k=m+1}^{\infty}\frac{x^{k}}{k!}\right|&lt;\epsilon\]
+
+<p>This shows that $f_{n}\rightarrow \exp(x)$ pointwise, in other words, $\exp(x)=f(x)$.</p>
+
+<p style="text-align: right">$\blacksquare$</p>
+
+<hr />
+
+
+                <script src="https://utteranc.es/client.js" repo="kyscg/kyscg.github.io" issue-term="url"
+                    label="comments" theme="github-light" crossorigin="anonymous" async></script>
+            </div>
+        </div>
+    </article>
+</body>
+
+</html>
