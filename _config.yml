@@ -1,0 +1,52 @@
+title: New Ideas
+repository: kyscg/kyscg.github.io
+author: Kilaru Yasaswi Sri Chandra Gandhi
+description: >- # this means to ignore newlines until "baseurl:"
+  my personal website :)
+url: "https://kyscg.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: kyscg7
+github_username:  kyscg
+search: true
+feed:
+  icon: /assets/images/alexandrosMegas.jpg
+  posts_limit: 7
+  collections:
+    - reads
+
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax-highlighter: rouge
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+collections:
+  reads:
+    output: true
+
+permalink: date
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

@@ -1,0 +1,60 @@
+---
+title: Blog Checklist
+subtitle: Using this post to check if I have coded up everything I want in this blog.
+date:   2025-03-22 02:32:42 +0530
+layout: default
+keywords: css
+published: true
+---
+
+- [x] all level headings
+- [x] bold, italics, and strikethrough
+- [x] links
+- [x] footnotes
+- [x] images and captions
+- [x] quotes
+- [x] code blocks and syntax highlighting
+- [x] $\TeX$
+- [x] utterances comments
+- [x] RSS feed for both /writing and /reading
+- [x] sitemap.xml
+- [ ] lichess, twitter, and youtube embeds
+- [ ] jekyll-scholar
+- [ ] site-wide search box
+
+# Level 1 Heading
+
+## Level 2 Heading
+
+### Level 3 Heading
+
+#### Level 4 Heading
+
+**This is bold**
+
+*This is italics*
+
+~~This is strikethrough~~
+
+[This is a link to /reading](/reading.html)
+
+This line has a footnote[^1]
+
+<div class='figure'>
+    <img src="/assets/images/alexandrosMegas.jpg"/>
+    <div class='caption'>
+        <span class='caption-label'>Figure 1.</span> this is an image and caption.
+    </div>
+</div>
+
+
+### Code Napoleon
+
+<blockquote>
+  <p>‘My true glory is not to have won forty battles... What nothing will destroy, what will live for ever, is my Civil Code.’</p>
+  <cite>— Napoleon on St. Helena</cite>
+</blockquote>
+
+---
+
+[^1]: which redirects back to the line
