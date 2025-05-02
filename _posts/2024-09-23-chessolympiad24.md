@@ -1,5 +1,5 @@
 ---
-title: India win everything at the Olympiads! 
+title: India win everything at the Chess Olympiads! 
 subtitle: Hopefully the beginning of something meaningful in Indian sport that is not cricket 
 date: 2024-09-23 22:17:12 +0530
 layout: default

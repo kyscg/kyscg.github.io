@@ -13,11 +13,18 @@
   font-family: 'Equity Caps', sans-serif;
 }
 
-#landing ul#links li a {
+#landing ul#links li a:link {
+  color: blue;
+  text-decoration: none;
+}
+
+#landing ul#links li a:visited {
+  color: blue;
   text-decoration: none;
 }
 
 #landing ul#links li a:hover {
+  color: green;
   text-decoration: underline;
 }
 
@@ -35,12 +42,20 @@
   font-size: 22px;
 }
 
-#writing p#nav a {
+#writing p#nav a:link {
+  color: blue;
+  text-decoration: none;
+  font-family: 'Equity Caps', sans-serif;
+}
+
+#writing p#nav a:visited {
+  color: blue;
   text-decoration: none;
   font-family: 'Equity Caps', sans-serif;
 }
 
 #writing p#nav a:hover {
+  color: green;
   font-weight: bold;
 }
 
@@ -50,12 +65,20 @@
   margin-bottom: 0;
 }
 
-#writing .post-title a {
+#writing .post-title a:link {
+  color: blue;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+#writing .post-title a:visited {
+  color: blue;
   font-size: 20px;
   text-decoration: none;
 }
 
 #writing .post-title a:hover {
+  color: green;
   text-decoration: underline;
 }
 
@@ -65,14 +88,23 @@
   margin-bottom: 0;
 }
 
-#writing .post-titler a {
+#writing .post-titler a:link {
+  color: blue;
+  font-size: 40px;
+  text-decoration: none;
+}
+
+#writing .post-titler a:visited {
+  color: blue;
   font-size: 40px;
   text-decoration: none;
 }
 
 #writing .post-titler a:hover {
+  color: green;
   text-decoration: underline;
 }
+
 #writing .post-date {
   font-family: 'Triplicate T4';
   text-transform: uppercase;
@@ -105,8 +137,8 @@
 }
 
 body {
-    font-family: 'Equity Text', sans-serif;
-    background-color: rgba(251, 241, 199, 0.5);
+  font-family: 'Equity Text', sans-serif;
+  background-color: rgba(251, 241, 199, 0.5);
 }
 
 blockquote {
@@ -210,6 +242,16 @@ th {
   font-weight: normal;
 }
 
+.wrap-article a:link {
+  color: blue;
+  text-decoration: none;
+}
+
+.wrap-article a:visited {
+  color: blue;
+  text-decoration: none;
+}
+
 .wrap-article a:hover {
   color: green;
 }
@@ -288,6 +330,16 @@ article {
   font-weight: normal;
   font-style: normal;
   font-feature-settings: "liga" 1, "kern" 1;
+}
+
+.highlight {
+  background-color: rgba(251, 241, 199);
+  border-radius: 20px;
+  padding: 0.25em;
+}
+
+.highlight pre {
+  margin-left: 1.5em;
 }
 
 .highlight table td {

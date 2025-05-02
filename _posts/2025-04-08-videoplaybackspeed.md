@@ -10,7 +10,6 @@ published: true
 To speed up video playback beyond 2x, open the JavaScript console on your web browser (`Ctrl` + `Shift` + `K` on FireFox, `Ctrl` + `Shift` + `J` on Chrome, etc) and paste the following command with your desired playback rate:
 
 ```js
-
 document.getElementsByTagName("video")[0].playbackRate = 
 ```
 

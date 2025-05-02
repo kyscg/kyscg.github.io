@@ -12,7 +12,6 @@ I found this Stack OverFlow answer about [generating random numbers with a bash 
 It uses the [`shuf`](https://man7.org/linux/man-pages/man1/shuf.1.html) command (typing `man shuf` opens the manual on linux)
 
 ```bash
-
 curl http://127.0.0.1:$(shuf -i 4000-4007 -n1)
 ```
 
