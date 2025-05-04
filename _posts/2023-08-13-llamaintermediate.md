@@ -1,6 +1,6 @@
 ---
 title: Intermediate Activations in Llama 2.7B
-subtitle: there is a country layer in in the llama 2 transformer
+subtitle: there is a country layer in the llama 2 transformer
 date: 2023-08-13 15:42:28 +0530
 layout: default
 keywords: deep learning, transformers
