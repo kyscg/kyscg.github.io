@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the markdown file name
-markdown_file="2025books.md"
+markdown_file="2023books.md"
 
 sed -i '$d' "$markdown_file"
 
@@ -30,7 +30,7 @@ echo "Enter your review (press Ctrl+D on a new line to finish):"
 review=$(read_review)
 
 # Create the markdown entry
-markdown_entry="### $number. [$book_title]($book_link) by $author <span style=\"float: right;\">\`($rating/5)\`</span>"
+markdown_entry="#### $number. [$book_title]($book_link) by $author <span style=\"float: right;\">\`($rating/5)\`</span>"
 
 # Append the entry to the markdown file
 echo "$markdown_entry" >> "$markdown_file"

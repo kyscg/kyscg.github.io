@@ -1,7 +1,7 @@
-#landing h1 {
+/*#landing h1 {
   font-size: 28px;
   font-family: 'Equity Caps', sans-serif;
-}
+}*/
 
 #landing ul#links {
   list-style: none;
@@ -137,7 +137,7 @@
 }
 
 body {
-  font-family: 'Equity Text', sans-serif;
+  font-family: 'Equity Text', serif;
   background-color: rgba(251, 241, 199, 0.5);
 }
 
@@ -233,13 +233,48 @@ th {
   margin-right: 0.5em;
 }
 
-.wrap-article h1,
-.wrap-article h2,
-.wrap-article h3,
-.wrap-article h4,
-.wrap-article h5,
-.wrap-article h6 {
-  font-weight: normal;
+/* Base styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Equity Text", serif; 
+  font-weight: normal; 
+  line-height: 1.2; 
+  margin-bottom: 0.5em; 
+}
+
+h1 {
+  font-size: 2.5em; 
+  margin-top: 0; 
+  letter-spacing: -0.02em; 
+}
+
+h2 {
+  font-size: 2em;
+  margin-top: 1.5em; 
+}
+
+h3 {
+  font-size: 1.75em;
+  margin-top: 1.25em;
+  font-style: italic;
+}
+
+h4 {
+  font-size: 1.5em;
+  margin-top: 1em;
+  border-bottom: 1px solid #ddd; /* a line because I've run out of ideas */
+  padding-bottom: 0.2em;
+}
+
+h5 {
+  font-size: 1.25em;
+  margin-top: 1em;
+  font-variant-caps: small-caps; 
+}
+
+h6 {
+  font-size: 1em;
+  margin-top: 1em;
+  font-weight: bold; 
 }
 
 .wrap-article a:link {
