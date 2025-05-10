@@ -1,14 +1,14 @@
 ---
 title: Huberman Lab Podcast [UFO]
 subtitle: Collection of important ideas from the Huberman Lab Podcast. Not Medical Advice!! 
-date: 2021-08-01 04:00:00 +0530
+date: 2021-08-01 14:00:00 +0530
 layout: default
 keywords: biology
 published: true
 ---
 
 <center>
-<object data="/assets/pdfs/hubermanlab.pdf" width="1000" height="1000" type='application/pdf'></object>
+<object data="/assets/pdfs/hubermanlab.pdf" width="80%" height="1000" type='application/pdf'></object>
 </center>
 
 ---

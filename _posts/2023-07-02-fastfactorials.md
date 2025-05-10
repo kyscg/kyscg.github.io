@@ -1,7 +1,7 @@
 ---
 title: Faster Factorial Approximations
 subtitle: Comparing factorial computation times vs. approximation as exponentiation, gamma functions, and Stirling's approximation. 
-date: 2023-07-02 04:00:00 +0530
+date: 2023-07-02 14:00:00 +0530
 layout: default
 keywords: math
 published: true

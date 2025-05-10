@@ -1,7 +1,7 @@
 ---
 title: Reorganizing Site Content
 subtitle: GitHub issue tracking much needed changes 
-date: 2023-11-28 04:00:00 +0530
+date: 2023-11-28 14:00:00 +0530
 layout: default
 keywords: notes
 published: true

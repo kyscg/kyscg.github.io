@@ -1,7 +1,7 @@
 ---
 title: Using shuf to select random ports in a cluster
 subtitle: A few tricks in bash to generate random numbers
-date: 2025-04-12 00:24:53 +0530
+date: 2025-04-12 20:24:53 +0530
 layout: default
 keywords: hacks, bash
 published: true

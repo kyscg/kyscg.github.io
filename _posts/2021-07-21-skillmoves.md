@@ -1,7 +1,7 @@
 ---
 title: Skill Moves — An Analysis
 subtitle: Understanding skill moves in football and making a case for the body feint.
-date: 2021-07-21 04:00:00 +0530
+date: 2021-07-21 14:00:00 +0530
 layout: default
 keywords: football
 published: true

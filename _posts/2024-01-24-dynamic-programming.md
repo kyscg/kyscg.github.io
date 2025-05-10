@@ -1,7 +1,7 @@
 ---
 title: Dynamic Programming [UFO]
 subtitle: Some notes on rod-cutting, LCS, and 0-1 Knapsack...
-date: 2024-01-24 01:44:04 +0530
+date: 2024-01-24 21:44:04 +0530
 layout: default
 keywords: algorithms, notes
 published: true

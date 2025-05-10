@@ -1,7 +1,7 @@
 ---
 title: Death [WIP] 
 subtitle: Lecture Notes of the 2007 Series at Yale taught by Shelly Kagan along with some personal opinions.
-date: 2022-03-15 04:00:00 +0530
+date: 2022-03-15 14:00:00 +0530
 layout: default
 keywords: notes
 published: true

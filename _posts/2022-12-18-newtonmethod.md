@@ -1,7 +1,7 @@
 ---
 title: Root Finding with Newton's Method
 subtitle: Testing whether Newton's method decays updates exponentially 
-date: 2022-12-18 04:00:00 +0530
+date: 2022-12-18 14:00:00 +0530
 layout: default
 keywords: math
 published: true

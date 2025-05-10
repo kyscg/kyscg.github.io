@@ -1,7 +1,7 @@
 ---
 title: Justice
 subtitle: Lecture Notes of the 2009 Series at Harvard taught by Micheal Sandel along with some personal opinions. 
-date: 2021-05-05 04:00:00 +0530
+date: 2021-05-05 14:00:00 +0530
 layout: default
 keywords: notes
 published: true
