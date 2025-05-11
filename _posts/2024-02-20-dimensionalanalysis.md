@@ -1,9 +1,13 @@
 ---
+permalink: 2024-02-20-dimensionalanalysis
 title: Dimensional Analysis on Loss Functions
 subtitle: A half-baked idea I had while checking my equations
 date: 2024-02-20 14:21:17 +0530
 layout: default
 keywords: deep learning, physics
+categories:
+    - nn
+    - physics
 published: true
 ---
 

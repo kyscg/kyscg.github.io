@@ -1,9 +1,11 @@
 ---
+permalink: 2023-07-12-doomsdayalgorithm
 title: John Conway's Doomsday Algorithm
 subtitle: This is a very good party trick to learn
 date: 2023-07-12 14:21:17 +0530
 layout: default
 keywords: math
+categories: math
 published: true
 ---
 

@@ -1,9 +1,11 @@
 ---
+permalink: 2023-11-11-SAMsemanticsegmentation
 title: Segmentation model outputs as prompts to SAM
 subtitle: Some ideas on improving semantic segmentation with SAM
 date: 2023-11-11 14:21:17 +0530
 layout: default
 keywords: deep learning, research
+categories: nn
 published: true
 ---
 

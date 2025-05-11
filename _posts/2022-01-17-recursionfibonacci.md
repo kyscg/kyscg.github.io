@@ -1,9 +1,11 @@
 ---
+permalink: 2022-01-17-recursionfibonacci
 title: How Many Recursive Calls Does a Recursive Function Make?
 subtitle: a wild fibonacci appears
 date: 2022-01-17 15:42:28 +0530
 layout: default
 keywords: math, os
+categories: math
 published: true
 ---
 

@@ -1,9 +1,11 @@
 ---
+permalink: 2024-07-01-riverofsteel
 title: "Like a river of steel it flowed, grey and ghostlike" 
 subtitle: An account of the WW1 German Army marching through Brussels by Richard Harding Davis.
 date: 2024-07-01 14:21:17 +0530
 layout: default
 keywords: history
+categories: history
 published: true
 ---
 

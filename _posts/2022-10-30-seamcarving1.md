@@ -1,9 +1,13 @@
 ---
+permalink: 2022-10-30-seamcarving1
 title: Seam Carving — Intuition and Ideas
 subtitle: Live Coding Seam Carving Part 1
 date: 2022-10-30 14:00:00 +0530
 layout: default
 keywords: research
+categories:
+    - nn
+    - math
 published: true
 ---
 

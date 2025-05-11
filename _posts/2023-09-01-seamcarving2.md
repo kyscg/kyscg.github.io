@@ -1,9 +1,13 @@
 ---
+permalink: 2023-09-01-seamcarving2
 title: Seam Carving — Energy Function
 subtitle: Live Coding Seam Carving Part 2
 date: 2023-09-01 14:00:00 +0530
 layout: default
 keywords: research
+categories:
+    - nn
+    - math
 published: true
 ---
 

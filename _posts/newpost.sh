@@ -14,11 +14,13 @@ filename="${current_date}-${name}.md"
 
 # Define the frontmatter content
 frontmatter="---
+permalink: ${current_date}-${name}
 title:
 subtitle:
 date: ${timestamp}
 layout: default
 keywords:
+categories:
 published: true
 ---"
 

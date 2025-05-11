@@ -1,9 +1,11 @@
 ---
+permalink: 2022-10-01-multilingualspeakers
 title: Multilingual Speakers
 subtitle: The neuroscience of speaking multiple languages, and switching between them.  
 date: 2022-10-01 19:27:37 +0530
 layout: default
 keywords: biology
+categories: biology
 published: true
 ---
 

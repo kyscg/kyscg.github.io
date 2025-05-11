@@ -1,9 +1,11 @@
 ---
+permalink: 2022-06-10-hellespont
 title: The Hellespont
 subtitle: something about crossing water bodies 
 date: 2022-06-10 15:42:28 +0530
 layout: default
 keywords: notes
+categories: personal
 published: true
 ---
 

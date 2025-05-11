@@ -1,9 +1,11 @@
 ---
+permalink: 2023-09-26-informationspeed
 title: Max-bounds on information travel speeds 
 subtitle: A dumb attempt by me to go faster than the speed of light 
 date: 2023-09-26 14:21:17 +0530
 layout: default
 keywords: physics
+categories: physics
 published: true
 ---
 

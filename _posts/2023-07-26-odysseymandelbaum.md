@@ -1,9 +1,11 @@
 ---
+permalink: 2023-07-26-odysseymandelbaum
 title: Muse, tell me of the man of many wiles
 subtitle: The opening lines from Allen Mandelbaum's translation of The Odyssey
 date: 2023-07-26 14:21:17 +0530
 layout: default
 keywords: literature
+categories: personal
 published: true
 ---
 

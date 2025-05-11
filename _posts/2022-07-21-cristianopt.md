@@ -1,9 +1,11 @@
 ---
+permalink: 2022-07-21-cristianopt
 title: Cristiano Ronaldo in The Player's Tribune 
 subtitle: a collection of my favourite lines from the article
 date: 2022-07-21 19:27:37 +0530
 layout: default
 keywords: cristiano ronaldo, football
+categories: sports
 published: true
 ---
 

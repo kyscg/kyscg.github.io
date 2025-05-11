@@ -1,9 +1,11 @@
 ---
+permalink: 2023-09-05-fourfours
 title: A Variation of the Four Fours Problem
 subtitle: Streaming while doing math
 date: 2023-09-05 15:00:00 +0530
 layout: default
 keywords: research
+categories: math
 published: true
 ---
 

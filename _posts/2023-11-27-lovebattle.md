@@ -1,9 +1,13 @@
 ---
+permalink: 2023-11-27-lovebattle
 title: F. Scott Fitzgerald about the first world war
 subtitle: from Tender is the Night 
 date: 2023-11-27 14:21:17 +0530
 layout: default
 keywords: history
+categories:
+    - personal
+    - history
 published: true
 ---
 

@@ -1,9 +1,11 @@
 ---
+permalink: 2023-01-07-humanplacenta
 title: The Human Placenta 
 subtitle: some cool stuff I learnt from a podcast
 date: 2023-01-07 14:21:17 +0530
 layout: default
 keywords: biology
+categories: biology
 published: true
 ---
 

@@ -1,9 +1,13 @@
 ---
+permalink: 2023-10-03-karikoupenn
 title: Katalin Kariko and UPenn 
-subtitle: UPenn apparently fired a future Nobel Prize winner and are attempted to recoup their losses
+subtitle: UPenn apparently fired a future Nobel Prize winner and are attempting to recoup their losses
 date: 2023-10-03 14:21:17 +0530
 layout: default
 keywords: notes 
+categories:
+    - personal
+    - biology
 published: true
 ---
 

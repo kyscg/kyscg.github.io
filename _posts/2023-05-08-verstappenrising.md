@@ -1,9 +1,11 @@
 ---
+permalink: 2023-05-08-verstappenrising
 title: Verstappen Rising
 subtitle: realistically, what is stopping him before 2026?
 date: 2023-05-08 14:21:17 +0530
 layout: default
 keywords: formula1, max verstappen, sports
+categories: sports
 published: true
 ---
 

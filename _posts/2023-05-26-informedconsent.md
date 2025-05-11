@@ -1,9 +1,11 @@
 ---
+permalink: 2023-05-26-informedconsent
 title: Informed Consent
 subtitle: What does this even mean?
 date: 2023-05-26 14:21:17 +0530
 layout: default
 keywords: biology
+categories: biology
 published: true
 ---
 

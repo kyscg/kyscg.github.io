@@ -1,9 +1,11 @@
 ---
+permalink: 2025-02-04-tolstoyhistory
 title: Tolstoy on History
 subtitle: he really dislikes the great man theory of history, but more than that, he dislikes Napoleon.
 date: 2025-03-20 19:27:37 +0530
 layout: default
 keywords: links
+categories: history
 published: true
 ---
 

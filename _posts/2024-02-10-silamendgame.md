@@ -1,9 +1,11 @@
 ---
+permalink: 2024-02-10-silamendgame
 title: Silman's Complete Endgame Course
 subtitle: A book review
 date: 2024-02-10 14:21:17 +0530
 layout: default
 keywords: chess
+categories: sports
 published: true
 ---
 

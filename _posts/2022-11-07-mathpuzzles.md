@@ -1,9 +1,11 @@
 ---
+permalink: 2022-11-07-mathpuzzles
 title: Some fun math puzzles
 subtitle: One of these is not like the other 
 date: 2022-11-07 19:27:37 +0530
 layout: default
 keywords: math
+categories: math
 published: true
 ---
 

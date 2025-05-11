@@ -1,9 +1,11 @@
 ---
+permalink: 2023-04-14-freespeech
 title: Get Some Free Speech While You Can
 subtitle: Freedom of expression isn't the tool of the powerful; it's the tool of the powerless 
 date: 2023-04-14 14:21:17 +0530
 layout: default
 keywords: notes
+categories: personal
 published: true
 ---
 

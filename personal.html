@@ -1,0 +1,92 @@
+---
+permalink: '/writing/personal'
+---
+
+<html>
+
+<head>
+    <title>Writing | Personal</title>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name='description' content=''>
+
+    <meta name='keywords' content='
+        machine learning,
+        deep learning,
+        linear algebra,
+        probability,
+        statistics,
+        finance,
+        urban design,
+        biology,
+        history,
+        football,
+        fiction
+    '>
+    <meta name='author' content='Kilaru Yasaswi Sri Chandra Gandhi'>
+
+    <link rel='shortcut icon' href='/assets/images/alexandrosMegas.jpg' />
+    <link href='/index.css' rel='stylesheet' />
+    <link href="/searchpf/pagefind-ui.css" rel="stylesheet">
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="2a3fa7ef-09a0-498f-afab-e07f756bd81e"></script>
+
+    {% include mathjax.html %}
+
+</head>
+
+<body>
+    <article id="writing">
+        <p id="nav">
+            <a href='/'>Home</a> ~
+            <a href='/reading'>Reading</a> ~
+            <a href='/feed.xml'>Feed</a>
+        </p>
+        <blockquote>
+            <p>I'm a big advocate for not hiding your enthusiasm for things. It seems to me that there
+                is a false
+                stigma around eagerness in our culture of unbothered ambivalence. This outlook perpetuates the idea that
+                it's not cool to want it. That people who don't try are fundamentally more chic than people who do.<br><br>
+                Never be
+                ashamed of trying, effortlessness is a myth.</p>
+            <cite>— <a href="https://youtu.be/OBG50aoUwlI?t=919">Taylor Swift</a></cite>
+        </blockquote>
+
+        <div id="search"></div>
+
+        <div id="cats" style="font-family: Triplicate T4">
+            <center>
+                <a href="/writing/nn">intelligence</a> <a href="/writing/math">math</a> <a href="/writing/physics">physics</a> <a href="/writing/history">history</a> <a href="/writing/biology">biology</a> <a href="/writing/sports">sports</a> <a href="/writing/personal">personal</a>
+            </center>
+        </div>
+
+        <div id='posts' class='section'>
+            {% for post in site.posts %}
+            {% if post.categories contains 'personal' %}
+            <div class='post-row'>
+                <p class='post-title'>
+                    <a href="{{ post.url }}">
+                        {{ post.title }}
+                    </a>
+                </p>
+                <p class='post-date'>
+                    {{ post.date | date_to_long_string }}
+                </p>
+            </div>
+            <p class='post-subtitle'>
+                {{ post.subtitle }}
+            </p>
+            <span class='hidden'>{{ forloop.index }}</span>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </article>
+    <script src="/searchpf/pagefind-ui.js" type="text/javascript"></script>
+    <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#search" });
+    });
+    </script>
+</body>
+
+</html>

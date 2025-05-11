@@ -1,9 +1,11 @@
 ---
+permalink: 2023-02-10-latexpipeline
 title: $\LaTeX$ pipeline
 subtitle: How I work with $\LaTeX$ locally instead of using OverLeaf
 date: 2023-03-21 14:21:17 +0530
 layout: default
 keywords: math
+categories: math
 published: true
 ---
 

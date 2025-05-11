@@ -1,9 +1,11 @@
 ---
+permalink: 2023-09-05-shortformvideorant
 title: On short form video content 
 subtitle: A rant
 date: 2023-09-05 14:21:17 +0530
 layout: default
 keywords: notes
+categories: personal
 published: true
 ---
 

@@ -1,9 +1,13 @@
 ---
+permalink: 2022-01-15-badatmath
 title: So, you think you're bad at math...
 subtitle: A video from Prof. Courtney Gibbons I revisit a lot
 date: 2022-01-15 15:42:28 +0530
 layout: default
 keywords: math, learning
+categories:
+    - math
+    - personal
 published: true
 ---
 

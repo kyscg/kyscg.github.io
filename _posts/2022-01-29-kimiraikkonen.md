@@ -1,9 +1,11 @@
 ---
+permalink: 2022-01-29-kimiraikkonen
 title:  Some Kimi Räikkönen stats
 subtitle: Probably the most talented driver in the 21st century
 date: 2022-01-29 15:42:28 +0530
 layout: default
 keywords: f1
+categories: sports
 published: true
 ---
 

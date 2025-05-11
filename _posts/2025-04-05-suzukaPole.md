@@ -1,9 +1,11 @@
 ---
+permalink: 2025-04-05-suzukaPole
 title: Max Verstappen breaks Suzuka Lap Record!
 subtitle: and for nostalgia's sake, a couple of perfect qualifying laps from Seb Vettel
 date: 2025-04-05 18:01:53 +0530
 layout: default
 keywords: sports, formula1
+categories: sports
 published: true
 ---
 

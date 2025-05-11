@@ -1,9 +1,11 @@
 ---
+permalink: 2022-03-01-thoughtsonprivacy
 title: Thoughts on Privacy
 subtitle: the burden of proof of a crime falls upon the state, or something along those lines
 date: 2022-03-01 15:42:28 +0530
 layout: default
 keywords: privacy, notes
+categories: personal
 published: true
 ---
 

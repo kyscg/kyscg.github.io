@@ -1,9 +1,11 @@
 ---
+permalink: 2024-02-29-hammingshannon
 title: Richard Hamming on Claude Shannon
 subtitle: An anecdote that stuck out to me from Hamming's You and Your Research
 date: 2024-02-29 14:21:17 +0530
 layout: default
 keywords: computer science, claude shannon
+categories: personal
 published: true
 ---
 

@@ -1,9 +1,11 @@
 ---
+permalink: 2024-01-24-dynamic-programming
 title: Dynamic Programming [UFO]
 subtitle: Some notes on rod-cutting, LCS, and 0-1 Knapsack...
 date: 2024-01-24 21:44:04 +0530
 layout: default
 keywords: algorithms, notes
+categories: math
 published: true
 ---
 

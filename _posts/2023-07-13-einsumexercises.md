@@ -1,9 +1,13 @@
 ---
+permalink: 2023-07-13-einsumexercises
 title: Einstein Summation Notation Exercises
 subtitle: Exercises in faster and more intuitive tensor notation for deep learning.
 date: 2023-07-13 14:00:00 +0530
 layout: default
 keywords: programming, research
+categories:
+    - nn
+    - math
 published: true
 ---
 

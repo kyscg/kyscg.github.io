@@ -1,9 +1,11 @@
 ---
+permalink: 2020-12-10-trafficevent
 title: Traffic event description using Unsupervised Learning Methods
 subtitle: 13th International (Online) Conference on Transportation Planning and Implementation Methodologies for Developing Countries
 date: 2020-12-10 14:00:00 +0530
 layout: default
 keywords: research
+categories: nn
 published: true
 ---
 

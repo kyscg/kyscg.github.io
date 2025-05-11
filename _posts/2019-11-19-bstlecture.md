@@ -1,9 +1,11 @@
 ---
+permalink: 2019-11-19-bstlecture
 title: Binary Search Trees
 subtitle: Notes for a lecture I gave as an undergrad 
 date: 2019-11-19 14:00:00 +0530
 layout: default
 keywords: research
+categories: math
 published: true
 ---
 

@@ -1,9 +1,11 @@
 ---
+permalink: 2023-07-07-speaknowtv
 title: Speak Now (Taylor's Version) 
 subtitle: The re-recording of Taylor Swift's third studio album is out!
 date: 2023-07-07 14:21:17 +0530
 layout: default
 keywords: taylor swift
+categories: personal
 published: true
 ---
 

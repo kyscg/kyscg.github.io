@@ -1,9 +1,11 @@
 ---
+permalink: 2025-04-08-videoplaybackspeed
 title: JavaScript to change video playback speed
 subtitle: because sometimes, you want to go faster than 2x
 date: 2025-04-08 20:07:44 +0530
 layout: default
 keywords: javascript, hacks
+categories: personal
 published: true
 ---
 

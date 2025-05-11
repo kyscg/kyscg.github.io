@@ -1,9 +1,11 @@
 ---
+permalink: 2023-08-05-johnbardeen
 title: John Bardeen
 subtitle: Imagine winning two Nobels for Physics
 date: 2023-08-05 14:21:17 +0530
 layout: default
 keywords: physics
+categories: physics
 published: true
 ---
 

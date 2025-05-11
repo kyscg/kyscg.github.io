@@ -1,9 +1,11 @@
 ---
+permalink: 2023-06-04-mahutrafaquote
 title: Rafael Nadal's dominance at Roland Garros
 subtitle: some perspective by Nicholas Mahut
 date: 2023-06-04 14:21:17 +0530
 layout: default
 keywords: tennis, sports
+categories: sports
 published: true
 ---
 

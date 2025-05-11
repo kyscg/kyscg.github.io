@@ -1,9 +1,11 @@
 ---
+permalink: 2024-05-22-tonikroos
 title: Vielen Dank für alles, Herr deutscher Scharfschütze 
 subtitle: Toni Kroos retires from professional football
 date: 2024-05-22 14:21:17 +0530
 layout: default
 keywords: sports, toni kroos
+categories: sports
 published: true
 ---
 

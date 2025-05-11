@@ -1,9 +1,11 @@
 ---
+permalink: 2022-01-23-modulararithmetic
 title: Modular Arithmetic
 subtitle: Storing a few results here for future use
 date: 2022-01-23 15:42:28 +0530
 layout: default
 keywords: math, notes
+categories: math
 published: true
 ---
 

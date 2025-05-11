@@ -1,9 +1,11 @@
 ---
+permalink: 2024-04-24-liquefyingsilica
 title: Liquefying Silica 
 subtitle: An appendix to my previous blog post on Isostasy 
 date: 2024-04-24 14:21:17 +0530
 layout: default
 keywords: physics
+categories: physics
 published: true
 ---
 

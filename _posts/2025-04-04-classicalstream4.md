@@ -1,9 +1,11 @@
 ---
+permalink: 2025-04-04-classicalstream4
 title: Classical Chess Stream 4
 subtitle: the horse jumps everywhere
 date: 2025-04-04 16:11:22 +0530
 layout: default
 keywords: chess, stream, youtube
+categories: sports
 published: true
 ---
 
