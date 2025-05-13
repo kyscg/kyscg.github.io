@@ -1,5 +1,5 @@
 ---
-permalink: 2023-08-13-llamaintermediate
+permalink: /2023/08/13/llamaintermediate
 title: Intermediate Activations in Llama 2.7B
 subtitle: there is a country layer in the llama 2 transformer
 date: 2023-08-13 15:42:28 +0530

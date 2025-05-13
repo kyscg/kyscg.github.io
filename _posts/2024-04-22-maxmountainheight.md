@@ -1,5 +1,5 @@
 ---
-permalink: 2024-04-22-maxmountainheight
+permalink: /2024/04/22/maxmountainheight
 title: Isostasy and Mountain Heights 
 subtitle: What is the tallest structure that can remain standing on an almost spherical mass?
 date: 2024-04-22 14:21:17 +0530

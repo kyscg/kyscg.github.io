@@ -1,5 +1,5 @@
 ---
-permalink: 2023-10-03-odysseybook22
+permalink: /2023/10/03/odysseybook22
 title: Book 22, The Odyssey 
 subtitle: At the time of the grand reveal
 date: 2023-10-03 14:21:17 +0530

@@ -1,5 +1,5 @@
 ---
-permalink: 2022-10-21-midnights
+permalink: /2022/10/21/midnights
 title: Midnights 
 subtitle: Taylor Swift's tenth studio album is out!
 date: 2022-10-21 14:21:17 +0530

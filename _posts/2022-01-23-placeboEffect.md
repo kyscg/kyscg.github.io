@@ -1,5 +1,5 @@
 ---
-permalink: 2022-01-23-placeboEffect
+permalink: /2022/01/23/placeboEffect
 title: The Placebo Effect
 subtitle: My attempt to understand this strangest of phenomena. Something I think can revolutionize modern medicine.
 date: 2022-01-23 16:24:44 +0530

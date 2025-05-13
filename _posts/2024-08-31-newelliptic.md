@@ -1,5 +1,5 @@
 ---
-permalink: 2024-08-31-newelliptic
+permalink: /2024/08/31/newelliptic
 title: An Elliptic Curve with Rank $\ge$ 29 has been found 
 subtitle: more math news from Mathstodon 
 date: 2024-08-31 14:21:17 +0530

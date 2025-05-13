@@ -1,5 +1,5 @@
 ---
-permalink: 2025-04-24-diffusionconvolution
+permalink: /2025/04/24/diffusionconvolution
 title: Sums of random variables and convolutions
 subtitle: A note on how Gaussians are convolved to make the reparameterization trick work in the diffusion forward process.
 date: 2025-04-24 19:28:12 +0530

@@ -1,5 +1,5 @@
 ---
-permalink: 2023-08-18-tmotabreview
+permalink: /2023/08/18/tmotabreview
 title: The Making of the Atomic Bomb
 subtitle: A review of the Richard Rhodes book
 date: 2023-08-18 14:21:17 +0530

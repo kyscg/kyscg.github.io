@@ -1,5 +1,5 @@
 ---
-permalink: 2024-01-31-engineefficiency
+permalink: /2024/01/31/engineefficiency
 title: Engine Efficiencies
 subtitle: and my attempts to relearn thermodynamics
 date: 2024-01-31 14:21:17 +0530

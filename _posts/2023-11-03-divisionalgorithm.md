@@ -1,5 +1,5 @@
 ---
-permalink: 2023-11-03-divisionalgorithm
+permalink: /2023/11/03/divisionalgorithm
 title: Division Algorithm Theorem
 subtitle: a very elegant proof that I learnt after many hours of toil
 date: 2023-11-03 14:21:17 +0530

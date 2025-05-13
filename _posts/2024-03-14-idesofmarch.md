@@ -1,5 +1,5 @@
 ---
-permalink: 2024-03-14-idesofmarch
+permalink: /2024/03/14/idesofmarch
 title: The Ides of March are upon us
 subtitle: celebrate by declining all meetings
 date: 2024-03-14 14:21:17 +0530

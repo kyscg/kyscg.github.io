@@ -1,5 +1,5 @@
 ---
-permalink: 2024-08-15-stirlingshiftsize
+permalink: /2024/08/15/stirlingshiftsize
 title: $x^n/n!$ and Stirling's Formula 
 subtitle: What is the size of the shift between two successive curves and how do you show that they intersect at integer points? 
 date: 2024-08-15 14:21:17 +0530

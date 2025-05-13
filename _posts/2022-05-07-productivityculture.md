@@ -1,5 +1,5 @@
 ---
-permalink: 2022-05-07-productivityculture
+permalink: /2022/05/07/productivityculture
 title: Productivity Culture
 subtitle: why aren't we working lesser hours even with technological advancement?
 date: 2022-05-07 15:42:28 +0530

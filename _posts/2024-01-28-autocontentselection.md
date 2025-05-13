@@ -1,5 +1,5 @@
 ---
-permalink: 2024-01-28-autocontentselection
+permalink: /2024/01/28/autocontentselection
 title: Automatic Content Selection
 subtitle: Notes from Stephen Wolfram's blog
 date: 2024-01-28 14:21:17 +0530

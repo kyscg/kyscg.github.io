@@ -1,5 +1,5 @@
 ---
-permalink: 2022-09-11-sebvettelbest
+permalink: /2022/09/11/sebvettelbest
 title: Sebastian Vettel's Greatest Hits
 subtitle:  indulging in some nostalgia
 date: 2022-09-11 19:27:37 +0530

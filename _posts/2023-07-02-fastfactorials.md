@@ -1,5 +1,5 @@
 ---
-permalink: 2023-07-02-fastfactorials
+permalink: /2023/07/02/fastfactorials
 title: Faster Factorial Approximations
 subtitle: Comparing factorial computation times vs. approximation as exponentiation, gamma functions, and Stirling's approximation. 
 date: 2023-07-02 14:00:00 +0530

@@ -1,5 +1,5 @@
 ---
-permalink: 2022-12-18-newtonmethod
+permalink: /2022/12/18/newtonmethod
 title: Root Finding with Newton's Method
 subtitle: Testing whether Newton's method decays updates exponentially 
 date: 2022-12-18 14:00:00 +0530

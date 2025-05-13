@@ -1,5 +1,5 @@
 ---
-permalink: 2024-08-11-olympicmedals
+permalink: /2024/08/11/olympicmedals
 title: Olympic Medals per Capita 
 subtitle: A much superior metric than the raw medal tally. 
 date: 2024-08-11 14:21:17 +0530

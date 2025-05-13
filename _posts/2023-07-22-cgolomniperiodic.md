@@ -1,5 +1,5 @@
 ---
-permalink: 2023-07-22-cgolomniperiodic
+permalink: /2023/07/22/cgolomniperiodic
 title: Conway's Game of Life is omniperiodic!
 subtitle: A very good thread (with an unexpected Alexander crossover) from Mathstodon
 date: 2023-07-22 14:21:17 +0530

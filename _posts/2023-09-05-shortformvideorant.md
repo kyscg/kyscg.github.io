@@ -1,5 +1,5 @@
 ---
-permalink: 2023-09-05-shortformvideorant
+permalink: /2023/09/05/shortformvideorant
 title: On short form video content 
 subtitle: A rant
 date: 2023-09-05 14:21:17 +0530

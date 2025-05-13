@@ -1,5 +1,5 @@
 ---
-permalink: 2023-09-19-linkedinrant
+permalink: /2023/09/19/linkedinrant
 title: On LinkedIn
 subtitle: A rant
 date: 2023-09-19 14:21:17 +0530

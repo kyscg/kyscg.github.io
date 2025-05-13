@@ -1,5 +1,5 @@
 ---
-permalink: 2024-04-30-fischergames
+permalink: /2024/04/30/fischergames
 title: The Games of Robert James Fischer 
 subtitle: A LiChess study while I go through a couple books with his most famous games.
 date: 2024-04-30 14:21:17 +0530

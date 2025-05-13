@@ -1,5 +1,5 @@
 ---
-permalink: 2024-07-20-colonizingvenus
+permalink: /2024/07/20/colonizingvenus
 title: Colonization of Venus 
 subtitle: Building floating castles, literally and figuratively. 
 date: 2024-07-20 14:21:17 +0530

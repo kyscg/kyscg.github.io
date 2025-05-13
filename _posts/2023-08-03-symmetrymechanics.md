@@ -1,5 +1,5 @@
 ---
-permalink: 2023-08-03-symmetrymechanics
+permalink: /2023/08/03/symmetrymechanics
 title: Symmetry and Newton's Laws
 subtitle: A very nice method to have in your problem-solving toolkit 
 date: 2023-08-03 14:21:17 +0530

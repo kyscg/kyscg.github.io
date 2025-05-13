@@ -1,5 +1,5 @@
 ---
-permalink: 2024-01-17-carboncapture
+permalink: /2024/01/17/carboncapture
 title: Scaling Carbon Capture
 subtitle: One of the most important problems to work on at this point in history.
 date: 2024-01-17 14:21:17 +0530

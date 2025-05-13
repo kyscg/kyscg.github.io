@@ -1,5 +1,5 @@
 ---
-permalink: 2024-06-14-pointsinacircle
+permalink: /2024/06/14/pointsinacircle
 title: A very nice ruler and compass geometry puzzle 
 subtitle: Find the shortest route between two points in a circle by touching the circumference along the route.
 date: 2024-06-14 14:21:17 +0530

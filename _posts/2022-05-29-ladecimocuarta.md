@@ -1,5 +1,5 @@
 ---
-permalink: 2022-05-29-ladecimocuarta
+permalink: /2022/05/29/ladecimocuarta
 title: Real Madrid win La Decimocuarta!
 subtitle: somos los reyes de europa
 date: 2022-05-29 15:42:28 +0530

@@ -1,5 +1,5 @@
 ---
-permalink: 2023-03-29-citineurotrip
+permalink: /2023/03/29/citineurotrip
 title:  Field Trip to Citi Neuro Hospital
 subtitle: a travel journal of sorts 
 date: 2023-03-29 14:21:17 +0530

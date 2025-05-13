@@ -1,5 +1,5 @@
 ---
-permalink: 2024-03-31-infinitesimalworms
+permalink: /2024/03/31/infinitesimalworms
 title: Infinitesimal Worms
 subtitle: A discontinuity paradox
 date: 2024-03-31 14:21:17 +0530

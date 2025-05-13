@@ -1,5 +1,5 @@
 ---
-permalink: 2022-07-07-mirzakhanianecdote
+permalink: /2022/07/07/mirzakhanianecdote
 title: Maryam Mirzakhani anecdote
 subtitle: 'Is it right?'
 date: 2022-07-07 19:27:37 +0530

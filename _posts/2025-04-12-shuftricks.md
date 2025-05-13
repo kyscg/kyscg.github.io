@@ -1,5 +1,5 @@
 ---
-permalink: 2025-04-12-shuftricks
+permalink: /2025/04/12/shuftricks
 title: Using shuf to select random ports in a cluster
 subtitle: A few tricks in bash to generate random numbers
 date: 2025-04-12 20:24:53 +0530

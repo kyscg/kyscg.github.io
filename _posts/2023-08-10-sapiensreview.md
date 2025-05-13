@@ -1,5 +1,5 @@
 ---
-permalink: 2023-08-10-sapiensreview
+permalink: /2023/08/10/sapiensreview
 title: Why is Sapiens so polarizing?
 subtitle: Partly a book review, partly a rant
 date: 2023-08-10 20:16:28 +0530

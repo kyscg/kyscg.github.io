@@ -1,5 +1,5 @@
 ---
-permalink: 2023-05-08-verstappenrising
+permalink: /2023/05/08/verstappenrising
 title: Verstappen Rising
 subtitle: realistically, what is stopping him before 2026?
 date: 2023-05-08 14:21:17 +0530

@@ -1,5 +1,5 @@
 ---
-permalink: 2024-04-29-recreationalmathdump
+permalink: /2024/04/29/recreationalmathdump
 title: Recreational Math Dump 
 subtitle: Some fun questions I've been trying to solve on and off this month 
 date: 2024-04-29 14:21:17 +0530

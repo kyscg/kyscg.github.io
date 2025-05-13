@@ -1,5 +1,5 @@
 ---
-permalink: 2022-07-28-sebf1retirement
+permalink: /2022/07/28/sebf1retirement
 title: Sebastian Vettel F1 retirement
 subtitle: I guess it was inevitable
 date: 2022-07-28 19:27:37 +0530

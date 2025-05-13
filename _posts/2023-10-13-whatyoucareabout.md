@@ -1,5 +1,5 @@
 ---
-permalink: 2023-10-13-whatyoucareabout
+permalink: /2023/10/13/whatyoucareabout
 title: How do you know what you care about? 
 subtitle: Correspondence with a friend
 date: 2023-10-13 14:21:17 +0530

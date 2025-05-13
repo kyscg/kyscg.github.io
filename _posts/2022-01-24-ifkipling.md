@@ -1,5 +1,5 @@
 ---
-permalink: 2022-01-24-ifkipling
+permalink: /2022/01/24/ifkipling
 title: If, by Rudyard Kipling
 subtitle: easily the greatest poem ever written, with emphasis on my favourite lines, which is like 80% of the poem.
 date: 2022-01-24 15:42:28 +0530

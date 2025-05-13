@@ -1,5 +1,5 @@
 ---
-permalink: 2024-02-05-navierstokes
+permalink: /2024/02/05/navierstokes
 title: Navier Stokes and smoothness
 subtitle: My notes while trying to make sense of the Navier Stokes problem
 date: 2024-02-05 14:21:17 +0530

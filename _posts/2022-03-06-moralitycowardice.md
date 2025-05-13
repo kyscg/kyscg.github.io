@@ -1,5 +1,5 @@
 ---
-permalink: 2022-03-06-moralitycowardice
+permalink: /2022/03/06/moralitycowardice
 title: Nietzsche's "Morality is Cowardice"
 subtitle: harmless =/= moral
 date: 2022-03-06 15:42:28 +0530

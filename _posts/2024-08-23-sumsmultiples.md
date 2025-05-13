@@ -1,5 +1,5 @@
 ---
-permalink: 2024-08-23-sumsmultiples
+permalink: /2024/08/23/sumsmultiples
 title: On the sums of multiples of two numbers 
 subtitle: A pattern that has evaded explanation for a long time, so I'm posting it here.
 date: 2024-08-23 14:21:17 +0530

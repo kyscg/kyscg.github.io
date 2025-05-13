@@ -1,5 +1,5 @@
 ---
-permalink: 2022-03-15-deathyale
+permalink: /2022/03/15/deathyale
 title: Death [WIP] 
 subtitle: Lecture Notes of the 2007 Series at Yale taught by Shelly Kagan along with some personal opinions.
 date: 2022-03-15 14:00:00 +0530

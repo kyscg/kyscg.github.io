@@ -14,7 +14,7 @@ filename="${current_date}-${name}.md"
 
 # Define the frontmatter content
 frontmatter="---
-permalink: ${current_date}-${name}
+permalink: $(date +%Y)/$(date +%m)/$(date +%d)/${name}
 title:
 subtitle:
 date: ${timestamp}

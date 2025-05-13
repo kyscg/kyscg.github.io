@@ -1,5 +1,5 @@
 ---
-permalink: 2022-08-27-geniusbukowski
+permalink: /2022/08/27/geniusbukowski
 title: The Genius of The Crowd
 subtitle: by Charles Bukowski
 date: 2022-08-27 19:27:37 +0530

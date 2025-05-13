@@ -1,5 +1,5 @@
 ---
-permalink: 2023-08-08-inexorablemarch
+permalink: /2023/08/08/inexorablemarch
 title: the inexorable march of time...
 subtitle: where does this phrase come from?
 date: 2023-08-08 19:24:45 +0530

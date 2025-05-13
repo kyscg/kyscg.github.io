@@ -1,5 +1,5 @@
 ---
-permalink: 2024-08-04-novakdjokovic
+permalink: /2024/08/04/novakdjokovic
 title: Thoughts on Novak Djokovic
 subtitle: After his Olympic Gold run
 date: 2024-08-14 14:21:17 +0530

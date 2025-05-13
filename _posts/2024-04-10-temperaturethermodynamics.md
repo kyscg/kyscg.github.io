@@ -1,5 +1,5 @@
 ---
-permalink: 2024-04-10-temperaturethermodynamics
+permalink: /2024/04/10/temperaturethermodynamics
 title: Temperature
 subtitle: and some more thermodynamics
 date: 2024-04-10 14:21:17 +0530

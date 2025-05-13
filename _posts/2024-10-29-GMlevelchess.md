@@ -1,5 +1,5 @@
 ---
-permalink: 2024-10-29-GMlevelchess
+permalink: /2024/10/29/GMlevelchess
 title: Distilling Stockfish into a Transformer
 subtitle: My thoughts on the "Grandmaster-Level Chess Without Search" paper from Google DeepMind
 date: 2024-10-29 22:17:12 +0530
