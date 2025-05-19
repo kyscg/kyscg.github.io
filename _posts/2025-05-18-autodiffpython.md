@@ -25,6 +25,12 @@ A recording of me explaining and implementing automatic differentiation in pure 
 - [How to test gradient implementations](https://timvieira.github.io/blog/post/2017/04/21/how-to-test-gradient-implementations/) by Tim Vieira on Graduate Descent
 - [micrograd](https://github.com/karpathy/micrograd) by Andrej Karpathy (the greatest ever)
 
+_Update: ever since I published my video, I have had many interesting discussions with people about autodiff and I found these links to be very useful in improving my understanding of autodiff._
+
+- [PyTorch Autograd Explained](https://www.youtube.com/watch?v=MswxJw-8PvE) by Elliot Waite
+- [Automatic Differentiation](https://justindomke.wordpress.com/2009/02/17/automatic-differentiation-the-most-criminally-underused-tool-in-the-potential-machine-learning-toolbox/) by Justin Domke
+- [Introduction to Automatic Differentiation](https://alexey.radul.name/ideas/2013/introduction-to-automatic-differentiation/)
+
 ## Code
 
 - [`fmadinterleaved.py`](https://gist.github.com/kyscg/fdd97e5da5c7456dbf0d5d336f1f318a#file-fmadinterleaved-py): implementation of forward mode autodiff by straightforward interleaving

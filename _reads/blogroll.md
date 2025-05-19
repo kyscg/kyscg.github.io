@@ -28,5 +28,8 @@ published: true
 * [Simon Willison's Weblog](https://simonwillison.net/)
 * [DYNOMIGHT INTERNET WEBSITE](https://dynomight.net/)
 * [Graduate Descent](https://timvieira.github.io/blog) by Tim Vieira
+* [argmin gravitas](https://www.gleech.org/) by Gavin Leech
+* [Essays](https://gwern.net/) by Gwern Branwen
+* [Alexey Guzey's Blog](https://guzey.com/)
 
 ---

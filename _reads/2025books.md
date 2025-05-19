@@ -74,4 +74,20 @@ the last great man in history
 
 Vive l'Empereur!
 
+#### 14. [Our Oriental Heritage](https://www.simonandschuster.com/books/Our-Oriental-Heritage/Will-Durant/The-Story-of-Civilization/9781451646689) by Will Durant <span style="float: right;">`(4.5/5)`</span>
+
+Wow it was only near the end of the book when Durant was writing about China did I bother to check when it was written, for there was no mention of Mao. Now that I write this, I should've realized something was off when he didn't write about the Indian Independence. This book was written almost a hundred years ago, that is a very long time back to be writing about history. Especially when so much has happened in the last hundred years. 
+
+A really good book apart from that, the writing is very engaging, and Durant has genuine respect and admiration about the civilizations he writes about. There is a lot of focus on culture and societal description rather than just military/geographical history, and that was super interesting to me. This book can be used as an encyclopedia of history, because of how well it is organized into sections. It allows you to see the big picture, and identify recurring themes and patterns.
+
+I learnt that the word "saw" has an alternative meaning that means "a proverb or maxim". Quoting from page 183 of the book, "so old is the modern saw that we live on one-fourth of what we eat, and the doctors live on the rest."
+
+Some examples of writing I thought were very nice, not directly related to history:
+
+> "the world of beauty and the world of money never touch, even when beautiful things are sold"
+
+> "Men look to love and life for everything; they receive a little less that that; they imagine that they have received nothing: these are the three stages of the pessimist"
+
+> "The very basis of the Higher Man's character is an overflowing sympathy towards all men. He is not angered by the excellences of other men; when he sees men of worth he thinks of equaling them; when he sees men of low worth he turns inward and examines himself, for there are few faults that we do not share with our neighbors. He pays no attention to slander or violent speech. He is courteous and affable to all, but he does not gush forth indiscriminate praise. He treats his inferiors without contempt, and his superiors without seeking to court their favor. He is grave in deportment, since men will not take seriously one who is not serious with them; he is slow in words and earnest in conduct; he is not quick with his tongue, or given to clever repartee; he is earnest because he has work to do—and this is the secret of his unaffected dignity. He is courteous even to his familiars, but maintains his reserve towards all, even his son."
+
 ---
