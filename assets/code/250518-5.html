@@ -1,0 +1,60 @@
+<!-- vim: set nomodeline: -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ftest.py</title>
+<meta name="colorscheme" content="catppuccin-latte"></meta>
+<style>
+* {font-family: monospace}
+body {background-color: #eff1f5; color: #4c4f69}
+.Statement {color: #8839ef}
+.Number {color: #fe640b}
+.Function {color: #1e66f5}
+.pythonStrInterpRegion {}
+.ColorColumn {background-color: #ccd0da}
+.Special {color: #ea76cb}
+.String {color: #40a02b}
+.Include {color: #8839ef}
+.pythonDot {}
+.Error {color: #d20f39}
+.Operator {color: #04a5e5}
+</style>
+</head>
+<body style="display: flex">
+<pre>
+<span class="String">&quot;&quot;&quot;</span>
+<span class="String">file:</span><span class="Error"> </span>
+<span class="String">    ftest.py</span>
+<span class="String">description:</span>
+<span class="String">    code to test whether all numbers (f(x), df_dx, df_dy) are correct</span>
+<span class="String">url:</span>
+<span class="String">    https://kyscg.github.io/2025/05/18/autodiffpython</span>
+<span class="String">author:</span>
+<span class="String">    kyscg</span>
+<span class="String">&quot;&quot;&quot;</span>
+
+<span class="Include">import</span> math
+
+<span class="Statement">def</span> <span class="Function">f</span>(x, y):
+    <span class="Statement">return</span> math<span class="pythonDot">.</span><span class="Function">sin</span>(x <span class="Operator">*</span> y) <span class="Operator">*</span> (x <span class="Operator">+</span> <span class="Number">2</span> <span class="Operator">*</span> y) <span class="Operator">**</span> <span class="Number">2</span>
+
+<span class="Statement">def</span> <span class="Function">df_dx</span>(x, y):
+    a <span class="Operator">=</span> <span class="Number">2</span> <span class="Operator">*</span> (x <span class="Operator">+</span> <span class="Number">2</span> <span class="Operator">*</span> y) <span class="Operator">*</span> math<span class="pythonDot">.</span><span class="Function">sin</span>(x <span class="Operator">*</span> y)
+    b <span class="Operator">=</span> y <span class="Operator">*</span> math<span class="pythonDot">.</span><span class="Function">cos</span>(x <span class="Operator">*</span> y) <span class="Operator">*</span> (x <span class="Operator">+</span> <span class="Number">2</span> <span class="Operator">*</span> y) <span class="Operator">**</span> <span class="Number">2</span>
+    <span class="Statement">return</span> a <span class="Operator">+</span> b
+
+<span class="Statement">def</span> <span class="Function">df_dy</span>(x, y):
+    a <span class="Operator">=</span> <span class="Number">4</span> <span class="Operator">*</span> (x <span class="Operator">+</span> <span class="Number">2</span> <span class="Operator">*</span> y) <span class="Operator">*</span> math<span class="pythonDot">.</span><span class="Function">sin</span>(x <span class="Operator">*</span> y)
+    b <span class="Operator">=</span> x <span class="Operator">*</span> math<span class="pythonDot">.</span><span class="Function">cos</span>(x <span class="Operator">*</span> y) <span class="Operator">*</span> (x <span class="Operator">+</span> <span class="Number">2</span> <span class="Operator">*</span> y) <span class="Operator">**</span> <span class="Number">2</span>
+    <span class="Statement">return</span> a <span class="Operator">+</span> b
+
+x_val <span class="Operator">=</span> <span class="Number">2.0</span>
+y_val <span class="Operator">=</span> <span class="Number">3.0</span>
+<span class="Function">print</span>(<span class="String">f'f(</span><span class="Special">{</span><span class="pythonStrInterpRegion">x_val</span><span class="Special">}</span><span class="String">, </span><span class="Special">{</span><span class="pythonStrInterpRegion">y_val</span><span class="Special">}</span><span class="String">) = </span><span class="Special">{</span><span class="pythonStrInterpRegion">f(x_val, y_val)</span><span class="Special">}</span><span class="String">'</span>)
+<span class="Function">print</span>(<span class="String">f'df/dx(</span><span class="Special">{</span><span class="pythonStrInterpRegion">x_val</span><span class="Special">}</span><span class="String">, </span><span class="Special">{</span><span class="pythonStrInterpRegion">y_val</span><span class="Special">}</span><span class="String">) = </span><span class="Special">{</span><span class="pythonStrInterpRegion">df_dx(x_val, y_val)</span><span class="Special">}</span><span class="String">'</span>)
+<span class="Function">print</span>(<span class="String">f'df/dy(</span><span class="Special">{</span><span class="pythonStrInterpRegion">x_val</span><span class="Special">}</span><span class="String">, </span><span class="Special">{</span><span class="pythonStrInterpRegion">y_val</span><span class="Special">}</span><span class="String">) = </span><span class="Special">{</span><span class="pythonStrInterpRegion">df_dy(x_val, y_val)</span><span class="Special">}</span><span class="String">'</span>)
+
+</pre>
+</body>
+</html>

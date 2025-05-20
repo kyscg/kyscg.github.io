@@ -1,0 +1,97 @@
+<!-- vim: set nomodeline: -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>dnexample.py</title>
+<meta name="colorscheme" content="catppuccin-latte"></meta>
+<style>
+* {font-family: monospace}
+body {background-color: #eff1f5; color: #4c4f69}
+.Statement {color: #8839ef}
+.Error {color: #d20f39}
+.pythonDot {}
+.Conditional {color: #8839ef; font-style: italic}
+.Function {color: #1e66f5}
+.ColorColumn {background-color: #ccd0da}
+.String {color: #40a02b}
+.Number {color: #fe640b}
+.Structure {color: #df8e1d}
+.Identifier {color: #dd7878}
+.Operator {color: #04a5e5}
+</style>
+</head>
+<body style="display: flex">
+<pre>
+<span class="String">&quot;&quot;&quot;</span>
+<span class="String">file:</span><span class="Error"> </span>
+<span class="String">    dnexample.py</span>
+<span class="String">description:</span>
+<span class="String">    an example of forward mode automatic differentiation using dual numbers</span>
+<span class="String">url:</span>
+<span class="String">    https://kyscg.github.io/2025/05/18/autodiffpython</span>
+<span class="String">author:</span>
+<span class="String">    kyscg</span>
+<span class="String">&quot;&quot;&quot;</span>
+
+<span class="Statement">class</span> <span class="Structure">DN</span>:
+    <span class="Statement">def</span> <span class="Function">__init__</span>(<span class="Identifier">self</span>, real, dual):
+        <span class="Identifier">self</span><span class="pythonDot">.</span>real <span class="Operator">=</span> real
+        <span class="Identifier">self</span><span class="pythonDot">.</span>dual <span class="Operator">=</span> dual
+
+    <span class="Statement">def</span> <span class="Function">__add__</span>(<span class="Identifier">self</span>, other):
+        <span class="Conditional">if</span> (<span class="Function">isinstance</span>(other, DN)):
+            real <span class="Operator">=</span> <span class="Identifier">self</span><span class="pythonDot">.</span>real <span class="Operator">+</span> other<span class="pythonDot">.</span>real
+            dual <span class="Operator">=</span> <span class="Identifier">self</span><span class="pythonDot">.</span>dual <span class="Operator">+</span> other<span class="pythonDot">.</span>dual
+            <span class="Statement">return</span> <span class="Function">DN</span>(real, dual)
+        <span class="Conditional">else</span>:
+            real <span class="Operator">=</span> <span class="Identifier">self</span><span class="pythonDot">.</span>real <span class="Operator">+</span> other
+            dual <span class="Operator">=</span> <span class="Identifier">self</span><span class="pythonDot">.</span>dual
+            <span class="Statement">return</span> <span class="Function">DN</span>(real, dual)
+    __radd__ <span class="Operator">=</span> __add__
+
+    <span class="Statement">def</span> <span class="Function">__mul__</span>(<span class="Identifier">self</span>, other):
+        <span class="Conditional">if</span> (<span class="Function">isinstance</span>(other, DN)):
+            real <span class="Operator">=</span> <span class="Identifier">self</span><span class="pythonDot">.</span>real <span class="Operator">*</span> other<span class="pythonDot">.</span>real
+            dual <span class="Operator">=</span> <span class="Identifier">self</span><span class="pythonDot">.</span>real <span class="Operator">*</span> other<span class="pythonDot">.</span>dual <span class="Operator">+</span> <span class="Identifier">self</span><span class="pythonDot">.</span>dual <span class="Operator">*</span> other<span class="pythonDot">.</span>real
+            <span class="Statement">return</span> <span class="Function">DN</span>(real, dual)
+        <span class="Conditional">else</span>:
+            real <span class="Operator">=</span> <span class="Identifier">self</span><span class="pythonDot">.</span>real <span class="Operator">*</span> other
+            dual <span class="Operator">=</span> <span class="Identifier">self</span><span class="pythonDot">.</span>dual <span class="Operator">*</span> other
+            <span class="Statement">return</span> <span class="Function">DN</span>(real, dual)
+    __rmul__ <span class="Operator">=</span> __mul__
+
+
+a <span class="Operator">=</span> <span class="Function">DN</span>(<span class="Number">3</span>, <span class="Number">0</span>)
+b <span class="Operator">=</span> a <span class="Operator">+</span> <span class="Number">3</span>
+c <span class="Operator">=</span> <span class="Number">4</span> <span class="Operator">+</span> a
+
+d <span class="Operator">=</span> <span class="Function">DN</span>(<span class="Number">4</span>, <span class="Number">2</span>)
+e <span class="Operator">=</span> d <span class="Operator">*</span> <span class="Number">3</span>
+f <span class="Operator">=</span> <span class="Function">DN</span>(<span class="Number">6</span>, <span class="Number">2</span>)
+g <span class="Operator">=</span> d <span class="Operator">*</span> f
+
+
+<span class="Function">print</span>(<span class="String">&quot;a:&quot;</span>, a<span class="pythonDot">.</span>real, a<span class="pythonDot">.</span>dual)
+<span class="Function">print</span>(<span class="String">&quot;b:&quot;</span>, b<span class="pythonDot">.</span>real, b<span class="pythonDot">.</span>dual)
+<span class="Function">print</span>(<span class="String">&quot;c:&quot;</span>, c<span class="pythonDot">.</span>real, c<span class="pythonDot">.</span>dual)
+
+<span class="Function">print</span>(<span class="String">&quot;d:&quot;</span>, d<span class="pythonDot">.</span>real, d<span class="pythonDot">.</span>dual)
+<span class="Function">print</span>(<span class="String">&quot;e:&quot;</span>, e<span class="pythonDot">.</span>real, e<span class="pythonDot">.</span>dual)
+<span class="Function">print</span>(<span class="String">&quot;f:&quot;</span>, f<span class="pythonDot">.</span>real, f<span class="pythonDot">.</span>dual)
+<span class="Function">print</span>(<span class="String">&quot;g:&quot;</span>, g<span class="pythonDot">.</span>real, g<span class="pythonDot">.</span>dual)
+<span class="Function">print</span>(<span class="String">'---'</span>)
+
+
+<span class="Statement">def</span> <span class="Function">f</span>(x):
+    <span class="Statement">return</span> <span class="Number">7</span> <span class="Operator">*</span> x <span class="Operator">*</span> x <span class="Operator">+</span> <span class="Number">3</span> <span class="Operator">*</span> x <span class="Operator">+</span> <span class="Number">4</span>
+
+<span class="Statement">def</span> <span class="Function">diff</span>(f, x):
+    <span class="Statement">return</span> <span class="Function">f</span>(<span class="Function">DN</span>(x, <span class="Number">1</span>))<span class="pythonDot">.</span>dual
+
+<span class="Function">print</span>(<span class="String">'f(1):'</span>, <span class="Function">f</span>(<span class="Number">1</span>))
+<span class="Function">print</span>(<span class="String">'df(1):'</span>, <span class="Function">diff</span>(f, <span class="Number">1</span>))
+
+</pre>
+</body>
+</html>

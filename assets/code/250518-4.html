@@ -1,0 +1,194 @@
+<!-- vim: set nomodeline: -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>rmad.py</title>
+<meta name="colorscheme" content="catppuccin-latte"></meta>
+<style>
+* {font-family: monospace}
+body {background-color: #eff1f5; color: #4c4f69}
+.ColorColumn {background-color: #ccd0da}
+.Statement {color: #8839ef}
+.Error {color: #d20f39}
+.Structure {color: #df8e1d}
+.Number {color: #fe640b}
+.Conditional {font-style: italic; color: #8839ef}
+.Special {color: #ea76cb}
+.Function {color: #1e66f5}
+.pythonStrInterpRegion {}
+.pythonDot {}
+.Constant {color: #fe640b}
+.String {color: #40a02b}
+.Include {color: #8839ef}
+.Repeat {color: #8839ef}
+.Identifier {color: #dd7878}
+.Operator {color: #04a5e5}
+</style>
+</head>
+<body style="display: flex">
+<pre>
+<span class="String">&quot;&quot;&quot;</span>
+<span class="String">file:</span><span class="Error"> </span>
+<span class="String">    rmad.py</span>
+<span class="String">description:</span><span class="Error"> </span>
+<span class="String">    implementation of reverse mode autodiff by building a computational graph</span>
+<span class="String">    and performing a reverse topological sort on it.</span>
+<span class="String">url:</span>
+<span class="String">    https://kyscg.github.io/2025/05/18/autodiffpython</span>
+<span class="String">author:</span>
+<span class="String">    kyscg</span>
+<span class="String">&quot;&quot;&quot;</span>
+
+<span class="Include">import</span> math
+
+<span class="Statement">class</span> <span class="Structure">Node</span>:
+    <span class="Statement">def</span> <span class="Function">__init__</span>(<span class="Identifier">self</span>, value, name<span class="Operator">=</span><span class="Constant">None</span>):
+        <span class="Identifier">self</span><span class="pythonDot">.</span>value <span class="Operator">=</span> value
+        <span class="Identifier">self</span><span class="pythonDot">.</span>grad <span class="Operator">=</span> <span class="Number">0.0</span>
+        <span class="Identifier">self</span><span class="pythonDot">.</span>children <span class="Operator">=</span> []
+        <span class="Identifier">self</span><span class="pythonDot">.</span>name <span class="Operator">=</span> name
+        <span class="Identifier">self</span><span class="pythonDot">.</span>op <span class="Operator">=</span> <span class="Constant">None</span>
+        <span class="Identifier">self</span><span class="pythonDot">.</span>other <span class="Operator">=</span> <span class="Constant">None</span>
+
+    <span class="Statement">def</span> <span class="Function">__add__</span>(<span class="Identifier">self</span>, other):
+        <span class="Statement">return</span> <span class="Function">add</span>(<span class="Identifier">self</span>, other)
+    __radd__ <span class="Operator">=</span> __add__
+
+    <span class="Statement">def</span> <span class="Function">__mul__</span>(<span class="Identifier">self</span>, other):
+        <span class="Statement">return</span> <span class="Function">mul</span>(<span class="Identifier">self</span>, other)
+    __rmul__ <span class="Operator">=</span> __mul__
+
+    <span class="Statement">def</span> <span class="Function">__pow__</span>(<span class="Identifier">self</span>, other):
+        <span class="Statement">return</span> <span class="Function">power</span>(<span class="Identifier">self</span>, other)
+
+    <span class="Statement">def</span> <span class="Function">__sin__</span>(<span class="Identifier">self</span>):
+        <span class="Statement">return</span> <span class="Function">sin</span>(<span class="Identifier">self</span>)
+
+    <span class="Statement">def</span> <span class="Function">__repr__</span>(<span class="Identifier">self</span>):
+        <span class="Statement">return</span> <span class="String">f'Node(value=</span><span class="Special">{</span><span class="Identifier">self</span><span class="pythonStrInterpRegion">.value</span><span class="Special">}</span><span class="String">, grad=</span><span class="Special">{</span><span class="Identifier">self</span><span class="pythonStrInterpRegion">.grad</span><span class="Special">}</span><span class="String">, name=</span><span class="Special">{</span><span class="Identifier">self</span><span class="pythonStrInterpRegion">.name</span><span class="Special">}</span><span class="String">)'</span>
+
+
+<span class="Statement">def</span> <span class="Function">add</span>(node1, node2):
+    <span class="Conditional">if</span> (<span class="Function">isinstance</span>(node2, Node)):
+        out <span class="Operator">=</span> <span class="Function">Node</span>(node1<span class="pythonDot">.</span>value <span class="Operator">+</span> node2<span class="pythonDot">.</span>value)
+        out<span class="pythonDot">.</span>children<span class="pythonDot">.</span><span class="Function">extend</span>([node1, node2])
+    <span class="Conditional">else</span>:
+        out <span class="Operator">=</span> <span class="Function">Node</span>(node1<span class="pythonDot">.</span>value <span class="Operator">+</span> node2)
+        out<span class="pythonDot">.</span>children<span class="pythonDot">.</span><span class="Function">extend</span>([node1])
+    out<span class="pythonDot">.</span>op <span class="Operator">=</span> <span class="String">&quot;add&quot;</span>
+    <span class="Statement">return</span> out
+
+
+<span class="Statement">def</span> <span class="Function">mul</span>(node1, node2):
+    <span class="Conditional">if</span> (<span class="Function">isinstance</span>(node2, Node)):
+        out <span class="Operator">=</span> <span class="Function">Node</span>(node1<span class="pythonDot">.</span>value <span class="Operator">*</span> node2<span class="pythonDot">.</span>value)
+        out<span class="pythonDot">.</span>children<span class="pythonDot">.</span><span class="Function">extend</span>([node1, node2])
+    <span class="Conditional">else</span>:
+        out <span class="Operator">=</span> <span class="Function">Node</span>(node1<span class="pythonDot">.</span>value <span class="Operator">*</span> node2)
+        out<span class="pythonDot">.</span>children<span class="pythonDot">.</span><span class="Function">extend</span>([node1])
+        out<span class="pythonDot">.</span>other <span class="Operator">=</span> node2
+    out<span class="pythonDot">.</span>op <span class="Operator">=</span> <span class="String">&quot;mul&quot;</span>
+    <span class="Statement">return</span> out
+
+
+<span class="Statement">def</span> <span class="Function">power</span>(node, exp):
+    out <span class="Operator">=</span> <span class="Function">Node</span>(node<span class="pythonDot">.</span>value <span class="Operator">**</span> exp)
+    out<span class="pythonDot">.</span>children<span class="pythonDot">.</span><span class="Function">extend</span>([node])
+    out<span class="pythonDot">.</span>op <span class="Operator">=</span> <span class="String">&quot;power&quot;</span>
+    out<span class="pythonDot">.</span>other <span class="Operator">=</span> exp
+    <span class="Statement">return</span> out
+
+<span class="Statement">def</span> <span class="Function">sin</span>(node):
+    out <span class="Operator">=</span> <span class="Function">Node</span>(math<span class="pythonDot">.</span><span class="Function">sin</span>(node<span class="pythonDot">.</span>value))
+    out<span class="pythonDot">.</span>children<span class="pythonDot">.</span><span class="Function">extend</span>([node])
+    out<span class="pythonDot">.</span>op <span class="Operator">=</span> <span class="String">&quot;sin&quot;</span>
+    <span class="Statement">return</span> out
+
+
+<span class="Statement">def</span> <span class="Function">backward</span>(seed):
+    seed<span class="pythonDot">.</span>grad <span class="Operator">=</span> <span class="Number">1.0</span>
+    visited <span class="Operator">=</span> <span class="Structure">set</span>()
+    visitlist <span class="Operator">=</span> []
+    queue <span class="Operator">=</span> [seed]
+
+    <span class="Repeat">while</span> queue:
+        node <span class="Operator">=</span> queue<span class="pythonDot">.</span><span class="Function">pop</span>(<span class="Number">0</span>)
+        <span class="Conditional">if</span> node <span class="Operator">not</span> <span class="Operator">in</span> visited:
+            visited<span class="pythonDot">.</span><span class="Function">add</span>(node)
+            visitlist<span class="pythonDot">.</span><span class="Function">append</span>(node)
+            <span class="Repeat">for</span> child <span class="Operator">in</span> node<span class="pythonDot">.</span>children:
+                queue<span class="pythonDot">.</span><span class="Function">append</span>(child)
+
+    <span class="Repeat">for</span> node <span class="Operator">in</span> visitlist:
+        <span class="Conditional">if</span> node<span class="pythonDot">.</span>op <span class="Operator">==</span> <span class="String">&quot;add&quot;</span>:
+            <span class="Conditional">if</span> (<span class="Function">len</span>(node<span class="pythonDot">.</span>children) <span class="Operator">==</span> <span class="Number">2</span>):
+                node<span class="pythonDot">.</span>children[<span class="Number">0</span>]<span class="pythonDot">.</span>grad <span class="Operator">+=</span> node<span class="pythonDot">.</span>grad <span class="Operator">*</span> <span class="Number">1.0</span>
+                node<span class="pythonDot">.</span>children[<span class="Number">1</span>]<span class="pythonDot">.</span>grad <span class="Operator">+=</span> node<span class="pythonDot">.</span>grad <span class="Operator">*</span> <span class="Number">1.0</span>
+            <span class="Conditional">else</span>:
+                node<span class="pythonDot">.</span>children[<span class="Number">0</span>]<span class="pythonDot">.</span>grad <span class="Operator">+=</span> node<span class="pythonDot">.</span>grad <span class="Operator">*</span> <span class="Number">1.0</span>
+
+        <span class="Conditional">elif</span> node<span class="pythonDot">.</span>op <span class="Operator">==</span> <span class="String">&quot;mul&quot;</span>:
+            <span class="Conditional">if</span> (<span class="Function">len</span>(node<span class="pythonDot">.</span>children) <span class="Operator">==</span> <span class="Number">2</span>):
+                node<span class="pythonDot">.</span>children[<span class="Number">0</span>]<span class="pythonDot">.</span>grad <span class="Operator">+=</span> node<span class="pythonDot">.</span>grad <span class="Operator">*</span> node<span class="pythonDot">.</span>children[<span class="Number">1</span>]<span class="pythonDot">.</span>value<span class="Error"> </span>
+                node<span class="pythonDot">.</span>children[<span class="Number">1</span>]<span class="pythonDot">.</span>grad <span class="Operator">+=</span> node<span class="pythonDot">.</span>grad <span class="Operator">*</span> node<span class="pythonDot">.</span>children[<span class="Number">0</span>]<span class="pythonDot">.</span>value<span class="Error"> </span>
+            <span class="Conditional">else</span>:
+                node<span class="pythonDot">.</span>children[<span class="Number">0</span>]<span class="pythonDot">.</span>grad <span class="Operator">+=</span> node<span class="pythonDot">.</span>grad <span class="Operator">*</span> node<span class="pythonDot">.</span>other
+
+        <span class="Conditional">elif</span> node<span class="pythonDot">.</span>op <span class="Operator">==</span> <span class="String">&quot;power&quot;</span>:
+            base <span class="Operator">=</span> node<span class="pythonDot">.</span>children[<span class="Number">0</span>]
+            exponent <span class="Operator">=</span> node<span class="pythonDot">.</span>other
+            base<span class="pythonDot">.</span>grad <span class="Operator">+=</span> node<span class="pythonDot">.</span>grad <span class="Operator">*</span> exponent <span class="Operator">*</span> (base<span class="pythonDot">.</span>value <span class="Operator">**</span> (exponent <span class="Operator">-</span> <span class="Number">1</span>))
+
+        <span class="Conditional">elif</span> node<span class="pythonDot">.</span>op <span class="Operator">==</span> <span class="String">&quot;sin&quot;</span>:
+            node<span class="pythonDot">.</span>children[<span class="Number">0</span>]<span class="pythonDot">.</span>grad <span class="Operator">+=</span> node<span class="pythonDot">.</span>grad <span class="Operator">*</span> math<span class="pythonDot">.</span><span class="Function">cos</span>(node<span class="pythonDot">.</span>children[<span class="Number">0</span>]<span class="pythonDot">.</span>value)
+
+
+x_val <span class="Operator">=</span> <span class="Number">6.0</span>
+y_val <span class="Operator">=</span> <span class="Number">1.0</span>
+
+v1 <span class="Operator">=</span> <span class="Function">Node</span>(x_val, name<span class="Operator">=</span><span class="String">'v1'</span>)
+v2 <span class="Operator">=</span> <span class="Function">Node</span>(y_val, name<span class="Operator">=</span><span class="String">'v2'</span>)
+v2i <span class="Operator">=</span> <span class="Number">2</span> <span class="Operator">*</span> v2
+v2i<span class="pythonDot">.</span>name <span class="Operator">=</span> <span class="String">'v2i'</span>
+v3 <span class="Operator">=</span> v1 <span class="Operator">+</span> v2i
+v3<span class="pythonDot">.</span>name <span class="Operator">=</span> <span class="String">'v3'</span>
+v4 <span class="Operator">=</span> v1 <span class="Operator">*</span> v2
+v4<span class="pythonDot">.</span>name <span class="Operator">=</span> <span class="String">'v4'</span>
+v5 <span class="Operator">=</span> v3 <span class="Operator">**</span> <span class="Number">2</span>
+v5<span class="pythonDot">.</span>name <span class="Operator">=</span> <span class="String">'v5'</span>
+v6 <span class="Operator">=</span> <span class="Function">sin</span>(v4)
+v6<span class="pythonDot">.</span>name <span class="Operator">=</span> <span class="String">'v6'</span>
+v7 <span class="Operator">=</span> v5 <span class="Operator">*</span> v6
+v7<span class="pythonDot">.</span>name <span class="Operator">=</span> <span class="String">'v7'</span>
+
+<span class="Function">backward</span>(seed<span class="Operator">=</span>v7)
+
+
+<span class="Function">print</span>(<span class="String">f'Value of the function at (</span><span class="Special">{</span><span class="pythonStrInterpRegion">x_val</span><span class="Special">}</span><span class="String">, </span><span class="Special">{</span><span class="pythonStrInterpRegion">y_val</span><span class="Special">}</span><span class="String">): </span><span class="Special">{</span><span class="pythonStrInterpRegion">v7.value</span><span class="Special">}</span><span class="String">'</span>)
+<span class="Function">print</span>(<span class="String">f'Partial derivative df/dx at (</span><span class="Special">{</span><span class="pythonStrInterpRegion">x_val</span><span class="Special">}</span><span class="String">, </span><span class="Special">{</span><span class="pythonStrInterpRegion">y_val</span><span class="Special">}</span><span class="String">): </span><span class="Special">{</span><span class="pythonStrInterpRegion">v1.grad</span><span class="Special">}</span><span class="String">'</span>)
+<span class="Function">print</span>(<span class="String">f'Partial derivative df/dy at (</span><span class="Special">{</span><span class="pythonStrInterpRegion">x_val</span><span class="Special">}</span><span class="String">, </span><span class="Special">{</span><span class="pythonStrInterpRegion">y_val</span><span class="Special">}</span><span class="String">): </span><span class="Special">{</span><span class="pythonStrInterpRegion">v2.grad</span><span class="Special">}</span><span class="String">'</span>)
+
+<span class="Function">print</span>(<span class="String">'---'</span>)
+
+<span class="Function">print</span>(v1)
+<span class="Function">print</span>(v2)
+<span class="Function">print</span>(v3)
+<span class="Function">print</span>(v4)
+<span class="Function">print</span>(v5)
+<span class="Function">print</span>(v6)
+<span class="Function">print</span>(v7)
+
+<span class="Function">print</span>(<span class="String">'---'</span>)
+
+<span class="Function">print</span>(<span class="String">f'children of v1: </span><span class="Special">{</span><span class="pythonStrInterpRegion">[ch.name </span><span class="Repeat">for</span><span class="pythonStrInterpRegion"> ch </span><span class="Operator">in</span><span class="pythonStrInterpRegion"> v1.children]</span><span class="Special">}</span><span class="String">'</span>)
+<span class="Function">print</span>(<span class="String">f'children of v2: </span><span class="Special">{</span><span class="pythonStrInterpRegion">[ch.name </span><span class="Repeat">for</span><span class="pythonStrInterpRegion"> ch </span><span class="Operator">in</span><span class="pythonStrInterpRegion"> v2.children]</span><span class="Special">}</span><span class="String">'</span>)
+<span class="Function">print</span>(<span class="String">f'children of v3: </span><span class="Special">{</span><span class="pythonStrInterpRegion">[ch.name </span><span class="Repeat">for</span><span class="pythonStrInterpRegion"> ch </span><span class="Operator">in</span><span class="pythonStrInterpRegion"> v3.children]</span><span class="Special">}</span><span class="String">'</span>)
+<span class="Function">print</span>(<span class="String">f'children of v4: </span><span class="Special">{</span><span class="pythonStrInterpRegion">[ch.name </span><span class="Repeat">for</span><span class="pythonStrInterpRegion"> ch </span><span class="Operator">in</span><span class="pythonStrInterpRegion"> v4.children]</span><span class="Special">}</span><span class="String">'</span>)
+<span class="Function">print</span>(<span class="String">f'children of v5: </span><span class="Special">{</span><span class="pythonStrInterpRegion">[ch.name </span><span class="Repeat">for</span><span class="pythonStrInterpRegion"> ch </span><span class="Operator">in</span><span class="pythonStrInterpRegion"> v5.children]</span><span class="Special">}</span><span class="String">'</span>)
+<span class="Function">print</span>(<span class="String">f'children of v6: </span><span class="Special">{</span><span class="pythonStrInterpRegion">[ch.name </span><span class="Repeat">for</span><span class="pythonStrInterpRegion"> ch </span><span class="Operator">in</span><span class="pythonStrInterpRegion"> v6.children]</span><span class="Special">}</span><span class="String">'</span>)
+<span class="Function">print</span>(<span class="String">f'children of v7: </span><span class="Special">{</span><span class="pythonStrInterpRegion">[ch.name </span><span class="Repeat">for</span><span class="pythonStrInterpRegion"> ch </span><span class="Operator">in</span><span class="pythonStrInterpRegion"> v7.children]</span><span class="Special">}</span><span class="String">'</span>)
+
+</pre>
+</body>
+</html>

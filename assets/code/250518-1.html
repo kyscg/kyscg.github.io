@@ -1,0 +1,90 @@
+<!-- vim: set nomodeline: -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fmadinterleaved.py</title>
+<meta name="colorscheme" content="catppuccin-latte"></meta>
+<style>
+* {font-family: monospace}
+body {background-color: #eff1f5; color: #4c4f69}
+.Statement {color: #8839ef}
+.Error {color: #d20f39}
+.ColorColumn {background-color: #ccd0da}
+.Conditional {color: #8839ef; font-style: italic}
+.Special {color: #ea76cb}
+.Function {color: #1e66f5}
+.pythonStrInterpRegion {}
+.pythonDot {}
+.Number {color: #fe640b}
+.String {color: #40a02b}
+.Include {color: #8839ef}
+.Boolean {color: #fe640b}
+.Comment {color: #7c7f93; font-style: italic}
+.Operator {color: #04a5e5}
+</style>
+</head>
+<body style="display: flex">
+<pre>
+<span class="String">&quot;&quot;&quot;</span>
+<span class="String">file:</span><span class="Error"> </span>
+<span class="String">    fmadinterleaved.py</span>
+<span class="String">description:</span><span class="Error"> </span>
+<span class="String">    implementation of forward mode autodiff by straightforward interleaving</span>
+<span class="String">    derivatives with the forward pass of the computation.</span>
+<span class="String">url:</span>
+<span class="String">    https://kyscg.github.io/2025/05/18/autodiffpython</span>
+<span class="String">author:</span>
+<span class="String">    kyscg</span>
+<span class="String">&quot;&quot;&quot;</span>
+
+<span class="Include">import</span> math
+
+<span class="Comment"># (x + 2y)^2.sin(xy)</span>
+
+<span class="Statement">def</span> <span class="Function">z</span>(x, y, nograd<span class="Operator">=</span><span class="Boolean">True</span>):
+    v1 <span class="Operator">=</span> x
+    v2 <span class="Operator">=</span> y
+    v3 <span class="Operator">=</span> v1 <span class="Operator">+</span> <span class="Number">2</span> <span class="Operator">*</span> v2
+    v4 <span class="Operator">=</span> v1 <span class="Operator">*</span> v2
+    v5 <span class="Operator">=</span> v3 <span class="Operator">**</span> <span class="Number">2</span>
+    v6 <span class="Operator">=</span> math<span class="pythonDot">.</span><span class="Function">sin</span>(v4)
+    v7 <span class="Operator">=</span> v5 <span class="Operator">*</span> v6
+
+    <span class="Conditional">if</span> nograd:
+        <span class="Statement">return</span> v7
+
+    <span class="Comment"># seed = x</span>
+    dv1 <span class="Operator">=</span> <span class="Number">1</span>
+    dv2 <span class="Operator">=</span> <span class="Number">0</span>
+    dv3 <span class="Operator">=</span> dv1 <span class="Operator">+</span> <span class="Number">2</span> <span class="Operator">*</span> dv2
+    dv4 <span class="Operator">=</span> v1 <span class="Operator">*</span> dv2 <span class="Operator">+</span> v2 <span class="Operator">*</span> dv1
+    dv5 <span class="Operator">=</span> <span class="Number">2</span> <span class="Operator">*</span> v3 <span class="Operator">*</span> dv3
+    dv6 <span class="Operator">=</span> math<span class="pythonDot">.</span><span class="Function">cos</span>(v4) <span class="Operator">*</span> dv4
+    dv7 <span class="Operator">=</span> v5 <span class="Operator">*</span> dv6 <span class="Operator">+</span> v6 <span class="Operator">*</span> dv5
+    dz_dx <span class="Operator">=</span> dv7
+
+    <span class="Comment"># seed = y</span>
+    dv1 <span class="Operator">=</span> <span class="Number">0</span>
+    dv2 <span class="Operator">=</span> <span class="Number">1</span>
+    dv3 <span class="Operator">=</span> dv1 <span class="Operator">+</span> <span class="Number">2</span> <span class="Operator">*</span> dv2
+    dv4 <span class="Operator">=</span> v1 <span class="Operator">*</span> dv2 <span class="Operator">+</span> v2 <span class="Operator">*</span> dv1
+    dv5 <span class="Operator">=</span> <span class="Number">2</span> <span class="Operator">*</span> v3 <span class="Operator">*</span> dv3
+    dv6 <span class="Operator">=</span> math<span class="pythonDot">.</span><span class="Function">cos</span>(v4) <span class="Operator">*</span> dv4
+    dv7 <span class="Operator">=</span> v5 <span class="Operator">*</span> dv6 <span class="Operator">+</span> v6 <span class="Operator">*</span> dv5
+    dz_dy <span class="Operator">=</span> dv7
+
+    <span class="Statement">return</span> v7, dz_dx, dz_dy
+
+
+x_val <span class="Operator">=</span> <span class="Number">2.0</span>
+y_val <span class="Operator">=</span> <span class="Number">3.0</span>
+
+<span class="Function">print</span>(<span class="String">f'Value of the function at (</span><span class="Special">{</span><span class="pythonStrInterpRegion">x_val</span><span class="Special">}</span><span class="String">, </span><span class="Special">{</span><span class="pythonStrInterpRegion">y_val</span><span class="Special">}</span><span class="String">): </span><span class="Special">{</span><span class="pythonStrInterpRegion">z(x_val, y_val)</span><span class="Special">}</span><span class="String">'</span>)
+<span class="Function">print</span>(<span class="String">f'Partial derivative df/dx at (</span><span class="Special">{</span><span class="pythonStrInterpRegion">x_val</span><span class="Special">}</span><span class="String">, </span><span class="Special">{</span><span class="pythonStrInterpRegion">y_val</span><span class="Special">}</span><span class="String">): </span><span class="Special">{</span><span class="pythonStrInterpRegion">z(x_val, y_val, </span><span class="Boolean">False</span><span class="pythonStrInterpRegion">)[</span><span class="Number">1</span><span class="pythonStrInterpRegion">]</span><span class="Special">}</span><span class="String">'</span>)
+<span class="Function">print</span>(<span class="String">f'Partial derivative df/dy at (</span><span class="Special">{</span><span class="pythonStrInterpRegion">x_val</span><span class="Special">}</span><span class="String">, </span><span class="Special">{</span><span class="pythonStrInterpRegion">y_val</span><span class="Special">}</span><span class="String">): </span><span class="Special">{</span><span class="pythonStrInterpRegion">z(x_val, y_val, </span><span class="Boolean">False</span><span class="pythonStrInterpRegion">)[</span><span class="Number">2</span><span class="pythonStrInterpRegion">]</span><span class="Special">}</span><span class="String">'</span>)
+
+
+</pre>
+</body>
+</html>
