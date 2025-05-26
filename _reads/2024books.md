@@ -161,7 +161,7 @@ The writing is so powerful, a must read. The first time I read it, I think I was
 
 #### 26. [The Gulag Archipelago, Volume 2](https://www.harpercollins.com/products/the-gulag-archipelago-volume-2-aleksandr-i-solzhenitsyn?variant=32122923876386) by Aleksandr Solzhenitsyn <span style="float: right;">`(5/5)`</span>
 
-While the first volume is far more entertaining to read, this is the volume that is more important to read. I went through chapter multiple times because of how much wisdom was compressed in each story. I think I finally understand why the book is subtitled, "An Experiment in Literary Investigation."
+While the first volume is far more entertaining to read, this is the volume that is more important to read. I went through some chapters multiple times because of how much wisdom was compressed in each story. I think I finally understand why the book is subtitled, "An Experiment in Literary Investigation."
 
 The Fan Fanych essay is the best part, other honourable mentions go to descriptions of the stool pigeons, the camp guards, the kids in camp, and what camp does to people's psychology. 
 

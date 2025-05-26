@@ -2,7 +2,7 @@
 permalink: "/blogroll/"
 title: Blogroll
 subtitle: A list of my favourite personal blogs on the internet
-date: 2025-05-13 17:18:42 +0530
+date: 2025-05-25 17:18:42 +0530
 layout: default
 keywords: blogroll, links
 published: true
@@ -31,5 +31,8 @@ published: true
 * [argmin gravitas](https://www.gleech.org/) by Gavin Leech
 * [Essays](https://gwern.net/) by Gwern Branwen
 * [Alexey Guzey's Blog](https://guzey.com/)
+* [Womaning in India](https://womaning.substack.com/) by Mahima Vashisht
+* [Boring Money](https://boringmoney.in/) by Sreedhar Manek
+* [Casey Handmer's Blog](https://caseyhandmer.wordpress.com/)
 
 ---

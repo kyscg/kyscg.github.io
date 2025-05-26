@@ -86,7 +86,7 @@ Some examples of writing I thought were very nice, not directly related to histo
 
 > "the world of beauty and the world of money never touch, even when beautiful things are sold"
 
-> "Men look to love and life for everything; they receive a little less that that; they imagine that they have received nothing: these are the three stages of the pessimist"
+> "Men look to love and life for everything; they receive a little less than that; they imagine that they have received nothing: these are the three stages of the pessimist"
 
 > "The very basis of the Higher Man's character is an overflowing sympathy towards all men. He is not angered by the excellences of other men; when he sees men of worth he thinks of equaling them; when he sees men of low worth he turns inward and examines himself, for there are few faults that we do not share with our neighbors. He pays no attention to slander or violent speech. He is courteous and affable to all, but he does not gush forth indiscriminate praise. He treats his inferiors without contempt, and his superiors without seeking to court their favor. He is grave in deportment, since men will not take seriously one who is not serious with them; he is slow in words and earnest in conduct; he is not quick with his tongue, or given to clever repartee; he is earnest because he has work to do—and this is the secret of his unaffected dignity. He is courteous even to his familiars, but maintains his reserve towards all, even his son."
 
