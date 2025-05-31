@@ -2,7 +2,7 @@
 permalink: "/2025books/"
 title: 2025
 subtitle: Books I'm reading in 2025
-date: 2025-04-09 22:38:42 +0530
+date: 2025-05-31 12:38:42 +0530
 layout: default
 keywords: books
 published: true
@@ -89,5 +89,62 @@ Some examples of writing I thought were very nice, not directly related to histo
 > "Men look to love and life for everything; they receive a little less than that; they imagine that they have received nothing: these are the three stages of the pessimist"
 
 > "The very basis of the Higher Man's character is an overflowing sympathy towards all men. He is not angered by the excellences of other men; when he sees men of worth he thinks of equaling them; when he sees men of low worth he turns inward and examines himself, for there are few faults that we do not share with our neighbors. He pays no attention to slander or violent speech. He is courteous and affable to all, but he does not gush forth indiscriminate praise. He treats his inferiors without contempt, and his superiors without seeking to court their favor. He is grave in deportment, since men will not take seriously one who is not serious with them; he is slow in words and earnest in conduct; he is not quick with his tongue, or given to clever repartee; he is earnest because he has work to do—and this is the secret of his unaffected dignity. He is courteous even to his familiars, but maintains his reserve towards all, even his son."
+
+#### 15. [The Life of Greece](https://www.simonandschuster.com/books/The-Life-of-Greece/Will-Durant/The-Story-of-Civilization/9781451647587) by Will Durant <span style="float: right;">`(4.75/5)`</span>
+
+I wrote about this in my review of Our Oriental Heritage but as you read this series, you come away, sometimes, with a very indescribable feeling of knowing more than Durant. For example, right away in the first chapter on Crete, Durant writes about an inexplicable period in history when everything in Crete was destroyed, with only ash and debris remaining. But we know now (a severe overstatement) about the Bronze Age Collapse, and how similar symptoms of ruin were observed in all Mediterranean civilizations.
+
+For all my love for Greek mythology and stories, I have never bothered to learn about the history of the Greeks themselves. I think I was very content with imagining them as Homeric individuals fighting wars and feasting while living side by side with the gods. Any history of Greece I know is after only Alexander, and that was more of a cult of personality thing with some military history. While reading this book, I was continually reminded by how much of our culture we owe to the Greeks. Religion, rituals, literature, alphabets, poetry, prose, oratory, essays, drama, art, sculpture, architecture, mathematics, logic, philosophy, and so much more. The West is written under the signature of the Greeks.
+
+This book is great, my favourite parts were the descriptions of art, and architecture and of the individuals across so many centuries. I thought the philosophy stuff was a bit soporific but I dragged on. Now I know a lot about the land and people I've admired from far away for so long.
+
+<div class='figure'>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Gold_cup_Vafio_1500_to_1450_BC%2C_NAMA_1758_080866_%28cropped%29.jpg"/>
+    <div class='caption'>
+        <span class='caption-label'>The Vaphio Cups</span> "the most perfect works of Mycenean or Minoan art which have survived"
+    </div>
+</div>
+
+The word "colophon" comes from a Greek city of the same name. "Greek. *kolophon*, hill; $\rightarrow$ cf. Latin *collis*, $\rightarrow$ English. hill. Because the cavalry of the city was famous for giving the "finishing touch" to a defeated force, the word kolophon became in Greek a synonym for the final stroke, and passed into our language as a publisher's symbol, originally placed at the end of a book."
+
+<div class='figure'>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/MaskOfAgamemnon.jpg"/>
+    <div class='caption'>
+        <span class='caption-label'>The Mask of Agamemnon</span>
+    </div>
+</div>
+
+The word paragraph which is used to denote a block of text pertaining to one topic and marking the differentiation from another topic comes from _paragraphos_ which means a sign written on the side. A horizontal dividing stroke was placed on the side to mark changes in topics.
+
+> "Here under the rubric of athletics we find the real religion of the Greeks — the worship of health, beauty, and strength. "To be in health," said Simonides, "is the best thing for man; the next best, to be of form and nature beautiful; the third, to enjoy wealth gotten without fraud; and the fourth, to be in youth's bloom among friends.""
+
+The phrase _deus ex machina_ which means "god from the machine" is a Roman description of a literal Greek theatre prop wherein playwrights like Euripides made use of a _mechane_ (which was a crane with pulley and weights) to lower a god into a scene who would resolve the plot via divine intervention.
+
+<div class='figure'>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Alcibades_being_taught_by_Socrates%2C_Fran%C3%A7ois-Andr%C3%A9_Vincent.jpg"/>
+    <div class='caption'>
+        <span class='caption-label'>Alcibiades being taught by Socrates (1776)</span> This wasn't done by the Greeks but I really liked this painting. 
+    </div>
+</div>
+
+The word hypocrite comes from the Greek word _hypokritēs_ but in a very round-about manner. In a Greek play, the plot is transmitted via a chorus and the actors on stage sort of "react" to the chorus. The word _hypokritēs_ means "answerer" or "replier" and all actors are called this because they "answer" to the chorus. Over time, this word came to mean two-faced because it was associated with actors who play pretend on stage. How cool is that?
+
+> "As Giotto rough-hewed the early path of Italian painting, and Raphael subdued the art with a quiet spirit into technical perfection, and Michelangelo completed the development in works of tortured genius; as Bach with incredible energy forced open a broad road to modern music, and Mozart perfected its form in melodious simplicity, and Beethoven completed the development in works of unbalanced grandeur; so Aeschylus cleared the way and set the forms for Greek drama with his harsh verse and stern philosophy, Sophocles fashioned the art with measured music and placid wisdom, and Euripides completed the development in works of passionate feeling and turbulent doubt. Aeschylus was a preacher of almost Hebraic intensity; Sophocles was a "classic" artist clinging to a broken faith; Euripides was a romantic poet who could never write a perfect play because he was distracted by philosophy. They were the Isaiah, Job, and Ecclesiastes of Greece."
+
+<div class='figure'>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Berlin_-_Pergamonmuseum_-_Altar_01.jpg"/>
+    <div class='caption'>
+        <span class='caption-label'>The Reconstructed Pergamon Altar</span> 
+    </div>
+</div>
+
+> "The Golden Age (of Greece) ended with the death of Socrates. Athens was exhausted in body and soul; only the degradation of character by prolonged war and desperate suffering could explain the ruthless treatment of Melos, the bitter sentence upon Mytilene, the execution of the Arginusae generals, and the sacrifice of Socrates on the altar of a dying faith. All the foundations of Athenian life were disordered: the soil of Attica had been devastated by the Spartan raids, and the slow-growing olive trees had been burned to the ground; the Athenian navy had been destroyed, and control of trade and the food supply had been lost; the state treasury was empty, and private fortunes had been taxed almost to extinction; two thirds of the citizen body had been killed. The damage done to Greece by the Persian invasions could not compare with the destruction of Greek life and property by the Peloponnesian War. After Salamis and Plataea Greece was left poor, but exalted with courage and pride; now Greece was poor again, and Athens had suffered a wound to her spirit which seemed too deep to be healed."
+
+<div class='figure'>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Alexander_Sarcophagus%2C_Istanbul_Archaeological_Museums_2024_%281%29.jpg"/>
+    <div class='caption'>
+        <span class='caption-label'>The Alexander Sarcophagus</span> 
+    </div>
+</div>
 
 ---

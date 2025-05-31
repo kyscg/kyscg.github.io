@@ -10,6 +10,8 @@ published: true
 
 A lot of people ask me what my favourite books are, or what books I would recommend to them. The purpose of this page is to provide a diversion to the question so I can sneak away before they figure out I dodged the question. These are a few of my all-time favourite reads, and books that got a spot on this list are those that I loved on first read. The fiction category is sorted by the order in which I read the books, but the non-fiction and academic section are random. I like to think I read everything apart from self-help, although I notice that I don't like horror, and look down on science-fiction. There aren't any super-niche books on this list because I very rarely stray from mainstream bestsellers that have stood the test of time. I don't know if I would recommend any of these books. I think I would actually discourage people from reading a few of these, and there are many books that I would recommend that are not on this list because I didn't like the reading experience. The academic section was a very last minute addition, I didn't know if you consider that "reading" and I definitely did not read all those books cover to cover. But those are books that have kept me company for a very long time, and taught me so much, that it is only fair that I put them here.
 
+I have a list of my favourite words [here](/words.txt).
+
 ## Fiction
 
 - The Ramayana by Valmiki

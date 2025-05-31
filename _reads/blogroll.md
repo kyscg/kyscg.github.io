@@ -2,7 +2,7 @@
 permalink: "/blogroll/"
 title: Blogroll
 subtitle: A list of my favourite personal blogs on the internet
-date: 2025-05-25 17:18:42 +0530
+date: 2025-05-29 13:18:42 +0530
 layout: default
 keywords: blogroll, links
 published: true
@@ -34,5 +34,9 @@ published: true
 * [Womaning in India](https://womaning.substack.com/) by Mahima Vashisht
 * [Boring Money](https://boringmoney.in/) by Sreedhar Manek
 * [Casey Handmer's Blog](https://caseyhandmer.wordpress.com/)
+* [julian.digital](https://julian.digital/)
+* [Arun Venkatesan's Blog](https://arun.is/blog/)
+* [taylor.town](https://taylor.town/)
+* [Culture Dump](https://culturedump.substack.com/) by Dr. Rebecca Marks
 
 ---
