@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the markdown file name
-markdown_file="2023books.md"
+markdown_file="2025books.md"
 
 sed -i '$d' "$markdown_file"
 

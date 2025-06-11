@@ -147,4 +147,8 @@ The word hypocrite comes from the Greek word _hypokritēs_ but in a very round-a
     </div>
 </div>
 
+#### 16. [Madame Doubtfire](https://www.annefine.co.uk/books/doubtfire.php) by Anne Fine <span style="float: right;">`(4/5)`</span>
+
+ I completely forgot about the existence of this book for more than a decade until I saw it in my library and recognized the cover. This is still just as funny, charming, and outrageously ridiculous as the first time I read it. I also enjoyed it a lot more, considering that I was a kid the last time I read it. Such a fun read! 
+
 ---
