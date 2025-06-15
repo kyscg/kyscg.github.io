@@ -2,7 +2,7 @@
 permalink: "/2025books/"
 title: 2025
 subtitle: Books I'm reading in 2025
-date: 2025-05-31 12:38:42 +0530
+date: 2025-06-15 12:38:42 +0530
 layout: default
 keywords: books
 published: true
@@ -150,5 +150,15 @@ The word hypocrite comes from the Greek word _hypokritēs_ but in a very round-a
 #### 16. [Madame Doubtfire](https://www.annefine.co.uk/books/doubtfire.php) by Anne Fine <span style="float: right;">`(4/5)`</span>
 
  I completely forgot about the existence of this book for more than a decade until I saw it in my library and recognized the cover. This is still just as funny, charming, and outrageously ridiculous as the first time I read it. I also enjoyed it a lot more, considering that I was a kid the last time I read it. Such a fun read! 
+
+#### 17. [Caesar and Christ](https://www.simonandschuster.com/books/Caesar-and-Christ/Will-Durant/The-Story-of-Civilization/9781451647600) by Will Durant <span style="float: right;">`(4.25/5)`</span>
+
+ I learnt more about Christianity than about Rome from this book. The only stuff about Rome I wasn't familiar with were the Emperors from Tiberius all the way to Commodus and the art and society stuff. That is a lot to not know, but it was a small part of the book. This book is way too short for such a huge time period with so many majestic personalities and monumental events.
+
+> "Christianity arose out of Jewish apocalyptic—esoteric revelations of the coming Kingdom; it derived its impetus from the personality and vision of Christ; it gained strength from the belief in his resurrection, and the promise of eternal life; it received doctrinal form in the theology of Paul; it grew by the absorption of pagan faith and ritual; it became a triumphant Church by inheriting the organizing patterns and genius of Rome."
+
+> "The two greatest problems in history," says a brilliant scholar of our time, are "how to account for the rise of Rome, and how to account for her fall." We may come nearer to understanding them if we remember that the fall of Rome, like her rise, had not one cause but many, and was not an event but a process spread over 300 years. Some nations have not lasted as long as Rome fell"
+
+May she rise again.
 
 ---

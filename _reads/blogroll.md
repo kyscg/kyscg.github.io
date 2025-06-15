@@ -38,5 +38,6 @@ published: true
 * [Arun Venkatesan's Blog](https://arun.is/blog/)
 * [taylor.town](https://taylor.town/)
 * [Culture Dump](https://culturedump.substack.com/) by Dr. Rebecca Marks
+* [Finite Jest](https://andreapetkovic.substack.com/archive) by Andrea Petkovic
 
 ---
