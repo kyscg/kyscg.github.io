@@ -161,4 +161,33 @@ The word hypocrite comes from the Greek word _hypokritēs_ but in a very round-a
 
 May she rise again.
 
+#### 18. [Brave New World](https://gutenberg.ca/ebooks/huxleya-bravenewworld/huxleya-bravenewworld-00-e.html) by Aldous Huxley <span style="float: right;">`(4.5/5)`</span>
+
+The first thing I am going to say about this book is probably the most overused quip ever, that this book is basically non-fiction at this point. I had three recurring thoughts come to me as I read this book: 1) this book has a lot of stylistic similarities with 1984, 2) wow this book is really prescient and 3) I should really write my anti-llm essay pretty soon.
+
+Before I start with the similarities I noticed between 1984 and Brave New World, I want to insert here this famous foreword by Neil Postman to his book Amusing Ourselves to Death.
+
+<blockquote>
+    <p>
+    We were keeping our eye on 1984. When the year came and the prophecy didn't, thoughtful Americans sang softly in praise of themselves. The roots of liberal democracy had held. Wherever else the terror had happened, we, at least, had not been visited by Orwellian nightmares.<br><br>
+
+But we had forgotten that alongside Orwell's dark vision, there was another - slightly older, slightly less well known, equally chilling: Aldous Huxley's Brave New World. Contrary to common belief even among the educated, Huxley and Orwell did not prophesy the same thing. Orwell warns that we will be overcome by an externally imposed oppression. But in Huxley's vision, no Big Brother is required to deprive people of their autonomy, maturity and history. As he saw it, people will come to love their oppression, to adore the technologies that undo their capacities to think.<br><br>
+
+What Orwell feared were those who would ban books. What Huxley feared was that there would be no reason to ban a book, for there would be no one who wanted to read one. Orwell feared those who would deprive us of information. Huxley feared those who would give us so much that we would be reduced to passivity and egoism. Orwell feared that the truth would be concealed from us. Huxley feared the truth would be drowned in a sea of irrelevance. Orwell feared we would become a captive culture. Huxley feared we would become a trivial culture, preoccupied with some equivalent of the feelies, the orgy porgy, and the centrifugal bumblepuppy. As Huxley remarked in Brave New World Revisited, the civil libertarians and rationalists who are ever on the alert to oppose tyranny "failed to take into account man's almost infinite appetite for distractions." In 1984, Orwell added, people are controlled by inflicting pain. In Brave New World, they are controlled by inflicting pleasure. In short, Orwell feared that what we fear will ruin us. Huxley feared that what we desire will ruin us.
+    </p>
+    <cite>— Neil Postman, Amusing Ourselves to Death</cite>
+</blockquote>
+
+The constant descriptions of all the clocks striking a particular time compared to the first line of 1984, the hate week paralleled in the orgy-porgies, and the use of the police to whisk away the transgressors to a location where the ideology of the Party is revealed by a big man from the party, whether it is O'Brien or Mustapha Mond. All these were similarities I noticed between the two books. Maybe like Christopher Hitchens said, "totalitarianism is a cliche."
+
+The next thing is the cliche stuff. The whole instant gratification thing feels like a social commentary of the 21st century rather than anything else. Except that we haven't really figured out how to remove all of pain. The story as of itself was very well written. The only stuff I felt was out of place was the end when John is harrassed by all the "civilized" people into killng himself. I understand it, but I thought it was a shade less awesome than the rest of the book. Also, the whole Fordship thing was very done.
+
+The commentary on the enforced caste system was very illuminating. The Brave New World's solution to the problem of class revolts is to use Pavlovian conditioning to keep everyone content in their station. Which brings to mind the idea that the places you are comfortable in are the places that are slowly killing you. I think that's a Nietzschean idea.
+
+John' entire internal monologue being just Shakespeare is such an awesome touch. When will I get to reading all of Shakespeare's works?
+
+I will end on a personal note, I keep thinking of everyone using LLM to do their thinking for them as something fundamentally bad for their minds. And this book really pushed me to add more thoughts to that. I am definitely going to at least start writing that essay now.
+
+Completely deserves its place in the pantheon of great dystopian science fiction works along with 1984, Fahrenheit 451, and The Handmaid's Tale.
+
 ---
