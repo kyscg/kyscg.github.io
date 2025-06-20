@@ -190,4 +190,14 @@ I will end on a personal note, I keep thinking of everyone using LLM to do their
 
 Completely deserves its place in the pantheon of great dystopian science fiction works along with 1984, Fahrenheit 451, and The Handmaid's Tale.
 
+#### 19. [Trust](https://www.hernandiaz.net/trust-novel) by Hernán Díaz <span style="float: right;">`(4.75/5)`</span>
+
+the final boss of unreliable narrators.
+
+I feverishly read this book, only taking three breaks. The writing is spectacular, and I will be going around recommending this book to everyone I meet. There are so many phrases in this book which really bring out the beauty of the English language, and they're sprinkled everywhere throughout the book.
+
+The story is great too, layer upon layer of unreliable narration until you're left double-guessing every event to remember what the actual truth was. It is not a thriller, nor is it a commentary on rich people like so many reviews of this book emphasize, although there is quite a lot about financial markets in there. It is simply about the human tendency to want to be remembered in a favourable light.
+
+The final thing I will say about the book is that there was no part of the book that felt superfluous to the story. Every page had Chekhov's gun hanging on the walls. Easily the best book I've read this year, yet.
+
 ---
