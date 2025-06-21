@@ -202,6 +202,6 @@ The final thing I will say about the book is that there was no part of the book 
 
 One more note: I find it super interesting that two consecutive Pulitzers were awarded for stories that heavily featured women being put in psychiatric institutions.
 
-- [Dua Lipa In Conversation With Hernan Diaz](https://www.youtube.com/watch?v=sRAKWYpOfcs): This is where I got the suggestion from, after watching Dua Lipa interview Ocean Vuong and Khaled Hosseini.
+- [Dua Lipa In Conversation With Hernan Diaz](https://www.youtube.com/watch?v=sRAKWYpOfcs): This is where I got the suggestion from, after watching Dua Lipa interview Ocean Vuong and Khaled Hosseini. Dua asks a very thoughtful question in this conversation that I thought of myself; about whether the Ida in Trust had any parallels to Ida Tarbell who wrote extensively about John. D. Rockefeller in her capacity as an investigative journalism.
 
 ---
