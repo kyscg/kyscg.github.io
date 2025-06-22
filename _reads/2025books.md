@@ -2,7 +2,7 @@
 permalink: "/2025books/"
 title: 2025
 subtitle: Books I'm reading in 2025
-date: 2025-06-15 12:38:42 +0530
+date: 2025-06-22 12:38:42 +0530
 layout: default
 keywords: books
 published: true
@@ -184,7 +184,7 @@ The next thing is the cliche stuff. The whole instant gratification thing feels 
 
 The commentary on the enforced caste system was very illuminating. The Brave New World's solution to the problem of class revolts is to use Pavlovian conditioning to keep everyone content in their station. Which brings to mind the idea that the places you are comfortable in are the places that are slowly killing you. I think that's a Nietzschean idea.
 
-John' entire internal monologue being just Shakespeare is such an awesome touch. When will I get to reading all of Shakespeare's works?
+John's entire internal monologue being just Shakespeare is such an awesome touch. When will I get to reading all of Shakespeare's works?
 
 I will end on a personal note, I keep thinking of everyone using LLM to do their thinking for them as something fundamentally bad for their minds. And this book really pushed me to add more thoughts to that. I am definitely going to at least start writing that essay now.
 
@@ -202,6 +202,10 @@ The final thing I will say about the book is that there was no part of the book 
 
 One more note: I find it super interesting that two consecutive Pulitzers were awarded for stories that heavily featured women being put in psychiatric institutions.
 
-- [Dua Lipa In Conversation With Hernan Diaz](https://www.youtube.com/watch?v=sRAKWYpOfcs): This is where I got the suggestion from, after watching Dua Lipa interview Ocean Vuong and Khaled Hosseini. Dua asks a very thoughtful question in this conversation that I thought of myself; about whether the Ida in Trust had any parallels to Ida Tarbell who wrote extensively about John. D. Rockefeller in her capacity as an investigative journalism.
+- [Dua Lipa In Conversation With Hernan Diaz](https://www.youtube.com/watch?v=sRAKWYpOfcs): This is where I got the suggestion from, after watching Dua Lipa interview Ocean Vuong and Khaled Hosseini. Dua asks a very thoughtful question in this conversation that I thought of myself; about whether the Ida in Trust had any parallels to Ida Tarbell who wrote extensively about John. D. Rockefeller in her capacity as an investigative journalist.
+
+#### 20. [Remarkably Bright Creatures](https://shelbyvanpelt.com/books/remarkably-bright-creatures/) by Shelby Van Pelt <span style="float: right;">`(5/5)`</span>
+
+ I cannot find the words to describe this book. This was beautiful. Simply beautiful.
 
 ---
