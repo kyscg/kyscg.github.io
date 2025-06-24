@@ -208,4 +208,8 @@ One more note: I find it super interesting that two consecutive Pulitzers were a
 
  I cannot find the words to describe this book. This was beautiful. Simply beautiful.
 
+#### 21. [Hello Beautiful](https://annnapolitano.com/hello-beautiful/) by Ann Napolitano <span style="float: right;">`(4.25/5)`</span>
+
+ I didn't think I would love this book this much when I was reading the first few chapters. I almost stopped midway because I thought the writing was too forced and none of the characters were likeable. I was so wrong. It keeps getting better and better. 
+
 ---
