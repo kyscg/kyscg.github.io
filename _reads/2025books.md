@@ -2,7 +2,7 @@
 permalink: "/2025books/"
 title: 2025
 subtitle: Books I'm reading in 2025
-date: 2025-06-22 12:38:42 +0530
+date: 2025-06-27 12:38:42 +0530
 layout: default
 keywords: books
 published: true
@@ -211,5 +211,9 @@ One more note: I find it super interesting that two consecutive Pulitzers were a
 #### 21. [Hello Beautiful](https://annnapolitano.com/hello-beautiful/) by Ann Napolitano <span style="float: right;">`(4.25/5)`</span>
 
  I didn't think I would love this book this much when I was reading the first few chapters. I almost stopped midway because I thought the writing was too forced and none of the characters were likeable. I was so wrong. It keeps getting better and better. 
+
+#### 22. [Lord of the Flies](https://william-golding.co.uk/books/lord-of-the-flies) by William Golding <span style="float: right;">`(3/5)`</span>
+
+I can totally see how this could have happened. And I can also see why this is recommended reading in school. Makes me want to read Treasure Island again.
 
 ---
