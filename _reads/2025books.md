@@ -216,4 +216,8 @@ One more note: I find it super interesting that two consecutive Pulitzers were a
 
 I can totally see how this could have happened. And I can also see why this is recommended reading in school. Makes me want to read Treasure Island again.
 
+#### 23. [The Unbearable Lightness of Being](https://www.goodreads.com/book/show/9717.The_Unbearable_Lightness_of_Being) by Milan Kundera <span style="float: right;">`(2.25/5)`</span>
+
+Word salad alert! Bunch of neurotic people saying neurotic things. I mean, I get why the book is so popular, the style of the prose is very soviet-essay coded and very memorable. The ideas are well-formed, and the characters are well written, and maybe I would have liked this book at some other time, but I simply couldn't read this without forcing myself to.
+
 ---
