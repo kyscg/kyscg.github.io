@@ -1,0 +1,331 @@
+<!-- vim: set nomodeline: -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>train.py</title>
+<meta name="colorscheme" content="catppuccin-latte"></meta>
+<style>
+* {font-family: monospace}
+body {background-color: #eff1f5; color: #4c4f69}
+.Special {color: #ea76cb}
+.Conditional {color: #8839ef; font-style: italic}
+.Function {color: #1e66f5}
+.Identifier {color: #dd7878}
+.pythonDot {}
+.Repeat {color: #8839ef}
+.Comment {color: #7c7f93; font-style: italic}
+.Statement {color: #8839ef}
+.Error {color: #d20f39}
+.pythonStrInterpRegion {}
+.ColorColumn {background-color: #ccd0da}
+.Operator {color: #04a5e5}
+.String {color: #40a02b}
+.Include {color: #8839ef}
+.Boolean {color: #fe640b}
+.Number {color: #fe640b}
+.Structure {color: #df8e1d}
+</style>
+</head>
+<body style="display: flex">
+<pre>
+<span class="String">&quot;&quot;&quot;</span>
+<span class="String">file:</span><span class="Error"> </span>
+<span class="String">    train.py</span>
+<span class="String">description:</span><span class="Error"> </span>
+<span class="String">    implementation of a deep q-network that teaches an agent to play enduro</span>
+<span class="String">    from the atari gym. prints logs to console and saves model checkpoints.</span>
+<span class="String">url:</span>
+<span class="String">    https://kyscg.github.io/2025/07/11/dqnenduro</span>
+<span class="String">author:</span>
+<span class="String">    kyscg</span>
+<span class="String">&quot;&quot;&quot;</span>
+
+<span class="Include">import</span> torch
+<span class="Include">import</span> torch<span class="pythonDot">.</span>nn <span class="Statement">as</span> nn
+<span class="Include">import</span> torch<span class="pythonDot">.</span>optim <span class="Statement">as</span> optim
+<span class="Include">import</span> torch<span class="pythonDot">.</span>nn<span class="pythonDot">.</span>functional <span class="Statement">as</span> F
+
+<span class="Include">import</span> random
+<span class="Include">import</span> numpy <span class="Statement">as</span> np
+<span class="Include">from</span> PIL <span class="Include">import</span> Image
+<span class="Include">from</span> collections <span class="Include">import</span> deque
+
+<span class="Include">import</span> ale_py
+<span class="Include">import</span> gymnasium <span class="Statement">as</span> gym
+
+device <span class="Operator">=</span> torch<span class="pythonDot">.</span><span class="Function">device</span>(<span class="String">'cuda'</span> <span class="Conditional">if</span> torch<span class="pythonDot">.</span>cuda<span class="pythonDot">.</span><span class="Function">is_available</span>() <span class="Conditional">else</span> <span class="String">'cpu'</span>)
+<span class="Function">print</span>(<span class="String">f'Using device: </span><span class="Special">{</span><span class="pythonStrInterpRegion">device</span><span class="Special">}</span><span class="String">'</span>)
+
+<span class="Comment"># hyperparameter cache</span>
+GAMMA <span class="Operator">=</span> <span class="Number">0.99</span>
+BATCH_SIZE <span class="Operator">=</span> <span class="Number">32</span>
+BUFFER_CAPACITY <span class="Operator">=</span> <span class="Number">100000</span>
+LEARNING_RATE <span class="Operator">=</span> <span class="Number">0.00025</span>
+EPS_START <span class="Operator">=</span> <span class="Number">1.0</span>
+EPS_END <span class="Operator">=</span> <span class="Number">0.1</span>
+EPS_DECAY <span class="Operator">=</span> <span class="Number">250000</span>
+TARGET_UPDATE <span class="Operator">=</span> <span class="Number">10000</span>
+NUM_EPISODES <span class="Operator">=</span> <span class="Number">500</span>
+INITIAL_COLLECT_STEPS <span class="Operator">=</span> <span class="Number">50000</span>
+FRAME_SKIP <span class="Operator">=</span> <span class="Number">4</span>
+STACK_SIZE <span class="Operator">=</span> <span class="Number">4</span>
+
+<span class="Statement">def</span> <span class="Function">preprocess_frame</span>(frame):
+
+    img <span class="Operator">=</span> Image<span class="pythonDot">.</span><span class="Function">fromarray</span>(frame)
+    img <span class="Operator">=</span> img<span class="pythonDot">.</span><span class="Function">convert</span>(<span class="String">'L'</span>)
+
+    img <span class="Operator">=</span> img<span class="pythonDot">.</span><span class="Function">resize</span>((<span class="Number">84</span>, <span class="Number">84</span>), Image<span class="pythonDot">.</span>Resampling<span class="pythonDot">.</span>LANCZOS <span class="Conditional">if</span> <span class="Function">hasattr</span>(Image, <span class="String">'Resampling'</span>) <span class="Conditional">else</span> Image<span class="pythonDot">.</span>ANTIALIAS)
+
+    processed_frame <span class="Operator">=</span> np<span class="pythonDot">.</span><span class="Function">array</span>(img, dtype<span class="Operator">=</span>np<span class="pythonDot">.</span>uint8)
+    <span class="Statement">return</span> processed_frame
+
+<span class="Statement">class</span> <span class="Structure">DQN</span>(nn<span class="pythonDot">.</span>Module):
+    <span class="Statement">def</span> <span class="Function">__init__</span>(<span class="Identifier">self</span>, num_actions):
+        <span class="Function">super</span>(DQN, <span class="Identifier">self</span>)<span class="pythonDot">.</span><span class="Function">__init__</span>()
+        <span class="Identifier">self</span><span class="pythonDot">.</span>conv1 <span class="Operator">=</span> nn<span class="pythonDot">.</span><span class="Function">Conv2d</span>(STACK_SIZE, <span class="Number">32</span>, kernel_size<span class="Operator">=</span><span class="Number">8</span>, stride<span class="Operator">=</span><span class="Number">4</span>) <span class="Comment"># 32 * 20 * 20</span>
+        <span class="Identifier">self</span><span class="pythonDot">.</span>conv2 <span class="Operator">=</span> nn<span class="pythonDot">.</span><span class="Function">Conv2d</span>(<span class="Number">32</span>, <span class="Number">64</span>, kernel_size<span class="Operator">=</span><span class="Number">4</span>, stride<span class="Operator">=</span><span class="Number">2</span>) <span class="Comment"># 64 * 9 * 9</span>
+        <span class="Identifier">self</span><span class="pythonDot">.</span>conv3 <span class="Operator">=</span> nn<span class="pythonDot">.</span><span class="Function">Conv2d</span>(<span class="Number">64</span>, <span class="Number">64</span>, kernel_size<span class="Operator">=</span><span class="Number">3</span>, stride<span class="Operator">=</span><span class="Number">1</span>) <span class="Comment"># 64 * 7 * 7</span>
+
+        <span class="Identifier">self</span><span class="pythonDot">.</span>_feature_size <span class="Operator">=</span> <span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">_get_conv_output_size</span>((STACK_SIZE, <span class="Number">84</span>, <span class="Number">84</span>))
+
+        <span class="Identifier">self</span><span class="pythonDot">.</span>fc1 <span class="Operator">=</span> nn<span class="pythonDot">.</span><span class="Function">Linear</span>(<span class="Identifier">self</span><span class="pythonDot">.</span>_feature_size, <span class="Number">512</span>)
+        <span class="Identifier">self</span><span class="pythonDot">.</span>fc2 <span class="Operator">=</span> nn<span class="pythonDot">.</span><span class="Function">Linear</span>(<span class="Number">512</span>, num_actions)
+
+    <span class="Statement">def</span> <span class="Function">_get_conv_output_size</span>(<span class="Identifier">self</span>, shape):
+        dummy <span class="Operator">=</span> torch<span class="pythonDot">.</span><span class="Function">zeros</span>(<span class="Number">1</span>, <span class="Operator">*</span>shape)
+        o <span class="Operator">=</span> F<span class="pythonDot">.</span><span class="Function">relu</span>(<span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">conv1</span>(dummy))
+        o <span class="Operator">=</span> F<span class="pythonDot">.</span><span class="Function">relu</span>(<span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">conv2</span>(o))
+        o <span class="Operator">=</span> F<span class="pythonDot">.</span><span class="Function">relu</span>(<span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">conv3</span>(o))
+
+        <span class="Statement">return</span> <span class="Structure">int</span>(np<span class="pythonDot">.</span><span class="Function">prod</span>(o<span class="pythonDot">.</span><span class="Function">size</span>()))
+
+    <span class="Statement">def</span> <span class="Function">forward</span>(<span class="Identifier">self</span>, x):
+        x <span class="Operator">=</span> F<span class="pythonDot">.</span><span class="Function">relu</span>(<span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">conv1</span>(x))
+        x <span class="Operator">=</span> F<span class="pythonDot">.</span><span class="Function">relu</span>(<span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">conv2</span>(x))
+        x <span class="Operator">=</span> F<span class="pythonDot">.</span><span class="Function">relu</span>(<span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">conv3</span>(x))
+
+        x <span class="Operator">=</span> x<span class="pythonDot">.</span><span class="Function">view</span>(x<span class="pythonDot">.</span><span class="Function">size</span>(<span class="Number">0</span>), <span class="Operator">-</span><span class="Number">1</span>)
+
+        x <span class="Operator">=</span> F<span class="pythonDot">.</span><span class="Function">relu</span>(<span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">fc1</span>(x))
+
+        <span class="Statement">return</span> <span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">fc2</span>(x)
+
+<span class="Statement">class</span> <span class="Structure">ReplayBuffer</span>:
+
+    <span class="Statement">def</span> <span class="Function">__init__</span>(<span class="Identifier">self</span>, capacity):
+        <span class="Identifier">self</span><span class="pythonDot">.</span>buffer <span class="Operator">=</span> <span class="Function">deque</span>(maxlen<span class="Operator">=</span>capacity)
+
+    <span class="Statement">def</span> <span class="Function">push</span>(<span class="Identifier">self</span>, state, action, reward, next_state, done):
+        <span class="Identifier">self</span><span class="pythonDot">.</span>buffer<span class="pythonDot">.</span><span class="Function">append</span>((state, action, reward, next_state, done))
+
+    <span class="Statement">def</span> <span class="Function">sample</span>(<span class="Identifier">self</span>, batch_size):
+        transitions <span class="Operator">=</span> random<span class="pythonDot">.</span><span class="Function">sample</span>(<span class="Identifier">self</span><span class="pythonDot">.</span>buffer, batch_size)
+        states_raw, actions, rewards, next_states_raw, dones <span class="Operator">=</span> <span class="Function">zip</span>(<span class="Operator">*</span>transitions)
+
+        states <span class="Operator">=</span> torch<span class="pythonDot">.</span><span class="Function">tensor</span>(np<span class="pythonDot">.</span><span class="Function">array</span>(states_raw), dtype<span class="Operator">=</span>torch<span class="pythonDot">.</span>float32)<span class="pythonDot">.</span><span class="Function">to</span>(device) <span class="Operator">/</span> <span class="Number">255.0</span>
+        next_states <span class="Operator">=</span> torch<span class="pythonDot">.</span><span class="Function">tensor</span>(np<span class="pythonDot">.</span><span class="Function">array</span>(next_states_raw), dtype<span class="Operator">=</span>torch<span class="pythonDot">.</span>float32)<span class="pythonDot">.</span><span class="Function">to</span>(device) <span class="Operator">/</span> <span class="Number">255.0</span>
+
+        actions <span class="Operator">=</span> torch<span class="pythonDot">.</span><span class="Function">tensor</span>(np<span class="pythonDot">.</span><span class="Function">array</span>(actions), dtype<span class="Operator">=</span>torch<span class="pythonDot">.</span>long)<span class="pythonDot">.</span><span class="Function">to</span>(device)
+        rewards <span class="Operator">=</span> torch<span class="pythonDot">.</span><span class="Function">tensor</span>(np<span class="pythonDot">.</span><span class="Function">array</span>(rewards), dtype<span class="Operator">=</span>torch<span class="pythonDot">.</span>float32)<span class="pythonDot">.</span><span class="Function">to</span>(device)
+        dones <span class="Operator">=</span> torch<span class="pythonDot">.</span><span class="Function">tensor</span>(np<span class="pythonDot">.</span><span class="Function">array</span>(dones), dtype<span class="Operator">=</span>torch<span class="pythonDot">.</span>bool)<span class="pythonDot">.</span><span class="Function">to</span>(device)
+
+        <span class="Statement">return</span> states, actions, rewards, next_states, dones
+
+    <span class="Statement">def</span> <span class="Function">__len__</span>(<span class="Identifier">self</span>):
+        <span class="Statement">return</span> <span class="Function">len</span>(<span class="Identifier">self</span><span class="pythonDot">.</span>buffer)
+
+<span class="Statement">class</span> <span class="Structure">DQNAgent</span>:
+
+    <span class="Statement">def</span> <span class="Function">__init__</span>(<span class="Identifier">self</span>, state_shape, action_dim, lr, gamma, eps_start, eps_end, eps_decay, target_update_freq, device):
+        <span class="Identifier">self</span><span class="pythonDot">.</span>action_dim <span class="Operator">=</span> action_dim
+        <span class="Identifier">self</span><span class="pythonDot">.</span>gamma <span class="Operator">=</span> gamma
+        <span class="Identifier">self</span><span class="pythonDot">.</span>eps_start <span class="Operator">=</span> eps_start
+        <span class="Identifier">self</span><span class="pythonDot">.</span>eps_end <span class="Operator">=</span> eps_end
+        <span class="Identifier">self</span><span class="pythonDot">.</span>eps_decay <span class="Operator">=</span> eps_decay
+        <span class="Identifier">self</span><span class="pythonDot">.</span>target_update_freq <span class="Operator">=</span> target_update_freq
+        <span class="Identifier">self</span><span class="pythonDot">.</span>device <span class="Operator">=</span> device
+
+        <span class="Identifier">self</span><span class="pythonDot">.</span>policy_net <span class="Operator">=</span> <span class="Function">DQN</span>(action_dim)<span class="pythonDot">.</span><span class="Function">to</span>(device)
+        <span class="Identifier">self</span><span class="pythonDot">.</span>target_net <span class="Operator">=</span> <span class="Function">DQN</span>(action_dim)<span class="pythonDot">.</span><span class="Function">to</span>(device)
+
+        <span class="Identifier">self</span><span class="pythonDot">.</span>target_net<span class="pythonDot">.</span><span class="Function">load_state_dict</span>(<span class="Identifier">self</span><span class="pythonDot">.</span>policy_net<span class="pythonDot">.</span><span class="Function">state_dict</span>())
+        <span class="Identifier">self</span><span class="pythonDot">.</span>target_net<span class="pythonDot">.</span><span class="Function">eval</span>()
+
+        <span class="Identifier">self</span><span class="pythonDot">.</span>optimizer <span class="Operator">=</span> optim<span class="pythonDot">.</span><span class="Function">RMSprop</span>(<span class="Identifier">self</span><span class="pythonDot">.</span>policy_net<span class="pythonDot">.</span><span class="Function">parameters</span>(), lr<span class="Operator">=</span>lr, alpha<span class="Operator">=</span><span class="Number">0.95</span>, eps<span class="Operator">=</span><span class="Number">0.01</span>, weight_decay<span class="Operator">=</span><span class="Number">0</span>)
+        <span class="Identifier">self</span><span class="pythonDot">.</span>criterion <span class="Operator">=</span> nn<span class="pythonDot">.</span><span class="Function">SmoothL1Loss</span>()
+
+        <span class="Identifier">self</span><span class="pythonDot">.</span>steps_done <span class="Operator">=</span> <span class="Number">0</span>
+
+
+    <span class="Statement">def</span> <span class="Function">select_action</span>(<span class="Identifier">self</span>, state):
+        eps_threshold <span class="Operator">=</span> <span class="Identifier">self</span><span class="pythonDot">.</span>eps_end <span class="Operator">+</span> (<span class="Identifier">self</span><span class="pythonDot">.</span>eps_start <span class="Operator">-</span> <span class="Identifier">self</span><span class="pythonDot">.</span>eps_end) <span class="Operator">*</span> np<span class="pythonDot">.</span><span class="Function">exp</span>(<span class="Operator">-</span><span class="Number">1.</span> <span class="Operator">*</span> <span class="Identifier">self</span><span class="pythonDot">.</span>steps_done <span class="Operator">/</span> <span class="Identifier">self</span><span class="pythonDot">.</span>eps_decay)
+
+        <span class="Conditional">if</span> random<span class="pythonDot">.</span><span class="Function">random</span>() <span class="Operator">&lt;</span> eps_threshold:
+            <span class="Statement">return</span> torch<span class="pythonDot">.</span><span class="Function">tensor</span>([random<span class="pythonDot">.</span><span class="Function">randrange</span>(<span class="Identifier">self</span><span class="pythonDot">.</span>action_dim)], device<span class="Operator">=</span><span class="Identifier">self</span><span class="pythonDot">.</span>device, dtype<span class="Operator">=</span>torch<span class="pythonDot">.</span>long)
+        <span class="Conditional">else</span>:
+            <span class="Statement">with</span> torch<span class="pythonDot">.</span><span class="Function">no_grad</span>():
+                state_tensor <span class="Operator">=</span> torch<span class="pythonDot">.</span><span class="Function">tensor</span>(state, dtype<span class="Operator">=</span>torch<span class="pythonDot">.</span>float32)<span class="pythonDot">.</span><span class="Function">unsqueeze</span>(<span class="Number">0</span>)<span class="pythonDot">.</span><span class="Function">to</span>(<span class="Identifier">self</span><span class="pythonDot">.</span>device) <span class="Operator">/</span> <span class="Number">255.0</span>
+
+                q_values <span class="Operator">=</span> <span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">policy_net</span>(state_tensor)
+
+                <span class="Statement">return</span> q_values<span class="pythonDot">.</span><span class="Function">argmax</span>(<span class="Number">1</span>)<span class="pythonDot">.</span><span class="Function">view</span>(<span class="Number">1</span>, <span class="Number">1</span>)
+
+    <span class="Statement">def</span> <span class="Function">optimize_model</span>(<span class="Identifier">self</span>, replay_buffer):
+
+        <span class="Conditional">if</span> <span class="Function">len</span>(replay_buffer) <span class="Operator">&lt;</span> BATCH_SIZE:
+            <span class="Statement">return</span>
+
+        states, actions, rewards, next_states, dones <span class="Operator">=</span> replay_buffer<span class="pythonDot">.</span><span class="Function">sample</span>(BATCH_SIZE)
+
+        state_action_values <span class="Operator">=</span> <span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">policy_net</span>(states)<span class="pythonDot">.</span><span class="Function">gather</span>(<span class="Number">1</span>, actions<span class="pythonDot">.</span><span class="Function">unsqueeze</span>(<span class="Operator">-</span><span class="Number">1</span>))<span class="pythonDot">.</span><span class="Function">squeeze</span>(<span class="Operator">-</span><span class="Number">1</span>)
+
+        <span class="Statement">with</span> torch<span class="pythonDot">.</span><span class="Function">no_grad</span>():
+            next_state_values <span class="Operator">=</span> <span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">target_net</span>(next_states)<span class="pythonDot">.</span><span class="Function">max</span>(<span class="Number">1</span>)[<span class="Number">0</span>]
+            expected_state_action_values <span class="Operator">=</span> rewards <span class="Operator">+</span> (<span class="Identifier">self</span><span class="pythonDot">.</span>gamma <span class="Operator">*</span> next_state_values <span class="Operator">*</span> (<span class="Number">1</span> <span class="Operator">-</span> dones<span class="pythonDot">.</span><span class="Function">float</span>()))
+
+        loss <span class="Operator">=</span> <span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">criterion</span>(state_action_values, expected_state_action_values)
+        <span class="Identifier">self</span><span class="pythonDot">.</span>optimizer<span class="pythonDot">.</span><span class="Function">zero_grad</span>()
+        loss<span class="pythonDot">.</span><span class="Function">backward</span>()
+        torch<span class="pythonDot">.</span>nn<span class="pythonDot">.</span>utils<span class="pythonDot">.</span><span class="Function">clip_grad_norm_</span>(<span class="Identifier">self</span><span class="pythonDot">.</span>policy_net<span class="pythonDot">.</span><span class="Function">parameters</span>(), <span class="Number">1.0</span>)
+        <span class="Identifier">self</span><span class="pythonDot">.</span>optimizer<span class="pythonDot">.</span><span class="Function">step</span>()
+
+        <span class="Identifier">self</span><span class="pythonDot">.</span>steps_done <span class="Operator">+=</span> <span class="Number">1</span>
+
+        <span class="Conditional">if</span> <span class="Identifier">self</span><span class="pythonDot">.</span>steps_done <span class="Operator">%</span> <span class="Identifier">self</span><span class="pythonDot">.</span>target_update_freq <span class="Operator">==</span> <span class="Number">0</span>:
+            <span class="Identifier">self</span><span class="pythonDot">.</span>target_net<span class="pythonDot">.</span><span class="Function">load_state_dict</span>(<span class="Identifier">self</span><span class="pythonDot">.</span>policy_net<span class="pythonDot">.</span><span class="Function">state_dict</span>())
+            <span class="Function">print</span>(<span class="String">f'Target network updated at step </span><span class="Special">{</span><span class="Identifier">self</span><span class="pythonStrInterpRegion">.steps_done</span><span class="Special">}</span><span class="String">'</span>)
+
+<span class="Statement">def</span> <span class="Function">train</span>():
+
+    env <span class="Operator">=</span> gym<span class="pythonDot">.</span><span class="Function">make</span>(<span class="String">'ALE/Enduro-v5'</span>)
+    num_actions <span class="Operator">=</span> env<span class="pythonDot">.</span>action_space<span class="pythonDot">.</span>n
+    <span class="Function">print</span>(<span class="String">f'Environment: ALE/Enduro-v5 | Action Space: </span><span class="Special">{</span><span class="pythonStrInterpRegion">num_actions</span><span class="Special">}</span><span class="String"> actions.'</span>)
+
+    agent <span class="Operator">=</span> <span class="Function">DQNAgent</span>(
+        state_shape<span class="Operator">=</span>(STACK_SIZE, <span class="Number">84</span>, <span class="Number">84</span>),
+        action_dim<span class="Operator">=</span>num_actions,
+        lr<span class="Operator">=</span>LEARNING_RATE,
+        gamma<span class="Operator">=</span>GAMMA,
+        eps_start<span class="Operator">=</span>EPS_START,
+        eps_end<span class="Operator">=</span>EPS_END,
+        eps_decay<span class="Operator">=</span>EPS_DECAY,
+        target_update_freq<span class="Operator">=</span>TARGET_UPDATE,
+        device<span class="Operator">=</span>device
+    )
+
+    replay_buffer <span class="Operator">=</span> <span class="Function">ReplayBuffer</span>(BUFFER_CAPACITY)
+
+    total_frames <span class="Operator">=</span> <span class="Number">0</span>
+    episode_rewards <span class="Operator">=</span> []
+
+    <span class="Function">print</span>(<span class="String">&quot;--- Starting Initial Experience Collection (Random Actions) ---&quot;</span>)
+    <span class="Function">print</span>(<span class="String">f&quot;Collecting </span><span class="Special">{</span><span class="pythonStrInterpRegion">INITIAL_COLLECT_STEPS</span><span class="Special">}</span><span class="String"> steps to fill replay buffer...&quot;</span>)
+
+    state_raw, _ <span class="Operator">=</span> env<span class="pythonDot">.</span><span class="Function">reset</span>()
+    state_processed <span class="Operator">=</span> <span class="Function">preprocess_frame</span>(state_raw)
+
+    stacked_frames_deque <span class="Operator">=</span> <span class="Function">deque</span>([state_processed] <span class="Operator">*</span> STACK_SIZE, maxlen<span class="Operator">=</span>STACK_SIZE)
+    current_stacked_state <span class="Operator">=</span> np<span class="pythonDot">.</span><span class="Function">array</span>(stacked_frames_deque, dtype<span class="Operator">=</span>np<span class="pythonDot">.</span>uint8)
+
+    <span class="Repeat">for</span> i <span class="Operator">in</span> <span class="Function">range</span>(INITIAL_COLLECT_STEPS):
+        action <span class="Operator">=</span> env<span class="pythonDot">.</span>action_space<span class="pythonDot">.</span><span class="Function">sample</span>()
+
+        next_frame_raw, reward, terminated, truncated, _ <span class="Operator">=</span> env<span class="pythonDot">.</span><span class="Function">step</span>(action)
+        done <span class="Operator">=</span> terminated <span class="Operator">or</span> truncated
+
+        next_frame_preprocessed <span class="Operator">=</span> <span class="Function">preprocess_frame</span>(next_frame_raw)
+        stacked_frames_deque<span class="pythonDot">.</span><span class="Function">append</span>(next_frame_preprocessed)
+        next_stacked_state <span class="Operator">=</span> np<span class="pythonDot">.</span><span class="Function">array</span>(stacked_frames_deque, dtype<span class="Operator">=</span>np<span class="pythonDot">.</span>uint8)
+
+        clipped_reward_sum <span class="Operator">=</span> np<span class="pythonDot">.</span><span class="Function">sign</span>(reward) <span class="Conditional">if</span> reward <span class="Operator">!=</span> <span class="Number">0</span> <span class="Conditional">else</span> <span class="Number">0</span>
+        replay_buffer<span class="pythonDot">.</span><span class="Function">push</span>(current_stacked_state, action, clipped_reward_sum, next_stacked_state, done)
+
+        current_stacked_state <span class="Operator">=</span> next_stacked_state
+        total_frames <span class="Operator">+=</span> <span class="Number">1</span>
+
+        <span class="Conditional">if</span> done:
+            state_raw, _ <span class="Operator">=</span> env<span class="pythonDot">.</span><span class="Function">reset</span>()
+            state_processed <span class="Operator">=</span> <span class="Function">preprocess_frame</span>(state_raw)
+            stacked_frames_deque <span class="Operator">=</span> <span class="Function">deque</span>([state_processed] <span class="Operator">*</span> STACK_SIZE, maxlen<span class="Operator">=</span>STACK_SIZE)
+            current_stacked_state <span class="Operator">=</span> np<span class="pythonDot">.</span><span class="Function">array</span>(stacked_frames_deque, dtype<span class="Operator">=</span>np<span class="pythonDot">.</span>uint8)
+
+        <span class="Conditional">if</span> (i <span class="Operator">+</span> <span class="Number">1</span>) <span class="Operator">%</span> <span class="Number">10000</span> <span class="Operator">==</span> <span class="Number">0</span>:
+            <span class="Function">print</span>(<span class="String">f&quot;Collected </span><span class="Special">{</span><span class="pythonStrInterpRegion">i </span><span class="Operator">+</span><span class="pythonStrInterpRegion"> </span><span class="Number">1</span><span class="Special">}</span><span class="String">/</span><span class="Special">{</span><span class="pythonStrInterpRegion">INITIAL_COLLECT_STEPS</span><span class="Special">}</span><span class="String"> frames for initial buffer.&quot;</span>)
+
+    <span class="Function">print</span>(<span class="String">f'Initial experience collection finished. Replay buffer size: </span><span class="Special">{</span><span class="Function">len</span><span class="pythonStrInterpRegion">(replay_buffer)</span><span class="Special">}</span><span class="String">'</span>)
+    <span class="Function">print</span>(<span class="String">'--- Starting Main Training Loop ---'</span>)
+
+    <span class="Repeat">for</span> episode <span class="Operator">in</span> <span class="Function">range</span>(NUM_EPISODES):
+        state_raw, _ <span class="Operator">=</span> env<span class="pythonDot">.</span><span class="Function">reset</span>()
+        state_processed <span class="Operator">=</span> <span class="Function">preprocess_frame</span>(state_raw)
+        stacked_frames_deque <span class="Operator">=</span> <span class="Function">deque</span>([state_processed] <span class="Operator">*</span> STACK_SIZE, maxlen<span class="Operator">=</span>STACK_SIZE)
+        current_stacked_state <span class="Operator">=</span> np<span class="pythonDot">.</span><span class="Function">array</span>(stacked_frames_deque, dtype<span class="Operator">=</span>np<span class="pythonDot">.</span>uint8)
+
+        episode_reward <span class="Operator">=</span> <span class="Number">0</span>
+        done <span class="Operator">=</span> <span class="Boolean">False</span>
+
+        <span class="Repeat">while</span> <span class="Operator">not</span> done:
+            action_tensor <span class="Operator">=</span> agent<span class="pythonDot">.</span><span class="Function">select_action</span>(current_stacked_state)
+            action <span class="Operator">=</span> action_tensor<span class="pythonDot">.</span><span class="Function">item</span>()
+
+            reward_sum_over_skip <span class="Operator">=</span> <span class="Number">0</span>
+            frame_skip_done <span class="Operator">=</span> <span class="Boolean">False</span>
+            <span class="Repeat">for</span> _ <span class="Operator">in</span> <span class="Function">range</span>(FRAME_SKIP):
+                next_frame_raw, reward, terminated, truncated, _ <span class="Operator">=</span> env<span class="pythonDot">.</span><span class="Function">step</span>(action)
+                done <span class="Operator">=</span> terminated <span class="Operator">or</span> truncated
+
+                reward_sum_over_skip <span class="Operator">+=</span> reward
+                <span class="Conditional">if</span> done:
+                    frame_skip_done <span class="Operator">=</span> <span class="Boolean">True</span>
+                    <span class="Statement">break</span>
+
+            next_frame_processed <span class="Operator">=</span> <span class="Function">preprocess_frame</span>(next_frame_raw)
+
+            stacked_frames_deque<span class="pythonDot">.</span><span class="Function">append</span>(next_frame_processed)
+            next_stacked_state <span class="Operator">=</span> np<span class="pythonDot">.</span><span class="Function">array</span>(stacked_frames_deque, dtype<span class="Operator">=</span>np<span class="pythonDot">.</span>uint8)
+
+            clipped_reward_sum <span class="Operator">=</span> np<span class="pythonDot">.</span><span class="Function">sign</span>(reward_sum_over_skip) <span class="Conditional">if</span> reward_sum_over_skip <span class="Operator">!=</span> <span class="Number">0</span> <span class="Conditional">else</span> <span class="Number">0</span>
+            replay_buffer<span class="pythonDot">.</span><span class="Function">push</span>(current_stacked_state, action, clipped_reward_sum, next_stacked_state, done)
+
+            current_stacked_state <span class="Operator">=</span> next_stacked_state
+
+            episode_reward <span class="Operator">+=</span> reward_sum_over_skip
+
+            total_frames <span class="Operator">+=</span> <span class="Number">1</span>
+            agent<span class="pythonDot">.</span>steps_done <span class="Operator">=</span> total_frames
+
+            agent<span class="pythonDot">.</span><span class="Function">optimize_model</span>(replay_buffer)
+
+            <span class="Conditional">if</span> frame_skip_done:
+                done <span class="Operator">=</span> <span class="Boolean">True</span>
+
+        episode_rewards<span class="pythonDot">.</span><span class="Function">append</span>(episode_reward)
+
+        avg_reward_last_100 <span class="Operator">=</span> np<span class="pythonDot">.</span><span class="Function">mean</span>(episode_rewards[<span class="Operator">-</span><span class="Number">100</span>:])
+
+        current_epsilon <span class="Operator">=</span> agent<span class="pythonDot">.</span>eps_end <span class="Operator">+</span> (agent<span class="pythonDot">.</span>eps_start <span class="Operator">-</span> agent<span class="pythonDot">.</span>eps_end) <span class="Operator">*</span> np<span class="pythonDot">.</span><span class="Function">exp</span>(<span class="Operator">-</span><span class="Number">1.</span> <span class="Operator">*</span> agent<span class="pythonDot">.</span>steps_done <span class="Operator">/</span> agent<span class="pythonDot">.</span>eps_decay)
+
+        <span class="Function">print</span>(<span class="String">f&quot;Episode </span><span class="Special">{</span><span class="pythonStrInterpRegion">episode </span><span class="Operator">+</span><span class="pythonStrInterpRegion"> </span><span class="Number">1</span><span class="Special">}</span><span class="String">/</span><span class="Special">{</span><span class="pythonStrInterpRegion">NUM_EPISODES</span><span class="Special">}</span><span class="String"> | Total Frames: </span><span class="Special">{</span><span class="pythonStrInterpRegion">total_frames</span><span class="Special">}</span><span class="String"> | &quot;</span>
+              <span class="String">f&quot;Epsilon: </span><span class="Special">{</span><span class="pythonStrInterpRegion">current_epsilon</span><span class="Special">:.4f}</span><span class="String"> | Reward: </span><span class="Special">{</span><span class="pythonStrInterpRegion">episode_reward</span><span class="Special">:.2f}</span><span class="String"> | &quot;</span>
+              <span class="String">f&quot;Avg 100-episode Reward: </span><span class="Special">{</span><span class="pythonStrInterpRegion">avg_reward_last_100</span><span class="Special">:.2f}</span><span class="String">&quot;</span>)
+
+        <span class="Conditional">if</span> (episode <span class="Operator">+</span> <span class="Number">1</span>) <span class="Operator">%</span> <span class="Number">50</span> <span class="Operator">==</span> <span class="Number">0</span>:
+            torch<span class="pythonDot">.</span><span class="Function">save</span>(agent<span class="pythonDot">.</span>policy_net<span class="pythonDot">.</span><span class="Function">state_dict</span>(), <span class="String">f&quot;dqn_enduro_episode_</span><span class="Special">{</span><span class="pythonStrInterpRegion">episode </span><span class="Operator">+</span><span class="pythonStrInterpRegion"> </span><span class="Number">1</span><span class="Special">}</span><span class="String">.pth&quot;</span>)
+            <span class="Function">print</span>(<span class="String">f&quot;Model checkpoint saved after episode </span><span class="Special">{</span><span class="pythonStrInterpRegion">episode </span><span class="Operator">+</span><span class="pythonStrInterpRegion"> </span><span class="Number">1</span><span class="Special">}</span><span class="String">&quot;</span>)
+
+    env<span class="pythonDot">.</span><span class="Function">close</span>()
+    <span class="Function">print</span>(<span class="String">&quot;</span><span class="Special">\n</span><span class="String">--- Training Finished! ---&quot;</span>)
+
+    <span class="Function">print</span>(<span class="String">&quot;Final average reward over last 100 episodes:&quot;</span>, np<span class="pythonDot">.</span><span class="Function">mean</span>(episode_rewards[<span class="Operator">-</span><span class="Number">100</span>:]))
+
+    torch<span class="pythonDot">.</span><span class="Function">save</span>(agent<span class="pythonDot">.</span>policy_net<span class="pythonDot">.</span><span class="Function">state_dict</span>(), <span class="String">&quot;dqn_enduro_final.pth&quot;</span>)
+    <span class="Function">print</span>(<span class="String">&quot;Final model saved as dqn_enduro_final.pth&quot;</span>)
+
+<span class="Conditional">if</span> <span class="Identifier">__name__</span> <span class="Operator">==</span> <span class="String">'__main__'</span>:
+    <span class="Function">train</span>()
+
+</pre>
+</body>
+</html>

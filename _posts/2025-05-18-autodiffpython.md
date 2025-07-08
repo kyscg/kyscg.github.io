@@ -14,7 +14,7 @@ published: true
 A recording of me explaining and implementing automatic differentiation in pure Python. I start with some mathematics of forward and reverse mode autodiff and then implement interleaved forward mode autodiff. Then I explain how to use Dual Numbers and implement forward mode autodiff using Dual Numbers. Finally, I construct a computation graph and perform a topological sort to achieve reverse mode autodiff.
 
 <center>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ULS1Py6ovjs?si=s2Hu84g9t6tdfIn7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ULS1Py6ovjs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </center>
 
 ## Resources

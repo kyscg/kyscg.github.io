@@ -388,6 +388,7 @@ article {
 
 .highlight pre {
   margin-left: 1.5em;
+  overflow-x: auto;
 }
 
 .highlight table td {

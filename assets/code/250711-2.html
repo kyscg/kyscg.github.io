@@ -1,0 +1,190 @@
+<!-- vim: set nomodeline: -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>infer.py</title>
+<meta name="colorscheme" content="catppuccin-latte"></meta>
+<style>
+* {font-family: monospace}
+body {background-color: #eff1f5; color: #4c4f69}
+.Exception {color: #8839ef}
+.Special {color: #ea76cb}
+.Conditional {font-style: italic; color: #8839ef}
+.Function {color: #1e66f5}
+.Identifier {color: #dd7878}
+.pythonDot {}
+.Repeat {color: #8839ef}
+.Comment {font-style: italic; color: #7c7f93}
+.Statement {color: #8839ef}
+.Error {color: #d20f39}
+.Constant {color: #fe640b}
+.pythonStrInterpRegion {}
+.ColorColumn {background-color: #ccd0da}
+.String {color: #40a02b}
+.Operator {color: #04a5e5}
+.Include {color: #8839ef}
+.Boolean {color: #fe640b}
+.Number {color: #fe640b}
+.Structure {color: #df8e1d}
+</style>
+</head>
+<body style="display: flex">
+<pre>
+<span class="String">&quot;&quot;&quot;</span>
+<span class="String">file:</span><span class="Error"> </span>
+<span class="String">    infer.py</span>
+<span class="String">description:</span>
+<span class="String">    loads model checkpoints and generates atari enduro gameplay video.</span>
+<span class="String">    also prints test average of any number of episodes required</span>
+<span class="String">url:</span>
+<span class="String">    https://kyscg.github.io/2025/07/11/dqnenduro</span>
+<span class="String">author:</span>
+<span class="String">    kyscg</span>
+<span class="String">&quot;&quot;&quot;</span>
+
+<span class="Include">import</span> torch
+<span class="Include">import</span> torch<span class="pythonDot">.</span>nn <span class="Statement">as</span> nn
+<span class="Include">import</span> torch<span class="pythonDot">.</span>nn<span class="pythonDot">.</span>functional <span class="Statement">as</span> F
+
+<span class="Include">import</span> imageio
+<span class="Include">import</span> numpy <span class="Statement">as</span> np
+<span class="Include">from</span> PIL <span class="Include">import</span> Image
+<span class="Include">from</span> collections <span class="Include">import</span> deque
+
+<span class="Include">import</span> ale_py
+<span class="Include">import</span> gymnasium <span class="Statement">as</span> gym
+
+device <span class="Operator">=</span> torch<span class="pythonDot">.</span><span class="Function">device</span>(<span class="String">&quot;cuda&quot;</span> <span class="Conditional">if</span> torch<span class="pythonDot">.</span>cuda<span class="pythonDot">.</span><span class="Function">is_available</span>() <span class="Conditional">else</span> <span class="String">&quot;cpu&quot;</span>)
+<span class="Function">print</span>(<span class="String">f&quot;Using device: </span><span class="Special">{</span><span class="pythonStrInterpRegion">device</span><span class="Special">}</span><span class="String">&quot;</span>)
+
+<span class="Comment"># hyperparameter cache</span>
+MODEL_PATH <span class="Operator">=</span> <span class="String">&quot;path to checkpoint&quot;</span>
+NUM_EVAL_EPISODES <span class="Operator">=</span> <span class="Number">7</span> <span class="Comment"># change this to 100 or 200</span>
+VIDEO_FILENAME <span class="Operator">=</span> <span class="String">&quot;path to video&quot;</span>
+VIDEO_FPS <span class="Operator">=</span> <span class="Number">30</span>
+FRAME_SKIP <span class="Operator">=</span> <span class="Number">4</span>
+STACK_SIZE <span class="Operator">=</span> <span class="Number">4</span>
+
+
+<span class="Statement">def</span> <span class="Function">preprocess_frame</span>(frame): <span class="Comment"># taken from train.py</span>
+    img <span class="Operator">=</span> Image<span class="pythonDot">.</span><span class="Function">fromarray</span>(frame)
+    img <span class="Operator">=</span> img<span class="pythonDot">.</span><span class="Function">convert</span>(<span class="String">'L'</span>)
+    img <span class="Operator">=</span> img<span class="pythonDot">.</span><span class="Function">resize</span>((<span class="Number">84</span>, <span class="Number">84</span>), Image<span class="pythonDot">.</span>Resampling<span class="pythonDot">.</span>LANCZOS <span class="Conditional">if</span> <span class="Function">hasattr</span>(Image, <span class="String">'Resampling'</span>) <span class="Conditional">else</span> Image<span class="pythonDot">.</span>ANTIALIAS)
+    processed_frame <span class="Operator">=</span> np<span class="pythonDot">.</span><span class="Function">array</span>(img, dtype<span class="Operator">=</span>np<span class="pythonDot">.</span>uint8)
+    <span class="Statement">return</span> processed_frame
+
+<span class="Statement">class</span> <span class="Structure">DQN</span>(nn<span class="pythonDot">.</span>Module): <span class="Comment"># taken from train.py</span>
+    <span class="Statement">def</span> <span class="Function">__init__</span>(<span class="Identifier">self</span>, num_actions):
+        <span class="Function">super</span>(DQN, <span class="Identifier">self</span>)<span class="pythonDot">.</span><span class="Function">__init__</span>()
+        <span class="Identifier">self</span><span class="pythonDot">.</span>conv1 <span class="Operator">=</span> nn<span class="pythonDot">.</span><span class="Function">Conv2d</span>(STACK_SIZE, <span class="Number">32</span>, kernel_size<span class="Operator">=</span><span class="Number">8</span>, stride<span class="Operator">=</span><span class="Number">4</span>)
+        <span class="Identifier">self</span><span class="pythonDot">.</span>conv2 <span class="Operator">=</span> nn<span class="pythonDot">.</span><span class="Function">Conv2d</span>(<span class="Number">32</span>, <span class="Number">64</span>, kernel_size<span class="Operator">=</span><span class="Number">4</span>, stride<span class="Operator">=</span><span class="Number">2</span>)
+        <span class="Identifier">self</span><span class="pythonDot">.</span>conv3 <span class="Operator">=</span> nn<span class="pythonDot">.</span><span class="Function">Conv2d</span>(<span class="Number">64</span>, <span class="Number">64</span>, kernel_size<span class="Operator">=</span><span class="Number">3</span>, stride<span class="Operator">=</span><span class="Number">1</span>)
+        <span class="Identifier">self</span><span class="pythonDot">.</span>_feature_size <span class="Operator">=</span> <span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">_get_conv_output_size</span>((STACK_SIZE, <span class="Number">84</span>, <span class="Number">84</span>))
+        <span class="Identifier">self</span><span class="pythonDot">.</span>fc1 <span class="Operator">=</span> nn<span class="pythonDot">.</span><span class="Function">Linear</span>(<span class="Identifier">self</span><span class="pythonDot">.</span>_feature_size, <span class="Number">512</span>)
+        <span class="Identifier">self</span><span class="pythonDot">.</span>fc2 <span class="Operator">=</span> nn<span class="pythonDot">.</span><span class="Function">Linear</span>(<span class="Number">512</span>, num_actions)
+
+    <span class="Statement">def</span> <span class="Function">_get_conv_output_size</span>(<span class="Identifier">self</span>, shape):
+        dummy_input <span class="Operator">=</span> torch<span class="pythonDot">.</span><span class="Function">zeros</span>(<span class="Number">1</span>, <span class="Operator">*</span>shape)
+        o <span class="Operator">=</span> F<span class="pythonDot">.</span><span class="Function">relu</span>(<span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">conv1</span>(dummy_input))
+        o <span class="Operator">=</span> F<span class="pythonDot">.</span><span class="Function">relu</span>(<span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">conv2</span>(o))
+        o <span class="Operator">=</span> F<span class="pythonDot">.</span><span class="Function">relu</span>(<span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">conv3</span>(o))
+        <span class="Statement">return</span> <span class="Structure">int</span>(np<span class="pythonDot">.</span><span class="Function">prod</span>(o<span class="pythonDot">.</span><span class="Function">size</span>()))
+
+    <span class="Statement">def</span> <span class="Function">forward</span>(<span class="Identifier">self</span>, x):
+        x <span class="Operator">=</span> F<span class="pythonDot">.</span><span class="Function">relu</span>(<span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">conv1</span>(x))
+        x <span class="Operator">=</span> F<span class="pythonDot">.</span><span class="Function">relu</span>(<span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">conv2</span>(x))
+        x <span class="Operator">=</span> F<span class="pythonDot">.</span><span class="Function">relu</span>(<span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">conv3</span>(x))
+        x <span class="Operator">=</span> x<span class="pythonDot">.</span><span class="Function">view</span>(x<span class="pythonDot">.</span><span class="Function">size</span>(<span class="Number">0</span>), <span class="Operator">-</span><span class="Number">1</span>)
+        x <span class="Operator">=</span> F<span class="pythonDot">.</span><span class="Function">relu</span>(<span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">fc1</span>(x))
+        <span class="Statement">return</span> <span class="Identifier">self</span><span class="pythonDot">.</span><span class="Function">fc2</span>(x)
+
+<span class="Statement">def</span> <span class="Function">generate_gameplay_video</span>():
+
+    env <span class="Operator">=</span> gym<span class="pythonDot">.</span><span class="Function">make</span>(<span class="String">'ALE/Enduro-v5'</span>, render_mode<span class="Operator">=</span><span class="String">'rgb_array'</span>)
+    num_actions <span class="Operator">=</span> env<span class="pythonDot">.</span>action_space<span class="pythonDot">.</span>n
+    <span class="Function">print</span>(<span class="String">f&quot;Environment: ALE/Enduro-v5 | Action Space: </span><span class="Special">{</span><span class="pythonStrInterpRegion">num_actions</span><span class="Special">}</span><span class="String"> actions.&quot;</span>)
+
+    policy_net <span class="Operator">=</span> <span class="Function">DQN</span>(num_actions)<span class="pythonDot">.</span><span class="Function">to</span>(device)
+    <span class="Exception">try</span>:
+        policy_net<span class="pythonDot">.</span><span class="Function">load_state_dict</span>(torch<span class="pythonDot">.</span><span class="Function">load</span>(MODEL_PATH, map_location<span class="Operator">=</span>device))
+        policy_net<span class="pythonDot">.</span><span class="Function">eval</span>()
+        <span class="Function">print</span>(<span class="String">f&quot;Successfully loaded model from </span><span class="Special">{</span><span class="pythonStrInterpRegion">MODEL_PATH</span><span class="Special">}</span><span class="String">&quot;</span>)
+    <span class="Exception">except</span> <span class="Structure">FileNotFoundError</span>:
+        <span class="Function">print</span>(<span class="String">f&quot;Error: Model file not found at </span><span class="Special">{</span><span class="pythonStrInterpRegion">MODEL_PATH</span><span class="Special">}</span><span class="String">.&quot;</span>)
+        env<span class="pythonDot">.</span><span class="Function">close</span>()
+        <span class="Statement">return</span>
+    <span class="Exception">except</span> <span class="Structure">Exception</span> <span class="Statement">as</span> e:
+        <span class="Function">print</span>(<span class="String">f&quot;Error loading model: </span><span class="Special">{</span><span class="pythonStrInterpRegion">e</span><span class="Special">}</span><span class="String">&quot;</span>)
+        env<span class="pythonDot">.</span><span class="Function">close</span>()
+        <span class="Statement">return</span>
+
+    frames_to_record <span class="Operator">=</span> [] <span class="Comment"># store all RGB frames</span>
+    total_rewards <span class="Operator">=</span> []
+
+    <span class="Function">print</span>(<span class="String">f&quot;Generating gameplay video for </span><span class="Special">{</span><span class="pythonStrInterpRegion">NUM_EVAL_EPISODES</span><span class="Special">}</span><span class="String"> episodes...&quot;</span>)
+
+    <span class="Repeat">for</span> episode <span class="Operator">in</span> <span class="Function">range</span>(NUM_EVAL_EPISODES):
+        state_raw, _ <span class="Operator">=</span> env<span class="pythonDot">.</span><span class="Function">reset</span>()
+        rendered_frame <span class="Operator">=</span> env<span class="pythonDot">.</span><span class="Function">render</span>()
+        <span class="Conditional">if</span> rendered_frame <span class="Operator">is</span> <span class="Operator">not</span> <span class="Constant">None</span>:
+            frames_to_record<span class="pythonDot">.</span><span class="Function">append</span>(rendered_frame)
+
+        state_processed <span class="Operator">=</span> <span class="Function">preprocess_frame</span>(state_raw)
+        stacked_frames_deque <span class="Operator">=</span> <span class="Function">deque</span>([state_processed] <span class="Operator">*</span> STACK_SIZE, maxlen<span class="Operator">=</span>STACK_SIZE)
+        current_stacked_state <span class="Operator">=</span> np<span class="pythonDot">.</span><span class="Function">array</span>(stacked_frames_deque, dtype<span class="Operator">=</span>np<span class="pythonDot">.</span>uint8)
+
+        episode_reward <span class="Operator">=</span> <span class="Number">0</span>
+        done <span class="Operator">=</span> <span class="Boolean">False</span>
+
+        <span class="Repeat">while</span> <span class="Operator">not</span> done:
+            state_tensor <span class="Operator">=</span> torch<span class="pythonDot">.</span><span class="Function">tensor</span>(current_stacked_state, dtype<span class="Operator">=</span>torch<span class="pythonDot">.</span>float32)<span class="pythonDot">.</span><span class="Function">unsqueeze</span>(<span class="Number">0</span>)<span class="pythonDot">.</span><span class="Function">to</span>(device) <span class="Operator">/</span> <span class="Number">255.0</span>
+
+            <span class="Statement">with</span> torch<span class="pythonDot">.</span><span class="Function">no_grad</span>():
+                q_values <span class="Operator">=</span> <span class="Function">policy_net</span>(state_tensor)
+                action <span class="Operator">=</span> q_values<span class="pythonDot">.</span><span class="Function">argmax</span>(<span class="Number">1</span>)<span class="pythonDot">.</span><span class="Function">item</span>() <span class="Comment"># greedy policy </span>
+
+            reward_sum_over_skip <span class="Operator">=</span> <span class="Number">0</span>
+            frame_skip_done <span class="Operator">=</span> <span class="Boolean">False</span>
+            <span class="Repeat">for</span> _ <span class="Operator">in</span> <span class="Function">range</span>(FRAME_SKIP):
+                next_frame_raw, reward, terminated, truncated, _ <span class="Operator">=</span> env<span class="pythonDot">.</span><span class="Function">step</span>(action)
+                done <span class="Operator">=</span> terminated <span class="Operator">or</span> truncated
+
+                rendered_frame <span class="Operator">=</span> env<span class="pythonDot">.</span><span class="Function">render</span>()
+                <span class="Conditional">if</span> rendered_frame <span class="Operator">is</span> <span class="Operator">not</span> <span class="Constant">None</span>:
+                    frames_to_record<span class="pythonDot">.</span><span class="Function">append</span>(rendered_frame)
+
+                reward_sum_over_skip <span class="Operator">+=</span> reward
+                <span class="Conditional">if</span> done:
+                    frame_skip_done <span class="Operator">=</span> <span class="Boolean">True</span>
+                    <span class="Statement">break</span>
+
+            next_frame_processed <span class="Operator">=</span> <span class="Function">preprocess_frame</span>(next_frame_raw)
+            stacked_frames_deque<span class="pythonDot">.</span><span class="Function">append</span>(next_frame_processed)
+            next_stacked_state <span class="Operator">=</span> np<span class="pythonDot">.</span><span class="Function">array</span>(stacked_frames_deque, dtype<span class="Operator">=</span>np<span class="pythonDot">.</span>uint8)
+
+            current_stacked_state <span class="Operator">=</span> next_stacked_state
+            episode_reward <span class="Operator">+=</span> reward_sum_over_skip
+
+            <span class="Conditional">if</span> frame_skip_done:
+                done <span class="Operator">=</span> <span class="Boolean">True</span>
+
+        total_rewards<span class="pythonDot">.</span><span class="Function">append</span>(episode_reward)
+        <span class="Function">print</span>(<span class="String">f&quot;Episode </span><span class="Special">{</span><span class="pythonStrInterpRegion">episode </span><span class="Operator">+</span><span class="pythonStrInterpRegion"> </span><span class="Number">1</span><span class="Special">}</span><span class="String">/</span><span class="Special">{</span><span class="pythonStrInterpRegion">NUM_EVAL_EPISODES</span><span class="Special">}</span><span class="String"> finished with reward: </span><span class="Special">{</span><span class="pythonStrInterpRegion">episode_reward</span><span class="Special">:.2f}</span><span class="String">&quot;</span>)
+
+    env<span class="pythonDot">.</span><span class="Function">close</span>()
+
+    <span class="Conditional">if</span> frames_to_record:
+        <span class="Function">print</span>(<span class="String">f&quot;Saving video to </span><span class="Special">{</span><span class="pythonStrInterpRegion">VIDEO_FILENAME</span><span class="Special">}</span><span class="String"> with </span><span class="Special">{</span><span class="Function">len</span><span class="pythonStrInterpRegion">(frames_to_record)</span><span class="Special">}</span><span class="String"> frames...&quot;</span>)
+        imageio<span class="pythonDot">.</span><span class="Function">mimwrite</span>(VIDEO_FILENAME, frames_to_record, fps<span class="Operator">=</span>VIDEO_FPS, codec<span class="Operator">=</span><span class="String">'libx264'</span>, quality<span class="Operator">=</span><span class="Number">9</span>)
+        <span class="Function">print</span>(<span class="String">f&quot;Total rewards for </span><span class="Special">{</span><span class="pythonStrInterpRegion">NUM_EVAL_EPISODES</span><span class="Special">}</span><span class="String"> episodes: </span><span class="Special">{</span><span class="pythonStrInterpRegion">total_rewards</span><span class="Special">}</span><span class="String">&quot;</span>)
+        <span class="Function">print</span>(<span class="String">f&quot;Average reward per episode: </span><span class="Special">{</span><span class="pythonStrInterpRegion">np.mean(total_rewards)</span><span class="Special">:.2f}</span><span class="String">&quot;</span>)
+    <span class="Conditional">else</span>:
+        <span class="Function">print</span>(<span class="String">&quot;No frames were recorded. Video not generated.&quot;</span>)
+
+<span class="Conditional">if</span> <span class="Identifier">__name__</span> <span class="Operator">==</span> <span class="String">'__main__'</span>:
+    <span class="Function">generate_gameplay_video</span>()
+
+</pre>
+</body>
+</html>
