@@ -2,7 +2,7 @@
 permalink: 2025/07/11/dqnenduro
 title: A Deep Q-Network learns to play Enduro 
 subtitle: Implementing the first Deepmind papers on deep reinforcement learning and realizing that the Sutton-Barto textbook is a masterpiece in technical pedagogy. 
-date: 2025-07-11 2:20:10 +0530
+date: 2025-07-11 12:20:10 +0530
 layout: default
 keywords: deep learning, reinforcement learning
 categories: nn
