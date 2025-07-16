@@ -2,7 +2,7 @@
 permalink: "/2025books/"
 title: 2025
 subtitle: Books I'm reading in 2025
-date: 2025-07-15 12:38:42 +0530
+date: 2025-07-16 12:38:42 +0530
 layout: default
 keywords: books
 published: true
@@ -223,5 +223,13 @@ Word salad alert! Bunch of neurotic people saying neurotic things. I mean, I get
 #### 24. [Alexander the Great](https://philipfreemanbooks.com/alexander-the-great/) by Philip Freeman <span style="float: right;">`(5/5)`</span>
 
 benchmark.
+
+#### 25. [Flowers for Algernon](https://www.google.co.in/books/edition/_/NRWlitmahXkC) by Daniel Keyes <span style="float: right;">`(4/5)`</span>
+
+Excellent read, important and thought-provoking. There is a very appropriate quote from Plato's Republic in the beginning of the book that I found myself returning to multiple times as I was reading the book. A good way to live life is to work hard and to be kind to others. The latter is by far the more important thing.
+
+> Any one who has common sense will remember that the bewilderments of the eyes are of two kinds, and arise from two causes, either from coming out of the light or from going into the light, which is true of the mind's eye, quite as much as of the bodily eye; and he who remembers this when he sees any one whose vision is perplexed and weak, will not be too ready to laugh; he will first ask whether that soul of man has come out of the brighter life, and is unable to see because unaccustomed to the dark, or having turned from darkness to the day is dazzled by excess of light. And he will count the one happy in his condition and state of being, and he will pity the other; or, if he have a mind to laugh at the soul which comes from below into the light, there will be more reason in this than in the laugh which greets him who returns from above out of the light into the den.
+
+[A much better and more creative review](https://www.goodreads.com/review/show/3892608661)
 
 ---
