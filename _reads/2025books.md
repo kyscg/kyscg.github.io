@@ -2,7 +2,7 @@
 permalink: "/2025books/"
 title: 2025
 subtitle: Books I'm reading in 2025
-date: 2025-07-16 12:38:42 +0530
+date: 2025-07-27 12:38:42 +0530
 layout: default
 keywords: books
 published: true
@@ -74,7 +74,13 @@ the last great man in history
 
 Vive l'Empereur!
 
-#### 14. [Our Oriental Heritage](https://www.simonandschuster.com/books/Our-Oriental-Heritage/Will-Durant/The-Story-of-Civilization/9781451646689) by Will Durant <span style="float: right;">`(4.5/5)`</span>
+#### 14. [The Napoleonic Wars](https://books.google.co.in/books/about/The_Napoleonic_Wars.html?id=o_S_rQEACAAJ) by Alexander Mikaberidze <span style="float: right;">`(1/5)`</span>
+
+This book is not about the wars that Napoleon waged, but rather, a global history during the Napoleonic Wars. Very deceptive title if you ask me, bordering on dishonest. Albeit interesting at times, this is not what I wanted when I picked up the book. I have boarded the wrong train, I need to get off asap. The first few chapters are just backstory backstory backstory where everyone is pairwise fighting everyone else. And the backstory never stops.
+
+the second chapter is titled "the 18th century international order" and completely excludes the east. classic." at least the cover is pretty.
+
+#### 15. [Our Oriental Heritage](https://www.simonandschuster.com/books/Our-Oriental-Heritage/Will-Durant/The-Story-of-Civilization/9781451646689) by Will Durant <span style="float: right;">`(4.5/5)`</span>
 
 Wow it was only near the end of the book when Durant was writing about China did I bother to check when it was written, for there was no mention of Mao. Now that I write this, I should've realized something was off when he didn't write about the Indian Independence. This book was written almost a hundred years ago, that is a very long time back to be writing about history. Especially when so much has happened in the last hundred years. 
 
@@ -90,7 +96,7 @@ Some examples of writing I thought were very nice, not directly related to histo
 
 > "The very basis of the Higher Man's character is an overflowing sympathy towards all men. He is not angered by the excellences of other men; when he sees men of worth he thinks of equaling them; when he sees men of low worth he turns inward and examines himself, for there are few faults that we do not share with our neighbors. He pays no attention to slander or violent speech. He is courteous and affable to all, but he does not gush forth indiscriminate praise. He treats his inferiors without contempt, and his superiors without seeking to court their favor. He is grave in deportment, since men will not take seriously one who is not serious with them; he is slow in words and earnest in conduct; he is not quick with his tongue, or given to clever repartee; he is earnest because he has work to do—and this is the secret of his unaffected dignity. He is courteous even to his familiars, but maintains his reserve towards all, even his son."
 
-#### 15. [The Life of Greece](https://www.simonandschuster.com/books/The-Life-of-Greece/Will-Durant/The-Story-of-Civilization/9781451647587) by Will Durant <span style="float: right;">`(4.75/5)`</span>
+#### 16. [The Life of Greece](https://www.simonandschuster.com/books/The-Life-of-Greece/Will-Durant/The-Story-of-Civilization/9781451647587) by Will Durant <span style="float: right;">`(4.75/5)`</span>
 
 I wrote about this in my review of Our Oriental Heritage but as you read this series, you come away, sometimes, with a very indescribable feeling of knowing more than Durant. For example, right away in the first chapter on Crete, Durant writes about an inexplicable period in history when everything in Crete was destroyed, with only ash and debris remaining. But we know now (a severe overstatement) about the Bronze Age Collapse, and how similar symptoms of ruin were observed in all Mediterranean civilizations.
 
@@ -147,11 +153,11 @@ The word hypocrite comes from the Greek word _hypokritēs_ but in a very round-a
     </div>
 </div>
 
-#### 16. [Madame Doubtfire](https://www.annefine.co.uk/books/doubtfire.php) by Anne Fine <span style="float: right;">`(4/5)`</span>
+#### 17. [Madame Doubtfire](https://www.annefine.co.uk/books/doubtfire.php) by Anne Fine <span style="float: right;">`(4/5)`</span>
 
  I completely forgot about the existence of this book for more than a decade until I saw it in my library and recognized the cover. This is still just as funny, charming, and outrageously ridiculous as the first time I read it. I also enjoyed it a lot more, considering that I was a kid the last time I read it. Such a fun read! 
 
-#### 17. [Caesar and Christ](https://www.simonandschuster.com/books/Caesar-and-Christ/Will-Durant/The-Story-of-Civilization/9781451647600) by Will Durant <span style="float: right;">`(4.25/5)`</span>
+#### 18. [Caesar and Christ](https://www.simonandschuster.com/books/Caesar-and-Christ/Will-Durant/The-Story-of-Civilization/9781451647600) by Will Durant <span style="float: right;">`(4.25/5)`</span>
 
  I learnt more about Christianity than about Rome from this book. The only stuff about Rome I wasn't familiar with were the Emperors from Tiberius all the way to Commodus and the art and society stuff. That is a lot to not know, but it was a small part of the book. This book is way too short for such a huge time period with so many majestic personalities and monumental events.
 
@@ -161,7 +167,7 @@ The word hypocrite comes from the Greek word _hypokritēs_ but in a very round-a
 
 May she rise again.
 
-#### 18. [Brave New World](https://gutenberg.ca/ebooks/huxleya-bravenewworld/huxleya-bravenewworld-00-e.html) by Aldous Huxley <span style="float: right;">`(4.5/5)`</span>
+#### 19. [Brave New World](https://gutenberg.ca/ebooks/huxleya-bravenewworld/huxleya-bravenewworld-00-e.html) by Aldous Huxley <span style="float: right;">`(4.5/5)`</span>
 
 The first thing I am going to say about this book is probably the most overused quip ever, that this book is basically non-fiction at this point. I had three recurring thoughts come to me as I read this book: 1) this book has a lot of stylistic similarities with 1984, 2) wow this book is really prescient and 3) I should really write my anti-llm essay pretty soon.
 
@@ -190,7 +196,7 @@ I will end on a personal note, I keep thinking of everyone using LLM to do their
 
 Completely deserves its place in the pantheon of great dystopian science fiction works along with 1984, Fahrenheit 451, and The Handmaid's Tale.
 
-#### 19. [Trust](https://www.hernandiaz.net/trust-novel) by Hernán Díaz <span style="float: right;">`(4.75/5)`</span>
+#### 20. [Trust](https://www.hernandiaz.net/trust-novel) by Hernán Díaz <span style="float: right;">`(4.75/5)`</span>
 
 the final boss of unreliable narrators.
 
@@ -204,32 +210,57 @@ One more note: I find it super interesting that two consecutive Pulitzers were a
 
 - [Dua Lipa In Conversation With Hernan Diaz](https://www.youtube.com/watch?v=sRAKWYpOfcs): This is where I got the suggestion from, after watching Dua Lipa interview Ocean Vuong and Khaled Hosseini. Dua asks a very thoughtful question in this conversation that I thought of myself; about whether the Ida in Trust had any parallels to Ida Tarbell who wrote extensively about John. D. Rockefeller in her capacity as an investigative journalist.
 
-#### 20. [Remarkably Bright Creatures](https://shelbyvanpelt.com/books/remarkably-bright-creatures/) by Shelby Van Pelt <span style="float: right;">`(5/5)`</span>
+#### 21. [Remarkably Bright Creatures](https://shelbyvanpelt.com/books/remarkably-bright-creatures/) by Shelby Van Pelt <span style="float: right;">`(5/5)`</span>
 
  I cannot find the words to describe this book. This was beautiful. Simply beautiful.
 
-#### 21. [Hello Beautiful](https://annnapolitano.com/hello-beautiful/) by Ann Napolitano <span style="float: right;">`(4.25/5)`</span>
+#### 22. [Hello Beautiful](https://annnapolitano.com/hello-beautiful/) by Ann Napolitano <span style="float: right;">`(4.25/5)`</span>
 
  I didn't think I would love this book this much when I was reading the first few chapters. I almost stopped midway because I thought the writing was too forced and none of the characters were likeable. I was so wrong. It keeps getting better and better. 
 
-#### 22. [Lord of the Flies](https://william-golding.co.uk/books/lord-of-the-flies) by William Golding <span style="float: right;">`(3/5)`</span>
+#### 23. [Lord of the Flies](https://william-golding.co.uk/books/lord-of-the-flies) by William Golding <span style="float: right;">`(3/5)`</span>
 
 I can totally see how this could have happened. And I can also see why this is recommended reading in school. Makes me want to read Treasure Island again.
 
-#### 23. [The Unbearable Lightness of Being](https://www.goodreads.com/book/show/9717.The_Unbearable_Lightness_of_Being) by Milan Kundera <span style="float: right;">`(2.25/5)`</span>
+#### 24. [The Unbearable Lightness of Being](https://www.goodreads.com/book/show/9717.The_Unbearable_Lightness_of_Being) by Milan Kundera <span style="float: right;">`(2.25/5)`</span>
 
 Word salad alert! Bunch of neurotic people saying neurotic things. I mean, I get why the book is so popular, the style of the prose is very soviet-essay coded and very memorable. The ideas are well-formed, and the characters are well written, and maybe I would have liked this book at some other time, but I simply couldn't read this without forcing myself to.
 
-#### 24. [Alexander the Great](https://philipfreemanbooks.com/alexander-the-great/) by Philip Freeman <span style="float: right;">`(5/5)`</span>
+#### 25. [Alexander the Great](https://philipfreemanbooks.com/alexander-the-great/) by Philip Freeman <span style="float: right;">`(5/5)`</span>
 
 benchmark.
 
-#### 25. [Flowers for Algernon](https://www.google.co.in/books/edition/_/NRWlitmahXkC) by Daniel Keyes <span style="float: right;">`(4/5)`</span>
+#### 26. [Flowers for Algernon](https://www.google.co.in/books/edition/_/NRWlitmahXkC) by Daniel Keyes <span style="float: right;">`(4/5)`</span>
 
 Excellent read, important and thought-provoking. There is a very appropriate quote from Plato's Republic in the beginning of the book that I found myself returning to multiple times as I was reading the book. A good way to live life is to work hard and to be kind to others. The latter is by far the more important thing.
 
 > Any one who has common sense will remember that the bewilderments of the eyes are of two kinds, and arise from two causes, either from coming out of the light or from going into the light, which is true of the mind's eye, quite as much as of the bodily eye; and he who remembers this when he sees any one whose vision is perplexed and weak, will not be too ready to laugh; he will first ask whether that soul of man has come out of the brighter life, and is unable to see because unaccustomed to the dark, or having turned from darkness to the day is dazzled by excess of light. And he will count the one happy in his condition and state of being, and he will pity the other; or, if he have a mind to laugh at the soul which comes from below into the light, there will be more reason in this than in the laugh which greets him who returns from above out of the light into the den.
 
 [A much better and more creative review](https://www.goodreads.com/review/show/3892608661)
+
+#### 27. [The Gene](https://siddharthamukherjee.com/the-gene-an-intimate-history/) by Siddhartha Mukherjee <span style="float: right;">`(2.25/5)`</span>
+
+In the acknowledgements of the book, Siddhartha Mukherjee writes that writing The Emperor of all Maladies exhausted his imagination. And that shows in this book. It is very very unimaginative, and reads like a chore. Not that inspiring to know that even the writing felt like a chore.
+
+This is definitely no The Emperor of all Maladies but it comes close. It has the same hallmark of density though. The structure of DNA is revealed in the first third of the book, and you are left wondering how much more is left to be discovered in the rest of the book.
+
+<blockquote>
+    <p>In 1951, long before James Watson would become a household name around the world, the novelist Doris Lessing took a three-hour walk with the young Watson, whom she knew through a friend of a friend. During the entire walk, across the heaths and fens near Cambridge, Lessing did all the talking; Watson said not one word. At the end of the walk, “exhausted, wanting only to escape,” Lessing at last heard the sound of human speech from her companion: “The trouble is, you see, that there is only one other person in the world that I can talk to.”</p>
+    <cite>— James Watson, on Francis Crick</cite>
+</blockquote>
+
+Also, Nobel rules about posthumous awards are stupid. Rosalind Franklin definitely deserved the Prize. She literally did all the work.
+
+<blockquote>
+    <p>But what made a red blood cell acquire a sickle shape? And why was the illness hereditary? The natural culprit was an abnormality in the gene for hemoglobin—the protein that carries oxygen and is present abundantly in red cells. [...] scientists in Cambridge pinpointed the difference between the protein chain of normal hemoglobin and “sickled” hemoglobin to a change in a single amino acid.</p><br>
+    <p>But if the protein chain was altered by exactly one amino acid, then its gene had to be different by precisely one triplet (“one triplet encodes one amino acid”). Indeed, as predicted, when the gene encoding the hemoglobin B chain was later identified and sequenced in sickle-cell patients, there was a single change: one triplet in DNA—GAG—had changed to another—GTG.</p><br>
+    <p>This resulted in the substitution of one amino acid for another: glutamate. was switched to valine. That switch altered the folding of the hemoglobin chain: rather than twisting into its neatly articulated, clasplike structure, the mutant hemoglobin protein accumulated in string-like clumps within red cells. These clumps grew so large, particularly in the absence of oxygen, that they tugged the membrane of the red cell until the normal disk was warped into a crescent-shaped, dysmorphic “sickle cell.” Unable to glide smoothly through capillaries and veins, sickled red cells jammed into microscopic clots throughout the body, interrupting blood flow and precipitating the excruciating pain of a sickling crisis.</p><br>
+    <p>It was a Rube Goldberg disease. A change in the sequence of a gene caused the change in the sequence of a protein; that warped its shape; that shrank a cell; that clogged a vein; that jammed the flow; that racked the body (that genes built). Gene, protein, function, and fate were strung in a chain: one chemical alteration in one base pair in DNA was sufficient to "encode” a radical change in human fate.</p>
+    <cite>— On Sickle Cell Anemia</cite>
+</blockquote>
+
+Back to the book. Way too infodense. Tries too hard to have random sensationalist anecdotes. Sloppy editing. Too many names that live for less than three to four pages. A bunch of Wikipedia pages stitched together with a background story about the author's family.
+
+The last two parts get very interesting. Mostly because the descriptions are of phenomena rather than a littany of "person x tried this, and that happened".
 
 ---
