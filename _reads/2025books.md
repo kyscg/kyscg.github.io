@@ -263,4 +263,8 @@ Back to the book. Way too infodense. Tries too hard to have random sensationalis
 
 The last two parts get very interesting. Mostly because the descriptions are of phenomena rather than a littany of "person x tried this, and that happened".
 
+#### 28. [The Catcher in the Rye](https://www.google.co.in/books/edition/The_Catcher_in_the_Rye/ScdAEQAAQBAJ) by J. D. Salinger <span style="float: right;">`(4.25/5)`</span>
+
+exceptional stuff, really distills that adolescent feeling of being deeply unimpressed and annoyed by everything around you. I read this book with very little expectations because I'd only ever heard negative things about it, but I thought it was beautiful. I can see myself not liking it a few years ago, and I can also see myself not liking it a few years later. This is what makes it such a great book. 
+
 ---
