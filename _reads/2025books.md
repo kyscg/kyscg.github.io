@@ -2,7 +2,7 @@
 permalink: "/2025books/"
 title: 2025
 subtitle: Books I'm reading in 2025
-date: 2025-07-27 12:38:42 +0530
+date: 2025-07-30 12:38:42 +0530
 layout: default
 keywords: books
 published: true
@@ -266,5 +266,13 @@ The last two parts get very interesting. Mostly because the descriptions are of 
 #### 28. [The Catcher in the Rye](https://www.google.co.in/books/edition/The_Catcher_in_the_Rye/ScdAEQAAQBAJ) by J. D. Salinger <span style="float: right;">`(4.25/5)`</span>
 
 exceptional stuff, really distills that adolescent feeling of being deeply unimpressed and annoyed by everything around you. I read this book with very little expectations because I'd only ever heard negative things about it, but I thought it was beautiful. I can see myself not liking it a few years ago, and I can also see myself not liking it a few years later. This is what makes it such a great book. 
+
+#### 29. [Inferno](https://danbrown.com/books/novels/inferno/) by Dan Brown <span style="float: right;">`(3.25/5)`</span>
+
+I finally finished this. Inferno was my second Dan Brown book, and I loved it when I first read more than ten years ago. Not so much this time. The intentional cliff hangers get very annoying but it was still fun to read. I always maintain that Dan Brown books are superb travel guides, and one reason why reading this took so long was me stopping every other page to Google a building or an artist.
+
+Also, the moral questions in this book about plagues and population collapse feel so different from ten years ago. Especially after COVID and birth rates dropping in recent years. I remember that back then, population growth was a huge problem, and was looked at as insurmountable.
+
+Will this make me read The Divine Comedy or Angels and Demons next? Watch this space!
 
 ---
