@@ -39,7 +39,7 @@ and in the sleep phase, we expand $L$ with a routine that maximizes
 
 $$P[L]\prod_{x\in X}\max_{\rho_i}P[x|\rho]\cdot P[\rho|L],$$
 
-where $x\in X$ means that we iterate over all tasks and $\rho_i$ are all refactorings of $\rho_x$ when $L$ is updated. Now we train $Q(\rho\|x)\approx P[\rho\|x,L],$ where $x\sim x$('replay') or $x\sim L('fantasy'). And this is what they term as dreaming in sleep.
+where $x\in X$ means that we iterate over all tasks and $\rho_i$ are all refactorings of $\rho_x$ when $L$ is updated. Now we train $Q(\rho\|x)\approx P[\rho\|x,L],$ where $x\sim x$('replay') or $x\sim L$('fantasy'). And this is what they term as dreaming in sleep.
 
 The way I understand the $P[\rho\|L]$ term is that we maximize the probability of generating a program from the library and this happen if we choose simpler programs from the learned concepts rather than the primitives.
 - Long programs are more likely to be made of primitives $\rightarrow$ more likely to overfit training samples and not be a general solution. (at least that's the intuition)

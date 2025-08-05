@@ -46,13 +46,14 @@ I have a list of my favourite words [here](/words.txt).
 - East of Eden by John Steinbeck
 - White Fang by Jack London
 - War and Peace by Leo Tolstoy
+- Remarkably Bright Creatures by Shelby Van Pelt
 
 ## Non-fiction
 
 - Alexander the Great by Philip Freeman
 - Julius Caesar by Philip Freeman
 - Napoleon by Andrew Roberts
-- Surely You're Joking Mr. Feynman by Richard Feynman
+- "Surely You're Joking, Mr. Feynman!" by Richard Feynman
 - Genius by James Gleick
 - The Making of the Atomic Bomb by Richard Rhodes
 - The Emperor of all Maladies by Siddhartha Mukherjee
