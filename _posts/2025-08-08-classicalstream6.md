@@ -2,7 +2,7 @@
 permalink: /2025/08/08/classicalstream6
 title: Classical Chess Stream 6
 subtitle: a bishop in the center is worth a queen 
-date: 2025-08-08 11:11:22 +0530
+date: 2025-08-08 4:11:22 +0530
 layout: default
 keywords: chess, stream, youtube
 categories: sports
@@ -25,7 +25,7 @@ The thumbnail is a photo of the tenth world chess champion Boris Spassky, who pa
 
 <center>
 <iframe src="https://lichess.org/embed/game/xzMTXfLS?theme=auto&bg=auto"
-width=100% height=480 frameborder=0></iframe>
+width="100%" height="480" frameborder=0></iframe>
 </center>
 
 PGN: 

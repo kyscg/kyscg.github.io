@@ -20,12 +20,11 @@ I have a list of my favourite words [here](/words.txt).
 - The Odyssey by Homer
 - Famous Five series by Enid Blyton
 - The Naughtiest Girl series by Enid Blyton
-- Mythos by Stephen Fry
-- Heroes by Stephen Fry
+- Stephen Fry's Great Mythology Series
 - Harry Potter series by J. K. Rowling
 - The Call of the Wild by Jack London
 - Diary of a Wimpy Kid series by Jeff Kinney
-- Inferno by Dan Brown
+- Angels & Demons by Dan Brown
 - Percy Jackson series by Rick Riordan
 - Heroes of Olympus series by Rick Riordan
 - A Thousand Splendid Suns by Khaled Hosseini
@@ -69,6 +68,8 @@ I have a list of my favourite words [here](/words.txt).
 - Shoe Dog by Phil Knight
 - Open by Andre Agassi
 - Fermat's Last Theorem by Simon Singh
+- The Story of Civilization series by Will Durant
+-
 
 ## Academic
 
