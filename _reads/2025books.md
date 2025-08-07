@@ -186,7 +186,7 @@ What Orwell feared were those who would ban books. What Huxley feared was that t
 
 The constant descriptions of all the clocks striking a particular time compared to the first line of 1984, the hate week paralleled in the orgy-porgies, and the use of the police to whisk away the transgressors to a location where the ideology of the Party is revealed by a big man from the party, whether it is O'Brien or Mustapha Mond. All these were similarities I noticed between the two books. Maybe like Christopher Hitchens said, "totalitarianism is a cliche."
 
-The next thing is the cliche stuff. The whole instant gratification thing feels like a social commentary of the 21st century rather than anything else. Except that we haven't really figured out how to remove all of pain. The story as of itself was very well written. The only stuff I felt was out of place was the end when John is harrassed by all the "civilized" people into killng himself. I understand it, but I thought it was a shade less awesome than the rest of the book. Also, the whole Fordship thing was very done.
+The next thing is the cliche stuff. The whole instant gratification thing feels like a social commentary of the 21st century rather than anything else. Except that we haven't really figured out how to remove all of pain. The story as of itself was very well written. The only stuff I felt was out of place was the end when John is harrassed by all the "civilized" people into killing himself. I understand it, but I thought it was a shade less awesome than the rest of the book. Also, the whole Fordship thing was very well done.
 
 The commentary on the enforced caste system was very illuminating. The Brave New World's solution to the problem of class revolts is to use Pavlovian conditioning to keep everyone content in their station. Which brings to mind the idea that the places you are comfortable in are the places that are slowly killing you. I think that's a Nietzschean idea.
 
@@ -274,5 +274,17 @@ I finally finished this. Inferno was my second Dan Brown book, and I loved it wh
 Also, the moral questions in this book about plagues and population collapse feel so different from ten years ago. Especially after COVID and birth rates dropping in recent years. I remember that back then, population growth was a huge problem, and was looked at as insurmountable.
 
 Will this make me read The Divine Comedy or Angels and Demons next? Watch this space!
+
+#### 30. [The Bell Jar](https://www.gutenberg.ca/ebooks/plaths-belljar/plaths-belljar-00-h.html) by Sylvia Plath <span style="float: right;">`(3.5/5)`</span>
+
+It was quite an experience to read this book with the knowledge of all the context surrounding it, about Plath's own life. I had to read Esther Greenwood's story after reading Holden Caulfield's, so I picked this up. The writing is brilliant. You can see the poetry in her descriptions, and I've never read stuff like this before. Not a single wasted word throughout it all.
+
+You can tell that Plath wrote those lines over and over again, that's how memorable they are.
+
+<blockquote>
+    <p>I sat on the toilet and leaned my head over the edge of the washbowl and I thought I was losing my guts and my dinner both. The sickness rolled through me in great waves. After each wave it would fade away and leave me limp as a wet leaf and shivering all over and then I would feel it rising up in me again, and the glittering white torture-chamber tiles under my feet and over my head and on all four sides closed in and squeezed me to pieces.</p>
+    <p>It didn't seem to be summer any more. I could feel the winter shaking my bones and banging my teeth together</p>
+    <cite>— Sylvia Plath, The Bell Jar (describing the effects of food poisoning)</cite>
+</blockquote>
 
 ---
