@@ -2,7 +2,7 @@
 permalink: "/blogroll/"
 title: Blogroll
 subtitle: A list of my favourite personal blogs on the internet
-date: 2025-07-15 13:18:42 +0530
+date: 2025-08-08 13:18:42 +0530
 layout: default
 keywords: blogroll, links
 published: true
@@ -40,5 +40,6 @@ published: true
 * [Culture Dump](https://culturedump.substack.com/) by Dr. Rebecca Marks
 * [Finite Jest](https://andreapetkovic.substack.com/archive) by Andrea Petkovic
 * [bookbear express](https://www.avabear.xyz/) by Ava
+* [Construction Physics](https://www.construction-physics.com) by Brian Potter
 
 ---

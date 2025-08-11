@@ -2,7 +2,7 @@
 permalink: /2025/08/08/classicalstream6
 title: Classical Chess Stream 6
 subtitle: a bishop in the center is worth a queen 
-date: 2025-08-08 4:11:22 +0530
+date: 2025-08-08 14:11:22 +0530
 layout: default
 keywords: chess, stream, youtube
 categories: sports

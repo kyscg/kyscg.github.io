@@ -44,7 +44,7 @@ this writing has some of the best self-deprecating + existentialist humour ever 
 
 there is nothing that hasn't been said before about this, so I wont waste my time. I loved reading the book, it never felt long, or boring, or difficult, or any of the usual excuses people give for not picking it up. The first time I read it, I simply didn't have any historical background to appreciate it, but now I get why Tolstoy wanted to write this book.
 
-Obviously, he has a very strong anti-Napoleon bias, and that put me off in some sections. But can we really blame the Russians for not liking Napoleon? His ideas on history are coherent until the epilogue, and then they get into youtube video-essay script territory. As far as characters go, Napoleon was my favourite (no surprises there) followed by Prince Andrei. Absolutely despised the entire Kuragin clan, and Anna Pavlovna, and Pierre Bezukhov. While the Kuragin's and Anna Pavlovna are just despicable people, Pierre is guilty in that he is a comfort-seeking man, the worst of the lot.
+Obviously, he has a very strong anti-Napoleon bias, and that put me off in some sections. But can we really blame the Russians for not liking Napoleon? His ideas on history are coherent until the epilogue, and then they get into youtube video-essay script territory. As far as characters go, Napoleon was my favourite (no surprises there) followed by Prince Andrei. Absolutely despised the entire Kuragin clan and Anna Pavlovna, and Pierre Bezukhov. While the Kuragin's and Anna Pavlovna are just despicable people, Pierre is guilty in that he is a comfort-seeking man, the worst of the lot.
 
 docked a quarter star for all the forced Napoleon hate, Vive l'Empereur!
 
@@ -78,7 +78,7 @@ Vive l'Empereur!
 
 This book is not about the wars that Napoleon waged, but rather, a global history during the Napoleonic Wars. Very deceptive title if you ask me, bordering on dishonest. Albeit interesting at times, this is not what I wanted when I picked up the book. I have boarded the wrong train, I need to get off asap. The first few chapters are just backstory backstory backstory where everyone is pairwise fighting everyone else. And the backstory never stops.
 
-the second chapter is titled "the 18th century international order" and completely excludes the east. classic." at least the cover is pretty.
+the second chapter is titled "the 18th century international order" and completely excludes the east. classic. at least the cover is pretty.
 
 #### 15. [Our Oriental Heritage](https://www.simonandschuster.com/books/Our-Oriental-Heritage/Will-Durant/The-Story-of-Civilization/9781451646689) by Will Durant <span style="float: right;">`(4.5/5)`</span>
 
@@ -286,5 +286,9 @@ You can tell that Plath wrote those lines over and over again, that's how memora
     <p>It didn't seem to be summer any more. I could feel the winter shaking my bones and banging my teeth together</p>
     <cite>— Sylvia Plath, The Bell Jar (describing the effects of food poisoning)</cite>
 </blockquote>
+
+#### 31. [East of Eden](https://www.google.co.in/books/edition/_/OPy6E5ZhXs0C?hl=en&kptab=overview) by John Steinbeck <span style="float: right;">`(5/5)`</span>
+
+just as beautiful, if not more, as the first time I read this. _timshel_. 
 
 ---

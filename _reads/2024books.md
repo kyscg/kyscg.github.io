@@ -227,7 +227,7 @@ stories I absolutely did not like (and which contributed to me avoiding the book
 
 #### 37. [East of Eden](https://www.google.co.in/books/edition/_/OPy6E5ZhXs0C?hl=en&kptab=overview) by John Steinbeck <span style="float: right;">`(5/5)`</span>
 
- It has been a long time since a book has consumed me thus. The best book I've read this year. 
+It has been a long time since a book has consumed me thus. The best book I've read this year. 
 
 #### 38. [David Copperfield](https://www.gutenberg.org/ebooks/766) by Charles Dickens <span style="float: right;">`(1/5)`</span>
 
