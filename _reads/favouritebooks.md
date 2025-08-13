@@ -69,7 +69,6 @@ I have a list of my favourite words [here](/words.txt).
 - Open by Andre Agassi
 - Fermat's Last Theorem by Simon Singh
 - The Story of Civilization series by Will Durant
--
 
 ## Academic
 

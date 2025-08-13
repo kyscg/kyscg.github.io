@@ -282,13 +282,29 @@ It was quite an experience to read this book with the knowledge of all the conte
 You can tell that Plath wrote those lines over and over again, that's how memorable they are.
 
 <blockquote>
-    <p>I sat on the toilet and leaned my head over the edge of the washbowl and I thought I was losing my guts and my dinner both. The sickness rolled through me in great waves. After each wave it would fade away and leave me limp as a wet leaf and shivering all over and then I would feel it rising up in me again, and the glittering white torture-chamber tiles under my feet and over my head and on all four sides closed in and squeezed me to pieces.</p>
-    <p>It didn't seem to be summer any more. I could feel the winter shaking my bones and banging my teeth together</p>
+    <p>I sat on the toilet and leaned my head over the edge of the washbowl and I thought I was losing my guts and my dinner both. The sickness rolled through me in great waves. After each wave it would fade away and leave me limp as a wet leaf and shivering all over and then I would feel it rising up in me again, and the glittering white torture-chamber tiles under my feet and over my head and on all four sides closed in and squeezed me to pieces.</p><br>
+    <p>It didn't seem to be summer any more. I could feel the winter shaking my bones and banging my teeth together.</p>
     <cite>— Sylvia Plath, The Bell Jar (describing the effects of food poisoning)</cite>
 </blockquote>
 
 #### 31. [East of Eden](https://www.google.co.in/books/edition/_/OPy6E5ZhXs0C?hl=en&kptab=overview) by John Steinbeck <span style="float: right;">`(5/5)`</span>
 
-just as beautiful, if not more, as the first time I read this. _timshel_. 
+just as beautiful, if not more, as the first time I read this. _timshel_.
+
+<blockquote>
+    <p>And Adam knew Eve his wife; and she conceived, and bore Cain, and said, “I have gotten a man from the Lord.” And she again bore his brother Abel. And Abel was a keeper of sheep, but Cain was a tiller of the ground. And in the process of time it came to pass that Cain brought of the fruit of the ground an offering unto the Lord. And Abel, he also brought of the firstlings of his flock and of the fat thereof. And the Lord had regard unto Abel and to his offering. But unto Cain and to his offering he had not regard. And Cain was very wroth, and his countenance fell. And
+the Lord said unto Cain,</p><br>
+    <p>“Why art thou wroth?<br>
+    And why is thy countenance fallen?<br>
+    If thou doest well,<br>
+    shalt thou not be accepted?<br>
+    And if thou doest not well,<br>
+    sin lieth at the door.<br>
+    And unto thee shall be his desire,<br>
+    and <b>thou mayest</b> rule over him.”
+    </p><br>
+    <p>And Cain talked with Abel his brother: and it came to pass, when they were in the field, that Cain rose up against Abel his brother and slew him. And the Lord said unto Cain, “Where is Abel thy brother?” And he said, “I know not. Am I my brother’s keeper?” And he said, “What hast thou done? The voice of thy brother’s blood crieth unto me from the ground. And now art thou cursed from the earth, which hath opened her mouth to receive thy brother’s blood from thy hand. When thou tillest the ground it shall not henceforth yield unto thee her strength; a fugitive and a vagabond shalt thou be in the earth.” And Cain said unto the Lord, “My punishment is greater than I can bear. Behold, thou hast driven me out this day from the face of the earth, and from thy face shall I be hid. And I shall be a fugitive and a vagabond in the earth; and it shall come to pass that everyone that findeth me shall slay me.” And the Lord said unto him, “Therefore whosoever slayeth Cain, vengeance shall be taken on him sevenfold.” And the Lord set a mark upon Cain, lest any finding him should kill him. And Cain went out from the presence of the Lord and dwelt in the land of Nod on the East of Eden.’</p>
+    <cite>— Book of Genesis, 4:1–18</cite>
+</blockquote>
 
 ---
