@@ -2,7 +2,7 @@
 permalink: "/favouritebooks/"
 title: Favourite Books
 subtitle: Books I wish I could read for the first time again
-date: 2025-04-14 02:38:42 +0530
+date: 2025-08-16 02:38:42 +0530
 layout: default
 keywords: books
 published: true
@@ -46,6 +46,7 @@ I have a list of my favourite words [here](/words.txt).
 - White Fang by Jack London
 - War and Peace by Leo Tolstoy
 - Remarkably Bright Creatures by Shelby Van Pelt
+- The Grapes of Wrath by John Steinbeck
 
 ## Non-fiction
 

@@ -2,7 +2,7 @@
 permalink: "/2025books/"
 title: 2025
 subtitle: Books I'm reading in 2025
-date: 2025-07-30 12:38:42 +0530
+date: 2025-08-16 12:38:42 +0530
 layout: default
 keywords: books
 published: true
@@ -306,5 +306,14 @@ the Lord said unto Cain,</p><br>
     <p>And Cain talked with Abel his brother: and it came to pass, when they were in the field, that Cain rose up against Abel his brother and slew him. And the Lord said unto Cain, “Where is Abel thy brother?” And he said, “I know not. Am I my brother’s keeper?” And he said, “What hast thou done? The voice of thy brother’s blood crieth unto me from the ground. And now art thou cursed from the earth, which hath opened her mouth to receive thy brother’s blood from thy hand. When thou tillest the ground it shall not henceforth yield unto thee her strength; a fugitive and a vagabond shalt thou be in the earth.” And Cain said unto the Lord, “My punishment is greater than I can bear. Behold, thou hast driven me out this day from the face of the earth, and from thy face shall I be hid. And I shall be a fugitive and a vagabond in the earth; and it shall come to pass that everyone that findeth me shall slay me.” And the Lord said unto him, “Therefore whosoever slayeth Cain, vengeance shall be taken on him sevenfold.” And the Lord set a mark upon Cain, lest any finding him should kill him. And Cain went out from the presence of the Lord and dwelt in the land of Nod on the East of Eden.’</p>
     <cite>— Book of Genesis, 4:1–18</cite>
 </blockquote>
+
+#### 32. [The Grapes of Wrath](https://www.google.co.in/books/edition/The_Grapes_of_Wrath/hNisMz5W1DQC) by John Steinbeck <span style="float: right;">`(5/5)`</span>
+
+This is a great book. A truly great book.
+
+> If you’re in trouble or hurt or need—go to poor people. They’re the only ones that’ll help—the only ones.
+
+- [Gary Hylander discusses The Grapes of Wrath](https://www.youtube.com/watch?v=b8w76FXeUQk)
+- [The Great American Novel Series: "The Grapes of Wrath" by John Steinbeck](https://www.youtube.com/watch?v=pZgDy-YKhrY)
 
 ---
