@@ -316,4 +316,8 @@ This is a great book. A truly great book.
 - [Gary Hylander discusses The Grapes of Wrath](https://www.youtube.com/watch?v=b8w76FXeUQk)
 - [The Great American Novel Series: "The Grapes of Wrath" by John Steinbeck](https://www.youtube.com/watch?v=pZgDy-YKhrY)
 
+#### 33. [Of Mice and Men](https://www.google.co.in/books/edition/Of_Mice_and_Men/L0IjEAAAQBAJ) by John Steinbeck <span style="float: right;">`(3.25/5)`</span>
+
+I assume that the only reason this book is so popular is because of how short it is. Maybe I'm spoiled after reading Steinbeck's Eden and Grapes, but this wasn't that good. His prose shines out, and his characters are very strongly written, but like I said, maybe a good introductory book to Steinbeck.
+
 ---

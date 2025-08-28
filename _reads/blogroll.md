@@ -41,5 +41,7 @@ published: true
 * [Finite Jest](https://andreapetkovic.substack.com/archive) by Andrea Petkovic
 * [bookbear express](https://www.avabear.xyz/) by Ava
 * [Construction Physics](https://www.construction-physics.com) by Brian Potter
+* [benkuhn.net](https://www.benkuhn.net/)
+* [Probably Overthinking It](https://allendowney.blogspot.com/)
 
 ---

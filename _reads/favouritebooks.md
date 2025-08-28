@@ -77,6 +77,8 @@ I have a list of my favourite words [here](/words.txt).
 - A First Course in Probability by Sheldon Ross
 - Calculus by Michael Spivak
 - Elementary Introduction to Number Theory by Calvin Long
+- Galois' Dream by Michio Kuga
+- The Princeton Guide to Mathematics, edited by Timothy Gowers
 - Concepts of Physics by H. C. Verma
 - Gravitation by Misner and Thorpe
 - Fluid Mechanics by Landau and Lifshitz
