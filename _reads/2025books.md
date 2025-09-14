@@ -320,4 +320,20 @@ This is a great book. A truly great book.
 
 I assume that the only reason this book is so popular is because of how short it is. Maybe I'm spoiled after reading Steinbeck's Eden and Grapes, but this wasn't that good. His prose shines out, and his characters are very strongly written, but like I said, maybe a good introductory book to Steinbeck.
 
+#### 34. [The Great Gatsby](https://www.gutenberg.org/cache/epub/64317/pg64317-images.html) by F. Scott Fitzgerald <span style="float: right;">`(5/5)`</span>
+
+I've been reading a lot of Great Depression literature so I thought I'd revisit this too. One of the greatest stories ever written.
+
+#### 35. [The Adventures of Tom Sawyer](https://www.gutenberg.org/cache/epub/74/pg74-images.html) by Mark Twain <span style="float: right;">`(4.5/5)`</span>
+
+Continuing my American Literature streak, I went back in time to 2011 when I first read this. Very good book, enjoyed reading it.
+
+> Although my book is intended mainly for the entertainment of boys and girls, I hope it will not be shunned by men and women on that account, for part of my plan has been to try to pleasantly remind adults of what they once were themselves, and of how they felt and thought and talked, and what queer enterprises they sometimes engaged in.
+
+#### 36. [The Adventures of Huckleberry Finn](https://www.gutenberg.org/cache/epub/76/pg76-images.html) by Mark Twain <span style="float: right;">`(4.5/5)`</span>
+
+You forget that Huck Finn is only a boy until Tom Sawyer comes along. A few parts were a little too drawn out for my taste but overall pretty fun.
+
+>  Persons attempting to find a motive in this narrative will be prosecuted; persons attempting to find a moral in it will be banished; persons attempting to find a plot in it will be shot.
+
 ---

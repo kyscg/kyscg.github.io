@@ -43,5 +43,6 @@ published: true
 * [Construction Physics](https://www.construction-physics.com) by Brian Potter
 * [benkuhn.net](https://www.benkuhn.net/)
 * [Probably Overthinking It](https://allendowney.blogspot.com/)
+* [Peter Bloem's Blog](https://peterbloem.nl/blog/)
 
 ---
