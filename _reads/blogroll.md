@@ -44,5 +44,6 @@ published: true
 * [benkuhn.net](https://www.benkuhn.net/)
 * [Probably Overthinking It](https://allendowney.blogspot.com/)
 * [Peter Bloem's Blog](https://peterbloem.nl/blog/)
+* [@jasmi.news](https://jasmi.news/) by Jasmine Sun
 
 ---
