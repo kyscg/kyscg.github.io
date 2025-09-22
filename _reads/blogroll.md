@@ -2,7 +2,7 @@
 permalink: "/blogroll/"
 title: Blogroll
 subtitle: A list of my favourite personal blogs on the internet
-date: 2025-08-08 13:18:42 +0530
+date: 2025-09-16 13:18:42 +0530
 layout: default
 keywords: blogroll, links
 published: true

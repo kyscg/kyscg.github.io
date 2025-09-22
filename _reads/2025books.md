@@ -2,7 +2,7 @@
 permalink: "/2025books/"
 title: 2025
 subtitle: Books I'm reading in 2025
-date: 2025-08-16 12:38:42 +0530
+date: 2025-09-18 12:38:42 +0530
 layout: default
 keywords: books
 published: true
@@ -342,6 +342,8 @@ There isn't a single likeable character in this book. The only redeeming quality
  
 Other reviewers have waxed lyrical about the plot's use of unreliable narrators; each one themselves being twice removed sometimes from true events. The burden of ascribing motivations to the characters falls entirely at the feet of the readers, and I can understand why this elevates the standing of the book to a classic.
 
-Heathcliff is the archetypal wounded and wronged hero, who experiences the loss of his soulmate—in the style of a Jay Gatsby, or a Severus Snape, or a Florentino Ariza—and spends the rest of his life picking at the wound so his grief is on display to himself. This grief takes the form of revenge, a revenge that reverberates across generations, and frequently manifests itself in the use of Wuthering Heights as a prison of domestic violence for the people he thinks has wronged him.
+Heathcliff is the archetypal wounded and wronged Byronic anti-hero, who experiences the loss of his soulmate—in the style of a Jay Gatsby, or a Severus Snape, or a Florentino Ariza—and spends the rest of his life picking at the wound so his grief is on display to himself. This grief takes the form of revenge, a revenge that reverberates across generations, and frequently manifests itself in the use of Wuthering Heights as a prison of domestic violence for the people he thinks has wronged him.
+
+[Contemporary reviews of Wuthering Heights](https://wuthering-heights.co.uk/reviews.php)
 
 ---
