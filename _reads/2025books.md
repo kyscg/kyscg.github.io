@@ -2,7 +2,7 @@
 permalink: "/2025books/"
 title: 2025
 subtitle: Books I'm reading in 2025
-date: 2025-09-18 12:38:42 +0530
+date: 2025-09-28 12:38:42 +0530
 layout: default
 keywords: books
 published: true
@@ -345,5 +345,13 @@ Other reviewers have waxed lyrical about the plot's use of unreliable narrators;
 Heathcliff is the archetypal wounded and wronged Byronic anti-hero, who experiences the loss of his soulmate—in the style of a Jay Gatsby, or a Severus Snape, or a Florentino Ariza—and spends the rest of his life picking at the wound so his grief is on display to himself. This grief takes the form of revenge, a revenge that reverberates across generations, and frequently manifests itself in the use of Wuthering Heights as a prison of domestic violence for the people he thinks has wronged him.
 
 [Contemporary reviews of Wuthering Heights](https://wuthering-heights.co.uk/reviews.php)
+
+#### 38. [A Walk in the Woods](https://www.google.co.in/books/edition/_/WnyDgV_vNhsC?hl=en) by Bill Bryson <span style="float: right;">`(3.5/5)`</span>
+
+I'm adding a thru-hike of the AT to my bucket list after this.
+
+#### 39. [In a Sunburned Country](https://www.google.co.in/books/edition/_/lvZrnX-a__wC) by Bill Bryson <span style="float: right;">`(4.25/5)`</span>
+
+I learnt so much from this book. I knew so little about Australia (except their 2000s cricket team) that every page in this book was filled with wonderful facts and descriptions. For all of Bryson's warnings about all the bugs and dangerous wildlife in Australia, he actually doesn't encounter any—but that doesn't stop him from repeating the warnings and narrating anecdotes of attacks. I recommend reading this book while checking out the places and streets on Google Street View, it is a lot of fun.
 
 ---
