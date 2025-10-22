@@ -2,7 +2,7 @@
 permalink: "/blogroll/"
 title: Blogroll
 subtitle: A list of my favourite personal blogs on the internet
-date: 2025-09-16 13:18:42 +0530
+date: 2025-10-07 13:18:42 +0530
 layout: default
 keywords: blogroll, links
 published: true
@@ -45,5 +45,8 @@ published: true
 * [Probably Overthinking It](https://allendowney.blogspot.com/)
 * [Peter Bloem's Blog](https://peterbloem.nl/blog/)
 * [@jasmi.news](https://jasmi.news/) by Jasmine Sun
+* [Ji-Ha's Blog](https://jiha-kim.github.io/)
+* [Scientific Spaces](https://kexue.fm/) by Su Jianlin
+* [The Technium](https://kk.org/thetechnium/) by Kevin Kelly
 
 ---

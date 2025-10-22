@@ -2,7 +2,7 @@
 permalink: "/2025books/"
 title: 2025
 subtitle: Books I'm reading in 2025
-date: 2025-09-28 12:38:42 +0530
+date: 2025-10-22 12:38:42 +0530
 layout: default
 keywords: books
 published: true
@@ -352,6 +352,33 @@ I'm adding a thru-hike of the AT to my bucket list after this.
 
 #### 39. [In a Sunburned Country](https://www.google.co.in/books/edition/_/lvZrnX-a__wC) by Bill Bryson <span style="float: right;">`(4.25/5)`</span>
 
-I learnt so much from this book. I knew so little about Australia (except their 2000s cricket team) that every page in this book was filled with wonderful facts and descriptions. For all of Bryson's warnings about all the bugs and dangerous wildlife in Australia, he actually doesn't encounter any—but that doesn't stop him from repeating the warnings and narrating anecdotes of attacks. I recommend reading this book while checking out the places and streets on Google Street View, it is a lot of fun.
+I learnt so much from this book. I knew so little about Australia (apart from their cricket stadiums and their exceptional 2000s cricket team) that every page in this book was filled with wonderful facts and descriptions. For all of Bryson's warnings about all the bugs and dangerous wildlife in Australia, he actually doesn't encounter any—but that doesn't stop him from repeating the warnings and narrating anecdotes of attacks. I recommend reading this book while checking out the places and streets on Google Street View, it is a lot of fun.
+
+#### 40. [A Short History of Nearly Everything](https://www.google.co.in/books/edition/_/YjAnfhsAQ8wC) by Bill Bryson <span style="float: right;">`(5/5)`</span>
+
+The best book I've read this year. You have a constant feeling of wonder and amazement at everything around you while you read this. It reminds you of when you were in school and learning about natural phenomena for the first time. Initially, the geology stuff goes over your head because of all the names, but not for too long. It is immensely rewarding to read. My third consecutive Bill Bryson book, and I only want more. This book is what Harari wishes Sapiens was.
+
+I have a personal anecdote to share with this review. When in school, I was taught about the water cycle; about how water evaporates, and falls back to the ground as rain water because the low temperatures in the upper atmosphere condense the water vapour. This always confused me, because I knew that the sun was supposed to be unimaginably hot, and so if you're going up into the sky, you're getting closer to the sky and things should be getting hotter and not cooler.
+
+This conundrum remained unresolved for a few years, and I made my peace with not getting any satisfactory answers for it; accepting it as something that just happens. When I was finally taught in high school about how pressure affects temperature (and vice versa), everything suddenly made sense, and I remember how overjoyed I was for a few days at solving this mystery. Bill Bryson mentions this exact conundrum in this book, and it only made me wish I read it earlier.
+
+Out of the many things that I learnt from this book is how carbon is sequestrated by marine animals which use it to make their shells; ultimately ending up as limestone. This locks carbon dioxide out of the atmosphere, preventing the earth from warming up, and facilitating favourable conditions for life on earth. I am going to stop here, because I could go on forever about all the cool things I learnt from this book.
+
+#### 41. [The Body](https://www.google.co.in/books/edition/_/OHuDDwAAQBAJ?) by Bill Bryson <span style="float: right;">`(4.25/5)`</span>
+
+The thing about Bill Bryson books is that he takes you from a state of soporific existence to recognizing that every part of the world around you is teeming with wonder. It is a miracle that any of us are here, and any of this is real. The only recurring thought I had while reading four books of his on the trot was, "I have so much to learn". Epic. 
+
+#### 42. [Robinson Crusoe](https://www.gutenberg.org/cache/epub/521/pg521-images.html) by Daniel Defoe <span style="float: right;">`(2/5)`</span>
+
+this book was far more fantastical in my memory than it actually is
+
+#### 43. [Treasure Island](https://www.gutenberg.org/files/120/120-h/120-h.htm) by Robert Louis Stevenson <span style="float: right;">`(3.5/5)`</span>
+
+Long John Silver is the goat!
+
+> Fifteen men on the dead man's chest — \
+> Yo-ho-ho, and a bottle of rum! \
+> Drink and the devil had done for the rest — \
+> Yo-ho-ho, and a bottle of rum!
 
 ---

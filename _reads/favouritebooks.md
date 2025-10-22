@@ -2,7 +2,7 @@
 permalink: "/favouritebooks/"
 title: Favourite Books
 subtitle: Books I wish I could read for the first time again
-date: 2025-08-16 02:38:42 +0530
+date: 2025-10-10 12:38:42 +0530
 layout: default
 keywords: books
 published: true
@@ -70,6 +70,7 @@ I have a list of my favourite words [here](/words.txt).
 - Open by Andre Agassi
 - Fermat's Last Theorem by Simon Singh
 - The Story of Civilization series by Will Durant
+- A Short History of Nearly Everything by Bill Bryson
 
 ## Academic
 
