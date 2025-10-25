@@ -1,0 +1,7 @@
+# from Jekyll.gitignore
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# GitHub Pages uses its own pages-gem
+Gemfile.lock
