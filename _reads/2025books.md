@@ -381,4 +381,14 @@ Long John Silver is the goat!
 > Drink and the devil had done for the rest — \
 > Yo-ho-ho, and a bottle of rum!
 
+#### 44. [Gulliver's Travels](https://www.gutenberg.org/files/829/829-h/829-h.htm) by Jonathan Swift <span style="float: right;">`(3.25/5)`</span>
+
+This book is hilarious, I only remember reading the Lilliput and Brobdingnag parts, and even those, heavily abridged, when I was younger, but the entire thing is so obviously a work of political satire.
+
+Gulliver's distaste towards scientists and mathematicians is so funny. Great read, and there is even a mention of a language model! (although that's not even close to the most interesting thing in this book)
+
+Another observation I made is that Jacques Barzun got his attribution mixed up when he wrote in 'Dawn to Decadence' that the Brobdingnagians thought Gulliver consulted his god because of how often he looked at it. Actually, it is the Lilliputs who describe his watch that way when they're making inventory of Gulliver's possessions. But this doesn't take away from the point he's trying to make.
+
+> But what I chiefly admired, and thought altogether unaccountable, was the strong disposition I observed in them (the mathematicians) towards news and politics, perpetually inquiring into public affairs, giving their judgments in matters of state, and passionately disputing every inch of a party opinion. I have indeed observed the same disposition among most of the mathematicians I have known in Europe, although I could never discover the least analogy between the two sciences; unless those people suppose, that because the smallest circle has as many degrees as the largest, therefore the regulation and management of the world require no more abilities than the handling and turning of a globe; but I rather take this quality to spring from a very common infirmity of human nature, inclining us to be most curious and conceited in matters where we have least concern, and for which we are least adapted by study or nature.
+
 ---
