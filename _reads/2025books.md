@@ -2,7 +2,7 @@
 permalink: "/2025books/"
 title: 2025
 subtitle: Books I'm reading in 2025
-date: 2025-10-22 12:38:42 +0530
+date: 2025-11-06 12:38:42 +0530
 layout: default
 keywords: books
 published: true
@@ -390,5 +390,13 @@ Gulliver's distaste towards scientists and mathematicians is so funny. Great rea
 Another observation I made is that Jacques Barzun got his attribution mixed up when he wrote in 'Dawn to Decadence' that the Brobdingnagians thought Gulliver consulted his god because of how often he looked at it. Actually, it is the Lilliputs who describe his watch that way when they're making inventory of Gulliver's possessions. But this doesn't take away from the point he's trying to make.
 
 > But what I chiefly admired, and thought altogether unaccountable, was the strong disposition I observed in them (the mathematicians) towards news and politics, perpetually inquiring into public affairs, giving their judgments in matters of state, and passionately disputing every inch of a party opinion. I have indeed observed the same disposition among most of the mathematicians I have known in Europe, although I could never discover the least analogy between the two sciences; unless those people suppose, that because the smallest circle has as many degrees as the largest, therefore the regulation and management of the world require no more abilities than the handling and turning of a globe; but I rather take this quality to spring from a very common infirmity of human nature, inclining us to be most curious and conceited in matters where we have least concern, and for which we are least adapted by study or nature.
+
+#### 45. [Educated](https://tarawestover.com/book) by Tara Westover <span style="float: right;">`(4/5)`</span>
+
+This is a really good book. One of those books, which if I had not read, I could have never imagined the existence of the events written about. This book is about memories, and how they warp in different ways each time we recall them. The descriptions of rural Idaho were so well done.
+
+#### 46. [Project Hail Mary](https://andyweirauthor.com/#project-hail-mary) by Andy Weir <span style="float: right;">`(5/5)`</span>
+
+_Amaze._
 
 ---
