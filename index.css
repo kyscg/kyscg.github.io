@@ -137,34 +137,37 @@ body {
 }
 
 blockquote {
-  margin: 1.5em 0;
-  padding-left: 1.2em;
-  border-left: 3px solid black;
+  position: relative;
+  margin: 2em 0;
+  color: #3c3836; 
+  
+  padding-left: 1.5em;
+  
+  border-left: 4px solid #d65d0e; 
+  
   font-style: italic;
-  color: #555;
   line-height: 1.6;
 }
 
 blockquote p {
   margin: 0;
+  font-size: 1.5em;
 }
 
 blockquote cite {
   display: block;
-  /* Make cite a block element */
-  margin-top: 0.8em;
+  margin-top: 1em;
   font-style: normal;
-  font-size: 0.9em;
-  color: #888;
+  font-size: 1.4em;
+  
+  color: #7c6f64; 
+  
+  font-variant: small-caps;
 }
 
-blockquote:before {
-  content: "\201C";
-  font-size: 1.5em;
-  color: #000;
-  position: relative;
-  top: 0.1em;
-  left: -0.5em;
+blockquote cite:before {
+  content: "\2014 \00A0";
+  color: #d65d0e;
 }
 
 pre>code {

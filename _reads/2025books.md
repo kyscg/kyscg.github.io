@@ -181,7 +181,7 @@ But we had forgotten that alongside Orwell's dark vision, there was another - sl
 
 What Orwell feared were those who would ban books. What Huxley feared was that there would be no reason to ban a book, for there would be no one who wanted to read one. Orwell feared those who would deprive us of information. Huxley feared those who would give us so much that we would be reduced to passivity and egoism. Orwell feared that the truth would be concealed from us. Huxley feared the truth would be drowned in a sea of irrelevance. Orwell feared we would become a captive culture. Huxley feared we would become a trivial culture, preoccupied with some equivalent of the feelies, the orgy porgy, and the centrifugal bumblepuppy. As Huxley remarked in Brave New World Revisited, the civil libertarians and rationalists who are ever on the alert to oppose tyranny "failed to take into account man's almost infinite appetite for distractions." In 1984, Orwell added, people are controlled by inflicting pain. In Brave New World, they are controlled by inflicting pleasure. In short, Orwell feared that what we fear will ruin us. Huxley feared that what we desire will ruin us.
     </p>
-    <cite>— Neil Postman, Amusing Ourselves to Death</cite>
+    <cite>Neil Postman, Amusing Ourselves to Death</cite>
 </blockquote>
 
 The constant descriptions of all the clocks striking a particular time compared to the first line of 1984, the hate week paralleled in the orgy-porgies, and the use of the police to whisk away the transgressors to a location where the ideology of the Party is revealed by a big man from the party, whether it is O'Brien or Mustapha Mond. All these were similarities I noticed between the two books. Maybe like Christopher Hitchens said, "totalitarianism is a cliche."
@@ -246,7 +246,7 @@ This is definitely no The Emperor of all Maladies but it comes close. It has the
 
 <blockquote>
     <p>In 1951, long before James Watson would become a household name around the world, the novelist Doris Lessing took a three-hour walk with the young Watson, whom she knew through a friend of a friend. During the entire walk, across the heaths and fens near Cambridge, Lessing did all the talking; Watson said not one word. At the end of the walk, “exhausted, wanting only to escape,” Lessing at last heard the sound of human speech from her companion: “The trouble is, you see, that there is only one other person in the world that I can talk to.”</p>
-    <cite>— James Watson, on Francis Crick</cite>
+    <cite>James Watson, on Francis Crick</cite>
 </blockquote>
 
 Also, Nobel rules about posthumous awards are stupid. Rosalind Franklin definitely deserved the Prize. She literally did all the work.
@@ -256,7 +256,7 @@ Also, Nobel rules about posthumous awards are stupid. Rosalind Franklin definite
     <p>But if the protein chain was altered by exactly one amino acid, then its gene had to be different by precisely one triplet (“one triplet encodes one amino acid”). Indeed, as predicted, when the gene encoding the hemoglobin B chain was later identified and sequenced in sickle-cell patients, there was a single change: one triplet in DNA—GAG—had changed to another—GTG.</p><br>
     <p>This resulted in the substitution of one amino acid for another: glutamate. was switched to valine. That switch altered the folding of the hemoglobin chain: rather than twisting into its neatly articulated, clasplike structure, the mutant hemoglobin protein accumulated in string-like clumps within red cells. These clumps grew so large, particularly in the absence of oxygen, that they tugged the membrane of the red cell until the normal disk was warped into a crescent-shaped, dysmorphic “sickle cell.” Unable to glide smoothly through capillaries and veins, sickled red cells jammed into microscopic clots throughout the body, interrupting blood flow and precipitating the excruciating pain of a sickling crisis.</p><br>
     <p>It was a Rube Goldberg disease. A change in the sequence of a gene caused the change in the sequence of a protein; that warped its shape; that shrank a cell; that clogged a vein; that jammed the flow; that racked the body (that genes built). Gene, protein, function, and fate were strung in a chain: one chemical alteration in one base pair in DNA was sufficient to "encode” a radical change in human fate.</p>
-    <cite>— On Sickle Cell Anemia</cite>
+    <cite>On Sickle Cell Anemia</cite>
 </blockquote>
 
 Back to the book. Way too infodense. Tries too hard to have random sensationalist anecdotes. Sloppy editing. Too many names that live for less than three to four pages. A bunch of Wikipedia pages stitched together with a background story about the author's family.
@@ -284,7 +284,7 @@ You can tell that Plath wrote those lines over and over again, that's how memora
 <blockquote>
     <p>I sat on the toilet and leaned my head over the edge of the washbowl and I thought I was losing my guts and my dinner both. The sickness rolled through me in great waves. After each wave it would fade away and leave me limp as a wet leaf and shivering all over and then I would feel it rising up in me again, and the glittering white torture-chamber tiles under my feet and over my head and on all four sides closed in and squeezed me to pieces.</p><br>
     <p>It didn't seem to be summer any more. I could feel the winter shaking my bones and banging my teeth together.</p>
-    <cite>— Sylvia Plath, The Bell Jar (describing the effects of food poisoning)</cite>
+    <cite>Sylvia Plath, The Bell Jar (describing the effects of food poisoning)</cite>
 </blockquote>
 
 #### 31. [East of Eden](https://www.google.co.in/books/edition/_/OPy6E5ZhXs0C?hl=en&kptab=overview) by John Steinbeck <span style="float: right;">`(5/5)`</span>
@@ -304,7 +304,7 @@ the Lord said unto Cain,</p><br>
     and <b>thou mayest</b> rule over him.”
     </p><br>
     <p>And Cain talked with Abel his brother: and it came to pass, when they were in the field, that Cain rose up against Abel his brother and slew him. And the Lord said unto Cain, “Where is Abel thy brother?” And he said, “I know not. Am I my brother’s keeper?” And he said, “What hast thou done? The voice of thy brother’s blood crieth unto me from the ground. And now art thou cursed from the earth, which hath opened her mouth to receive thy brother’s blood from thy hand. When thou tillest the ground it shall not henceforth yield unto thee her strength; a fugitive and a vagabond shalt thou be in the earth.” And Cain said unto the Lord, “My punishment is greater than I can bear. Behold, thou hast driven me out this day from the face of the earth, and from thy face shall I be hid. And I shall be a fugitive and a vagabond in the earth; and it shall come to pass that everyone that findeth me shall slay me.” And the Lord said unto him, “Therefore whosoever slayeth Cain, vengeance shall be taken on him sevenfold.” And the Lord set a mark upon Cain, lest any finding him should kill him. And Cain went out from the presence of the Lord and dwelt in the land of Nod on the East of Eden.’</p>
-    <cite>— Book of Genesis, 4:1–18</cite>
+    <cite>Book of Genesis, 4:1–18</cite>
 </blockquote>
 
 #### 32. [The Grapes of Wrath](https://www.google.co.in/books/edition/The_Grapes_of_Wrath/hNisMz5W1DQC) by John Steinbeck <span style="float: right;">`(5/5)`</span>

@@ -27,6 +27,6 @@ The men of the infantry sang “Fatherland, My Fatherland”. Between each line 
 For seven hours the army passed in such solid column that not once might a taxi-cab or trolley car pass through the city. Like a river of steel it flowed, grey and ghostlike. Then, as dusk came and a thousands of horses’ hoofs and thousands of iron boots continued to tramp forward, they struck tiny sparks from the stones, but the horses and men who beat out the sparks were invisible.
 <br><br>
 At midnight, pack wagons and siege guns were still passing. At seven this morning I was awakened by the tramp of men and bands playing jauntily. Whether they marched all day or not I do not know; but for 26 hours the grey army rumbled with the mystery of fog and the pertinacity of a steamroller.</p>
-    <cite>— Richard Harding Davis</cite>
+    <cite>Richard Harding Davis</cite>
 </blockquote>
 

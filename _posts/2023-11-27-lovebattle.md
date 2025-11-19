@@ -21,7 +21,7 @@ published: true
 <p>“General Grant invented this kind of battle at Petersburg in sixty- five.”</p><br>
 
 <p>“No, he didn't — he just invented mass butchery. This kind of battle was invented by Lewis Carroll and Jules Verne and whoever wrote Undine, and country deacons bowling and marraines in Marseilles and girls seduced in the back lanes of Wurtemburg and Westphalia. Why, this was a love battle — there was a century of middle-class love spent here. This was the last love battle.” </p>
-    <cite>— F. Scott Fitzgerald from Tender is the Night</cite>
+    <cite>F. Scott Fitzgerald from Tender is the Night</cite>
 </blockquote>
 
 ---
