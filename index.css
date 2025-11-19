@@ -335,6 +335,12 @@ article {
   padding: 40vh 0;
 }
 
+@media (min-width: 1200px) {
+  article:not(#landing) {
+    max-width: 50%;
+  }
+}
+
 .hidden {
   display: none;
 }

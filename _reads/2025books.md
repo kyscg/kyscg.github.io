@@ -2,7 +2,7 @@
 permalink: "/2025books/"
 title: 2025
 subtitle: Books I'm reading in 2025
-date: 2025-11-06 12:38:42 +0530
+date: 2025-11-16 12:38:42 +0530
 layout: default
 keywords: books
 published: true
@@ -362,7 +362,7 @@ I have a personal anecdote to share with this review. When in school, I was taug
 
 This conundrum remained unresolved for a few years, and I made my peace with not getting any satisfactory answers for it; accepting it as something that just happens. When I was finally taught in high school about how pressure affects temperature (and vice versa), everything suddenly made sense, and I remember how overjoyed I was for a few days at solving this mystery. Bill Bryson mentions this exact conundrum in this book, and it only made me wish I read it earlier.
 
-Out of the many things that I learnt from this book is how carbon is sequestrated by marine animals which use it to make their shells; ultimately ending up as limestone. This locks carbon dioxide out of the atmosphere, preventing the earth from warming up, and facilitating favourable conditions for life on earth. I am going to stop here, because I could go on forever about all the cool things I learnt from this book.
+Out of the many things that I learnt from this book is how carbon is sequestered by marine animals which use it to make their shells; ultimately ending up as limestone. This locks carbon dioxide out of the atmosphere, preventing the earth from warming up, and facilitating favourable conditions for life on earth. I am going to stop here, because I could go on forever about all the cool things I learnt from this book.
 
 #### 41. [The Body](https://www.google.co.in/books/edition/_/OHuDDwAAQBAJ?) by Bill Bryson <span style="float: right;">`(4.25/5)`</span>
 
@@ -398,5 +398,15 @@ This is a really good book. One of those books, which if I had not read, I could
 #### 46. [Project Hail Mary](https://andyweirauthor.com/#project-hail-mary) by Andy Weir <span style="float: right;">`(5/5)`</span>
 
 _Amaze._
+
+#### 47. [The Lincoln Highway](https://www.amortowles.com/the-lincoln-highway-about-the-book/) by Amor Towles <span style="float: right;">`(5/5)`</span>
+
+I simply couldn't turn the pages fast enough. Duchess is one of the most unlikeable characters I've ever read, right away from his introduction. The parts with Billy and his brother were heartwarming. But my favourite writing has to be all the Sally chapters.
+
+My second five star Amor Towles book, I'm definitely going to get my hands on Rules of Civility next.
+
+#### 48. [Rules of Civility](https://www.amortowles.com/rules-of-civility-about-the-book/) by Amor Towles <span style="float: right;">`(2.25/5)`</span>
+
+The writing was—_como se dice_—fab-dabulous but the story was such a drag. I loved Eve's turns of phrase so much.
 
 ---

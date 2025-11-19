@@ -2,7 +2,7 @@
 permalink: "/2024books/"
 title: 2024
 subtitle: Books I read in 2024
-date: 2024-12-21 12:51:42 +0530
+date: 2024-12-21 23:51:42 +0530
 layout: default
 keywords: books
 published: true
