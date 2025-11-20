@@ -1,0 +1,13 @@
+<footer>
+    <br>
+    <small>
+        &copy; <span id="copyright-year"></span> Kilaru Yasaswi Sri Chandra Gandhi. All rights reserved.
+    </small>
+</footer>
+
+<script>
+    // Check if the element exists before trying to set text to avoid errors
+    if (document.getElementById('copyright-year')) {
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    }
+</script>
