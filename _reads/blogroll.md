@@ -50,5 +50,6 @@ published: true
 * [The Technium](https://kk.org/thetechnium/) by Kevin Kelly
 * [Andy Matuschak's Website](https://andymatuschak.org/)
 * [A Universe of Sorts](https://pixel-druid.com/) by Siddharth Bhat
+* [JOODALOOP](https://joodaloop.com/) by Judah
 
 ---
