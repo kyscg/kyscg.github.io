@@ -20,7 +20,6 @@ Reading and implementing the Seam Carving paper. In this video, I write the ener
 #### Citation
 
 ```bibtex
-
 @online{kilaru2022seamcarving2,
   title  = {Seam Carving. Part 2: Energy Function},
   author = {Yasaswi Sri Chandra Gandhi Kilaru},

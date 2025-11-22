@@ -31,7 +31,6 @@ width="100%" height="480" frameborder=0></iframe>
 PGN: 
 
 ```
-
 1. e4 d6 2. d4 Nf6 3. Bd3 e5 4. dxe5 dxe5 5. Nf3 Nbd7 6. O-O g6
 7. Bg5 Bg7 8. Bh4 O-O 9. Bg3 Nh5 10. b4 Qe7 11. a3 c5 12. c3 b6
 13. Bb5 Rd8 14. Bc6 Nxg3 15. hxg3 Rb8 16. Qd5 Nf8 17. Qc4 Be6

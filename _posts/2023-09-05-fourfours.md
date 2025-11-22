@@ -17,7 +17,6 @@ I found a question on Mathstodon the other day, posed by David Radcliffe. Using 
 #### Citation
 
 ```bibtex
-
 @online{kilaru2023fourfours,
   title  = {A Variation of the Four Fours Problem},
   author = {Yasaswi Sri Chandra Gandhi Kilaru},

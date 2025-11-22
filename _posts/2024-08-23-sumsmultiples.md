@@ -18,7 +18,6 @@ primes as well and found that it does for a bunch of others. Examples: $f(2,5)=\
 23331668, 2333316668,\dots\}.$
 
 ```python
-
 def sumMul(p1: int, p2: int, b: int, n: int) -> int:
 
     A = (b ** n - 1) // p1

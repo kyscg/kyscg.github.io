@@ -23,6 +23,8 @@ I was reading the man pages and I found that you can do so much more with this s
 
 ```bash
 shuf files.txt
+
+shuf files.txt > temp.txt && mv temp.txt training.txt
 ```
 
 - Pick seven random numbers out of an input range

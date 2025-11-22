@@ -43,7 +43,6 @@ say that the hardest part in this entire thing was plotting the graphs, they nee
 some programming acrobatics to get the axes right.
 
 ```python
-
 def comp(n: int) -> list:
     
     x = []

@@ -17,7 +17,6 @@ Non-recurrent and unpredictable traffic events directly influence road traffic c
 #### Citation
 
 ```bibtex
-
 @article{kilaru2020,
   author       = {Kilaru, Yasaswi Sri Chandra Gandhi and Ghosh, Indrajit},
   title        = {Traffic event description based on Twitter data using Unsupervised Learning Methods for Indian road conditions},

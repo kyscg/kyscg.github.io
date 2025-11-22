@@ -84,7 +84,6 @@ But this is obviously incorrect because this is adding the individual probabilie
 We can see this in action using [`np.convolve`](https://numpy.org/doc/stable/reference/generated/numpy.convolve.html). Just make sure that the "filter" has a smaller size, or the function will swap the two arrays around.
 
 ```python
-
 import numpy as np
 
 array_a = np.array([0.1, 0.2, 0.3, 0.2, 0.2])
@@ -158,7 +157,6 @@ $\blacksquare$
 This is easier to do in code:
 
 ```python
-
 import numpy as np
 
 
@@ -194,7 +192,6 @@ Cited as:
 Or
 
 ```bibtex
-
 @article{kilaru2025diffusionconvolution,
   title   = "Sums of random variables and convolutions",
   author  = "Kilaru, Yasaswi Sri Chandra Gandhi",

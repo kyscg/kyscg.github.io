@@ -10,7 +10,6 @@ published: true
 ---
 
 ```cpp
-
 int ceil(int numerator, int denominator):
 {
     return (numerator + denominator - 1) / denominator;
@@ -21,7 +20,6 @@ int ceil(int numerator, int denominator):
 and in case of suspected overflow, use this
 
 ```cpp
-
 int ceil(int numerator, int denominator)
 {
     if (numerator % denominator == 0)

@@ -32,8 +32,7 @@ I trained a lot of variants with different results. Two things that improved per
 
 - Install the following requirements (most of these are already available on Colab)
 
-```
-
+```PlainText
 ale-py==0.11.1
 gymnasium==1.1.1
 imageio==2.37.0

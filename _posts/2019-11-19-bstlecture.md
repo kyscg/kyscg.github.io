@@ -20,7 +20,6 @@ Notes for a lecture I gave at IIT Roorkee on Binary Search Trees. After motivati
 #### Citation
 
 ```bibtex
-
 @article{kilaru2019bstlecture,
   title   = "Lecture: Binary Search Trees",
   author  = "Kilaru, Yasaswi Sri Chandra Gandhi",

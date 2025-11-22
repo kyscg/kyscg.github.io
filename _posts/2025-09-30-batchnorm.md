@@ -46,7 +46,6 @@ $$
 - For inference, use estimates of $\mu$ and $\sigma^2$ using exponentially weighted averages across all mini-batches, for all samples.
 
 ```python
-
 import torch
 
 def logbn(tnsr, desc: str) -> None:

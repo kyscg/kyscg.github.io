@@ -170,18 +170,6 @@ blockquote cite:before {
   color: #d65d0e;
 }
 
-pre>code {
-  font-family: 'Triplicate T4', monospace;
-  font-size: 15px;
-  padding: 15px;
-  line-height: 1.5;
-}
-
-code {
-  font-family: 'Triplicate T4', monospace;
-  font-size: 15px;
-}
-
 table {
   width: 100%;
   border-collapse: collapse;
@@ -442,23 +430,49 @@ footer {
   font-feature-settings: "liga" 1, "kern" 1;
 }
 
-.highlight {
-  background-color: rgba(251, 241, 199);
-  border-radius: 20px;
-  padding: 0.25em;
+/*pre>code {
+  font-family: 'Triplicate T4', monospace;
+  font-size: 15px;
+  padding: 15px;
+  line-height: 1.5;
 }
 
-.highlight pre {
-  margin-left: 1.5em;
+code {
+  font-family: 'Triplicate T4', monospace;
+  font-size: 15px;
+}*/
+
+code {
+  font-family: 'Triplicate T4', monospace;
+}
+
+.highlight {
+  border-radius: 5px;
+  font-size: 0.95em;
+  line-height: 1.4;
   overflow-x: auto;
 }
 
-.highlight table td {
-  padding: 5px;
+.highlight .lineno {
+  color: #a89984;
+  user-select: none;
+  font-size: 0.85em;
+  border: none !important;
+  padding-left: 10px;
 }
 
-.highlight table pre {
-  margin: 0;
+.highlight pre {
+  font-family: 'Triplicate T4', monospace;
+  font-size: 0.85em;
+}
+
+.highlight table td {
+  border: none;
+  padding: 0;
+}
+
+.highlight table td:first-child {
+  width: 40px; 
 }
 
 .highlight,
