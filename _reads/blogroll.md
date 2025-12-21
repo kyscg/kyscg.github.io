@@ -2,7 +2,7 @@
 permalink: "/blogroll/"
 title: Blogroll
 subtitle: A list of my favourite personal blogs on the internet
-date: 2025-11-16 13:18:42 +0530
+date: 2025-12-18 13:18:42 +0530
 layout: default
 keywords: blogroll, links
 published: true
@@ -52,5 +52,8 @@ published: true
 * [A Universe of Sorts](https://pixel-druid.com/) by Siddharth Bhat
 * [JOODALOOP](https://joodaloop.com/) by Judah
 * [Aceso Under Glass](https://acesounderglass.com/) by Elizabeth Van Nostrand
+* [Bits about Money](https://www.bitsaboutmoney.com/) by Patrick McKenzie
+* [Life is Computation](https://lifeiscomputation.com/) by Hessam Akhlaghpour
+* [James Somers' Website](https://jsomers.net/)
 
 ---
