@@ -2,7 +2,7 @@
 permalink: "/favouritebooks/"
 title: Favourite Books
 subtitle: Books I wish I could read for the first time again
-date: 2025-10-10 12:38:42 +0530
+date: 2026-01-05 12:38:42 +0530
 layout: default
 keywords: books
 published: true
@@ -47,6 +47,7 @@ I have a list of my favourite words [here](/words.txt).
 - War and Peace by Leo Tolstoy
 - Remarkably Bright Creatures by Shelby Van Pelt
 - The Grapes of Wrath by John Steinbeck
+- Stoner by John Williams
 
 ## Non-fiction
 

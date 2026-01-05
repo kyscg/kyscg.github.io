@@ -1,8 +1,8 @@
 ---
 permalink: "/2025books/"
 title: 2025
-subtitle: Books I'm reading in 2025
-date: 2025-11-16 12:38:42 +0530
+subtitle: Books I read in 2025
+date: 2025-12-26 12:38:42 +0530
 layout: default
 keywords: books
 published: true
@@ -408,5 +408,23 @@ My second five star Amor Towles book, I'm definitely going to get my hands on Ru
 #### 48. [Rules of Civility](https://www.amortowles.com/rules-of-civility-about-the-book/) by Amor Towles <span style="float: right;">`(2.25/5)`</span>
 
 The writing was—_como se dice_—fab-dabulous but the story was such a drag. I loved Eve's turns of phrase so much.
+
+#### 49. [We Solve Murders](https://www.goodreads.com/list/show/2.The_Worst_Books_of_All_Time) by Richard Osman <span style="float: right;">`(0/5)`</span>
+
+This is easily one of the worst genres of books ever written, can't believe they cut down trees to print this garbage on. This is the kind of book that is written in the hope that it will be made into a tv series. Filled with sitcom humour, artificial personalities, and forced internal dialogue. I curse the hour and day I picked up this travesty.
+
+I am writing this review three weeks after I buried my copy in a landfill, and I am still furious that I wasted my time reading this.
+
+#### 50. [Angels and Demons](https://danbrown.com/books/novels/angels-and-demons/) by Dan Brown <span style="float: right;">`(5/5)`</span>
+
+This was the book that made me go on a Dan Brown spree when I was thirteen, and none of his other books come close to this. Now I can see why the writing is criticized, and how it feels lazy, but what a powerful story. Loved it more than ten years later as well.
+
+#### 51. [A Room of One's Own](https://gutenberg.net.au/ebooks02/0200791h.html) by Virginia Woolf <span style="float: right;">`(3/5)`</span>
+
+what a wonderful essay, I need to read this many more times before I absorb everything. the stream of consciousness writing can be tiresome sometimes, but there's always a point at the end of everything.
+
+#### 52. [Madonna in a Fur Coat](https://www.goodreads.com/book/show/27793819-madonna-in-a-fur-coat) by Sabahattin Ali <span style="float: right;">`(3/5)`</span>
+
+wow this book was written in 1943
 
 ---
