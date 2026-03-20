@@ -2,7 +2,7 @@
 permalink: "/blogroll/"
 title: Blogroll
 subtitle: A list of my favourite personal blogs on the internet
-date: 2026-01-05 13:18:42 +0530
+date: 2026-01-27 13:18:42 +0530
 layout: default
 keywords: blogroll, links
 published: true
@@ -56,5 +56,6 @@ published: true
 * [Life is Computation](https://lifeiscomputation.com/) by Hessam Akhlaghpour
 * [James Somers' Website](https://jsomers.net/)
 * [The Neighborhoods](https://theneighborhoods.substack.com/) by Rob Stephenson
+* [Riley Walz' Website](https://walzr.com/)
 
 ---

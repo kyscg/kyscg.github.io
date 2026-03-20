@@ -2,7 +2,7 @@
 permalink: "/2026books/"
 title: 2026
 subtitle: Books I'm reading in 2026
-date: 2026-01-05 12:38:42 +0530
+date: 2026-01-19 10:38:42 +0530
 layout: default
 keywords: books
 published: true
@@ -30,5 +30,13 @@ Well, in a way it did. The final few pages detailing his thoughts on his death b
 > What did you expect? he asked himself.
 
 I place it in the pantheon of great books about the simultaneous necessity and futility of hope as a reminder to myself about the importance of living life with relentless optimism and limitless energy.
+
+#### 2. [Metamorphosis](https://www.gutenberg.org/cache/epub/5200/pg5200-images.html) by Franz Kafka <span style="float: right;">`(3.75/5)`</span>
+
+> _Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheuren Ungeziefer verwandelt_
+
+The thing I remember most from my first reading of this book was how absurd it was that Samsa's first reaction to finding out about his transformation was wonder about how he was late for work, and how he could still make it to work. This time, I was even more struck by how much Samsa tries to be accomodating towards his family when he's the one who needs the care and concern. He initially tries to play it cool in from of the chief clerk, and then hides himself away so that his sister doesn't have to see him, and slowly wastes away in his room, his self-denial of life culminating in his death and freeing his family.
+
+The most heartbreaking part was when Gregor came out of his room to appreciate his sister's music and this resulted in her final betrayal. Of course he gave up and died after that. And how relieved his family were after his death. Hope could only return once Gregor was removed from their lives. In a way, Gregor's psychic transformation was complete way before his physical transformation. When he took on a job he disliked and became less than human. _Ein ungeheuren Ungeziefer_.
 
 ---

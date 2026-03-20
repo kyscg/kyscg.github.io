@@ -96,6 +96,7 @@ I have a list of my favourite words [here](/words.txt).
 - Reinforcement Learning by Sutton and Barto
 - Introduction to the Theory of Computation by Michael Sipser
 - Operating Systems Three Easy Pieces by Remzi and Andrea Arpaci-Dusseau
-- 100 Endgames You Must Know by Jesus de la Villa 
+- 100 Endgames You Must Know by Jesus de la Villa
+- Harper's Illustrated Biochemistry, 31st Edition by Rodwell et al.
 
 ---
