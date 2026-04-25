@@ -11,36 +11,27 @@ ask() {
   echo "$response"
 }
 
-# Function to read multi-line input for the review
-read_review() {
-  review_text=""
-  while IFS= read -r line; do
-    review_text+="$line"
-  done
-  echo "$review_text"
-}
-
 # Get the details from the user
 number=$(ask "Enter the review number")
 book_title=$(ask "Enter the book title")
 book_link=$(ask "Enter the book link")
 author=$(ask "Enter the author")
 rating=$(ask "Enter your rating (out of 5)")
-echo "Enter your review (press Ctrl+D on a new line to finish):"
-review=$(read_review)
+
+# opening a temporary file for the review, inspired by git commit
+temp_file=$(mktemp)
+nvim "$temp_file"
+review=$(cat "$temp_file")
+rm "$temp_file"
 
 # Create the markdown entry
 markdown_entry="#### $number. [$book_title]($book_link) by $author <span style=\"float: right;\">\`($rating/5)\`</span>"
 
 # Append the entry to the markdown file
 echo "$markdown_entry" >> "$markdown_file"
-
 echo "" >> "$markdown_file"
-
 echo "$review" >> "$markdown_file"
-
 echo "" >> "$markdown_file"
-
 echo "---" >> "$markdown_file"
 
 echo "Review for '$book_title' has been appended to '$markdown_file'."
