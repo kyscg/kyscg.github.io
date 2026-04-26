@@ -2,27 +2,72 @@
 permalink: "/2025books/"
 title: 2025
 subtitle: Books I read in 2025
-date: 2025-12-26 12:38:42 +0530
+date: 2025-12-27 12:38:42 +0530
 layout: default
 keywords: books
 published: true
 ---
 
+<div class="books-progress">52/52</div>
+
+<div class="book-section" markdown="1"
+  data-title="Uncle Tom's Cabin"
+  data-author="Harriet Beecher Stowe"
+  data-rating="4/5"
+  data-link="https://www.gutenberg.org/cache/epub/203/pg203-images.html"
+  data-cover="/assets/images/covers/uncle-toms-cabin-harriet-beecher-stowe.webp">
+
 #### 1. [Uncle Tom's Cabin](https://www.gutenberg.org/cache/epub/203/pg203-images.html) by Harriet Beecher Stowe <span style="float: right;">`(4/5)`</span>
 
 good book, the whole christian evangelism propaganda was overdone in my opinion, but it is tolerable.
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="South Sea Tales"
+  data-author="Jack London"
+  data-rating="3.75/5"
+  data-link="https://www.gutenberg.org/cache/epub/1208/pg1208-images.html"
+  data-cover="/assets/images/covers/south-sea-tales-jack-london.webp">
+
 #### 2. [South Sea Tales](https://www.gutenberg.org/cache/epub/1208/pg1208-images.html) by Jack London <span style="float: right;">`(3.75/5)`</span>
 
-Some Robinson Crusoesque short stories that I really enjoyed reading. I liked The House of Mapuhi, Mauki, and The Heathen a lot. 
+Some Robinson Crusoesque short stories that I really enjoyed reading. I liked The House of Mapuhi, Mauki, and The Heathen a lot.
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="The Call of the Wild"
+  data-author="Jack London"
+  data-rating="5/5"
+  data-link="https://www.gutenberg.org/cache/epub/215/pg215-images.html"
+  data-cover="/assets/images/covers/the-call-of-the-wild-jack-london.webp">
 
 #### 3. [The Call of the Wild](https://www.gutenberg.org/cache/epub/215/pg215-images.html) by Jack London <span style="float: right;">`(5/5)`</span>
 
 I love this book so much, for so many reasons. As a child, I used to open this book to the scene where Buck pulls a thousand pounds for John and read it over and over again. Simply wonderful.
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="White Fang"
+  data-author="Jack London"
+  data-rating="5/5"
+  data-link="https://www.gutenberg.org/cache/epub/910/pg910-images.html"
+  data-cover="/assets/images/covers/white-fang-jack-london.webp">
+
 #### 4. [White Fang](https://www.gutenberg.org/cache/epub/910/pg910-images.html) by Jack London <span style="float: right;">`(5/5)`</span>
 
 my third consecutive Jack London book, I can't get enough of his writing. I wish I read this when I was in school. For me, this is better than The Call of the Wild as far as the writing and story go. I am going to go around for the next few days asking everyone I run into to read this book.
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Suicide Notes"
+  data-author="Michael Thomas Ford"
+  data-rating="4/5"
+  data-link="https://www.michaelthomasford.com/ya-novels.html"
+  data-cover="/assets/images/covers/suicide-notes-michael-thomas-ford.webp">
 
 #### 5. [Suicide Notes](https://www.michaelthomasford.com/ya-novels.html) by Michael Thomas Ford <span style="float: right;">`(4/5)`</span>
 
@@ -30,15 +75,42 @@ I hadn't realised how much I missed this sarcastic percy jacksonesque humour unt
 
 both the dialogue and monologue are great, the plot kinda darkens and pales simultaneously towards the end but it was still very enjoyable to read. also, the subject matter is clearly dark, and the humour does a very good job of being thoughtful as well as effective.
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Night Watch"
+  data-author="Jayne Anne Phillips"
+  data-rating="3/5"
+  data-link="https://jayneannephillips.com/night-watch/"
+  data-cover="/assets/images/covers/night-watch-jayne-anne-phillips.webp">
+
 #### 6. [Night Watch](https://jayneannephillips.com/night-watch/) by Jayne Anne Phillips <span style="float: right;">`(3/5)`</span>
 
 wasn't too bad, although I felt that narration + dialogue were far stronger than descriptions in many places. I have no clue what that Weed character is doing in the book except as a literary device for more exposition, and even that is a weak justification.
 
 I am updating the review on my website a month after reading it, and one thing that stands out is how certain aspects of the book linger on for a long time. The whole Civil War thing, and rustic descriptions of rural America. Very enduring. I can see why it appealed to the Pulitzer folks.
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="The Financial Lives of the Poets"
+  data-author="Jess Walter"
+  data-rating="4/5"
+  data-link="https://www.jesswalter.com/the_financial_lives_of_the_poets__2009__94357.htm"
+  data-cover="/assets/images/covers/the-financial-lives-of-the-poets-jess-walter.webp">
+
 #### 7. [The Financial Lives of the Poets](https://www.jesswalter.com/the_financial_lives_of_the_poets__2009__94357.htm) by Jess Walter <span style="float: right;">`(4/5)`</span>
 
 this writing has some of the best self-deprecating + existentialist humour ever written. some parts would go real viral on substack/blog-screenshot-twitter. the plot gets weak at some places and the ending is lacklustre. almost like it was written in the hope that it would be adapted into a movie.
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="War and Peace"
+  data-author="Leo Tolstoy, translated by Louise and Aylmer Maude"
+  data-rating="4.75/5"
+  data-link="https://www.gutenberg.org/ebooks/2600"
+  data-cover="/assets/images/covers/war-and-peace-leo-tolstoy.webp">
 
 #### 8. [War and Peace](https://www.gutenberg.org/ebooks/2600) by Leo Tolstoy, translated by Louise and Aylmer Maude <span style="float: right;">`(4.75/5)`</span>
 
@@ -48,9 +120,27 @@ Obviously, he has a very strong anti-Napoleon bias, and that put me off in some 
 
 docked a quarter star for all the forced Napoleon hate, Vive l'Empereur!
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="A Study in Scarlet"
+  data-author="Arthur Conan Doyle"
+  data-rating="2.5/5"
+  data-link="https://www.gutenberg.org/cache/epub/244/pg244-images.html"
+  data-cover="/assets/images/covers/a-study-in-scarlet-arthur-conan-doyle.webp">
+
 #### 9. [A Study in Scarlet](https://www.gutenberg.org/cache/epub/244/pg244-images.html) by Arthur Conan Doyle <span style="float: right;">`(2.5/5)`</span>
 
 what was that in the middle? the most pointless backstory ever. The Sherlock stuff was cool. but that flashback ruined it all.
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Odyssey"
+  data-author="Stephen Fry"
+  data-rating="4/5"
+  data-link="https://www.stephenfry.com/store/"
+  data-cover="/assets/images/covers/odyssey-stephen-fry.webp">
 
 #### 10. [Odyssey](https://www.stephenfry.com/store/) by Stephen Fry <span style="float: right;">`(4/5)`</span>
 
@@ -60,13 +150,40 @@ However, I think Fry's four volumes on Greek Myths are incredibly important for 
 
 Children now wont have to search farther than the next book in the series. Athena smiles on Stephen Fry.
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="The Room on the Roof"
+  data-author="Ruskin Bond"
+  data-rating="2/5"
+  data-link="https://www.google.co.in/books/edition/THE_ROOM_ON_THE_ROOF/1MGC-Iu1yPkC"
+  data-cover="/assets/images/covers/the-room-on-the-roof-ruskin-bond.webp">
+
 #### 11. [The Room on the Roof](https://www.google.co.in/books/edition/THE_ROOM_ON_THE_ROOF/1MGC-Iu1yPkC) by Ruskin Bond <span style="float: right;">`(2/5)`</span>
 
- quaint and nice, but also drawn-out in some places. 
+ quaint and nice, but also drawn-out in some places.
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="1984"
+  data-author="George Orwell"
+  data-rating="5/5"
+  data-link="https://www.george-orwell.org/1984"
+  data-cover="/assets/images/covers/1984-george-orwell.webp">
 
 #### 12. [1984](https://www.george-orwell.org/1984) by George Orwell <span style="float: right;">`(5/5)`</span>
 
 This is essential reading. The writing is so powerful, and prescient. One can argue that the idea of the thought police is very far away from most people's concern, especially in light of the recent resurgence of free-speech absolutists. But I think this book is about Fear, and how it paralyzes and eventually snuffs out everything brilliant and unique about humans. I might read Brave New World sometime soon, that one is about Greed.
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Napoleon"
+  data-author="Andrew Roberts"
+  data-rating="5/5"
+  data-link="https://www.andrew-roberts.net/books/napoleon-a-life/"
+  data-cover="/assets/images/covers/napoleon-andrew-roberts.webp">
 
 #### 13. [Napoleon](https://www.andrew-roberts.net/books/napoleon-a-life/) by Andrew Roberts <span style="float: right;">`(5/5)`</span>
 
@@ -74,11 +191,29 @@ the last great man in history
 
 Vive l'Empereur!
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="The Napoleonic Wars"
+  data-author="Alexander Mikaberidze"
+  data-rating="1/5"
+  data-link="https://books.google.co.in/books/about/The_Napoleonic_Wars.html?id=o_S_rQEACAAJ"
+  data-cover="/assets/images/covers/the-napoleonic-wars-alexander-mikaberidze.webp">
+
 #### 14. [The Napoleonic Wars](https://books.google.co.in/books/about/The_Napoleonic_Wars.html?id=o_S_rQEACAAJ) by Alexander Mikaberidze <span style="float: right;">`(1/5)`</span>
 
 This book is not about the wars that Napoleon waged, but rather, a global history during the Napoleonic Wars. Very deceptive title if you ask me, bordering on dishonest. Albeit interesting at times, this is not what I wanted when I picked up the book. I have boarded the wrong train, I need to get off asap. The first few chapters are just backstory backstory backstory where everyone is pairwise fighting everyone else. And the backstory never stops.
 
 the second chapter is titled "the 18th century international order" and completely excludes the east. classic. at least the cover is pretty.
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Our Oriental Heritage"
+  data-author="Will Durant"
+  data-rating="4.5/5"
+  data-link="https://www.simonandschuster.com/books/Our-Oriental-Heritage/Will-Durant/The-Story-of-Civilization/9781451646689"
+  data-cover="/assets/images/covers/our-oriental-heritage-will-durant.webp">
 
 #### 15. [Our Oriental Heritage](https://www.simonandschuster.com/books/Our-Oriental-Heritage/Will-Durant/The-Story-of-Civilization/9781451646689) by Will Durant <span style="float: right;">`(4.5/5)`</span>
 
@@ -95,6 +230,15 @@ Some examples of writing I thought were very nice, not directly related to histo
 > "Men look to love and life for everything; they receive a little less than that; they imagine that they have received nothing: these are the three stages of the pessimist"
 
 > "The very basis of the Higher Man's character is an overflowing sympathy towards all men. He is not angered by the excellences of other men; when he sees men of worth he thinks of equaling them; when he sees men of low worth he turns inward and examines himself, for there are few faults that we do not share with our neighbors. He pays no attention to slander or violent speech. He is courteous and affable to all, but he does not gush forth indiscriminate praise. He treats his inferiors without contempt, and his superiors without seeking to court their favor. He is grave in deportment, since men will not take seriously one who is not serious with them; he is slow in words and earnest in conduct; he is not quick with his tongue, or given to clever repartee; he is earnest because he has work to do—and this is the secret of his unaffected dignity. He is courteous even to his familiars, but maintains his reserve towards all, even his son."
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="The Life of Greece"
+  data-author="Will Durant"
+  data-rating="4.75/5"
+  data-link="https://www.simonandschuster.com/books/The-Life-of-Greece/Will-Durant/The-Story-of-Civilization/9781451647587"
+  data-cover="/assets/images/covers/the-life-of-greece-will-durant.webp">
 
 #### 16. [The Life of Greece](https://www.simonandschuster.com/books/The-Life-of-Greece/Will-Durant/The-Story-of-Civilization/9781451647587) by Will Durant <span style="float: right;">`(4.75/5)`</span>
 
@@ -153,9 +297,27 @@ The word hypocrite comes from the Greek word _hypokritēs_ but in a very round-a
     </div>
 </div>
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Madame Doubtfire"
+  data-author="Anne Fine"
+  data-rating="4/5"
+  data-link="https://www.annefine.co.uk/books/doubtfire.php"
+  data-cover="/assets/images/covers/madame-doubtfire-anne-fine.webp">
+
 #### 17. [Madame Doubtfire](https://www.annefine.co.uk/books/doubtfire.php) by Anne Fine <span style="float: right;">`(4/5)`</span>
 
- I completely forgot about the existence of this book for more than a decade until I saw it in my library and recognized the cover. This is still just as funny, charming, and outrageously ridiculous as the first time I read it. I also enjoyed it a lot more, considering that I was a kid the last time I read it. Such a fun read! 
+ I completely forgot about the existence of this book for more than a decade until I saw it in my library and recognized the cover. This is still just as funny, charming, and outrageously ridiculous as the first time I read it. I also enjoyed it a lot more, considering that I was a kid the last time I read it. Such a fun read!
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Caesar and Christ"
+  data-author="Will Durant"
+  data-rating="4.25/5"
+  data-link="https://www.simonandschuster.com/books/Caesar-and-Christ/Will-Durant/The-Story-of-Civilization/9781451647600"
+  data-cover="/assets/images/covers/caesar-and-christ-will-durant.webp">
 
 #### 18. [Caesar and Christ](https://www.simonandschuster.com/books/Caesar-and-Christ/Will-Durant/The-Story-of-Civilization/9781451647600) by Will Durant <span style="float: right;">`(4.25/5)`</span>
 
@@ -166,6 +328,15 @@ The word hypocrite comes from the Greek word _hypokritēs_ but in a very round-a
 > "The two greatest problems in history," says a brilliant scholar of our time, are "how to account for the rise of Rome, and how to account for her fall." We may come nearer to understanding them if we remember that the fall of Rome, like her rise, had not one cause but many, and was not an event but a process spread over 300 years. Some nations have not lasted as long as Rome fell"
 
 May she rise again.
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Brave New World"
+  data-author="Aldous Huxley"
+  data-rating="4.5/5"
+  data-link="https://gutenberg.ca/ebooks/huxleya-bravenewworld/huxleya-bravenewworld-00-e.html"
+  data-cover="/assets/images/covers/brave-new-world-aldous-huxley.webp">
 
 #### 19. [Brave New World](https://gutenberg.ca/ebooks/huxleya-bravenewworld/huxleya-bravenewworld-00-e.html) by Aldous Huxley <span style="float: right;">`(4.5/5)`</span>
 
@@ -196,6 +367,15 @@ I will end on a personal note, I keep thinking of everyone using LLM to do their
 
 Completely deserves its place in the pantheon of great dystopian science fiction works along with 1984, Fahrenheit 451, and The Handmaid's Tale.
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Trust"
+  data-author="Hernán Díaz"
+  data-rating="4.75/5"
+  data-link="https://www.hernandiaz.net/trust-novel"
+  data-cover="/assets/images/covers/trust-hernán-díaz.webp">
+
 #### 20. [Trust](https://www.hernandiaz.net/trust-novel) by Hernán Díaz <span style="float: right;">`(4.75/5)`</span>
 
 the final boss of unreliable narrators.
@@ -210,25 +390,79 @@ One more note: I find it super interesting that two consecutive Pulitzers were a
 
 - [Dua Lipa In Conversation With Hernan Diaz](https://www.youtube.com/watch?v=sRAKWYpOfcs): This is where I got the suggestion from, after watching Dua Lipa interview Ocean Vuong and Khaled Hosseini. Dua asks a very thoughtful question in this conversation that I thought of myself; about whether the Ida in Trust had any parallels to Ida Tarbell who wrote extensively about John. D. Rockefeller in her capacity as an investigative journalist.
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Remarkably Bright Creatures"
+  data-author="Shelby Van Pelt"
+  data-rating="5/5"
+  data-link="https://shelbyvanpelt.com/books/remarkably-bright-creatures/"
+  data-cover="/assets/images/covers/remarkably-bright-creatures-shelby-van-pelt.webp">
+
 #### 21. [Remarkably Bright Creatures](https://shelbyvanpelt.com/books/remarkably-bright-creatures/) by Shelby Van Pelt <span style="float: right;">`(5/5)`</span>
 
  I cannot find the words to describe this book. This was beautiful. Simply beautiful.
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Hello Beautiful"
+  data-author="Ann Napolitano"
+  data-rating="4.25/5"
+  data-link="https://annnapolitano.com/hello-beautiful/"
+  data-cover="/assets/images/covers/hello-beautiful-ann-napolitano.webp">
+
 #### 22. [Hello Beautiful](https://annnapolitano.com/hello-beautiful/) by Ann Napolitano <span style="float: right;">`(4.25/5)`</span>
 
- I didn't think I would love this book this much when I was reading the first few chapters. I almost stopped midway because I thought the writing was too forced and none of the characters were likeable. I was so wrong. It keeps getting better and better. 
+ I didn't think I would love this book this much when I was reading the first few chapters. I almost stopped midway because I thought the writing was too forced and none of the characters were likeable. I was so wrong. It keeps getting better and better.
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Lord of the Flies"
+  data-author="William Golding"
+  data-rating="3/5"
+  data-link="https://william-golding.co.uk/books/lord-of-the-flies"
+  data-cover="/assets/images/covers/lord-of-the-flies-william-golding.webp">
 
 #### 23. [Lord of the Flies](https://william-golding.co.uk/books/lord-of-the-flies) by William Golding <span style="float: right;">`(3/5)`</span>
 
 I can totally see how this could have happened. And I can also see why this is recommended reading in school. Makes me want to read Treasure Island again.
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="The Unbearable Lightness of Being"
+  data-author="Milan Kundera"
+  data-rating="2.25/5"
+  data-link="https://www.goodreads.com/book/show/9717.The_Unbearable_Lightness_of_Being"
+  data-cover="/assets/images/covers/the-unbearable-lightness-of-being-milan-kundera.webp">
+
 #### 24. [The Unbearable Lightness of Being](https://www.goodreads.com/book/show/9717.The_Unbearable_Lightness_of_Being) by Milan Kundera <span style="float: right;">`(2.25/5)`</span>
 
 Word salad alert! Bunch of neurotic people saying neurotic things. I mean, I get why the book is so popular, the style of the prose is very soviet-essay coded and very memorable. The ideas are well-formed, and the characters are well written, and maybe I would have liked this book at some other time, but I simply couldn't read this without forcing myself to.
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Alexander the Great"
+  data-author="Philip Freeman"
+  data-rating="5/5"
+  data-link="https://philipfreemanbooks.com/alexander-the-great/"
+  data-cover="/assets/images/covers/alexander-the-great-philip-freeman.webp">
+
 #### 25. [Alexander the Great](https://philipfreemanbooks.com/alexander-the-great/) by Philip Freeman <span style="float: right;">`(5/5)`</span>
 
 benchmark.
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Flowers for Algernon"
+  data-author="Daniel Keyes"
+  data-rating="4/5"
+  data-link="https://www.google.co.in/books/edition/_/NRWlitmahXkC"
+  data-cover="/assets/images/covers/flowers-for-algernon-daniel-keyes.webp">
 
 #### 26. [Flowers for Algernon](https://www.google.co.in/books/edition/_/NRWlitmahXkC) by Daniel Keyes <span style="float: right;">`(4/5)`</span>
 
@@ -237,6 +471,15 @@ Excellent read, important and thought-provoking. There is a very appropriate quo
 > Any one who has common sense will remember that the bewilderments of the eyes are of two kinds, and arise from two causes, either from coming out of the light or from going into the light, which is true of the mind's eye, quite as much as of the bodily eye; and he who remembers this when he sees any one whose vision is perplexed and weak, will not be too ready to laugh; he will first ask whether that soul of man has come out of the brighter life, and is unable to see because unaccustomed to the dark, or having turned from darkness to the day is dazzled by excess of light. And he will count the one happy in his condition and state of being, and he will pity the other; or, if he have a mind to laugh at the soul which comes from below into the light, there will be more reason in this than in the laugh which greets him who returns from above out of the light into the den.
 
 [A much better and more creative review](https://www.goodreads.com/review/show/3892608661)
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="The Gene"
+  data-author="Siddhartha Mukherjee"
+  data-rating="2.25/5"
+  data-link="https://siddharthamukherjee.com/the-gene-an-intimate-history/"
+  data-cover="/assets/images/covers/the-gene-siddhartha-mukherjee.webp">
 
 #### 27. [The Gene](https://siddharthamukherjee.com/the-gene-an-intimate-history/) by Siddhartha Mukherjee <span style="float: right;">`(2.25/5)`</span>
 
@@ -263,9 +506,27 @@ Back to the book. Way too infodense. Tries too hard to have random sensationalis
 
 The last two parts get very interesting. Mostly because the descriptions are of phenomena rather than a littany of "person x tried this, and that happened".
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="The Catcher in the Rye"
+  data-author="J. D. Salinger"
+  data-rating="4.25/5"
+  data-link="https://www.google.co.in/books/edition/The_Catcher_in_the_Rye/ScdAEQAAQBAJ"
+  data-cover="/assets/images/covers/the-catcher-in-the-rye-j-d-salinger.webp">
+
 #### 28. [The Catcher in the Rye](https://www.google.co.in/books/edition/The_Catcher_in_the_Rye/ScdAEQAAQBAJ) by J. D. Salinger <span style="float: right;">`(4.25/5)`</span>
 
-exceptional stuff, really distills that adolescent feeling of being deeply unimpressed and annoyed by everything around you. I read this book with very little expectations because I'd only ever heard negative things about it, but I thought it was beautiful. I can see myself not liking it a few years ago, and I can also see myself not liking it a few years later. This is what makes it such a great book. 
+exceptional stuff, really distills that adolescent feeling of being deeply unimpressed and annoyed by everything around you. I read this book with very little expectations because I'd only ever heard negative things about it, but I thought it was beautiful. I can see myself not liking it a few years ago, and I can also see myself not liking it a few years later. This is what makes it such a great book.
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Inferno"
+  data-author="Dan Brown"
+  data-rating="3.25/5"
+  data-link="https://danbrown.com/books/novels/inferno/"
+  data-cover="/assets/images/covers/inferno-dan-brown.webp">
 
 #### 29. [Inferno](https://danbrown.com/books/novels/inferno/) by Dan Brown <span style="float: right;">`(3.25/5)`</span>
 
@@ -274,6 +535,15 @@ I finally finished this. Inferno was my second Dan Brown book, and I loved it wh
 Also, the moral questions in this book about plagues and population collapse feel so different from ten years ago. Especially after COVID and birth rates dropping in recent years. I remember that back then, population growth was a huge problem, and was looked at as insurmountable.
 
 Will this make me read The Divine Comedy or Angels and Demons next? Watch this space!
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="The Bell Jar"
+  data-author="Sylvia Plath"
+  data-rating="3.5/5"
+  data-link="https://www.gutenberg.ca/ebooks/plaths-belljar/plaths-belljar-00-h.html"
+  data-cover="/assets/images/covers/the-bell-jar-sylvia-plath.webp">
 
 #### 30. [The Bell Jar](https://www.gutenberg.ca/ebooks/plaths-belljar/plaths-belljar-00-h.html) by Sylvia Plath <span style="float: right;">`(3.5/5)`</span>
 
@@ -286,6 +556,15 @@ You can tell that Plath wrote those lines over and over again, that's how memora
     <p>It didn't seem to be summer any more. I could feel the winter shaking my bones and banging my teeth together.</p>
     <cite>Sylvia Plath, The Bell Jar (describing the effects of food poisoning)</cite>
 </blockquote>
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="East of Eden"
+  data-author="John Steinbeck"
+  data-rating="5/5"
+  data-link="https://www.google.co.in/books/edition/_/OPy6E5ZhXs0C?hl=en&kptab=overview"
+  data-cover="/assets/images/covers/east-of-eden-john-steinbeck.webp">
 
 #### 31. [East of Eden](https://www.google.co.in/books/edition/_/OPy6E5ZhXs0C?hl=en&kptab=overview) by John Steinbeck <span style="float: right;">`(5/5)`</span>
 
@@ -307,6 +586,15 @@ the Lord said unto Cain,</p><br>
     <cite>Book of Genesis, 4:1–18</cite>
 </blockquote>
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="The Grapes of Wrath"
+  data-author="John Steinbeck"
+  data-rating="5/5"
+  data-link="https://www.google.co.in/books/edition/The_Grapes_of_Wrath/hNisMz5W1DQC"
+  data-cover="/assets/images/covers/the-grapes-of-wrath-john-steinbeck.webp">
+
 #### 32. [The Grapes of Wrath](https://www.google.co.in/books/edition/The_Grapes_of_Wrath/hNisMz5W1DQC) by John Steinbeck <span style="float: right;">`(5/5)`</span>
 
 This is a great book. A truly great book.
@@ -316,13 +604,40 @@ This is a great book. A truly great book.
 - [Gary Hylander discusses The Grapes of Wrath](https://www.youtube.com/watch?v=b8w76FXeUQk)
 - [The Great American Novel Series: "The Grapes of Wrath" by John Steinbeck](https://www.youtube.com/watch?v=pZgDy-YKhrY)
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Of Mice and Men"
+  data-author="John Steinbeck"
+  data-rating="3.25/5"
+  data-link="https://www.google.co.in/books/edition/Of_Mice_and_Men/L0IjEAAAQBAJ"
+  data-cover="/assets/images/covers/of-mice-and-men-john-steinbeck.webp">
+
 #### 33. [Of Mice and Men](https://www.google.co.in/books/edition/Of_Mice_and_Men/L0IjEAAAQBAJ) by John Steinbeck <span style="float: right;">`(3.25/5)`</span>
 
 I assume that the only reason this book is so popular is because of how short it is. Maybe I'm spoiled after reading Steinbeck's Eden and Grapes, but this wasn't that good. His prose shines out, and his characters are very strongly written, but like I said, maybe a good introductory book to Steinbeck.
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="The Great Gatsby"
+  data-author="F. Scott Fitzgerald"
+  data-rating="5/5"
+  data-link="https://www.gutenberg.org/cache/epub/64317/pg64317-images.html"
+  data-cover="/assets/images/covers/the-great-gatsby-f-scott-fitzgerald.webp">
+
 #### 34. [The Great Gatsby](https://www.gutenberg.org/cache/epub/64317/pg64317-images.html) by F. Scott Fitzgerald <span style="float: right;">`(5/5)`</span>
 
 I've been reading a lot of Great Depression literature so I thought I'd revisit this too. One of the greatest stories ever written.
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="The Adventures of Tom Sawyer"
+  data-author="Mark Twain"
+  data-rating="4.5/5"
+  data-link="https://www.gutenberg.org/cache/epub/74/pg74-images.html"
+  data-cover="/assets/images/covers/the-adventures-of-tom-sawyer-mark-twain.webp">
 
 #### 35. [The Adventures of Tom Sawyer](https://www.gutenberg.org/cache/epub/74/pg74-images.html) by Mark Twain <span style="float: right;">`(4.5/5)`</span>
 
@@ -330,11 +645,29 @@ Continuing my American Literature streak, I went back in time to 2011 when I fir
 
 > Although my book is intended mainly for the entertainment of boys and girls, I hope it will not be shunned by men and women on that account, for part of my plan has been to try to pleasantly remind adults of what they once were themselves, and of how they felt and thought and talked, and what queer enterprises they sometimes engaged in.
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="The Adventures of Huckleberry Finn"
+  data-author="Mark Twain"
+  data-rating="2.75/5"
+  data-link="https://www.gutenberg.org/cache/epub/76/pg76-images.html"
+  data-cover="/assets/images/covers/the-adventures-of-huckleberry-finn-mark-twain.webp">
+
 #### 36. [The Adventures of Huckleberry Finn](https://www.gutenberg.org/cache/epub/76/pg76-images.html) by Mark Twain <span style="float: right;">`(2.75/5)`</span>
 
 You forget that Huck Finn is only a boy until Tom Sawyer comes along. A few parts were a little too drawn out for my taste but overall pretty fun.
 
 >  Persons attempting to find a motive in this narrative will be prosecuted; persons attempting to find a moral in it will be banished; persons attempting to find a plot in it will be shot.
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Wuthering Heights"
+  data-author="Emily Brontë"
+  data-rating="2.25/5"
+  data-link="https://www.gutenberg.org/cache/epub/768/pg768-images.html"
+  data-cover="/assets/images/covers/wuthering-heights-emily-brontë.webp">
 
 #### 37. [Wuthering Heights](https://www.gutenberg.org/cache/epub/768/pg768-images.html) by Emily Brontë <span style="float: right;">`(2.25/5)`</span>
 
@@ -346,13 +679,40 @@ Heathcliff is the archetypal wounded and wronged Byronic anti-hero, who experien
 
 [Contemporary reviews of Wuthering Heights](https://wuthering-heights.co.uk/reviews.php)
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="A Walk in the Woods"
+  data-author="Bill Bryson"
+  data-rating="3.5/5"
+  data-link="https://www.google.co.in/books/edition/_/WnyDgV_vNhsC?hl=en"
+  data-cover="/assets/images/covers/a-walk-in-the-woods-bill-bryson.webp">
+
 #### 38. [A Walk in the Woods](https://www.google.co.in/books/edition/_/WnyDgV_vNhsC?hl=en) by Bill Bryson <span style="float: right;">`(3.5/5)`</span>
 
 I'm adding a thru-hike of the AT to my bucket list after this.
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="In a Sunburned Country"
+  data-author="Bill Bryson"
+  data-rating="4.25/5"
+  data-link="https://www.google.co.in/books/edition/_/lvZrnX-a__wC"
+  data-cover="/assets/images/covers/in-a-sunburned-country-bill-bryson.webp">
+
 #### 39. [In a Sunburned Country](https://www.google.co.in/books/edition/_/lvZrnX-a__wC) by Bill Bryson <span style="float: right;">`(4.25/5)`</span>
 
 I learnt so much from this book. I knew so little about Australia (apart from their cricket stadiums and their exceptional 2000s cricket team) that every page in this book was filled with wonderful facts and descriptions. For all of Bryson's warnings about all the bugs and dangerous wildlife in Australia, he actually doesn't encounter any—but that doesn't stop him from repeating the warnings and narrating anecdotes of attacks. I recommend reading this book while checking out the places and streets on Google Street View, it is a lot of fun.
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="A Short History of Nearly Everything"
+  data-author="Bill Bryson"
+  data-rating="5/5"
+  data-link="https://www.google.co.in/books/edition/_/YjAnfhsAQ8wC"
+  data-cover="/assets/images/covers/a-short-history-of-nearly-everything-bill-bryson.webp">
 
 #### 40. [A Short History of Nearly Everything](https://www.google.co.in/books/edition/_/YjAnfhsAQ8wC) by Bill Bryson <span style="float: right;">`(5/5)`</span>
 
@@ -364,13 +724,40 @@ This conundrum remained unresolved for a few years, and I made my peace with not
 
 Out of the many things that I learnt from this book is how carbon is sequestered by marine animals which use it to make their shells; ultimately ending up as limestone. This locks carbon dioxide out of the atmosphere, preventing the earth from warming up, and facilitating favourable conditions for life on earth. I am going to stop here, because I could go on forever about all the cool things I learnt from this book.
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="The Body"
+  data-author="Bill Bryson"
+  data-rating="4.25/5"
+  data-link="https://www.google.co.in/books/edition/_/OHuDDwAAQBAJ?"
+  data-cover="/assets/images/covers/the-body-bill-bryson.webp">
+
 #### 41. [The Body](https://www.google.co.in/books/edition/_/OHuDDwAAQBAJ?) by Bill Bryson <span style="float: right;">`(4.25/5)`</span>
 
-The thing about Bill Bryson books is that he takes you from a state of soporific existence to recognizing that every part of the world around you is teeming with wonder. It is a miracle that any of us are here, and any of this is real. The only recurring thought I had while reading four books of his on the trot was, "I have so much to learn". Epic. 
+The thing about Bill Bryson books is that he takes you from a state of soporific existence to recognizing that every part of the world around you is teeming with wonder. It is a miracle that any of us are here, and any of this is real. The only recurring thought I had while reading four books of his on the trot was, "I have so much to learn". Epic.
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Robinson Crusoe"
+  data-author="Daniel Defoe"
+  data-rating="2/5"
+  data-link="https://www.gutenberg.org/cache/epub/521/pg521-images.html"
+  data-cover="/assets/images/covers/robinson-crusoe-daniel-defoe.webp">
 
 #### 42. [Robinson Crusoe](https://www.gutenberg.org/cache/epub/521/pg521-images.html) by Daniel Defoe <span style="float: right;">`(2/5)`</span>
 
 this book was far more fantastical in my memory than it actually is
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Treasure Island"
+  data-author="Robert Louis Stevenson"
+  data-rating="3.5/5"
+  data-link="https://www.gutenberg.org/files/120/120-h/120-h.htm"
+  data-cover="/assets/images/covers/treasure-island-robert-louis-stevenson.webp">
 
 #### 43. [Treasure Island](https://www.gutenberg.org/files/120/120-h/120-h.htm) by Robert Louis Stevenson <span style="float: right;">`(3.5/5)`</span>
 
@@ -380,6 +767,15 @@ Long John Silver is the goat!
 > Yo-ho-ho, and a bottle of rum! \
 > Drink and the devil had done for the rest — \
 > Yo-ho-ho, and a bottle of rum!
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Gulliver's Travels"
+  data-author="Jonathan Swift"
+  data-rating="3.25/5"
+  data-link="https://www.gutenberg.org/files/829/829-h/829-h.htm"
+  data-cover="/assets/images/covers/gullivers-travels-jonathan-swift.webp">
 
 #### 44. [Gulliver's Travels](https://www.gutenberg.org/files/829/829-h/829-h.htm) by Jonathan Swift <span style="float: right;">`(3.25/5)`</span>
 
@@ -391,13 +787,40 @@ Another observation I made is that Jacques Barzun got his attribution mixed up w
 
 > But what I chiefly admired, and thought altogether unaccountable, was the strong disposition I observed in them (the mathematicians) towards news and politics, perpetually inquiring into public affairs, giving their judgments in matters of state, and passionately disputing every inch of a party opinion. I have indeed observed the same disposition among most of the mathematicians I have known in Europe, although I could never discover the least analogy between the two sciences; unless those people suppose, that because the smallest circle has as many degrees as the largest, therefore the regulation and management of the world require no more abilities than the handling and turning of a globe; but I rather take this quality to spring from a very common infirmity of human nature, inclining us to be most curious and conceited in matters where we have least concern, and for which we are least adapted by study or nature.
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Educated"
+  data-author="Tara Westover"
+  data-rating="4/5"
+  data-link="https://tarawestover.com/book"
+  data-cover="/assets/images/covers/educated-tara-westover.webp">
+
 #### 45. [Educated](https://tarawestover.com/book) by Tara Westover <span style="float: right;">`(4/5)`</span>
 
 This is a really good book. One of those books, which if I had not read, I could have never imagined the existence of the events written about. This book is about memories, and how they warp in different ways each time we recall them. The descriptions of rural Idaho were so well done.
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Project Hail Mary"
+  data-author="Andy Weir"
+  data-rating="5/5"
+  data-link="https://andyweirauthor.com/#project-hail-mary"
+  data-cover="/assets/images/covers/project-hail-mary-andy-weir.webp">
+
 #### 46. [Project Hail Mary](https://andyweirauthor.com/#project-hail-mary) by Andy Weir <span style="float: right;">`(5/5)`</span>
 
 _Amaze._
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="The Lincoln Highway"
+  data-author="Amor Towles"
+  data-rating="5/5"
+  data-link="https://www.amortowles.com/the-lincoln-highway-about-the-book/"
+  data-cover="/assets/images/covers/the-lincoln-highway-amor-towles.webp">
 
 #### 47. [The Lincoln Highway](https://www.amortowles.com/the-lincoln-highway-about-the-book/) by Amor Towles <span style="float: right;">`(5/5)`</span>
 
@@ -405,9 +828,27 @@ I simply couldn't turn the pages fast enough. Duchess is one of the most unlikea
 
 My second five star Amor Towles book, I'm definitely going to get my hands on Rules of Civility next.
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Rules of Civility"
+  data-author="Amor Towles"
+  data-rating="2.25/5"
+  data-link="https://www.amortowles.com/rules-of-civility-about-the-book/"
+  data-cover="/assets/images/covers/rules-of-civility-amor-towles.webp">
+
 #### 48. [Rules of Civility](https://www.amortowles.com/rules-of-civility-about-the-book/) by Amor Towles <span style="float: right;">`(2.25/5)`</span>
 
 The writing was—_como se dice_—fab-dabulous but the story was such a drag. I loved Eve's turns of phrase so much.
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="We Solve Murders"
+  data-author="Richard Osman"
+  data-rating="0/5"
+  data-link="https://www.goodreads.com/list/show/2.The_Worst_Books_of_All_Time"
+  data-cover="/assets/images/covers/we-solve-murders-richard-osman.webp">
 
 #### 49. [We Solve Murders](https://www.goodreads.com/list/show/2.The_Worst_Books_of_All_Time) by Richard Osman <span style="float: right;">`(0/5)`</span>
 
@@ -415,16 +856,45 @@ This is easily one of the worst genres of books ever written, can't believe they
 
 I am writing this review three weeks after I buried my copy in a landfill, and I am still furious that I wasted my time reading this.
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Angels and Demons"
+  data-author="Dan Brown"
+  data-rating="5/5"
+  data-link="https://danbrown.com/books/novels/angels-and-demons/"
+  data-cover="/assets/images/covers/angels-and-demons-dan-brown.webp">
+
 #### 50. [Angels and Demons](https://danbrown.com/books/novels/angels-and-demons/) by Dan Brown <span style="float: right;">`(5/5)`</span>
 
 This was the book that made me go on a Dan Brown spree when I was thirteen, and none of his other books come close to this. Now I can see why the writing is criticized, and how it feels lazy, but what a powerful story. Loved it more than ten years later as well.
+
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="A Room of One's Own"
+  data-author="Virginia Woolf"
+  data-rating="3/5"
+  data-link="https://gutenberg.net.au/ebooks02/0200791h.html"
+  data-cover="/assets/images/covers/a-room-of-ones-own-virginia-woolf.webp">
 
 #### 51. [A Room of One's Own](https://gutenberg.net.au/ebooks02/0200791h.html) by Virginia Woolf <span style="float: right;">`(3/5)`</span>
 
 what a wonderful essay, I need to read this many more times before I absorb everything. the stream of consciousness writing can be tiresome sometimes, but there's always a point at the end of everything.
 
+</div>
+
+<div class="book-section" markdown="1"
+  data-title="Madonna in a Fur Coat"
+  data-author="Sabahattin Ali"
+  data-rating="3/5"
+  data-link="https://www.goodreads.com/book/show/27793819-madonna-in-a-fur-coat"
+  data-cover="/assets/images/covers/madonna-in-a-fur-coat-sabahattin-ali.webp">
+
 #### 52. [Madonna in a Fur Coat](https://www.goodreads.com/book/show/27793819-madonna-in-a-fur-coat) by Sabahattin Ali <span style="float: right;">`(3/5)`</span>
 
 wow this book was written in 1943
 
----
+</div>
+
+<script src="/assets/js/books-grid.js"></script>
