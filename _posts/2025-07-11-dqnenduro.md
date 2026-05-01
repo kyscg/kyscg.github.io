@@ -52,7 +52,7 @@ tqdm==4.67.1
 Markov Decision Process $\rightarrow$ memoryless, choose action.
 
 <div class='figure'>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Markov_Decision_Process.svg/600px-Markov_Decision_Process.svg.png"/>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Markov_Decision_Process.svg"/>
     <div class='caption'>
         <span class='caption-label'>Figure 1.</span> Example of a simple MDP with three states (green circles) and two actions (orange circles), with two rewards (orange arrows)
     </div>
