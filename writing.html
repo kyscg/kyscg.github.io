@@ -29,7 +29,8 @@ title: Writing
     <link rel='shortcut icon' href='/assets/images/alexandrosMegas.jpg' />
     <link href='/index.css' rel='stylesheet' />
     <link href="/searchpf/pagefind-ui.css" rel="stylesheet">
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="2a3fa7ef-09a0-498f-afab-e07f756bd81e"></script>
+    <script defer src="https://cloud.umami.is/script.js"
+        data-website-id="2a3fa7ef-09a0-498f-afab-e07f756bd81e"></script>
 
     {% include mathjax.html %}
     {% include seo_tags.html %}
@@ -38,9 +39,12 @@ title: Writing
 <body>
     <article id="writing">
         <p id="nav">
-            <a href='/'>Home</a> ~
-            <a href='/reading'>Reading</a> ~
-            <a href='/feed.xml'>Feed</a>
+            <a href='/'>Home</a>
+            <span class="nav-ornament">❧ G7 ☙</span>
+            <span class="nav-right">
+                <a href='/reading'>Reading</a>
+                <a href='/feed.xml'>Feed</a>
+            </span>
         </p>
         <blockquote>
             <p>So much working, reading, thinking, living to do! A lifetime is not long enough.</p>
@@ -50,7 +54,10 @@ title: Writing
         <div id="search"></div>
 
         <div id="cats">
-                <a href="/writing/nn">intelligence</a> <a href="/writing/math">math</a> <a href="/writing/physics">physics</a> <a href="/writing/history">history</a> <a href="/writing/biology">biology</a> <a href="/writing/sports">sports</a> <a href="/writing/personal">personal</a>
+            <a href="/writing/nn">intelligence</a> <a href="/writing/math">math</a> <a
+                href="/writing/physics">physics</a> <a href="/writing/history">history</a> <a
+                href="/writing/biology">biology</a> <a href="/writing/sports">sports</a> <a
+                href="/writing/personal">personal</a>
         </div>
 
         <div id='posts' class='section'>
@@ -74,10 +81,11 @@ title: Writing
     </article>
     <script src="/searchpf/pagefind-ui.js" type="text/javascript"></script>
     <script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-      new PagefindUI({ element: "#search" });
-    });
+        window.addEventListener('DOMContentLoaded', (event) => {
+            new PagefindUI({ element: "#search" });
+        });
     </script>
 </body>
-    {% include footer.html %}
+{% include footer.html %}
+
 </html>
